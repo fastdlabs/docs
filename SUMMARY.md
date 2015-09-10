@@ -7,7 +7,6 @@
    * [开发规范](kai_fa_gui_fan.md)
 * [路由](lu_you.md)
    * [路由配置](lu_you_pei_zhi.md)
-* [请求&响应](qing_6c4226_xiang_ying.md)
 * [视图](shi_tu.md)
 * [Repository](repository.md)
 * [配置文件](pei_zhi_wen_jian.md)
