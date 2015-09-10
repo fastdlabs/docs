@@ -32,3 +32,5 @@ Routes::put('/', 'Class@method');
 Routes::delete('/', 'Class@method');
 ```
 
+
+
