@@ -20,5 +20,15 @@ Routes::get('/', 'Class@method');
 Routes::post('/', 'Class@method');
 ```
 
-###
+###PUT
+
+```
+Routes::put('/', 'Class@method');
+```
+
+###DELETE
+
+```
+Routes::delete('/', 'Class@method');
+```
 
