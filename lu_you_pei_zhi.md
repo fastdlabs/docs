@@ -14,7 +14,6 @@
 
 ```
 Routes::get('/', 'Class@method');
-//host/
 ```
 
 ###POST
