@@ -40,7 +40,9 @@ Routes::delete('/', 'Class@method');
 
 ##动态路由
 
-
+```
+Routes::get('/{name}', 'Class@method');
+```
 
 
 ###路由异常
