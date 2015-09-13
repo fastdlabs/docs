@@ -14,7 +14,7 @@
 * [命令行](ming_ling_xing.md)
 * [异常](yi_chang.md)
 * [扩展](kuo_zhan.md)
-* [bundle](bundle.md)
+* [bundles](bundle.md)
 * [整合&配置](zheng_540826_pei_zhi.md)
 * [组件](zu_jian.md)
 
