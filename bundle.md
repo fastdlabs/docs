@@ -17,3 +17,9 @@ composer require fastd/admin-bundle
 ```php
 composer require fastd/swoole-bundle
 ```
+
+##asset-bundle
+
+```php
+composer require fastd/asset-bundle
+```
