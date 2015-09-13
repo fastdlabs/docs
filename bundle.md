@@ -5,3 +5,11 @@
 ```php
 composer require fastd/media-bundle 
 ```
+
+##admin-bundle
+
+```php
+composer require fastd/admin-bundle 
+```
+
+##
