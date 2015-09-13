@@ -15,5 +15,5 @@ composer require fastd/admin-bundle
 ##swoole-bundle
 
 ```php
-
+composer require fastd/swoole-bundle
 ```
