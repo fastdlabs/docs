@@ -17,6 +17,7 @@
    * [swoole](swoole.md)
 * [bundles](bundle.md)
    * [media-bundle](media-bundle.md)
+   * swoole-bundle
 * [整合&配置](zheng_540826_pei_zhi.md)
 * [组件](zu_jian.md)
 
