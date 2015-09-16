@@ -10,11 +10,11 @@
 'media' => [
     // ...
     // 数据提供器
-        'provider' => [
-            'connection' => 'media',
-            'repository' => 'Media:Repository:Media',
-            'remote_url' => '/', // 数据提供地址
-        ],
+    'provider' => [
+        'connection' => 'media',
+        'repository' => 'Media:Repository:Media',
+        'remote_url' => '/', // 数据提供地址
+    ],
     // ...
 ]
 ```
