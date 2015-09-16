@@ -6,4 +6,12 @@
 
 ----
 
+#Usage
+
+```json
+
+```
+
+----
+
 ###License  MIT
