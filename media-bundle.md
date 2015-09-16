@@ -11,7 +11,7 @@
 ```json
 {
     "require": {
-        
+        "fastd/media-bundle": "1.0.*@alpha"
     }
 }
 ```
