@@ -21,6 +21,7 @@
         'width'     => 120,
         'height'    => 120,
     ],
+    // 上传
     'uploaded' => [
         'path' => '%root.path%/../public/upload/%date%',
         'exts' => [
