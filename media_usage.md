@@ -19,4 +19,4 @@
 ]
 ```
 
-来源"本地"数据: connection 和 repository，链接和库，可以自行配置 repository 返回什么数据，repository 需要实现 `Media\Std\`
+来源"本地"数据: connection 和 repository，链接和库，可以自行配置 repository 返回什么数据，repository 需要实现 `Media\Std\ProviderInterface` 接口，实现 `getMedia($page, $offset, $limited, $lastId)` 方法。
