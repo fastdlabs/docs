@@ -8,7 +8,7 @@
 
 驼峰(这里均指对象/类)， 而结尾呢，统一使用 `.php`。 如:
 
-```
+```php
 Demo  => Demo.php
 
 DateConvert => DateConvert.php
@@ -16,7 +16,7 @@ DateConvert => DateConvert.php
 
 ####接口
 
-```
+```php
 DemoInterface  => DemoInterface.php
 
 DateConvertInterface => DateConvertInterface.php
@@ -24,7 +24,7 @@ DateConvertInterface => DateConvertInterface.php
 
 ####抽象
 
-```
+```php
 DemoAbstract  => DemoAbstract.php
 
 DateConvertAbstract => DateConvertAbstract.php
@@ -34,7 +34,7 @@ DateConvertAbstract => DateConvertAbstract.php
 
 统一全部大写，并使用下划线隔开单词，如： 
 
-```
+```php
 define(DATE_CONVERT, ''); 建议少用
 
 const DATE_CONVERT
