@@ -17,7 +17,48 @@
 ```
 
 ```php
+class Application extends \FastD\Framework\Kernel\AppKernel
+{
+    /**
+     * Register project bundles into the kernel.
+     *
+     * @return array
+     */
+    public function registerBundles()
+    {
+        return array(
+            new \Asset\AssetBundle(),
+            new \Admin\AdminBundle(),
+            new \Media\MediaBundle(),
+            new \Almanac\AlmanacBundle(),
+        );
+    }
 
+    /**
+     * Register custom kernel plugins.
+     * Must return array.
+     * examples:
+     *  return array(
+     *      "Monolog\\Logger"
+     *  )
+     *
+     * @return array
+     */
+    public function registerService(){return [];}
+
+    /**
+     * @return array
+     */
+    public function registerConfigVariable(){return [];}
+
+    /**
+     * Register application configuration
+     *
+     * @param \FastD\Config\Config
+     * @return void
+     */
+    public function registerConfiguration(\FastD\Config\Config $config){}
+}
 ```
 
 ----
