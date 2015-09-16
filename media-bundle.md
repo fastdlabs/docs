@@ -16,6 +16,8 @@
 }
 ```
 
+注册到 `app/Application.php`
+
 ```php
 class Application extends \FastD\Framework\Kernel\AppKernel
 {
