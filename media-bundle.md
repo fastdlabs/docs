@@ -31,7 +31,6 @@ class Application extends \FastD\Framework\Kernel\AppKernel
     }
 }
 ```
-
 ----
 
 ###License  MIT
