@@ -22,7 +22,7 @@
 
 路由写法:
 
-```
+```php
 Routes::{method}(['/', 'name' => '路由名'], '绑定触发的事件对象');
 ```
 
@@ -34,7 +34,7 @@ Routes::{method}(['/', 'name' => '路由名'], '绑定触发的事件对象');
 
 而绑定时间实则是非常简单。只需要将完整的对象名和方法填写到路由的第二个参数即可。
 
-```
+```php
 Routes::get(['/', 'name' => '路由名'], 'Namespace\ClassName@method');
 ```
 
@@ -46,7 +46,7 @@ Routes::get(['/', 'name' => '路由名'], 'Namespace\ClassName@method');
 
 例如:
 
-```
+```php
 return 'hello world';
 or
 return new \FastD\Http\Response('hello world');
