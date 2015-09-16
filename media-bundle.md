@@ -22,7 +22,9 @@ class Application extends \FastD\Framework\Kernel\AppKernel
     public function registerBundles()
     {
         return array(
+            // ...
             new \Media\MediaBundle(),
+            // ...
         );
     }
 }
