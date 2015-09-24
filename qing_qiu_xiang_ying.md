@@ -66,3 +66,8 @@ class Demo extends BaseEvent
 Routes::get('/', 'Demo@demoAction');
 
 ```
+
+效果虽说和以上两个示例一样，但是在编码上更加不雅观，咱们搞(xie)艺(dai)术(ma)的，应该要有点原则和逼格，要给别人一种专业，高端的感觉，但同时要保持低调谦虚，不然这圈子就白混了。
+
+
+
