@@ -6,5 +6,16 @@
 
 推荐方式：**参数注入**
 
+```php
 
+use FastD\Http\Request;
+
+class Demo{
+    public function demoAction(Reqeuest $request){
+        return $request->query->hasGet('name', 'janhuang');
+    }
+}
+
+Routes::get('/', '');
+```
 
