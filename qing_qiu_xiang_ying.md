@@ -73,6 +73,11 @@ Routes::get('/', 'Demo@demoAction');
 
 ####1.GET
 
+```php
+$request->query->get('name');
+$request->query->hasGet('name', $default);
+```
+
 ####2.POST | PUT | DELETE
 
 ##2.响应(Response)
