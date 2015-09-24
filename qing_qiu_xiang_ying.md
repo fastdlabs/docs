@@ -26,6 +26,14 @@ Routes::get('/', 'Demo@demoAction');
 
 ```php
 
+use FastD\Http\Request;
 
+class Demo{
+    public function demoAction(Reqeuest $request){
+        return $request->query->hasGet('name', 'janhuang');
+    }
+}
+
+Routes::get('/', 'Demo@demoAction');
 
 ```
