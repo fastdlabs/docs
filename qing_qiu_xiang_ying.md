@@ -35,7 +35,8 @@ use FastD\Framework\Events\BaseEvent;
 
 class Demo extends BaseEvent
 {
-    public function demoAction(Reqeuest $request){
+    public function demoAction(){
+        $request = $this->getRequest();
         return $request->query->hasGet('name', 'janhuang');
     }
 }
