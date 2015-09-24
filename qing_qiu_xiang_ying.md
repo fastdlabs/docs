@@ -72,3 +72,5 @@ Routes::get('/', 'Demo@demoAction');
 ##2.响应(Response)
 
 框架除了统一了请求入口，还统一了出口(Response)。至于统一出口的好处大家可以继续研究下。
+
+这里要求每个响应方法都必须返回(return) 一个基于 `FastD\Http\Response` 的对象或者字符串，否则系统会提示异常，
