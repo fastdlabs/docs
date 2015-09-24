@@ -81,8 +81,8 @@ $request->query->hasGet('name', $default);
 ####2.POST | PUT | DELETE
 
 ```php
-$request->query->get('name');
-$request->query->hasGet('name', $default);
+$request->request->get('name');
+$request->request->hasGet('name', $default);
 ```
 
 
