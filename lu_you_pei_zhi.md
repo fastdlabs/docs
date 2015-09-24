@@ -36,6 +36,8 @@ Routes::delete('/', 'Class@method');
 
 如此类推......
 
+上述的 `Class@mthod` 中，Class对应的是完整的类名，method则对应类方法
+
 ----
 
 ##动态路由
