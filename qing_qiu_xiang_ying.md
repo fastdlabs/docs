@@ -31,8 +31,9 @@ Routes::get('/', 'Demo@demoAction');
 ```php
 
 use FastD\Http\Request;
+use FastD\Framework\Events\BaseEvent;
 
-class Demo extends
+class Demo extends BaseEvent
 {
     public function demoAction(Reqeuest $request){
         return $request->query->hasGet('name', 'janhuang');
