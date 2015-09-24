@@ -6,7 +6,7 @@ tcpdump是非常强大的网络安全分析工具，可以将网络上截获的�
 
 tcpdump 适用于大多数的类Unix系统 操作系统：包括Linux、Solaris、BSD、Mac OS X、HP-UX和AIX 等等。在这些系统中，tcpdump 需要使用libpcap这个捕捉数据的库。其在Windows下的版本称为WinDump；它需要WinPcap驱动，相当于在Linux平台下的libpcap。
 
-0x02 Tcpdump用途
+#0x02 Tcpdump用途
 
 tcpdump能够分析网络行为，性能和应用产生或接收网络流量。它支持针对网络层、协议、主机、网络或端口的过滤，并提供and、or、not等逻辑语句来帮助你去掉无用的信息，从而使用户能够进一步找出问题的根源。
 
