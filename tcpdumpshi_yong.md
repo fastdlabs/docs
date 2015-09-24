@@ -1,72 +1,60 @@
-<section class="entry-content ng-binding" ng-bind-html="postContentTrustedHtml">
-      <p>
-        </p><h1>0x01 Tcpdump简介</h1>
+#0x01 Tcpdump简介
 
-<hr>
+tcpdump 是一个运行在命令行下的嗅探工具。它允许用户拦截和显示发送或收到过网络连接到该计算机的TCP/IP和其他数据包。tcpdump 是一个在BSD许可证下发布的自由软件。
 
-<ol>
-<li><p>tcpdump 是一个运行在命令行下的嗅探工具。它允许用户拦截和显示发送或收到过网络连接到该计算机的TCP/IP和其他数据包。tcpdump 是一个在BSD许可证下发布的自由软件。</p></li>
-<li><p>tcpdump是非常强大的网络安全分析工具，可以将网络上截获的数据包保存到文件以备分析。可以定义过滤规则，只截获感兴趣的数据包，以减少输出文件大小和数据包分析时的装载和处理时间。</p></li>
-<li><p>tcpdump 适用于大多数的类Unix系统 操作系统：包括Linux、Solaris、BSD、Mac OS X、HP-UX和AIX 等等。在这些系统中，tcpdump 需要使用libpcap这个捕捉数据的库。其在Windows下的版本称为WinDump；它需要WinPcap驱动，相当于在Linux平台下的libpcap。</p></li>
-</ol>
+tcpdump是非常强大的网络安全分析工具，可以将网络上截获的数据包保存到文件以备分析。可以定义过滤规则，只截获感兴趣的数据包，以减少输出文件大小和数据包分析时的装载和处理时间。
 
-<!--more-->
+tcpdump 适用于大多数的类Unix系统 操作系统：包括Linux、Solaris、BSD、Mac OS X、HP-UX和AIX 等等。在这些系统中，tcpdump 需要使用libpcap这个捕捉数据的库。其在Windows下的版本称为WinDump；它需要WinPcap驱动，相当于在Linux平台下的libpcap。
 
-<h1>0x02 Tcpdump用途</h1>
+0x02 Tcpdump用途
 
-<hr>
+tcpdump能够分析网络行为，性能和应用产生或接收网络流量。它支持针对网络层、协议、主机、网络或端口的过滤，并提供and、or、not等逻辑语句来帮助你去掉无用的信息，从而使用户能够进一步找出问题的根源。
 
-<p>tcpdump能够分析网络行为，性能和应用产生或接收网络流量。它支持针对网络层、协议、主机、网络或端口的过滤，并提供and、or、not等逻辑语句来帮助你去掉无用的信息，从而使用户能够进一步找出问题的根源。</p>
+也可以使用 tcpdump 的实现特定目的，例如在路由器和网关之间拦截并显示其他用户或计算机通信。通过 tcpdump 分析非加密的流量，如Telnet或HTTP的数据包，查看登录的用户名、密码、网址、正在浏览的网站内容，或任何其他信息。因此系统中存在网络分析工具主要不是对本机安全的威胁，而是对网络上的其他计算机的安全存在威胁。
 
-<p>也可以使用 tcpdump 的实现特定目的，例如在路由器和网关之间拦截并显示其他用户或计算机通信。通过 tcpdump 分析非加密的流量，如Telnet或HTTP的数据包，查看登录的用户名、密码、网址、正在浏览的网站内容，或任何其他信息。因此系统中存在网络分析工具主要不是对本机安全的威胁，而是对网络上的其他计算机的安全存在威胁。</p>
+有很多用户喜欢使用柏克莱数据包过滤器来限制 tcpdump 产生的数据包数量，这样BPF会只把“感兴趣”的数据包到上层软件，可以避免从操作系统 内核向用户态复制其他数据包，降低抓包的CPU的负担以及所需的缓冲区空间，从而减少丢包率。
 
-<p>有很多用户喜欢使用柏克莱数据包过滤器来限制 tcpdump 产生的数据包数量，这样BPF会只把“感兴趣”的数据包到上层软件，可以避免从操作系统 内核向用户态复制其他数据包，降低抓包的CPU的负担以及所需的缓冲区空间，从而减少丢包率。</p>
+注:这篇文章只涉及tcpdump的基本用法，请记住tcpdump比我描述的强大的多!
 
-<p>注:这篇文章只涉及tcpdump的基本用法，请记住tcpdump比我描述的强大的多!</p>
+0x03 Tcpdump的安装
 
-<h1>0x03 Tcpdump的安装</h1>
+做好编译源程序前的准备活动
 
-<hr>
+网上下载获得libpcap和tcpdump
 
-<p>做好编译源程序前的准备活动</p>
+http://www.tcpdump.org/
 
-<ol>
-<li><p>网上下载获得libpcap和tcpdump</p>
+安装c编译所需包：apt-get install build-essential
 
-<p><code>http://www.tcpdump.org/</code></p></li>
-<li><p>安装c编译所需包：<code>apt-get install build-essential</code></p></li>
-<li><p>安装 libpcap的前置：<code>apt-get install flex,apt-get install bison</code></p></li>
-<li><p>安装libpcap。</p>
+安装 libpcap的前置：apt-get install flex,apt-get install bison
 
-<p>tcpdump的使用必须有这库。</p>
+安装libpcap。
 
-<p><code>tar  xvfz libpcap-1.7.3.tar.gz //解压</code></p>
+tcpdump的使用必须有这库。
 
-<p>进入解压之后的文件目录</p>
+tar xvfz libpcap-1.7.3.tar.gz //解压
 
-<pre class="highlight">运行./configure  //生成makefile文件`        
+进入解压之后的文件目录
+
+运行./configure  //生成makefile文件`        
 
 make  //进行编译        
 
 make install   //安装   库文件默认安装在目录  /usr/lib,头文件默认安装在  /usr/include
-</pre></li>
-<li><p>安装tcpdump</p>
+安装tcpdump
 
-<p><code>tar  xvfz tcpdump.4.7.4.tar.gz     //解压</code></p>
+tar xvfz tcpdump.4.7.4.tar.gz //解压
 
-<p>进入解压之后的文件目录，运行</p>
+进入解压之后的文件目录，运行
 
-<pre class="highlight">./configure  //生成makefile文件        
+./configure  //生成makefile文件        
 
 make              //进行编译        
 
 make install   //安装   库文件默认安装在目录  /usr/lib,头文件默认安装在  /usr/include
-</pre></li>
-</ol>
+测试是否成功安装：命令行输入 tcpdump有网络信息显示！！
 
-<p>测试是否成功安装：命令行输入 tcpdump有网络信息显示！！</p>
-
-<pre class="highlight">Usage: tcpdump [-aAbdDefhHIJKlLnNOpqRStuUvxX#] [ -B size ] [ -c count ]
+Usage: tcpdump [-aAbdDefhHIJKlLnNOpqRStuUvxX#] [ -B size ] [ -c count ]
         [ -C file_size ] [ -E algo:secret ] [ -F file ] [ -G seconds ]
         [ -i interface ] [ -j tstamptype ] [ -M secret ] [ --number ]
         [ -Q in|out|inout ]
@@ -74,13 +62,9 @@ make install   //安装   库文件默认安装在目录  /usr/lib,头文件默�
         [ -T type ] [ --version ] [ -V file ]
         [ -w file ] [ -W filecount ] [ -y datalinktype ] [ -z command ]
         [ -Z user ] [ expression ]
-</pre>
+0x04 Tcpdump的超详细使用命令
 
-<h1>0x04 Tcpdump的超详细使用命令</h1>
-
-<hr>
-
-<pre class="highlight">-A  以ASCII码方式显示每一个数据包(不会显示数据包中链路层头部信息). 在抓取包含
+-A  以ASCII码方式显示每一个数据包(不会显示数据包中链路层头部信息). 在抓取包含
     网页数据的数据包时, 可方便查看数据(nt: 即Handy for capturing web pages).
 
 -c  count
@@ -156,8 +140,8 @@ make install   //安装   库文件默认安装在目录  /usr/lib,头文件默�
 
 -l  对标准输出进行行缓冲(nt: 使标准输出设备遇到一个换行符就马上把这行的内容打印出来).
     在需要同时观察抓包打印以及保存抓包记录的时候很有用. 比如, 可通过以下命令组合来达到此目的:
-    ``tcpdump  -l  |  tee dat'' 或者 ``tcpdump  -l   &gt; dat  &amp;  tail  -f  dat''.
-    (nt: 前者使用tee来把tcpdump 的输出同时放到文件dat和标准输出中, 而后者通过重定向操作'&gt;', 把tcpdump的输出放到
+    ``tcpdump  -l  |  tee dat'' 或者 ``tcpdump  -l   > dat  &  tail  -f  dat''.
+    (nt: 前者使用tee来把tcpdump 的输出同时放到文件dat和标准输出中, 而后者通过重定向操作'>', 把tcpdump的输出放到
     dat 文件中, 同时通过tail把dat文件中的内容放到标准输出中)
 
 -L  列出指定网络接口所支持的数据链路层的类型后退出.(nt: 指定接口通过-i 来指定)
@@ -266,13 +250,9 @@ make install   //安装   库文件默认安装在目录  /usr/lib,头文件默�
       用户ID设置为user, 组ID设置为user首要所属组的ID(nt: tcpdump 此处可理解为tcpdump 运行之后对应的进程)
 
       此选项也可在编译的时候被设置为默认打开.(nt: 此时user 的取值未知, 需补充)
-</pre>
+0x05 Tcpdump表达式详解
 
-<h1>0x05 Tcpdump表达式详解</h1>
-
-<hr>
-
-<pre class="highlight">该表达式用于决定哪些数据包将被打印.  
+该表达式用于决定哪些数据包将被打印.  
 如果不给定条件表达式, 网络上所有被捕获的包都会被打印,
 否则, 只有满足条件表达式的数据包被打印.(nt: all packets, 可理解为, 所有被指定接口捕获的数据包).
 表达式由一个或多个表达元组成(nt: primitive, 表达元, 可理解为组成表达式的基本元素). 
@@ -337,113 +317,82 @@ wlan(802.11 wireless LAN)的头部. 对于802.11 协议数据包的头部, 目�
 为了表示方便, 同样的修饰符可以被省略, 如tcp dst port ftp or ftp-data or domain与以下的表达式
 含义相同tcp dst port ftp or tcp dst port ftp-data or tcp dst port domain.
 (nt: 其过滤条件可理解为, 包的协议为tcp, 目的端口为ftp 或 ftp-data 或 domain(端口53) ).
-</pre>
+0x06 Tcpdump常用命令实例
 
-<h1>0x06 Tcpdump常用命令实例</h1>
+默认启动
 
-<hr>
+tcpdump
+普通情况下，直接启动tcpdump将监视第一个网络接口上所有流过的数据包。
 
-<h2>默认启动</h2>
+监听网卡eth0
 
-<pre class="highlight">tcpdump
-</pre>
+tcpdump -i eth0
+这个方式最简单了，但是用处不多，因为基本上只能看到数据包的信息刷屏，压根看不清，可以使用ctrl+c中断退出，如果真有需求，可以将输出内容重定向到一个文件，这样也更方便查看。
 
-<p>普通情况下，直接启动tcpdump将监视第一个网络接口上所有流过的数据包。</p>
+监听指定的主机
 
-<h2>监听网卡eth0</h2>
+tcpdump -i eth0 -nn 'host 192.168.168.2'
+这样的话，192.168.168.2这台主机接收到的包和发送的包都会被抓取。
 
-<pre class="highlight">tcpdump -i eth0
-</pre>
+tcpdump -i eth0 -nn 'src host 192.168.168.2'
+这样只有192.168.168.2这台主机发送的包才会被抓取。
 
-<p>这个方式最简单了，但是用处不多，因为基本上只能看到数据包的信息刷屏，压根看不清，可以使用ctrl+c中断退出，如果真有需求，可以将输出内容重定向到一个文件，这样也更方便查看。</p>
+tcpdump -i eth0 -nn 'dst host 192.168.168.2'
+这样只有192.168.168.2这台主机接收到的包才会被抓取。
 
-<h2>监听指定的主机</h2>
+监听指定端口
 
-<pre class="highlight">tcpdump -i eth0 -nn 'host 192.168.168.2'
-</pre>
+tcpdump -i eth0 -nnA 'port 80'
+上例是用来监听主机的80端口收到和发送的所有数据包，结合-A参数，在web开发中，真是非常有用。
 
-<p>这样的话，192.168.168.2这台主机接收到的包和发送的包都会被抓取。</p>
+监听指定主机和端口
 
-<pre class="highlight">tcpdump -i eth0 -nn 'src host 192.168.168.2'
-</pre>
+tcpdump -i eth0 -nnA 'port 80 and src host 192.168.168.2'
+多个条件可以用and，or连接。上例表示监听192.168.168.2主机通过80端口发送的数据包。
 
-<p>这样只有192.168.168.2这台主机发送的包才会被抓取。</p>
+监听除某个端口外的其它端口
 
-<pre class="highlight">tcpdump -i eth0 -nn 'dst host 192.168.168.2'
-</pre>
+tcpdump -i eth0 -nnA '!port 22'
+如果需要排除某个端口或者主机，可以使用“!”符号，上例表示监听非22端口的数据包。
 
-<p>这样只有192.168.168.2这台主机接收到的包才会被抓取。</p>
+抓取特定目标ip和端口的包
 
-<h2>监听指定端口</h2>
+tcpdump host 192.168.168.2 and tcp port 8000
+捕获的数据太多，不断刷屏，可能需要将数据内容记录到文件里，需要使用-w参数：
 
-<pre class="highlight">tcpdump -i eth0 -nnA 'port 80'
-</pre>
+tcpdump -X -s 0 -w A.cap host 192.168.168.2 and tcp port 8000
+则将之前显示在屏幕中的内容，写入tcpdump可执行文件同级目录下的A.cap文件中。
 
-<p>上例是用来监听主机的80端口收到和发送的所有数据包，结合-A参数，在web开发中，真是非常有用。</p>
+文件查看方式如下，需要使用-r参数：
 
-<h2>监听指定主机和端口</h2>
+tcpdump -X -s 0 -r test.cap host 192.168.168.2 and tcp port 8000
+使用tcpdump抓取HTTP包
 
-<pre class="highlight">tcpdump -i eth0 -nnA 'port 80 and src host 192.168.168.2'
-</pre>
+tcpdump  -XvvennSs 0 -i eth0 tcp[20:2]=0x4745 or tcp[20:2]=0x4854
+0x4745 为"GET"前两个字母"GE",0x4854 为"HTTP"前两个字母"HT"。
 
-<p>多个条件可以用and，or连接。上例表示监听192.168.168.2主机通过80端口发送的数据包。</p>
+tcpdump 对截获的数据并没有进行彻底解码，数据包内的大部分内容是使用十六进制的形式直接打印输出的。显然这不利于分析网络故障，通常的解决办法是先使用带-w参数的tcpdump 截获数据并保存到文件中，然后再使用其他程序(如Wireshark)进行解码分析。当然也应该定义过滤规则，以避免捕获的数据包填满整个硬盘。
 
-<h2>监听除某个端口外的其它端口</h2>
+0x07 tcpdump 与wireshark
 
-<pre class="highlight">tcpdump -i eth0 -nnA '!port 22'
-</pre>
+Wireshark(以前是ethereal)是Windows下非常简单易用的抓包工具。但在Linux下很难找到一个好用的图形化抓包工具。
 
-<p>如果需要排除某个端口或者主机，可以使用“!”符号，上例表示监听非22端口的数据包。</p>
+还好有Tcpdump。我们可以用Tcpdump + Wireshark 的完美组合实现：在 Linux 里抓包，然后在Windows 里分析包。
 
-<h2>抓取特定目标ip和端口的包</h2>
+tcpdump tcp -i eth1 -t -s 0 -c 100 and dst port ! 22 and src net 192.168.1.0/24 -w ./target.cap
 
-<pre class="highlight">tcpdump host 192.168.168.2 and tcp port 8000
-</pre>
+(1)tcp: ip icmp arp rarp 和 tcp、udp、icmp这些选项等都要放到第一个参数的位置，用来过滤数据报的类型
 
-<h2>捕获的数据太多，不断刷屏，可能需要将数据内容记录到文件里，需要使用-w参数：</h2>
+(2)-i eth1 : 只抓经过接口eth1的包
 
-<pre class="highlight">tcpdump -X -s 0 -w A.cap host 192.168.168.2 and tcp port 8000
-</pre>
+(3)-t : 不显示时间戳
 
-<p>则将之前显示在屏幕中的内容，写入tcpdump可执行文件同级目录下的A.cap文件中。</p>
+(4)-s 0 : 抓取数据包时默认抓取长度为68字节。加上-S 0 后可以抓到完整的数据包
 
-<h2>文件查看方式如下，需要使用-r参数：</h2>
+(5)-c 100 : 只抓取100个数据包
 
-<pre class="highlight">tcpdump -X -s 0 -r test.cap host 192.168.168.2 and tcp port 8000
-</pre>
+(6)dst port ! 22 : 不抓取目标端口是22的数据包
 
-<h2>使用tcpdump抓取HTTP包</h2>
+(7)src net 192.168.1.0/24 : 数据包的源网络地址为192.168.1.0/24
 
-<pre class="highlight">tcpdump  -XvvennSs 0 -i eth0 tcp[20:2]=0x4745 or tcp[20:2]=0x4854
-</pre>
-
-<p>0x4745 为"GET"前两个字母"GE",0x4854 为"HTTP"前两个字母"HT"。</p>
-
-<p>tcpdump 对截获的数据并没有进行彻底解码，数据包内的大部分内容是使用十六进制的形式直接打印输出的。显然这不利于分析网络故障，通常的解决办法是先使用带-w参数的tcpdump 截获数据并保存到文件中，然后再使用其他程序(如Wireshark)进行解码分析。当然也应该定义过滤规则，以避免捕获的数据包填满整个硬盘。</p>
-
-<h1>0x07 tcpdump 与wireshark</h1>
-
-<hr>
-
-<p>Wireshark(以前是ethereal)是Windows下非常简单易用的抓包工具。但在Linux下很难找到一个好用的图形化抓包工具。</p>
-
-<p>还好有Tcpdump。我们可以用Tcpdump + Wireshark 的完美组合实现：在 Linux 里抓包，然后在Windows 里分析包。</p>
-
-<p>tcpdump tcp -i eth1 -t -s 0 -c 100 and dst port ! 22 and src net 192.168.1.0/24 -w ./target.cap</p>
-
-<p>(1)tcp: ip icmp arp rarp 和 tcp、udp、icmp这些选项等都要放到第一个参数的位置，用来过滤数据报的类型</p>
-
-<p>(2)-i eth1 : 只抓经过接口eth1的包</p>
-
-<p>(3)-t : 不显示时间戳</p>
-
-<p>(4)-s 0 : 抓取数据包时默认抓取长度为68字节。加上-S 0 后可以抓到完整的数据包</p>
-
-<p>(5)-c 100 : 只抓取100个数据包</p>
-
-<p>(6)dst port ! 22 : 不抓取目标端口是22的数据包</p>
-
-<p>(7)src net 192.168.1.0/24 : 数据包的源网络地址为192.168.1.0/24</p>
-
-<p>(8)-w ./target.cap : 保存成cap文件，方便用ethereal(即wireshark)分析</p>      <p></p>
-    </section>
+(8)-w ./target.cap : 保存成cap文件，方便用ethereal(即wireshark)分析
