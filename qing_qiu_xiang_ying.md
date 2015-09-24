@@ -108,8 +108,10 @@ Attribute::get(string $name, boolean $raw = false, Closure $callback);
         }
 
 ```php
-Attribute::get(string $name, boolean $raw = false, Closure $callback);
+Attribute::hasGet(string $name, mixed $default, boolean $raw = false, Closure $callback);
 ```
+
+
 
 ##2.响应(Response)
 
