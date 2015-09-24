@@ -82,7 +82,7 @@ FastD\Http\Response::__construct(string $data, int $status = Response::HTTP_OK, 
 ```
 
 ####string $data
-    响应数据
+    响应数据，如果要响应json或者其他格式数据，需要进行序列化，设置相应的响应头
     
 ####int $status
 
