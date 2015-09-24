@@ -97,7 +97,7 @@ Attribute::get(string $name, boolean $raw = false, Closure $callback);
     
 ####boolean $raw
     
-    是否转义和过滤
+    是否不转义和不过滤
     
 
 
