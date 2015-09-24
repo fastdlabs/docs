@@ -10,8 +10,10 @@
 
 use FastD\Http\Request;
 
-class Demo{
-    public function demoAction(Reqeuest $request){
+class Demo
+{
+    public function demoAction(Reqeuest $request)
+    {
         return $request->query->hasGet('name', 'janhuang');
     }
 }
@@ -28,7 +30,8 @@ Routes::get('/', 'Demo@demoAction');
 
 use FastD\Http\Request;
 
-class Demo{
+class Demo extends
+{
     public function demoAction(Reqeuest $request){
         return $request->query->hasGet('name', 'janhuang');
     }
