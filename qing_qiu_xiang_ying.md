@@ -119,7 +119,15 @@ Attribute::get(string $name, boolean $raw = false, Closure $callback);
 
 在事件处理对象当中，方法中必须 `return`， 如上述例子:
 
-
+```php
+class Demo
+{
+    public function demoAction(Reqeuest $request)
+    {
+        return $request->query->hasGet('name', 'janhuang');
+    }
+}
+```
 
 `FastD\Http\Response` 对象构造方法接受三个参数:
 
