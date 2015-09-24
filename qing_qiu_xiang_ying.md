@@ -107,6 +107,8 @@ Attribute::get(string $name, boolean $raw = false, Closure $callback);
             return md5($name);
         }
 
+
+
 ##2.响应(Response)
 
 框架除了统一了请求入口，还统一了出口(Response)。至于统一出口的好处大家可以继续研究下。
