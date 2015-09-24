@@ -85,6 +85,7 @@ $request->request->get('name');
 $request->request->hasGet('name', $default);
 ```
 
+参数都会默认过滤掉script和iframe
 
 ##2.响应(Response)
 
