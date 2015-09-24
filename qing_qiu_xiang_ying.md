@@ -90,4 +90,4 @@ FastD\Http\Response::__construct(string $data, int $status = Response::HTTP_OK, 
     
 ####array $headers
     
-    自定义相应头
+    自定义响应头，具体请了解http协议的response headers
