@@ -107,7 +107,6 @@ Attribute::get(string $name, boolean $raw = false, Closure $callback);
             return md5($name);
         }
 <br />
-
 ```php
 Attribute::hasGet(string $name, mixed $default, boolean $raw = false, Closure $callback);
 ```
