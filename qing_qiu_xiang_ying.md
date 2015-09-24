@@ -117,6 +117,8 @@ Attribute::get(string $name, boolean $raw = false, Closure $callback);
 
 这里要求每个响应方法都必须返回(return) 一个基于 `FastD\Http\Response` 的对象或者字符串，否则系统会提示异常。因为每个方法都是有返回值的，所以在模块与模块之间调用会变得异常方便，而且处理对象完全是系统统一处理，所以会大大降低非一致性问题。这里需要注意一点就是，不要随意在处理方法中进行输出，这是不规范并且不安全的。
 
+
+
 `FastD\Http\Response` 对象构造方法接受三个参数:
 
 ```php
