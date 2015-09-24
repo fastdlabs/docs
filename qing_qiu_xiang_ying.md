@@ -22,4 +22,6 @@ Routes::get('/', 'Demo@demoAction');
 以上示例是，注入一个Request对象(**注意命名空间**)作为参数传入，可以直接操作对象，Request 的完整路径是 `FastD\Http\Request`。
 
 
-####2.通过BaseEvent
+####2.通过BaseEvent获取
+
+
