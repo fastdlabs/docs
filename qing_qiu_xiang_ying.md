@@ -107,7 +107,9 @@ Attribute::get(string $name, boolean $raw = false, Closure $callback);
             return md5($name);
         }
 
-
+```php
+Attribute::get(string $name, boolean $raw = false, Closure $callback);
+```
 
 ##2.响应(Response)
 
