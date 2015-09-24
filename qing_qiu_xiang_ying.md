@@ -106,11 +106,8 @@ Attribute::get(string $name, boolean $raw = false, Closure $callback);
         function ($name) {
             return md5($name);
         }
-<br />
 
-```php
-Attribute::hasGet(string $name, mixed $default, boolean $raw = false, Closure $callback);
-```
+而 `hasGet` 方法则对应多一个判断，第二个参数代表如果找不到$name参数，则会使用第二个参数值，其他参数作用与上面一样
 
 
 
