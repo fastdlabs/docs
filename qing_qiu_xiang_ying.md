@@ -49,4 +49,4 @@ Routes::get('/', 'Demo@demoAction');
 
 效果和以上一样。
 
-####3.通过Request::createRequestHandle方法获取
+####3.通过Request::createRequestHandle方法获取(不推荐)
