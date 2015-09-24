@@ -71,4 +71,4 @@ Routes::get('/', 'Demo@demoAction');
 
 ##2.响应(Response)
 
-框架除了统一了请求入口，还同意
+框架除了统一了请求入口，还同意了
