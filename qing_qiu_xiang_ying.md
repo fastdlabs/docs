@@ -73,7 +73,7 @@ Routes::get('/', 'Demo@demoAction');
 
 ####1.GET
 
-
+####2.POST
 
 ##2.响应(Response)
 
