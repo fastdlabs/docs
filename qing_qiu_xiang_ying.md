@@ -101,7 +101,7 @@ Attribute::get(string $name, boolean $raw = false, Closure $callback);
     
 ####colsure $callback
 
-    回调，
+    回调，需要自定义过滤的回调函数，接受一个参数，参数来源与请求参数
 
 ##2.响应(Response)
 
