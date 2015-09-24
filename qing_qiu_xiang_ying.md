@@ -88,4 +88,6 @@ FastD\Http\Response::__construct(string $data, int $status = Response::HTTP_OK, 
 
     响应状态码，即http状态码
     
-####array $headers第三那个参数
+####array $headers
+    
+    
