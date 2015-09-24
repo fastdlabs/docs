@@ -24,6 +24,8 @@ Routes::get('/', 'Demo@demoAction');
 
 ####2.通过BaseEvent获取
 
-```
+```php
+
+
 
 ```
