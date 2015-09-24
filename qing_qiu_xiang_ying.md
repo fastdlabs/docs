@@ -129,6 +129,8 @@ class Demo
 }
 ```
 
+方法中默认返回GET参数name，系统判断到是返回字符串，默认为其他产生一个Response对象，结果和: `return new Response($request->query->hasGet('name', 'janhuang'))` 一样
+
 `FastD\Http\Response` 对象构造方法接受三个参数:
 
 ```php
