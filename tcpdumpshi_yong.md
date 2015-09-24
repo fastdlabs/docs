@@ -62,7 +62,7 @@ Usage: tcpdump [-aAbdDefhHIJKlLnNOpqRStuUvxX#] [ -B size ] [ -c count ]
         [ -T type ] [ --version ] [ -V file ]
         [ -w file ] [ -W filecount ] [ -y datalinktype ] [ -z command ]
         [ -Z user ] [ expression ]
-0x04 Tcpdump的超详细使用命令
+#0x04 Tcpdump的超详细使用命令
 
 -A  以ASCII码方式显示每一个数据包(不会显示数据包中链路层头部信息). 在抓取包含
     网页数据的数据包时, 可方便查看数据(nt: 即Handy for capturing web pages).
@@ -250,7 +250,7 @@ Usage: tcpdump [-aAbdDefhHIJKlLnNOpqRStuUvxX#] [ -B size ] [ -c count ]
       用户ID设置为user, 组ID设置为user首要所属组的ID(nt: tcpdump 此处可理解为tcpdump 运行之后对应的进程)
 
       此选项也可在编译的时候被设置为默认打开.(nt: 此时user 的取值未知, 需补充)
-0x05 Tcpdump表达式详解
+#0x05 Tcpdump表达式详解
 
 该表达式用于决定哪些数据包将被打印.  
 如果不给定条件表达式, 网络上所有被捕获的包都会被打印,
@@ -317,7 +317,7 @@ wlan(802.11 wireless LAN)的头部. 对于802.11 协议数据包的头部, 目�
 为了表示方便, 同样的修饰符可以被省略, 如tcp dst port ftp or ftp-data or domain与以下的表达式
 含义相同tcp dst port ftp or tcp dst port ftp-data or tcp dst port domain.
 (nt: 其过滤条件可理解为, 包的协议为tcp, 目的端口为ftp 或 ftp-data 或 domain(端口53) ).
-0x06 Tcpdump常用命令实例
+#0x06 Tcpdump常用命令实例
 
 默认启动
 
@@ -373,7 +373,7 @@ tcpdump  -XvvennSs 0 -i eth0 tcp[20:2]=0x4745 or tcp[20:2]=0x4854
 
 tcpdump 对截获的数据并没有进行彻底解码，数据包内的大部分内容是使用十六进制的形式直接打印输出的。显然这不利于分析网络故障，通常的解决办法是先使用带-w参数的tcpdump 截获数据并保存到文件中，然后再使用其他程序(如Wireshark)进行解码分析。当然也应该定义过滤规则，以避免捕获的数据包填满整个硬盘。
 
-0x07 tcpdump 与wireshark
+#0x07 tcpdump 与wireshark
 
 Wireshark(以前是ethereal)是Windows下非常简单易用的抓包工具。但在Linux下很难找到一个好用的图形化抓包工具。
 
