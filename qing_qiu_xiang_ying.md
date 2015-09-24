@@ -50,3 +50,19 @@ Routes::get('/', 'Demo@demoAction');
 效果和以上一样。
 
 ####3.通过 Request::createRequestHandle 方法获取(不推荐)
+
+```php
+
+use FastD\Http\Request;
+
+class Demo extends BaseEvent
+{
+    public function demoAction(){
+        $request = Request::createRequestHandle;
+        return $request->query->hasGet('name', 'janhuang');
+    }
+}
+
+Routes::get('/', 'Demo@demoAction');
+
+```
