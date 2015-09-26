@@ -1,6 +1,6 @@
 #链接查看
 
-1.查看TCP链接状态:
+###查看TCP链接状态:
 
 `netstat -n | awk '/^tcp/ {++state[$NF]} END {for(key in state) print key,"t",state[key]}'`
 
@@ -27,7 +27,7 @@ TIME_WAIT：另一边已初始化一个释放
 LAST_ACK：等待所有分组死掉
 ```
 
-2.查看Nginx运行进程数
+###查看Nginx运行进程数
 
 `ps -ef | grep nginx | wc -l`
 
@@ -39,6 +39,6 @@ LAST_ACK：等待所有分组死掉
 
 `netstat -antp | grep 80 | grep ESTABLISHED -c`
  
-4.查看MySQL进程连接数：
+###查看MySQL进程连接数：
 
 `ps -axef | grep mysqld -c`
