@@ -26,3 +26,14 @@ CLOSING：两边同时尝试关闭
 TIME_WAIT：另一边已初始化一个释放
 LAST_ACK：等待所有分组死掉
 ```
+
+2、查看Nginx运行进程数
+ps -ef | grep nginx | wc -l
+返回的数字就是nginx的运行进程数，如果是apache则执行
+ps -ef | grep httpd | wc -l
+ 
+3、查看Web服务器进程连接数：
+netstat -antp | grep 80 | grep ESTABLISHED -c
+ 
+4、查看MySQL进程连接数：
+ps -axef | grep mysqld -c
