@@ -35,7 +35,7 @@ LAST_ACK：等待所有分组死掉
 
 `ps -ef | grep httpd | wc -l`
  
-3.查看Web服务器进程连接数：
+###查看Web服务器进程连接数：
 
 `netstat -antp | grep 80 | grep ESTABLISHED -c`
  
