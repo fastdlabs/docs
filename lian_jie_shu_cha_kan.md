@@ -5,8 +5,6 @@
 `netstat -n | awk '/^tcp/ {++state[$NF]} END {for(key in state) print key,"t",state[key]}'`
 
 ```
-返回结果一般如下：
- 
 LAST_ACK 5 （正在等待处理的请求数）
 SYN_RECV 30
 ESTABLISHED 1597 （正常数据传输状态）
