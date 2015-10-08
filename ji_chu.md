@@ -30,7 +30,7 @@ src/*
 ```php
 use FastD\Http\Request;
 
-class Demo extends 
+class Demo extends TemplateEvent
 {
     public function demoAction(Reqeuest $request)
     {
