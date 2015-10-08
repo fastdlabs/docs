@@ -60,7 +60,9 @@ class Demo extends TemplateEvent
 {
     public function demoAction(Reqeuest $request)
     {
-        return $this->render('path/to/views.twig');
+        return $this->render('path/to/views.twig', [
+            'name' => 'janhuang',
+        ]);
     }
 }
 
