@@ -25,7 +25,9 @@ src/*
 
 ##范例
 
-###Example #1
+###Example #1 render() 示例
+
+
 
 
 
