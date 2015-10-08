@@ -33,7 +33,7 @@ class Demo
 {
     public function demoAction(Reqeuest $request)
     {
-        return $request->query->hasGet('name', 'janhuang');
+        return $request->request->hasGet('name', 'janhuang');
     }
 }
 
