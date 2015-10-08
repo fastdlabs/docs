@@ -4,4 +4,4 @@
 
 使用模板渲染功能需要继承 `FastD\Framework\Events\TemplateEvent` 模板事件。
 
-##TemplateEvent::public function render($template, array $parameters = array())
+##TemplateEvent::render($template, array $parameters = array())
