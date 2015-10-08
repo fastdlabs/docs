@@ -9,5 +9,17 @@
 `nginx` 稍微比较复杂。框架中的 `http` 组件解析并不是太过完善，需要在 `nginx` 上配置 `PATH_INFO` 参数。
 
 ```
-
+server {
+    listen 80;
+    server_name [server_name];
+    root [document_root];
+    index .php;
+    location ~ \.php {
+            fastcgi_split_path_info ^(.+.php)(/.*)$;
+            fastcgi_param   PATH_INFO $fastcgi_path_info;
+            fastcgi_pass 11.11.11.33:9000;
+            include fastcgi.conf;
+            
+    }
+}
 ```
