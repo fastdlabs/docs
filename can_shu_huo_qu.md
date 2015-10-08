@@ -77,6 +77,7 @@ function ($name) {
 
 ##API
 
+```
     public function remove($name);
 
     /**
