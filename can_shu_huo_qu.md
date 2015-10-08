@@ -50,7 +50,7 @@ Routes::get('/', 'Demo@demoAction');
 
 `hasGet` 方法接受 `4 个参数
 
-####string $name
+####name
 
 参数名，需要获取的参数名。
 
