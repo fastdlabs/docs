@@ -168,10 +168,7 @@ public function remove($name)
     /**
      * @return array
      */
-    public function all()
-    {
-        return $this->parameters;
-    }
+    public function all();
 
     /**
      * @return bool
