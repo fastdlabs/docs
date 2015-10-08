@@ -74,5 +74,4 @@ server {
 
 Open Apache `rewrite_mod`.
 
-
 #License MIT
