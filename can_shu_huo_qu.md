@@ -62,7 +62,7 @@ Routes::get('/', 'Demo@demoAction');
     
 是否不转义和不过滤，默认为false，全部过滤，true则不过滤
     
-####\Closure $callback
+####callback
 
 回调，需要自定义过滤的回调函数，接受一个参数内容，参数来源与请求参数内容。
 
