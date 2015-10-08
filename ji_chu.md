@@ -53,6 +53,20 @@ Routes::get('/', 'Demo@demoAction');
 参数传递: 
 
 
+```php
+use FastD\Http\Request;
+use FastD\Framework\Events\TemplateEvent;
+
+class Demo extends TemplateEvent
+{
+    public function demoAction(Reqeuest $request)
+    {
+        return $this->render('path/to/views.twig');
+    }
+}
+
+Routes::get('/', 'Demo@demoAction');
+```
 
 
 
