@@ -76,27 +76,4 @@ function ($name) {
 
 
 
-```php
-$request->query->get('name');
-$request->query->hasGet('name', $default);
-```
-
-####2.POST | PUT | DELETE
-
-```php
-$request->request->get('name');
-$request->request->hasGet('name', $default);
-```
-
-参数都会默认过滤掉 script 和 iframe 标签，如果需要自定义过滤，需要输入 3，4参数
-
-##`FastD\Http\QueryAttribute Extends FastD\Http\Attribute` 
-
-`GET` 参数对象，
-
-```php
-Attribute::get(string $name, boolean $raw = false, Closure $callback);
-```
-
-
 
