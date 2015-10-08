@@ -77,4 +77,114 @@ function ($name) {
 
 ##API
 
+public function remove($name)
+    {
+        if ($this->has($name)) {
+            unset($this->parameters[$name]);
+        }
 
+        return $this->has($name) ? false : true;
+    }
+
+    /**
+     * @param $name
+     * @param bool $raw
+     * @param $callback
+     * @return string|int|array
+     */
+    public function get($name, $raw = false, $callback = null)
+    {
+        if (!$this->has($name)) {
+            throw new \InvalidArgumentException(sprintf('Attribute %s is undefined.', $name));
+        }
+
+        $parameter = $this->parameters[$name];
+
+        if (!$raw) {
+            $parameter = $this->raw($parameter);
+        }
+
+        if (is_callable($callback)) {
+            $parameter = $callback($parameter);
+        }
+
+        return $parameter;
+    }
+
+    /**
+     * @param $value
+     * @return string
+     */
+    public function raw($value)
+    {
+        if (is_string($value)) {
+            preg_replace('/(\<script.*?\>.*?<\/script.*?\>|\<i*frame.*?\>.*?\<\/i*frame.*?\>)/ui', '', $value);
+            $value = strip_tags($value);
+        }
+
+        return $value;
+    }
+
+    /**
+     * @param $name
+     * @return bool
+     */
+    public function has($name)
+    {
+        return isset($this->parameters[$name]);
+    }
+
+    /**
+     * @param            $name
+     * @param            $default
+     * @param bool|false $raw
+     * @param null       $callback
+     * @return array|int|string
+     */
+    public function hasGet($name, $default, $raw = false, $callback = null)
+    {
+        try {
+            return $this->get($name, $raw, $callback);
+        } catch (\Exception $e) {
+            if (is_callable($callback)) {
+                return $callback($default);
+            }
+            return $default;
+        }
+    }
+
+    /**
+     * @param $name
+     * @param $value
+     * @return $this
+     */
+    public function set($name, $value)
+    {
+        $this->parameters[$name] = $value;
+
+        return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function all()
+    {
+        return $this->parameters;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isEmpty()
+    {
+        return [] === $this->parameters;
+    }
+
+    /**
+     * @return array
+     */
+    public function keys()
+    {
+        return array_keys($this->parameters);
+    }
