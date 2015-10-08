@@ -11,7 +11,7 @@
    * [请求&响应](qing_qiu_xiang_ying.md)
    * [参数获取](can_shu_huo_qu.md)
 * [视图](shi_tu.md)
-   * 基础
+   * [基础](ji_chu.md)
 * [Repository](repository.md)
 * [配置文件](pei_zhi_wen_jian.md)
 * [命令行](ming_ling_xing.md)
