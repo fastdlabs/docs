@@ -77,14 +77,7 @@ function ($name) {
 
 ##API
 
-public function remove($name)
-    {
-        if ($this->has($name)) {
-            unset($this->parameters[$name]);
-        }
-
-        return $this->has($name) ? false : true;
-    }
+public function remove($name);
 
     /**
      * @param $name
@@ -92,38 +85,13 @@ public function remove($name)
      * @param $callback
      * @return string|int|array
      */
-    public function get($name, $raw = false, $callback = null)
-    {
-        if (!$this->has($name)) {
-            throw new \InvalidArgumentException(sprintf('Attribute %s is undefined.', $name));
-        }
-
-        $parameter = $this->parameters[$name];
-
-        if (!$raw) {
-            $parameter = $this->raw($parameter);
-        }
-
-        if (is_callable($callback)) {
-            $parameter = $callback($parameter);
-        }
-
-        return $parameter;
-    }
+    public function get($name, $raw = false, $callback = null);
 
     /**
      * @param $value
      * @return string
      */
-    public function raw($value)
-    {
-        if (is_string($value)) {
-            preg_replace('/(\<script.*?\>.*?<\/script.*?\>|\<i*frame.*?\>.*?\<\/i*frame.*?\>)/ui', '', $value);
-            $value = strip_tags($value);
-        }
-
-        return $value;
-    }
+    public function raw($value);
 
     /**
      * @param $name
