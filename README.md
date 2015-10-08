@@ -6,14 +6,6 @@
 
 框架主要提倡灵活自由开放，并且自身遵循 `PSR` 开发规范，字需要开发者也遵循 `PSR` 开发规范即可。
 
-------
-
-###Jan Huang
-
-Github: [JanHuang](https://github.com/JanHuang)
-
-#FastD-PHP-Simple-Framework
-
 ##Requirement
 
 * PHP 5.4+
