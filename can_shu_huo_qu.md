@@ -176,15 +176,9 @@ public function remove($name)
     /**
      * @return bool
      */
-    public function isEmpty()
-    {
-        return [] === $this->parameters;
-    }
-
-    /**
+    public function isEmpty();
+    
+    /** 
      * @return array
      */
-    public function keys()
-    {
-        return array_keys($this->parameters);
-    }
+    public function keys();
