@@ -60,7 +60,7 @@ Routes::get('/', 'Demo@demoAction');
     
 ####raw
     
-是否不转义和不过滤，默认为 `false`，全部过滤，`true 则不过滤
+是否不转义和不过滤，默认为 `false`，全部过滤，`true` 则不过滤
     
 ####callback
 
