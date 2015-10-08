@@ -30,7 +30,7 @@ src/*
 ```php
 use FastD\Http\Request;
 
-class Demo
+class Demo extends 
 {
     public function demoAction(Reqeuest $request)
     {
