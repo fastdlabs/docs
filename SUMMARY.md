@@ -10,7 +10,6 @@
    * [路由配置](lu_you_pei_zhi.md)
    * [请求&响应](qing_qiu_xiang_ying.md)
    * [参数获取](can_shu_huo_qu.md)
-* [视图](shi_tu.md)
 * [Repository](repository.md)
 * [资源配置](pei_zhi_wen_jian.md)
    * [详细文档](xiang_xi_wen_dang.md)
