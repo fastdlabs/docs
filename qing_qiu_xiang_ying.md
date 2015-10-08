@@ -88,7 +88,7 @@ $request->request->hasGet('name', $default);
 
 ## `FastD\Http\QueryAttribute Extends FastD\Http\Attribute` 
 
-`Http` 请求对象，
+`GET` 参数对象，
 
 ```php
 Request::get(string $name, boolean $raw = false, Closure $callback);
