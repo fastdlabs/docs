@@ -77,7 +77,7 @@ function ($name) {
 
 ##API
 
-public function remove($name)   ;
+    public function remove($name);
 
     /**
      * @param $name
