@@ -86,7 +86,7 @@ $request->request->hasGet('name', $default);
 
 参数都会默认过滤掉 script 和 iframe 标签，如果需要自定义过滤，需要输入 3，4参数
 
-## `FastD\Http\Attribute Extends FastD\Http\Attribute` 
+## `FastD\Http\QueryAttribute Extends FastD\Http\Attribute` 
 
 `Http` 请求对象，
 
