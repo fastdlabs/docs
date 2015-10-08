@@ -27,6 +27,20 @@ Routes::get('/', 'Demo@demoAction');
 ##获取 POST 参数
 
 ```php
+use FastD\Http\Request;
+
+class Demo
+{
+    public function demoAction(Reqeuest $request)
+    {
+        return $request->query->hasGet('name', 'janhuang');
+    }
+}
+
+Routes::get('/', 'Demo@demoAction');
+```
+
+```php
 $request->query->get('name');
 $request->query->hasGet('name', $default);
 ```
