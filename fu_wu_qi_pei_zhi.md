@@ -6,3 +6,4 @@
 
 ##Nginx
 
+`nginx` 稍微比较复杂。框架中的 `http` 组件解析并不是太过完善，需要在 `nginx` 上配置 `PATH_INFO` 参数
