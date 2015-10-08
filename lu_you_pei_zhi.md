@@ -238,7 +238,6 @@ interface RouteInterface
 }
 ```
 
-
 ###路由异常
 
 在请求非法的情况下，会返回 Http status code: `403`，也就是说，如果一个 POST 请求路使用 GET 请求，则会抛出 `403` 状态的异常
