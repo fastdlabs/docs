@@ -11,10 +11,10 @@
    * [请求&响应](qing_qiu_xiang_ying.md)
    * [参数获取](can_shu_huo_qu.md)
 * [视图](shi_tu.md)
-   * [视图入门](ji_chu.md)
    * [详细文档](xiang_xi_wen_dang.md)
 * [Repository](repository.md)
 * [资源配置](pei_zhi_wen_jian.md)
+   * [视图入门](ji_chu.md)
    * 视图
 * [命令行](ming_ling_xing.md)
 * [异常](yi_chang.md)
