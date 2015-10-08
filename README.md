@@ -8,7 +8,7 @@
 
 ------
 
-作者：Jan Huang
+Jan Huang
 
 Github: [JanHuang](https://github.com/JanHuang)
 
