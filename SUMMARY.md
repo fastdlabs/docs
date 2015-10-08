@@ -12,7 +12,7 @@
    * [参数获取](can_shu_huo_qu.md)
 * [视图](shi_tu.md)
    * [基础](ji_chu.md)
-   * 详细文档
+   * [详细文档](xiang_xi_wen_dang.md)
 * [Repository](repository.md)
 * [配置文件](pei_zhi_wen_jian.md)
 * [命令行](ming_ling_xing.md)
