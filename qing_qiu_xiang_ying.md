@@ -88,6 +88,8 @@ $request->request->hasGet('name', $default);
 
 ## `FastD\Http\Request` 
 
+`Http` 请求对象，
+
 ```php
 Attribute::get(string $name, boolean $raw = false, Closure $callback);
 ```
