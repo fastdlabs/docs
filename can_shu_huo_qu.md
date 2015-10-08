@@ -58,7 +58,7 @@ Routes::get('/', 'Demo@demoAction');
     
 ####boolean $raw
     
-    是否不转义和不过滤，默认为false，全部过滤，true则不过滤
+是否不转义和不过滤，默认为false，全部过滤，true则不过滤
     
 ####\Closure $callback
 
