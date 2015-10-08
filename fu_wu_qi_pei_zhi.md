@@ -13,13 +13,12 @@ server {
     listen 80;
     server_name [server_name];
     root [document_root];
-    index .php;
+    index (dev|test|prod).php;
     location ~ \.php {
             fastcgi_split_path_info ^(.+.php)(/.*)$;
             fastcgi_param   PATH_INFO $fastcgi_path_info;
-            fastcgi_pass 11.11.11.33:9000;
+            fastcgi_pass 127.0.0.1:9000;
             include fastcgi.conf;
-            
     }
 }
 ```
