@@ -6,4 +6,8 @@
 
 #TemplateEvent::render($template[, array $parameters = array()])
 
-##
+##说明
+
+通过render方法渲染模板，render内部调用 `Twig` 引擎。
+
+
