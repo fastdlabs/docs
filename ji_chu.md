@@ -69,6 +69,6 @@ class Demo extends TemplateEvent
 Routes::get('/', 'Demo@demoAction');
 ```
 
-twig 内的使用方法请参考: [Twig]()
+twig 内的使用方法请参考: [Twig 文档](twig.sensiolabs.org/documentation)
 
 
