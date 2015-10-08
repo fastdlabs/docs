@@ -141,29 +141,14 @@ public function remove($name)
      * @param null       $callback
      * @return array|int|string
      */
-    public function hasGet($name, $default, $raw = false, $callback = null)
-    {
-        try {
-            return $this->get($name, $raw, $callback);
-        } catch (\Exception $e) {
-            if (is_callable($callback)) {
-                return $callback($default);
-            }
-            return $default;
-        }
-    }
+    public function hasGet($name, $default, $raw = false, $callback = null);
 
     /**
      * @param $name
      * @param $value
      * @return $this
      */
-    public function set($name, $value)
-    {
-        $this->parameters[$name] = $value;
-
-        return $this;
-    }
+    public function set($name, $value);
 
     /**
      * @return array
