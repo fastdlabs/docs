@@ -40,6 +40,9 @@ class Demo
 Routes::get('/', 'Demo@demoAction');
 ```
 
+
+
+
 ```php
 $request->query->get('name');
 $request->query->hasGet('name', $default);
