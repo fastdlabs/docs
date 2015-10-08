@@ -50,6 +50,8 @@ class Demo extends TemplateEvent
 Routes::get('/', 'Demo@demoAction');
 ```
 
+参数传递: 
+
 
 
 
