@@ -24,6 +24,12 @@ Routes::get('/', 'Demo@demoAction');
 
 ##获取 POST 参数
 
+示例: `http|https://url/?name=janhuang&age=18`
+
+```
+
+```
+
 ```php
 use FastD\Http\Request;
 
