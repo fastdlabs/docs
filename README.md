@@ -12,8 +12,6 @@
 
 Github: [JanHuang](https://github.com/JanHuang)
 
-#License MIT
-
 #FastD-PHP-Simple-Framework
 
 ##发起人
