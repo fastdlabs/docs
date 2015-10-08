@@ -54,7 +54,7 @@ Routes::get('/', 'Demo@demoAction');
 
 ####mixed $default
 
-如果需要获取的参数不存在，返回此设置的默认值.
+如果需要获取的参数不存在，返回此设置的默认值。
     
 ####boolean $raw
     
