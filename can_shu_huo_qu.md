@@ -7,7 +7,6 @@
 示例: `http|https://url/?name=janhuang&age=18`
 
 ```php
-```php
 use FastD\Http\Request;
 
 class Demo
@@ -19,7 +18,6 @@ class Demo
 }
 
 Routes::get('/', 'Demo@demoAction');
-```
 ```
 
 ####1.GET
