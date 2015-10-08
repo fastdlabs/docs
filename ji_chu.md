@@ -27,7 +27,19 @@ src/*
 
 ###Example #1 render() 示例
 
+```php
+use FastD\Http\Request;
 
+class Demo
+{
+    public function demoAction(Reqeuest $request)
+    {
+        return $request->query->hasGet('name', 'janhuang');
+    }
+}
+
+Routes::get('/', 'Demo@demoAction');
+```
 
 
 
