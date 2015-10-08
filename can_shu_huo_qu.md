@@ -20,6 +20,10 @@ class Demo
 Routes::get('/', 'Demo@demoAction');
 ```
 
+以上结果返回 `janhuang`
+
+
+
 ####1.GET
 
 ```php
