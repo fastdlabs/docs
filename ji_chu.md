@@ -52,7 +52,6 @@ Routes::get('/', 'Demo@demoAction');
 
 参数传递: 
 
-
 ```php
 use FastD\Http\Request;
 use FastD\Framework\Events\TemplateEvent;
