@@ -46,7 +46,7 @@ class Demo
 Routes::get('/', 'Demo@demoAction');
 ```
 
-##
+##FastD\Http\Attribute::
 
 `hasGet` 方法接受 `4 个参数
 
