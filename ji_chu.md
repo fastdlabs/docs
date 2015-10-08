@@ -29,6 +29,7 @@ src/*
 
 ```php
 use FastD\Http\Request;
+use FastD\Framework\Events\TemplateEvent;
 
 class Demo extends TemplateEvent
 {
