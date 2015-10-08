@@ -91,7 +91,7 @@ $request->request->hasGet('name', $default);
 `GET` 参数对象，
 
 ```php
-Request::get(string $name, boolean $raw = false, Closure $callback);
+QueryAttribute::get(string $name, boolean $raw = false, Closure $callback);
 ```
 
 ####string $name
