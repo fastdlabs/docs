@@ -14,14 +14,6 @@ Github: [JanHuang](https://github.com/JanHuang)
 
 #FastD-PHP-Simple-Framework
 
-##发起人
-* JanHuang / bboyjanhuang@gmail.com
-
-##维护者
-
-* JanHuang / bboyjanhuang@gmail.com
-- [Homepage](http://www.fast-d.cn)
-
 ##Requirement
 
 * PHP 5.4+
