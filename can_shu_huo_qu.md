@@ -50,7 +50,11 @@ Routes::get('/', 'Demo@demoAction');
 
 ####string $name
 
-参数名
+参数名，需要获取的参数名。
+
+####mixed $default
+
+如果需要获取的参数不存在，返回此设置的默认值.
     
 ####boolean $raw
     
