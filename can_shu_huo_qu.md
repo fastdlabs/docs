@@ -6,7 +6,7 @@
 
 示例: `http|https://url/?name=janhuang&age=18`
 
-    
+
 
 ####1.GET
 
