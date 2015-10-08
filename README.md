@@ -10,4 +10,6 @@ FastD PHP Simple Framework 是一个开源，面向对象的开发框架。灵�
 
 Github: [JanHuang](https://github.com/JanHuang)
 
-##License MIT
+#License 
+
+###MIT
