@@ -24,7 +24,7 @@ Routes::get('/', 'Demo@demoAction');
 
 
 
-####1.GET
+##获取 POST 参数
 
 ```php
 $request->query->get('name');
