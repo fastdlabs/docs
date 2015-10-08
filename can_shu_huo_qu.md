@@ -24,10 +24,12 @@ Routes::get('/', 'Demo@demoAction');
 
 ##获取 POST 参数
 
-示例: `http|https://url/?name=janhuang&age=18`
+示例: `http|https://url/`
 
 ```
-
+request_body:
+    name: janhuang
+    age: 18
 ```
 
 ```php
