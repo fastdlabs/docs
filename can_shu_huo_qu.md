@@ -50,7 +50,7 @@ Routes::get('/', 'Demo@demoAction');
 
 ####string $name
 
-    参数名
+参数名
     
 ####boolean $raw
     
