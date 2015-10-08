@@ -14,8 +14,8 @@
    * [详细文档](xiang_xi_wen_dang.md)
 * [Repository](repository.md)
 * [资源配置](pei_zhi_wen_jian.md)
+   * [视图入门](ji_chu.md)
    * 视图
-* [视图入门](ji_chu.md)
 * [命令行](ming_ling_xing.md)
 * [异常](yi_chang.md)
 * [扩展](kuo_zhan.md)
