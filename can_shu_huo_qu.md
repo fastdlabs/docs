@@ -78,6 +78,8 @@ function ($name) {
 ##API
 
 ```
+class Attribute implements \Iterator, \Countable 
+{
     public function remove($name);
 
     /**
@@ -130,4 +132,5 @@ function ($name) {
      * @return array
      */
     public function keys();
+}
 ```
