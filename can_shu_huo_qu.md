@@ -46,6 +46,8 @@ class Demo
 Routes::get('/', 'Demo@demoAction');
 ```
 
+
+
 `hasGet` 方法接受 `4 个参数
 
 ####string $name
