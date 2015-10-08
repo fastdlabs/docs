@@ -48,6 +48,23 @@ Routes::get('/', 'Demo@demoAction');
 
 `hasGet` 方法接受 `4 个参数
 
+####string $name
+
+    参数名
+    
+####boolean $raw
+    
+    是否不转义和不过滤，默认为false，全部过滤，true则不过滤
+    
+####\Closure $callback
+
+    回调，需要自定义过滤的回调函数，接受一个参数内容，参数来源与请求参数内容。
+    如:
+        function ($name) {
+            return md5($name);
+        }
+
+而 `hasGet` 方法则对应多一个判断，第二个参数代表如果找不到$name参数，则会使用第二个参数值，其他参数作用与上面一样
 
 
 
