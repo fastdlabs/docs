@@ -2,7 +2,7 @@
 
 一般 `http` 请求有 `GET,POST,DELETE,PUT,OPTION` 等，但是常用基本都是 `GET,POST`两个，而且这两个可以满足日常大大大大部分要求。
 
-###
+## 获取GET参数
 
 ####1.GET
 
