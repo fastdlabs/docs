@@ -35,7 +35,7 @@ class Demo extends TemplateEvent
 {
     public function demoAction(Reqeuest $request)
     {
-        return $request->query->hasGet('name', 'janhuang');
+        return $this->render('path/to/views.twig');
     }
 }
 
