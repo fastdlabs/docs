@@ -54,11 +54,11 @@ Routes::get('/', 'Demo@demoAction');
 
 参数名，需要获取的参数名。
 
-####mixed $default
+####default
 
 如果需要获取的参数不存在，返回此设置的默认值。
     
-####boolean $raw
+####raw
     
 是否不转义和不过滤，默认为false，全部过滤，true则不过滤
     
