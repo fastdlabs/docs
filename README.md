@@ -8,7 +8,7 @@
 
 ------
 
-Jan Huang
+###Jan Huang
 
 Github: [JanHuang](https://github.com/JanHuang)
 
@@ -19,7 +19,7 @@ Github: [JanHuang](https://github.com/JanHuang)
 
 ##维护者
 
-* JanHuang / bboyjanhuang@gmail.com* 
+* JanHuang / bboyjanhuang@gmail.com
 - [Homepage](http://www.fast-d.cn)
 
 ##Requirement
