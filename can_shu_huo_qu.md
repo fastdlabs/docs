@@ -129,11 +129,8 @@ public function remove($name)
      * @param $name
      * @return bool
      */
-    public function has($name)
-    {
-        return isset($this->parameters[$name]);
-    }
-
+    public function has($name);
+    
     /**
      * @param            $name
      * @param            $default
