@@ -22,8 +22,6 @@ Routes::get('/', 'Demo@demoAction');
 
 以上结果返回 `janhuang`
 
-
-
 ##获取 POST 参数
 
 ```php
