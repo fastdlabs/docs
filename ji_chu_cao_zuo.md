@@ -13,7 +13,9 @@ CREATE TABLE `demo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8
 ```
 
-创建 `Welcome\Demo\DemoRepository` 仓库
+创建 `Welcome\Demo\DemoRepository` 仓库: 
+
+
 
 ##Create
 
