@@ -41,3 +41,5 @@ class Demo extends BaseEvent
 Routes::get('/', 'Demo@demoAction');
 ```
 
+可以有效地链接两个数据库，并且进行一些读写分离，不同库操作的时候会方便很多哦亲。
+
