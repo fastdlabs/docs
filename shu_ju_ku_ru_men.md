@@ -22,3 +22,4 @@ class Demo extends BaseEvent
 
 Routes::get('/', 'Demo@demoAction');
 ```
+
