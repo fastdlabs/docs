@@ -39,7 +39,7 @@ class Demo extends BaseEvent
     public function demoAction(){
         $demoRepository = $this->getConnection('read')->getRepository('Welcome:Repository:Demo');
         $demoRepository->insert([
-            'name' => 
+            'name' => 'janhuang'
         ]);
         return 'connection ok';
     }
