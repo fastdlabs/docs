@@ -10,7 +10,7 @@ CREATE TABLE `demo` (
   `name` varchar(20) NOT NULL DEFAULT '',
   `extra` varchar(200) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
 ```
 
 ##Create
