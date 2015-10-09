@@ -15,7 +15,20 @@ CREATE TABLE `demo` (
 
 ##Create
 
+```php
 
+use FastD\Http\Request;
+
+class Demo extends BaseEvent
+{
+    public function demoAction(){
+        $connection = $this->getConnection('read');
+        return 'connection ok';
+    }
+}
+
+Routes::get('/', 'Demo@demoAction');
+```
 
 ##Delete
 
