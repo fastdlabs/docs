@@ -74,7 +74,6 @@ Routes::get('/', 'Demo@demoAction');
 定一个 `Demo\\DemoRepository` 仓库对象:
 
 ```php
-
 use FastD\Http\Request;
 
 class Demo extends BaseEvent
