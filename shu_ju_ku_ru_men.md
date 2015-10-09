@@ -85,7 +85,7 @@ class Demo extends BaseEvent
 Routes::get('/', 'Demo@demoAction');
 ```
 
-###Repository 与表名的映射
+###Repository 与表名的映射规则
 
 `Repository` 对应一个表，表名可以使用保护属性 `table` 进行指定，默认是以 `Repository` 类名进行指定。如:
 
@@ -95,7 +95,5 @@ TestDemoRepository => table name test_demo
 ```
 
 表名全小写，用下划线 `_` 隔开。
-
-####获取指定的Repository
 
 
