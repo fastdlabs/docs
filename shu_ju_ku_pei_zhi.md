@@ -22,7 +22,7 @@ app/config/config_prod.php // 生产环境配置
 
 数据库的配置信息均统一存储在字段 `database` 中，由链接名 `connection` 对应链接信息进行获取。如: 
 
-```
+```php
 return [
     // 数据库配置
     'database' => [
