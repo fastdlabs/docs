@@ -70,4 +70,6 @@ Routes::get('/', 'Demo@demoAction');
 
 首先 `Repository` 需要先定义好，不像使用 `ThinkPHP` 中的 `M` 方法。
 
+以上的 `getRepository` 中的 'Demo' 参数值等同于 `\Demo` 类名，而 `getRepository` 中的参数正是 `Repository` 的完整类名，完整类名包括命名空间，而最后的名字 **不需要** 带 `Repository` 关键字，而类名的命名空间的写法则是用 "*:*" 冒号个开。如:
+
 
