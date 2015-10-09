@@ -9,7 +9,6 @@
 获取 `read` 链接: 
 
 ```php
-
 use FastD\Http\Request;
 
 class Demo extends BaseEvent
