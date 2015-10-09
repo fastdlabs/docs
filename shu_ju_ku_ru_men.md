@@ -23,3 +23,5 @@ class Demo extends BaseEvent
 Routes::get('/', 'Demo@demoAction');
 ```
 
+上述就可以正确的将 `read` 配置的数据库链接起来了。那如果出了 `read` 库操作之外，还需要操作 `write` 的话，也只需要写多一行代码，如: 
+
