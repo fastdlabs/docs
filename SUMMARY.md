@@ -11,7 +11,7 @@
    * [请求&响应](qing_qiu_xiang_ying.md)
    * [参数获取](can_shu_huo_qu.md)
 * [Repository](repository.md)
-   * 数据库入门
+   * [数据库入门](shu_ju_ku_ru_men.md)
 * [资源配置](pei_zhi_wen_jian.md)
    * [视图](shi_tu.md)
        * [视图入门](ji_chu.md)
