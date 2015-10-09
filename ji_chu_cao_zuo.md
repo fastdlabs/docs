@@ -71,6 +71,8 @@ Routes::get('/', 'Demo@demoAction');
 
 ##Update
 
+
+
 ##Read
 
 ##自定义语句
