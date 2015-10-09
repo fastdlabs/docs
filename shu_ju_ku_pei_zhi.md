@@ -12,3 +12,10 @@ public/test.php // 测试环境
 public/prod.php // 生产环境，一般上线后不经常修改
 ```
 
+数据库的配置文件也是根据这三者环境进行切换，对应配置文件: 
+
+```
+app/config/config_dev.php  // 开发环境配置
+app/config/config_test.php // 测试环境配置
+app/config/config_prod.php // 生产环境配置
+```
