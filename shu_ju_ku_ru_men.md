@@ -61,7 +61,7 @@ class Demo extends BaseEvent
 {
     public function demoAction(){
         $connection = $this->getConnection('read')->getRepository('Demo');
-        return 'connection ok';
+        return 'get repository ok';
     }
 }
 
