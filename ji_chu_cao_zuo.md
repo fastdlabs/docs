@@ -30,7 +30,6 @@ class DemoRepository extends Repository
 ##Create
 
 ```php
-
 use FastD\Http\Request;
 
 class Demo extends BaseEvent
