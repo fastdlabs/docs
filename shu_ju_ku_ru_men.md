@@ -77,7 +77,7 @@ TestDemoRepository => table name test_demo
 
 表名全小写，用下划线 `_` 隔开。
 
-
+####获取指定的Repository
 
 定一个 `Demo\\DemoRepository` 仓库对象:
 
