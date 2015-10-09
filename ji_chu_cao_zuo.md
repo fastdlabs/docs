@@ -17,6 +17,7 @@ CREATE TABLE `demo` (
 
 ```
 <?php
+
 namespace Welcome\Repository;
 
 use FastD\Database\Repository\Repository;
