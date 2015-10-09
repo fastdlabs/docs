@@ -95,5 +95,3 @@ TestDemoRepository => table name test_demo
 ```
 
 表名全小写，用下划线 `_` 隔开。
-
-
