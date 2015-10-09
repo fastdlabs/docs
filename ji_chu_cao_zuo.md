@@ -5,7 +5,12 @@
 创建新表: 
 
 ```
-
+CREATE TABLE `demo` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(20) NOT NULL DEFAULT '',
+  `extra` varchar(200) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8
 ```
 
 ##Create
