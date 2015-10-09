@@ -37,7 +37,7 @@ use FastD\Http\Request;
 class Demo extends BaseEvent
 {
     public function demoAction(){
-        $connection = $this->getConnection('read');
+        $connection = $this->getConnection('read')->getRepository('Welcome:Repository:Demo');
         return 'connection ok';
     }
 }
