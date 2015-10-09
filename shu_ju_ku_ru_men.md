@@ -81,19 +81,4 @@ TestDemoRepository => table name test_demo
 
 ####获取指定的Repository
 
-定一个 `Demo\\DemoRepository` 仓库对象:
-
-```php
-use FastD\Http\Request;
-
-class Demo extends BaseEvent
-{
-    public function demoAction(){
-        $connection = $this->getConnection('read')->getRepository('Demo:Demo');
-        return 'get repository ok';
-    }
-}
-
-Routes::get('/', 'Demo@demoAction');
-```
 
