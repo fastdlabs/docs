@@ -47,25 +47,5 @@ return [
             'database_prefix'   => ''
         ],
     ],
-    // 存储配置
-    'storage' => [
-        /*'write' => [
-            'type' => 'redis',
-            'host' => '11.11.11.11',
-            'port' => 6379
-        ],*/
-    ],
-    // 资源管理
-    'assets' => [
-        /*'host' => 'http://baidu.com',
-        'path' => 'public'*/
-    ],
-
-    // 错误页面配置
-    'error' => [
-        'page' => [
-            404 => __DIR__ . '/../views/errors/404.html'
-        ],
-    ],
 ];
 ```
