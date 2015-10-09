@@ -47,7 +47,9 @@ Routes::get('/', 'Demo@demoAction');
 
 Repository的设计灵感来源于 `Symfony2` 框架中集成的 `Doctrine` 组件，在此处可以理解为 `Model`，因为当前的设计和功能优待提升。
 
-###基础用法
+###获取Repository
+
+
 
 
 
