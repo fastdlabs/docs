@@ -23,5 +23,49 @@ app/config/config_prod.php // 生产环境配置
 数据库的配置信息均统一存储在字段 `database` 中，由链接名 `connection` 对应链接信息进行获取。如: 
 
 ```
+return [
+    // 数据库配置
+    'database' => [
+        'write' => [
+            'database_type'     => 'mysql',
+            'database_host'     => '127.0.0.1',
+            'database_port'     => 3306,
+            'database_user'     => 'root',
+            'database_pwd'      => '123456',
+            'database_charset'  => 'utf8',
+            'database_name'     => 'test',
+            'database_prefix'   => ''
+        ],
+        'read' => [
+            'database_type'     => 'mysql',
+            'database_host'     => '127.0.0.1',
+            'database_port'     => 3306,
+            'database_user'     => 'root',
+            'database_pwd'      => '123456',
+            'database_charset'  => 'utf8',
+            'database_name'     => 'test',
+            'database_prefix'   => ''
+        ],
+    ],
+    // 存储配置
+    'storage' => [
+        /*'write' => [
+            'type' => 'redis',
+            'host' => '11.11.11.11',
+            'port' => 6379
+        ],*/
+    ],
+    // 资源管理
+    'assets' => [
+        /*'host' => 'http://baidu.com',
+        'path' => 'public'*/
+    ],
 
+    // 错误页面配置
+    'error' => [
+        'page' => [
+            404 => __DIR__ . '/../views/errors/404.html'
+        ],
+    ],
+];
 ```
