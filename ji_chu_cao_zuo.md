@@ -53,6 +53,20 @@ Routes::get('/', 'Demo@demoAction');
 使用自定义语句进行删除操作: 
 
 ```php
+use FastD\Http\Request;
+
+class Demo extends BaseEvent
+{
+    public function demoAction(){
+        $demoRepository = $this->getConnection('read')->getRepository('Welcome:Repository:Demo');
+        $demoRepository->insert([
+            'name' => 'janhuang'
+        ]);
+        return 'connection ok';
+    }
+}
+
+Routes::get('/', 'Demo@demoAction');
 ```
 
 ##Update
