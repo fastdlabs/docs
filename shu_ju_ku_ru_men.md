@@ -33,6 +33,7 @@ class Demo extends BaseEvent
 {
     public function demoAction(){
         $connection = $this->getConnection('read');
+        $writeConnection = $this->getConnection('write');
         return 'connection ok';
     }
 }
