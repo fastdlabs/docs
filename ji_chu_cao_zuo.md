@@ -67,7 +67,7 @@ class Demo extends BaseEvent
 Routes::get('/', 'Demo@demoAction');
 ```
 
-详细在最后一小节: 自定义查询
+详细在最后一小节: 自定义语句
 
 ##Update
 
