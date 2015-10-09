@@ -8,3 +8,17 @@
 
 获取 `read` 链接: 
 
+```php
+
+use FastD\Http\Request;
+
+class Demo extends BaseEvent
+{
+    public function demoAction(){
+        $request = Request::createRequestHandle;
+        return $request->query->hasGet('name', 'janhuang');
+    }
+}
+
+Routes::get('/', 'Demo@demoAction');
+```
