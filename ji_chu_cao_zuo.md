@@ -37,7 +37,10 @@ use FastD\Http\Request;
 class Demo extends BaseEvent
 {
     public function demoAction(){
-        $connection = $this->getConnection('read')->getRepository('Welcome:Repository:Demo');
+        $demoRepository = $this->getConnection('read')->getRepository('Welcome:Repository:Demo');
+        $demoRepository->insert([
+            'name' => 
+        ]);
         return 'connection ok';
     }
 }
