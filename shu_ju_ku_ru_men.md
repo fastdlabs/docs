@@ -68,5 +68,6 @@ class Demo extends BaseEvent
 Routes::get('/', 'Demo@demoAction');
 ```
 
+首先 `Repository` 需要先定义好，不像使用 `ThinkPHP` 中的 `M` 方法。
 
 
