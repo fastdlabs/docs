@@ -53,8 +53,19 @@ Repository 需要依赖数据连接，每个Repository对应多个链接。
 
 每个 `getConnection` 方法都返回一个 `Connection` 对象，对象中可以通过 `getRepository` 来获取对应的 `Repository`。 如: 
 
-```
+```php
 
+use FastD\Http\Request;
+
+class Demo extends BaseEvent
+{
+    public function demoAction(){
+        $connection = $this->getConnection('read');
+        return 'connection ok';
+    }
+}
+
+Routes::get('/', 'Demo@demoAction');
 ```
 
 
