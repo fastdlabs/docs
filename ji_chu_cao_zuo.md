@@ -59,7 +59,7 @@ class Demo extends BaseEvent
 {
     public function demoAction(){
         $demoRepository = $this->getConnection('read')->getRepository('Welcome:Repository:Demo');
-        $demoRepository->createQuery('delete from demo;');
+        $demoRepository->createQuery('delete from demo;')->getQuery()->getAffectedRows();
         return 'connection ok';
     }
 }
