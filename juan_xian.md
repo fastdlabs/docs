@@ -14,4 +14,4 @@
 
 ##打赏
 
-![打赏](aerkfv0ut36u0m9o6f.png)
+<img src="aerkfv0ut36u0m9o6f.png" alt="打赏" style="width: 250px; height: 250px;">
