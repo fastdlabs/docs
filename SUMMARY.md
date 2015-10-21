@@ -21,7 +21,7 @@
    * [静态资源处理](jing_tai_zi_yuan_chu_li.md)
    * [配置](pei_zhi.md)
        * [路由](config_lu_you.md)
-       * bundle个性配置
+       * [bundle个性配置](bundlege_xing_pei_zhi.md)
 * [命令行](ming_ling_xing.md)
 * [异常](yi_chang.md)
 * [扩展](kuo_zhan.md)
