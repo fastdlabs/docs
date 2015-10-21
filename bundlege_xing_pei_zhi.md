@@ -13,3 +13,15 @@ return [
 ```
 
 那这个配置是会合并到全局配置当中，可以通过 `Config::getParameters` 或者继承 `BaseEvent` 的 `getParameters` 进行获取。
+
+如上: 
+
+```
+class Demo extends BaseEvent
+{
+    public function demoAction()
+    {
+        return $this->getParameters('demobundle.connection');
+    }
+}
+```
