@@ -24,7 +24,7 @@
        * [bundle个性配置](bundlege_xing_pei_zhi.md)
 * [命令行](ming_ling_xing.md)
 * [异常](yi_chang.md)
-* [扩展](kuo_zhan.md)
+* [可选扩展](kuo_zhan.md)
    * [swoole](swoole.md)
 * [bundles](bundle.md)
    * [media-bundle](media-bundle.md)
