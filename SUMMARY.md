@@ -24,7 +24,7 @@
        * [bundle个性配置](bundlege_xing_pei_zhi.md)
 * [命令行](ming_ling_xing.md)
    * [预设的命令行](yu_she_de_ming_ling_xing.md)
-   * 自定义命令行
+   * [自定义命令行](zi_ding_yi_ming_ling_xing.md)
 * [异常](yi_chang.md)
 * [可选扩展](kuo_zhan.md)
    * [swoole](swoole.md)
