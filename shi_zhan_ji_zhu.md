@@ -40,6 +40,6 @@ configure arguments: --prefix=/usr/local/webserver/nginx --with-ld-opt=-Wl,-rpat
 
 启动 `nginx`
 
-恭喜你，你离大神又
+恭喜你，你离大神又进了一步
 
 
