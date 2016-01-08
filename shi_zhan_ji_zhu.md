@@ -36,4 +36,10 @@ configure arguments: --prefix=/usr/local/webserver/nginx --with-ld-opt=-Wl,-rpat
 
 `cp objs/nginx /path/to/nginx/sbin/nginx`
 
+`nginx -V`
+
 启动 `nginx`
+
+恭喜你，你离大神又
+
+
