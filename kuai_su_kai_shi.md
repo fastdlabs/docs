@@ -28,7 +28,7 @@ Routes::{method}(['/', 'name' => '路由名'], '绑定触发的事件对象');
 
 路由初始化完成后，会返回一个 `\FastD\Routing\Route` 对象，对象函数多个链式方法，可用于设置请求目标的各个参数
 
-##触发事件绑定
+## 触发事件绑定
 
 而路由的设置则需要对应一个相应的动作，或者说是触发的事件，因为服务器需要响应客户端，你可以这么理解。
 
@@ -40,7 +40,7 @@ Routes::get(['/', 'name' => '路由名'], 'Namespace\ClassName@method');
 
 以上用户在请求地址: `/` 的时候，就会触发 `Namespace\ClassName@method` 此对象的 `method` 方法。
 
-##事件响应
+## 事件响应
 
 每个路由对应的事件方法，需要返回一个字符串或者一个 `FastD\Http\Response` 对象，也就是说，需要 `return string|Object;`, 否则框架会抛出异常。
 
