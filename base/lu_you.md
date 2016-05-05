@@ -1,8 +1,8 @@
 # 路由
 
-路由是一个框架必备的东西，
+路由是一个框架必备的东西，配置的方式参考了 Laravel 和 Symfony 两个框架。
 
-路由配置文件在 `path/to/bundle/Resources/config/routes.php`
+路由配置文件在 `{bundle}/Resources/config/routes.php`
 
 将来重新讲注释路由添加回去，敬请期待。
 
