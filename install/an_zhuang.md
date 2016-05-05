@@ -31,13 +31,13 @@ server
 {
     listen       80;
     server_name  {server_name};
-    index (dev|test|prod).php;
+    index {(dev|test|prod)}.php;
     root {document_root};
     location / {
         try_files $uri @rewriteapp;
     }
     location @rewriteapp {
-        rewrite ^(.*)$ /test.php$1 last;
+        rewrite ^(.*)$ /{(dev|test|prod)}.php$1 last;
     }
     location ~ \.php {
         fastcgi_pass 127.0.0.1:9100;
