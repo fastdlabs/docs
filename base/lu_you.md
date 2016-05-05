@@ -4,8 +4,6 @@
 
 路由配置文件在 `{bundle}/Resources/config/routes.php`
 
-将来重新讲注释路由添加回去，敬请期待。
-
 ##基础路由配置
 
 ----
