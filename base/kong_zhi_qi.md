@@ -39,5 +39,8 @@ public function jsonAction()
 
 ## 依赖注入
 
+控制器还支持一个强大的依赖注入，注入实现方式是根据容器注入进行实现，具体容器注入可看： [Container](https://github.com/JanHuang/container)
+
+和 Symfony 一样，依赖注入也是通过参数进行注入，只是在实现上精简了很多。
 
 
