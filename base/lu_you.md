@@ -71,6 +71,14 @@ Routes::get('dynamic', '/{name}', \WelcomeBundle\Controllers\Index::class.'@dyna
 而动态路由中的参数 `{name}` 会作为控制器方法动态传递到方法中 `dynamicAction($name)` 。
 
 
+## 路由组
+
+路由组可以说是一系列路由的前缀。
+
+```php
+
+```
+
 ## 注释路由
 
 注释路由仅在非生产环境下才会发挥作用，因为需要解析大量的注释，如果在生产环境下启用这种功能会造成大量的资源浪费，但可以通过命令对其进行缓存，该思路参考 Symfony 框架进行开发。
