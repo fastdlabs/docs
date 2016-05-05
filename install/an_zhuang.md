@@ -50,7 +50,9 @@ server
 }
 ```
 
+注意 `{}` 里面使用与配置你该有的域名及入口文件的，请对应修改自己服务器的配置。
+
 #### Apache
 
-`rewrite_mod`
+项目的 `public` 目录下已经存在了 `.htaccess` 文件了，所以 `apache` 只需要开启 `rewrite_mod` 扩展即可 
 
