@@ -4,3 +4,5 @@ FastD 中采用了 [Twig](http://twig.sensiolabs.org/) 来作为模板引擎。�
 
 模板文件存放于目录: `{bundle}/Resources/views`
 
+## 渲染模板
+
