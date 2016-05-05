@@ -129,4 +129,12 @@ class Index extends Controller
 
 ## 路由命令
 
+如果这么多的路由不配套命令管理，那将是非常难以管理的。
+
+### 路由列表命令
+
+```
+php bin/console route:dump
+```
+
 
