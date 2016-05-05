@@ -68,23 +68,11 @@ Routes::get('dynamic', '/{name}', \WelcomeBundle\Controllers\Index::class.'@dyna
 }
 ```
 
-动态路由变量使用花括号(`{}`) 作为标志声明。以上路由会在请求 `/jan` 或者其他值的时候触发。而动态的参数则直接在绑定的事件中作为方法参数获取即可。如上:
+访问地址: `/janhuang` 即可出现 `This variable is janhuang` 等字样，动态路由配置成功。
 
-```
-class ClassName
-{
-    public function methodName($name)
-    {
-        return $name;
-    }
-}
-```
+而动态路由中的参数 `{name}` 会作为控制器方法动态传递到方法中 `dynamicAction($name)` 。
 
-事件方法中的 `$name` 就是路由动态传递的值。
-
-----
-
-##路由对象及其配置
+## 路由对象及其配置
 
 当在配置路由地址的时候，方法均会返回一个路由对象，而路由对象自身实现自 `FastD/Routing/RouteInterface` 接口，而接口有数个方法，可以供给路由其他参数配置使用。以下是方法列表
 
