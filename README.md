@@ -6,5 +6,4 @@ FastD 是一个开源，面向对象的开发框架。其模式类似 Symfony �
 
 * PHP 7+
 
-
 ## License MIT
