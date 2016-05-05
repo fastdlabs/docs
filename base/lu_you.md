@@ -52,7 +52,7 @@ public function postAction()
 * patch
 * any (意指允许所有请求方法到达路由)
 
-### 动态路由
+## 动态路由
 
 ```
 Routes::get('dynamic', '/{name}', \WelcomeBundle\Controllers\Index::class.'@dynamicAction');
