@@ -56,7 +56,16 @@ public function postAction()
 ## 动态路由
 
 ```
-Routes::get('/{name}', 'Class@method');
+Routes::get('dynamic', '/{name}', \WelcomeBundle\Controllers\Index::class.'@dynamicAction');
+```
+
+**Action**
+
+```php
+ public function dynamicAction($name)
+    {
+        return $this->response('This variable is ' . $name);
+    }
 ```
 
 动态路由变量使用花括号(`{}`) 作为标志声明。以上路由会在请求 `/jan` 或者其他值的时候触发。而动态的参数则直接在绑定的事件中作为方法参数获取即可。如上:
