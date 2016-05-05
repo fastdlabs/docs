@@ -84,3 +84,5 @@ public function redirectAction(Request $request)
     return $this->response($this->generateUrl('/di'));
 }
 ```
+
+通过 `Controllers::generateUrl($name, array $parameters = [], $format = null)` 进行对路由的配置和管理。
