@@ -10,7 +10,7 @@
 
 该路由地址只能通过 Get 访问
 
-```
+```php
 Routes::get('base', '/base', \WelcomeBundle\Controllers\Index::class.'@indexAction');
 ```
 
@@ -29,7 +29,7 @@ public function indexAction()
 
 ### POST
 
-```
+```php
 Routes::post('base_post', '/base', \WelcomeBundle\Controllers\Index::class.'@postAction');
 ```
 
@@ -53,7 +53,7 @@ public function postAction()
 
 ## 动态路由
 
-```
+```php
 Routes::get('dynamic', '/{name}', \WelcomeBundle\Controllers\Index::class.'@dynamicAction');
 ```
 
@@ -133,7 +133,7 @@ class Index extends Controller
 
 ### 路由列表命令
 
-```
+```php
 php bin/console route:dump
 ```
 
