@@ -4,9 +4,9 @@
 
 路由配置文件在 `{bundle}/Resources/config/routes.php`
 
-## 基础路由配置
+### 基础路由配置
 
-### GET
+#### GET
 
 该路由地址只能通过 Get 访问
 
@@ -27,7 +27,7 @@ public function indexAction()
 
 而 `indexAction` 即是控制器方法，具体请求处理的方法主体。
 
-### POST
+#### POST
 
 ```php
 Routes::post('base_post', '/base', \WelcomeBundle\Controllers\Index::class.'@postAction');
@@ -51,7 +51,7 @@ public function postAction()
 * patch
 * any (意指允许所有请求方法到达路由)
 
-## 动态路由
+### 动态路由
 
 ```php
 Routes::get('dynamic', '/{name}', \WelcomeBundle\Controllers\Index::class.'@dynamicAction');
@@ -71,7 +71,7 @@ Routes::get('dynamic', '/{name}', \WelcomeBundle\Controllers\Index::class.'@dyna
 而动态路由中的参数 `{name}` 会作为控制器方法动态传递到方法中 `dynamicAction($name)` 。
 
 
-## 路由组
+### 路由组
 
 路由组可以说是一系列路由的前缀。
 
@@ -83,7 +83,7 @@ Routes::group('/user', function () {
 
 `/user` 就是匿名函数中所有路由的前缀，凡是在匿名函数中定义的路由，都会带上此前缀，路由组支持多层嵌套。
 
-## 注释路由
+### 注释路由
 
 注释路由仅在非生产环境下才会发挥作用，因为需要解析大量的注释，如果在生产环境下启用这种功能会造成大量的资源浪费，但可以通过命令对其进行缓存，该思路参考 Symfony 框架进行开发。
 
@@ -129,11 +129,11 @@ class Index extends Controller
 
 **注释中字符串必须用双引号`"`，单引号无法解析，default、requirements 参数值必须是 json**
 
-## 路由命令
+### 路由命令
 
 如果这么多的路由不配套命令管理，那将是非常难以管理的。
 
-### 路由列表命令
+#### 路由列表命令
 
 ```php
 php bin/console route:dump
@@ -174,7 +174,7 @@ Path-Regex:     /^\/base$/
 
 查询到对应的正则匹配表达式，控制器已经方法等相关信息。
 
-### 路由缓存命令
+#### 路由缓存命令
 
 ```
 php bin/console route:cache
