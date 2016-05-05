@@ -77,7 +77,9 @@ Routes::get('dynamic', '/{name}', \WelcomeBundle\Controllers\Index::class.'@dyna
 
 注释路由仅在控制器方法中才会生效，并且方法名要是 `Action` 结尾才能生效。
 
+```php
 
+```
 
 ## 路由命令
 
