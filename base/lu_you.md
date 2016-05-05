@@ -24,7 +24,7 @@ public function indexAction()
 }
 ```
 
-访问该地址会出现 `hello world` 字样，证明已经配置成功了。路由这里的第一个参数，是路由的名字，在其他地方进行调用的时候可以通过该名字直接进行调用
+只需要用户访问 `/base` 路由的时候，`\WelcomeBundle\Controllers\Index` 下的 `indexAction` 将会被执行，会出现 `hello world` 字样，证明已经配置成功了。路由这里的第一个参数，是路由的名字，在其他地方进行调用的时候可以通过该名字直接进行调用
 
 而 `indexAction` 即是控制器方法，具体请求处理的方法主体。
 
@@ -78,11 +78,6 @@ Routes::get('dynamic', '/{name}', \WelcomeBundle\Controllers\Index::class.'@dyna
 
 
 
-###路由异常
-
-在请求非法的情况下，会返回 Http status code: `403`，也就是说，如果一个 POST 请求路使用 GET 请求，则会抛出 `403` 状态的异常
-
-如果请求一个不存在路由，则会抛出 `404` 异常。而解决这些异常的最好办法就是使用合法的路由地址。
-
+## 路由命令
 
 
