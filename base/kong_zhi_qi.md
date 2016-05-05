@@ -27,13 +27,17 @@ public function indexAction()
 
 ```php
 /**
-     * @Route("/json")
-     */
-    public function jsonAction()
-    {
-        return $this->responseJson(['name' => 'janhuang']);
-    }
+ * @Route("/json")
+ */
+public function jsonAction()
+{
+    return $this->responseJson(['name' => 'janhuang']);
+}
 ```
 
+当访问执行此处代码的时候，就会响应对应的 `json` 内容到客户端。
+
 ## 依赖注入
+
+
 
