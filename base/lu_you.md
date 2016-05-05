@@ -11,7 +11,7 @@
 ### GET
 
 ```
-Routes::get('/', 'Class@method');
+Routes::get('base', '/base', \WelcomeBundle\Controllers\Index::class.'@indexAction');
 ```
 
 ### POST
