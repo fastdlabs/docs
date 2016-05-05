@@ -20,6 +20,10 @@ composer create-project fastd fastd/fastd
 
 ### 环境配置
 
+保证目录在当前进程的读写权限，特别是 `app/storage` 的读写权限，因为此目录是用于数据缓存读写的。
+
+其次要配置好 php.ini 时区。
+
 #### Nginx
 
 ```
