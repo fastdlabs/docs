@@ -16,12 +16,21 @@
 Routes::get('base', '/base', \WelcomeBundle\Controllers\Index::class.'@indexAction');
 ```
 
+**Action**
+
+```php
+public function indexAction()
+    {
+        return $this->response('hello world');
+    }
+```
+
 访问该地址会出现 `hello world` 字样，证明已经配置成功了。路由这里的第一个参数，是路由的名字，在其他地方进行调用的时候可以通过该名字直接进行调用
 
 ### POST
 
 ```
-Routes::post('/', 'Class@method');
+Routes::post('base_post', '/base', \WelcomeBundle\Controllers\Index::class.'@postAction');
 ```
 
 ###  PUT
