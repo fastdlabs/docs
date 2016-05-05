@@ -68,3 +68,6 @@ public function redirectAction(Request $request)
     return $this->redirect($this->generateUrl('/di'));
 }
 ```
+
+以上会直接跳转到上述定义的依赖注入控制器中。
+
