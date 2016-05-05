@@ -12,7 +12,9 @@
 Routes::get('base', '/base', \WelcomeBundle\Controllers\Index::class.'@indexAction');
 ```
 
+```php
 
+```
 
 ## 依赖注入
 
