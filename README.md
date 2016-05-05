@@ -1,35 +1,14 @@
-# 简介
+# FastD PHP Simple Framework V2.0
 
-###FastD PHP Simple Framework 
+FastD 是一个开源，面向对象的开发框架。其模式类似 Symfony 框架，良好的编码贵发，灵活的开发模式，而且入门门槛不高，适合初中高不同阶段的开发者和乐于学习的 PHP 开发者。
 
-是一个开源，面向对象的开发框架，简称 FD。灵活自由并且优雅地开发web项目。并且较低的入门门槛，适合初中高不同阶段的开发者。
+## 环境要求
 
-框架主要提倡灵活自由开放，并且自身遵循 `PSR` 开发规范，字需要开发者也遵循 `PSR` 开发规范即可。
+* PHP 7+
 
-##Requirement
+## Composer 
 
-* PHP 5.4+
-
-##Install
-
-###1. Install composer.json
-
-[Composer](https://getcomposer.org/download/)
-
-
-###2. Clone FastD repository
-
-```
-git clone git@github.com:JanHuang/fastD.git
-```
-
-###3. Composer install
-
-```
-composer -vvv install
-```
-
-#Tutorial
+# Tutorial
 
 ##Documentation
 
