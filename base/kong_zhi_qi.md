@@ -12,8 +12,13 @@
 Routes::get('base', '/base', \WelcomeBundle\Controllers\Index::class.'@indexAction');
 ```
 
-```php
+#### 响应 (response)
 
+```php
+public function indexAction()
+{
+    return $this->response('hello world');
+}
 ```
 
 ## 依赖注入
