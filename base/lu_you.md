@@ -10,6 +10,8 @@
 
 ### GET
 
+该路由地址只能通过 Get 访问
+
 ```
 Routes::get('base', '/base', \WelcomeBundle\Controllers\Index::class.'@indexAction');
 ```
