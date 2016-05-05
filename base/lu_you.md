@@ -76,6 +76,8 @@ Routes::get('dynamic', '/{name}', \WelcomeBundle\Controllers\Index::class.'@dyna
 
 注释路由仅在非生产环境下才会发挥作用，因为需要解析大量的注释，如果在生产环境下启用这种功能会造成大量的资源浪费，但可以通过命令对其进行缓存，该思路参考 Symfony 框架进行开发。
 
+注释路由仅在控制器方法中才会生效，并且方法名要是 `Action` 结尾才能生效。
+
 
 
 ## 路由命令
