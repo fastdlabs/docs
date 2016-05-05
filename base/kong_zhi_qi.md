@@ -47,8 +47,10 @@ public function jsonAction()
 /**
  * @Route("/di")
  */
-public function diAction(FastD\Http\Request $request)
+public function diAction(\FastD\Http\Request $request)
 {
     return $this->response($request->getMethod());
 }
 ```
+
+也可以注入自定义的对象，前提对象现需要定义好。
