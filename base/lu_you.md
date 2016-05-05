@@ -7,8 +7,6 @@
 
 ## 基础路由配置
 
-----
-
 ### GET
 
 该路由地址只能通过 Get 访问
@@ -54,7 +52,7 @@ public function postAction()
 * patch
 * any (意指允许所有请求方法到达路由)
 
-## 动态路由
+### 动态路由
 
 ```
 Routes::get('dynamic', '/{name}', \WelcomeBundle\Controllers\Index::class.'@dynamicAction');
@@ -73,6 +71,8 @@ Routes::get('dynamic', '/{name}', \WelcomeBundle\Controllers\Index::class.'@dyna
 
 而动态路由中的参数 `{name}` 会作为控制器方法动态传递到方法中 `dynamicAction($name)` 。
 
+
+## 注释路由
 
 
 
