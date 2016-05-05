@@ -43,4 +43,12 @@ public function jsonAction()
 
 和 Symfony 一样，依赖注入也是通过参数进行注入，只是在实现上精简了很多。
 
-
+```php
+/**
+ * @Route("/di")
+ */
+public function diAction(Request $request)
+{
+    return $this->response($request->getMethod());
+}
+```
