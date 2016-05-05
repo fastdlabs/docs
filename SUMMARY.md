@@ -3,7 +3,7 @@
 * [简介](README.md)
 * [安装](install/an_zhuang.md)
 * [基础](base/ji_chu.md)
-   * 路由
+   * [路由](base/lu_you.md)
 * [加入我们](juan_xian.md)
 * [路由](lu_you.md)
    * [路由配置](lu_you_pei_zhi.md)
