@@ -140,4 +140,34 @@ php bin/console route:dump
 输出: 
 
 ```
+Name                     Method         Scheme         Path
+Bundle: WelcomeBundle\WelcomeBundle
+/                        GET            http           /welcomebundle/
+base                     GET            http           /base
+base_post                POST           http           /base
+dynamic                  GET            http           /{name}
+user_profile             GET            http           /user/profile
 ```
+
+将目前所有模块下的路由分别列出来，并按照模块划分。默认模块都在根下: `/`
+
+通过路由命令以及路由的名字可以查询具体路由信息.
+
+```
+php bin/console route:dump base
+```
+
+输出: 
+
+```
+Route ["base"]
+Path:           /base
+Method:         GET
+Format:         php
+Callback:       WelcomeBundle\Controllers\Index@indexAction
+Defaults:       
+Requirements:   
+Path-Regex:     /^\/base$/
+```
+
+查询到对应的正则匹配表达式，控制器已经方法等相关信息。
