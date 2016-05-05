@@ -38,7 +38,10 @@ Routes::post('base_post', '/base', \WelcomeBundle\Controllers\Index::class.'@pos
 **Action**
 
 ```php
-
+public function postAction()
+{
+    return $this->response('That is POST request method.');
+}
 ```
 
 ###  PUT
