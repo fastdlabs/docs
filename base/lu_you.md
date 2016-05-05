@@ -76,8 +76,12 @@ Routes::get('dynamic', '/{name}', \WelcomeBundle\Controllers\Index::class.'@dyna
 路由组可以说是一系列路由的前缀。
 
 ```php
-
+Routes::group('/user', function () {
+    Routes::get('user_profile', '/profile', \WelcomeBundle\Controllers\Index::class.'@profileAction');
+});
 ```
+
+`/user` 就是匿名函数中所有路由的前缀，凡是在匿名函数中定义的路由，都会带上此前缀，路由组支持多层嵌套。
 
 ## 注释路由
 
