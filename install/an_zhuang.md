@@ -8,7 +8,15 @@ FastD 对运行环境是有一定要求的。
 * ext-curl
 * ext-pdo
 
-## Composer 
+确保以上环境要求之后就可以安装 FastD 了。
+
+### Composer 
+
+FastD 利用 [Composer](http://getcomposer.org) 来管理其自身的依赖包。因此，在使用 FastD 之前，请务必确保在你的机器上已经安装了 `Composer `。
+
+```
+
+```
 
 # Tutorial
 
