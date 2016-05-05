@@ -76,5 +76,11 @@ public function redirectAction(Request $request)
 每个定义的路由都允许根据路由名来生成对应的路由地址。在上述跳转代码中，已经生成了一个路由地址。
 
 ```php
-
+/**
+ * @Route("/redirect")
+ */
+public function redirectAction(Request $request)
+{
+    return $this->response($this->generateUrl('/di'));
+}
 ```
