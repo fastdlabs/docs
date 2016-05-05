@@ -2,10 +2,6 @@
 
 * [简介](README.md)
 * [安装](install/an_zhuang.md)
-* [入门](ru_men.md)
-   * [快速开始](kuai_su_kai_shi.md)
-   * [开发规范](kai_fa_gui_fan.md)
-   * [服务器配置](fu_wu_qi_pei_zhi.md)
 * [加入我们](juan_xian.md)
 * [路由](lu_you.md)
    * [路由配置](lu_you_pei_zhi.md)
