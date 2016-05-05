@@ -21,5 +21,7 @@ public function indexAction()
 }
 ```
 
+控制器可以根据不同类型响应不同数据格式。
+
 ## 依赖注入
 
