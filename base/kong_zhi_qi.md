@@ -60,5 +60,11 @@ public function diAction(\FastD\Http\Request $request)
 跳转是一个只需要一行代码的工作。哈哈
 
 ```php
-
+/**
+ * @Route("/redirect")
+ */
+public function redirectAction(Request $request)
+{
+    return $this->redirect($this->generateUrl('/di'));
+}
 ```
