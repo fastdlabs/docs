@@ -137,4 +137,7 @@ class Index extends Controller
 php bin/console route:dump
 ```
 
+输出: 
 
+```
+```
