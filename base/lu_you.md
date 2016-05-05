@@ -44,19 +44,14 @@ public function postAction()
 }
 ```
 
-###  PUT
+路由配置支持:
 
-```
-Routes::put('/', 'Class@method');
-```
-
-###DELETE
-
-```
-Routes::delete('/', 'Class@method');
-```
-
-----
+* get
+* post
+* put
+* delete
+* patch
+* any (意指允许所有请求方法到达路由)
 
 ##动态路由
 
