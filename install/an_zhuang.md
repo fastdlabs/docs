@@ -30,9 +30,9 @@ composer create-project fastd fastd/fastd
 server
 {
     listen       80;
-    server_name  sandbox.lhl.linghit.com;
-    index test.php;
-    root /media/raid10/htdocs/lhl.linghit.com/public;
+    server_name  {server_name};
+    index (dev|test|prod).php;
+    root {root_document};
     location / {
         try_files $uri @rewriteapp;
     }
