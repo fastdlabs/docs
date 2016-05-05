@@ -4,23 +4,23 @@
 
 路由配置文件在 `{bundle}/Resources/config/routes.php`
 
-##基础路由配置
+## 基础路由配置
 
 ----
 
-###GET
+### GET
 
 ```
 Routes::get('/', 'Class@method');
 ```
 
-###POST
+### POST
 
 ```
 Routes::post('/', 'Class@method');
 ```
 
-###PUT
+###  PUT
 
 ```
 Routes::put('/', 'Class@method');
