@@ -90,7 +90,13 @@ Routes::group('/user', function () {
 注释路由仅在控制器方法中才会生效，并且方法名要是 `Action` 结尾才能生效。
 
 ```php
-
+/**
+ * @Route("/")
+ */
+public function indexAction()
+{
+    return $this->response('hello world');
+}
 ```
 
 ## 路由命令
