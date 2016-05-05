@@ -112,6 +112,22 @@ class Index extends Controller
 }
 ```
 
+类名之上的注释就相当是路由组的功能，而方法上的注释则是具体的路由地址。参数与路由文件配置一样。
+
+配置路由请求方法需要另加注释: `@Method("GET")` 里面参数是控制路由请求方法的值。
+
+完整配置: 
+
+```php
+/**
+ * @Route("/", name="route.name", defaults={}, requirements={})
+ * @Method("GET")
+ */
+```
+
+**注释中字符串必须用双引号`"`，单引号无法解析，default、requirements 参数值必须是 json
+**
+
 ## 路由命令
 
 
