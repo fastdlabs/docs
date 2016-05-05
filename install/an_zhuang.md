@@ -39,5 +39,5 @@ server {
 
 #### Apache
 
-Open Apache `rewrite_mod`.
+`rewrite_mod`
 
