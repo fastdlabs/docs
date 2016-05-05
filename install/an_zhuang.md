@@ -32,7 +32,7 @@ server
     listen       80;
     server_name  {server_name};
     index (dev|test|prod).php;
-    root {root_document};
+    root {document_root};
     location / {
         try_files $uri @rewriteapp;
     }
