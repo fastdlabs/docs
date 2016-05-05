@@ -21,7 +21,19 @@ public function indexAction()
 }
 ```
 
-控制器可以根据不同类型响应不同数据格式。
+控制器可以根据不同数据请求类型响应不同数据格式, 而数据请求类型是根据请求路由的扩展名进行控制，如: `/name.json` 则会自动响应 `json` 格式主体，前提必须你的内容格式符合 `json` 的响应格式，也就是: 数组(array)，否则会抛出异常。而每个返回(return) 必须是一个 `FastD\Http\Response` 对象，调度器中只接受 `FastD\Http\Response` 对象，这样可以控制统一个入口和统一的出口。
+
+响应制定内容格式: 
+
+```php
+/**
+     * @Route("/json")
+     */
+    public function jsonAction()
+    {
+        return $this->responseJson(['name' => 'janhuang']);
+    }
+```
 
 ## 依赖注入
 
