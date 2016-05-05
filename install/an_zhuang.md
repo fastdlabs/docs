@@ -1,5 +1,13 @@
 # 安装
 
+### 对运行环境的要求
+
+FastD 对运行环境是有一定要求的。
+
+* PHP 7+
+* ext-curl
+* ext-pdo
+
 ## Composer 
 
 # Tutorial
