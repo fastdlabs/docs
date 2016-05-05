@@ -1,7 +1,6 @@
 # Summary
 
 * [简介](README.md)
-   * 安装
 * [加入我们](juan_xian.md)
 * [入门](ru_men.md)
    * [快速开始](kuai_su_kai_shi.md)
