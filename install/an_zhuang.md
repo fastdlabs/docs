@@ -20,7 +20,7 @@ composer create-project fastd fastd/fastd
 
 ### 环境配置
 
-###Nginx
+#### Nginx
 
 ```
 server {
@@ -37,7 +37,7 @@ server {
 }
 ```
 
-###Apache
+#### Apache
 
 Open Apache `rewrite_mod`.
 
