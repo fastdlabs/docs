@@ -125,8 +125,7 @@ class Index extends Controller
  */
 ```
 
-**注释中字符串必须用双引号`"`，单引号无法解析，default、requirements 参数值必须是 json
-**
+**注释中字符串必须用双引号`"`，单引号无法解析，default、requirements 参数值必须是 json**
 
 ## 路由命令
 
