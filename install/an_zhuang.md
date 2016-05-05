@@ -40,7 +40,7 @@ server
         rewrite ^(.*)$ /{(dev|test|prod)}.php$1 last;
     }
     location ~ \.php {
-        fastcgi_pass 127.0.0.1:9100;
+        fastcgi_pass 127.0.0.1:9000;
         fastcgi_split_path_info ^(.+.php)(/.*)$;
         include       fastcgi_params;
         fastcgi_param PATH_INFO $fastcgi_path_info;
