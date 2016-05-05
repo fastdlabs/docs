@@ -29,24 +29,24 @@ composer create-project fastd fastd/fastd
 ```
 server
 {
-  listen       80;
-  server_name  sandbox.lhl.linghit.com;
-  index test.php;
-  root /media/raid10/htdocs/lhl.linghit.com/public;
-  location / {
-    try_files $uri @rewriteapp;
-  }
-  location @rewriteapp {
-    rewrite ^(.*)$ /test.php$1 last;
-  }
-  location ~ \.php {
-    fastcgi_pass 127.0.0.1:9100;
-    fastcgi_split_path_info ^(.+.php)(/.*)$;
-    include       fastcgi_params;
-    fastcgi_param PATH_INFO $fastcgi_path_info;
-    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-    fastcgi_param HTTPS              off;
-  }
+    listen       80;
+    server_name  sandbox.lhl.linghit.com;
+    index test.php;
+    root /media/raid10/htdocs/lhl.linghit.com/public;
+    location / {
+        try_files $uri @rewriteapp;
+    }
+    location @rewriteapp {
+        rewrite ^(.*)$ /test.php$1 last;
+    }
+    location ~ \.php {
+        fastcgi_pass 127.0.0.1:9100;
+        fastcgi_split_path_info ^(.+.php)(/.*)$;
+        include       fastcgi_params;
+        fastcgi_param PATH_INFO $fastcgi_path_info;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        fastcgi_param HTTPS              off;
+    }
 }
 ```
 
