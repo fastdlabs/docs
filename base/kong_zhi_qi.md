@@ -47,7 +47,7 @@ public function jsonAction()
 /**
  * @Route("/di")
  */
-public function diAction(Request $request)
+public function diAction(FastD\Http\Request $request)
 {
     return $this->response($request->getMethod());
 }
