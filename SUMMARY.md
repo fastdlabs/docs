@@ -6,7 +6,6 @@
 * [基础](base/ji_chu.md)
    * [路由](base/lu_you.md)
    * [控制器](base/kong_zhi_qi.md)
-   * 演示
    * [模板](base/mo_ban.md)
 * [加入我们](juan_xian.md)
 * [路由](lu_you.md)
