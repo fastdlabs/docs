@@ -54,3 +54,11 @@ public function diAction(\FastD\Http\Request $request)
 ```
 
 也可以注入自定义的对象，前提对象现需要定义好。
+
+## 跳转
+
+跳转是一个只需要一行代码的工作。哈哈
+
+```php
+
+```
