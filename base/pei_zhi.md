@@ -88,4 +88,26 @@ class Demo extends Controller
 
 以上会读取数据库配置数据，格式如下: 
 ```php
+[
+    'write' => [
+        'type'     => 'mysql',
+        'host'     => '127.0.0.1',
+        'port'     => 3306,
+        'user'     => 'root',
+        'pwd'      => '',
+        'charset'  => 'utf8',
+        'dbname'     => '',
+        'prefix'   => ''
+    ],
+    'read' => [
+        'type'     => 'mysql',
+        'host'     => '127.0.0.1',
+        'port'     => 3306,
+        'user'     => 'root',
+        'pwd'      => '',
+        'charset'  => 'utf8',
+        'dbname'     => '',
+        'prefix'   => ''
+    ],
+]
 ```
