@@ -12,7 +12,7 @@
 Routes::get('base', '/base', \WelcomeBundle\Controllers\Index::class.'@indexAction');
 ```
 
-##### 响应 (response)
+##### ＃响应 (response)
 
 ```php
 public function indexAction()
