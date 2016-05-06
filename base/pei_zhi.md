@@ -134,3 +134,7 @@ $db = $this->getParameters('database.read');
     'prefix'   => ''
 ]
 ```
+
+自定义的配置数据也是如此，可以对其执行制定数据的获取。
+
+### 模块配置
