@@ -72,7 +72,7 @@ twig 自身支持模块扩展，具体请看文档: [Twig Extension](http://twig
 
 扩展对象目录: `{bundle}/Extensions`
 
-添加扩展: 
+扩展内容如下: 
 
 ```php
 <?php
@@ -123,4 +123,15 @@ class DemoExtensions extends TplExtension
         ];
     }
 }
+```
+
+添加完扩展后，需要将扩展对象添加到 `bundle` 引导文件中，引导文件也就是每个 `bundle` 下面的 `xxxBundle.php`，重写 `registerExtensions` 方法，返回扩展数组即可。如: 
+
+```php
+public function registerExtensions()
+    {
+        return [
+            new DemoExtensions(),
+        ];
+    }
 ```
