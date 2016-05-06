@@ -24,7 +24,7 @@ return [
             'host'     => '127.0.0.1',
             'port'     => 3306,
             'user'     => 'root',
-            'pwd'      => '123456',
+            'pwd'      => '',
             'charset'  => 'utf8',
             'dbname'     => '',
             'prefix'   => ''
@@ -34,7 +34,7 @@ return [
             'host'     => '127.0.0.1',
             'port'     => 3306,
             'user'     => 'root',
-            'pwd'      => '123456',
+            'pwd'      => '',
             'charset'  => 'utf8',
             'dbname'     => '',
             'prefix'   => ''
