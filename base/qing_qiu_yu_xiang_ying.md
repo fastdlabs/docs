@@ -27,7 +27,9 @@ public function requestAction(Request $request)
 
 get 参数也就是 URL 的 query string 参数，和 symfony 保持一致操作方式。
 
-
+```php
+$request->query->get($name);
+```
 
 ##### ＃post参数
 
