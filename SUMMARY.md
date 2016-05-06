@@ -11,8 +11,6 @@
 * [命令行](ming_ling_xing.md)
    * [预设的命令行](yu_she_de_ming_ling_xing.md)
    * [自定义命令行](zi_ding_yi_ming_ling_xing.md)
-* [可选扩展](kuo_zhan.md)
-   * [swoole](swoole.md)
 * [bundles](bundle.md)
    * [media-bundle](media-bundle.md)
        * [配置参数](pei_zhi_can_shu.md)
