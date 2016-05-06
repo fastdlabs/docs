@@ -336,5 +336,9 @@ class Demo extends Controller
 
 ### 配置缓存
 
+和路由一样，配置也需要每次读取每个模块下的配置合并到全局配置中，因为在生产环境如果都要执行这些操作的话，也会造成一定的浪费，因此我们生产上应该是中记住: 节省
 
+```
+php bin/console config:cache
+```
 
