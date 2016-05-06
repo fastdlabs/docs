@@ -11,7 +11,6 @@
 * [命令行](ming_ling_xing.md)
    * [预设的命令行](yu_she_de_ming_ling_xing.md)
    * [自定义命令行](zi_ding_yi_ming_ling_xing.md)
-* [整合&配置](zheng_540826_pei_zhi.md)
 * [组件](zu_jian.md)
 * [实战技术](shi_zhan_ji_zhu.md)
    * [tcpdump使用](tcpdumpshi_yong.md)
