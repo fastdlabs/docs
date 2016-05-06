@@ -26,8 +26,8 @@ return [
             'user'     => 'root',
             'pwd'      => '123456',
             'charset'  => 'utf8',
-            'dbname'     => 'typecho',
-            'prefix'   => 'tp_'
+            'dbname'     => '',
+            'prefix'   => ''
         ],
         'read' => [
             'type'     => 'mysql',
@@ -36,8 +36,8 @@ return [
             'user'     => 'root',
             'pwd'      => '123456',
             'charset'  => 'utf8',
-            'dbname'     => 'typecho',
-            'prefix'   => 'tp_'
+            'dbname'     => '',
+            'prefix'   => ''
         ],
     ],
     // 存储配置
