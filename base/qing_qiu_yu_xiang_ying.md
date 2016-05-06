@@ -31,6 +31,14 @@ get 参数也就是 URL 的 query string 参数，和 symfony 保持一致操作
 $request->query->get($name);
 ```
 
+如果 URL 为: `http://examples.com/?name=jan&age=18`
+
+则可以通过 query 对象进行获取，例子: 
+
+```php
+$request->query->
+```
+
 ##### ＃post参数
 
 ##### ＃cookie
