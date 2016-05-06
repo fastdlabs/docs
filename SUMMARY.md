@@ -8,6 +8,7 @@
    * [控制器](base/kong_zhi_qi.md)
    * [模板](base/mo_ban.md)
    * [配置](base/pei_zhi.md)
+* [数据库](database/shuju_ku_md.md)
 * [系统服务](system/xi_tong_fu_wu.md)
    * [服务辅助对象](system/fu_wu_fu_zhu_dui_xiang.md)
    * [命令行](system/ming_ling_xing.md)
@@ -17,6 +18,5 @@
    * [tcpdump使用](tcpdumpshi_yong.md)
    * [连接数查看](lian_jie_shu_cha_kan.md)
    * Nginx动态添加模块
-* [数据库](database/shuju_ku_md.md)
 * [扩展包](extensions/kuo_zhan_bao.md)
 
