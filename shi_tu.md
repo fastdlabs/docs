@@ -1,3 +1,0 @@
-#视图
-
-视图模板引擎使用著名的 `Twig` 模板引擎，详情请看文档: [Twig 文档](twig.sensiolabs.org/documentation)
