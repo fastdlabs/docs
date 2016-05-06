@@ -44,9 +44,10 @@ return [
     'storage' => [
         'write' => [
             'type' => 'redis',
-            'host' => '11.11.11.11',
+            'host' => '',
             'port' => 6379
         ],
     ],
 ];
 ```
+
