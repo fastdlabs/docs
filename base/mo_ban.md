@@ -128,10 +128,19 @@ class DemoExtensions extends TplExtension
 添加完扩展后，需要将扩展对象添加到 `bundle` 引导文件中，引导文件也就是每个 `bundle` 下面的 `xxxBundle.php`，重写 `registerExtensions` 方法，返回扩展数组即可。如: 
 
 ```php
-public function registerExtensions()
+<?php
+namespace Welcome;
+
+use FastD\Framework\Bundle\Bundle;
+use Welcome\Extensions\DemoExtensions;
+
+class WelcomeBundle extends Bundle
 {
-    return [
-        new DemoExtensions(),
-    ];
+    public function registerExtensions()
+    {
+        return [
+            new DemoExtensions(),
+        ];
+    }
 }
 ```
