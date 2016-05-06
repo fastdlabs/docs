@@ -247,6 +247,12 @@ class Demo extends Controller
 自定义配置需要在 `app/application.php` 中的 `registerConfigurationVariable(Config $config)` 进行配置，调用 `Config` 对象的  `setVariable` 方法即可。
 
 ```php
-
+/**
+ * @param Config $config
+ */
+public function registerConfigurationVariable(Config $config)
+{
+    $config->setVariable('name', 'janhuang');
+}
 ```
 
