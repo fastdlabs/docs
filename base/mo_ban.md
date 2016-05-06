@@ -66,5 +66,7 @@ format 为生成路由地址的格式，也就是后缀。
 
 ### 模板扩展
 
-twig 自身支持模块扩展，具体请看文档: [Twig Extension](http://twig.sensiolabs.org/doc/advanced.html#creating-an-extension)
+twig 自身支持模块扩展，具体请看文档: [Twig Extension](http://twig.sensiolabs.org/doc/advanced.html#creating-an-extension).
+
+
 
