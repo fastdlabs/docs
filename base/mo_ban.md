@@ -26,7 +26,13 @@ public function twigAction(Request $request)
 
 在模板中，可能需要用上很多的资源，如 css，js，images 等资源，每个地址都是一个静态的请求，所以建议这部分工作直接有 `nginx` 或者其他服务器进行接管。
 
+模板资源目录: `{bundle}/Resources/assets`
 
+```
+php bin/console asset:install
+```
+
+安装成功后，会在 `public` 目录下生成 `bundles/{bundle}` 软链接，按照不同的 bundle 名进行目录划分。
 
 ### 模板预定义函数
 
