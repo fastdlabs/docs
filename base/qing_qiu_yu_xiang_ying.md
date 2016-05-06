@@ -74,6 +74,7 @@ $request->setCookie($name, $value = null, $expire = 0, $path = '/', $domain = nu
 **getCookie**
 
 ```php
+$request->getCookie($name);
 ```
 
 ##### ＃session
