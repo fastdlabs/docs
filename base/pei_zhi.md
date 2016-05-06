@@ -15,4 +15,49 @@
 例子，查看全局配置文件(dev): 
 
 ```php
+<?php
+return [
+    // 数据库配置
+    'database' => [
+        'write' => [
+            'type'     => 'mysql',
+            'host'     => '127.0.0.1',
+            'port'     => 3306,
+            'user'     => 'root',
+            'pwd'      => '123456',
+            'charset'  => 'utf8',
+            'dbname'     => 'typecho',
+            'prefix'   => 'tp_'
+        ],
+        'read' => [
+            'type'     => 'mysql',
+            'host'     => '127.0.0.1',
+            'port'     => 3306,
+            'user'     => 'root',
+            'pwd'      => '123456',
+            'charset'  => 'utf8',
+            'dbname'     => 'typecho',
+            'prefix'   => 'tp_'
+        ],
+    ],
+    // 存储配置
+    'storage' => [
+        'write' => [
+            'type' => 'redis',
+            'host' => '11.11.11.11',
+            'port' => 6379
+        ],
+    ],
+    // 资源管理
+    'assets' => [
+        /*'host' => 'http://baidu.com',
+        'path' => 'public'*/
+    ],
+    // 错误页面配置
+    'error' => [
+        'page' => [
+            404 => null
+        ],
+    ],
+];
 ```
