@@ -8,7 +8,6 @@
    * [控制器](base/kong_zhi_qi.md)
    * [模板](base/mo_ban.md)
    * [配置](base/pei_zhi.md)
-* [加入我们](juan_xian.md)
 * [路由](lu_you.md)
    * [路由配置](lu_you_pei_zhi.md)
    * [请求&响应](qing_qiu_xiang_ying.md)
