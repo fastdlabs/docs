@@ -203,5 +203,35 @@ return [
 **控制器**
 
 ```php
+<?php
 
+namespace WelcomeBundle\Controllers;
+
+use FastD\Framework\Bundle\Controllers\Controller;
+
+/**
+ * Class Demo
+ *
+ * @Route("/demo")
+ * @package WelcomeBundle\Controllers
+ */
+class Demo extends Controller
+{
+    // some code...
+
+    /**
+     * @Route("/config", name="config")
+     *
+     * @return \FastD\Http\Response|string
+     */
+    public function configAction()
+    {
+        $db = $this->getParameters('database');
+
+        return $this->render('base/config.twig', [
+            'config' => var_export($db, true),
+            'path' => $this->getParameters('dynamic.path')
+        ]);
+    }
+}
 ```
