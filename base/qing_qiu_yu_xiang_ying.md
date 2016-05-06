@@ -36,8 +36,10 @@ $request->query->get($name);
 则可以通过 query 对象进行获取，例子: 
 
 ```php
-$request->query->
+$request->query->get('name'); // jan
 ```
+
+如果要判断是否存在
 
 ##### ＃post参数
 
