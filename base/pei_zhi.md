@@ -342,3 +342,4 @@ class Demo extends Controller
 php bin/console config:cache
 ```
 
+命令会生成一份与路由缓存一样的配置文件 `config.cache`，里面会缓存所有模块配置。
