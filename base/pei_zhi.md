@@ -85,3 +85,7 @@ class Demo extends Controller
     }
 }
 ```
+
+以上会读取数据库配置数据，格式如下: 
+```php
+```
