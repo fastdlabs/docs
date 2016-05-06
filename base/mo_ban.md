@@ -28,7 +28,7 @@ public function twigAction(Request $request)
 
 生成一个路由绝对路径地址，接受三个参数。
 
-```php
+```
 {{ url(route, params, format) }}
 ```
 
@@ -42,7 +42,7 @@ format 为生成路由地址的格式，也就是后缀。
 
 给模板生成一系列的资源路径地址，如 css，js，images等等。
 
-```twig
+```
 {{  }}
 ```
 
