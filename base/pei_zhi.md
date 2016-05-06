@@ -256,3 +256,45 @@ public function registerConfigurationVariable(Config $config)
 }
 ```
 
+配置文件添加自定义变量参数。
+
+```php
+<?php
+return [
+    // 数据库配置
+    'database' => [
+        'write' => [
+            'type'     => 'mysql',
+            'host'     => '127.0.0.1',
+            'port'     => 3306,
+            'user'     => 'root',
+            'pwd'      => '',
+            'charset'  => 'utf8',
+            'dbname'     => '',
+            'prefix'   => ''
+        ],
+        'read' => [
+            'type'     => 'mysql',
+            'host'     => '127.0.0.1',
+            'port'     => 3306,
+            'user'     => 'root',
+            'pwd'      => '',
+            'charset'  => 'utf8',
+            'dbname'     => '',
+            'prefix'   => ''
+        ],
+    ],
+    // 存储配置
+    'storage' => [
+        'write' => [
+            'type' => 'redis',
+            'host' => '',
+            'port' => 6379
+        ],
+    ],
+    'dynamic' => [
+        'path' => '%root.path%'
+    ]
+];
+```
+
