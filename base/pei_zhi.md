@@ -244,3 +244,9 @@ class Demo extends Controller
 
 除了系统内置的动态变量意外，还可以针对个人自定义一些动态的配置，方便自己的操作习惯。
 
+自定义配置需要在 `app/application.php` 中的 `registerConfigurationVariable(Config $config)` 进行配置，调用 `Config` 对象的  `setVariable` 方法即可。
+
+```php
+
+```
+
