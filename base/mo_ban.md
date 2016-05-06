@@ -28,7 +28,7 @@ public function twigAction(Request $request)
 
 生成一个路由绝对路径地址，接受三个参数。
 
-```twig
+```php
 {{ url(route, params, format) }}
 ```
 
