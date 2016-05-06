@@ -18,5 +18,5 @@
    * [连接数查看](lian_jie_shu_cha_kan.md)
    * Nginx动态添加模块
 * 数据库
-* 扩展包
+* [扩展包](extensions/kuo_zhan_bao.md)
 
