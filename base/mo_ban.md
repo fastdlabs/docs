@@ -129,9 +129,9 @@ class DemoExtensions extends TplExtension
 
 ```php
 public function registerExtensions()
-    {
-        return [
-            new DemoExtensions(),
-        ];
-    }
+{
+    return [
+        new DemoExtensions(),
+    ];
+}
 ```
