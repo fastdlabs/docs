@@ -68,6 +68,8 @@ format 为生成路由地址的格式，也就是后缀。
 
 twig 自身支持模块扩展，具体请看文档: [Twig Extension](http://twig.sensiolabs.org/doc/advanced.html#creating-an-extension).
 
+框架已经将一套扩展整合到自身当中，简化了整体的实现方法，只需要简单实现想要的功能即可。
+
 ```php
 <?php
 
@@ -118,4 +120,3 @@ class DemoExtensions extends TplExtension
     }
 }
 ```
-
