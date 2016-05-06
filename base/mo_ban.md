@@ -60,7 +60,9 @@ format 为生成路由地址的格式，也就是后缀。
 {{ asset(path, version = null) }}
 ```
 
+方法最终会生成一个资源链接地址，格式为: `//path/to/public/resources.js`
 
+如果有版本参数，则会追加版本尾巴: `?v=1.0.0`
 
 ### 模板扩展
 
