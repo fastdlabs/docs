@@ -13,7 +13,7 @@
    * [命令行](system/ming_ling_xing.md)
    * [异常](system/yi_chang.md)
 * [组件](components/zujian_md.md)
-* [实战技术](shi_zhan_ji_zhu.md)
+* [实战技术](practice/shizhan_ji_zhu_md.md)
    * [tcpdump使用](tcpdumpshi_yong.md)
    * [连接数查看](lian_jie_shu_cha_kan.md)
    * Nginx动态添加模块
