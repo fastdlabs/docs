@@ -25,6 +25,10 @@ public function requestAction(Request $request)
 
 ##### ＃get参数
 
+get 参数也就是 URL 的 query string 参数，和 symfony 保持一致操作方式。
+
+
+
 ##### ＃post参数
 
 ##### ＃cookie
