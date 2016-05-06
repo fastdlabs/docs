@@ -65,13 +65,13 @@ $request->request->get($name);
 
 cookie 操作与 PHP 本身操作保持一致，只是框架中的 cookie 是一个对象，而 PHP 本身的是一个函数操作而已，内部实现也是通过 `setcookie` 进行处理。因此在效果，及操作上是没有太大区别。
 
-**＃setCookie**
+**setCookie**
 
 ```php
 $request->setCookie($name, $value = null, $expire = 0, $path = '/', $domain = null, $secure = false, $httpOnly = true);
 ```
 
-**＃getCookie**
+**getCookie**
 
 ```php
 $request->getCookie($name);
