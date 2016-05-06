@@ -39,7 +39,11 @@ $request->query->get($name);
 $request->query->get('name'); // jan
 ```
 
-如果要判断是否存在
+如果要判断是否存在，则可以通过 has 方法进行判断，每个 `Attribute` 对象中都有该方法，具体可看源码.
+
+```php
+$request->query->has('name'); // bool true or false
+```
 
 ##### ＃post参数
 
