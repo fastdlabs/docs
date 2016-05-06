@@ -7,7 +7,16 @@
 如果需要在控制器中获取请求的信息，需要用到上一节的控制器依赖注入的模块功能。
 
 ```php
-
+/**
+ * @Route("/request", name="request")
+ *
+ * @param Request $request
+ * @return Response
+ */
+public function requestAction(Request $request)
+{
+    return $this->response('hello response');
+}
 ```
 
 ### 响应 (Response)
