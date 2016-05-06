@@ -45,6 +45,14 @@ $request->query->get('name'); // jan
 $request->query->has('name'); // bool true or false
 ```
 
+两者也都可以结合，结合 has 和 get 方法进行判断获取，例子: 
+
+```php
+$request->query->hasGet('name', 'janhuang');
+```
+
+当如果没有找到 `name` 的时候，则会返回第二个参数作为默认值返回，也就是说，如果没有找到 `name` 则会返回 `janhuang` 作为结果。
+
 ##### ＃post参数
 
 ##### ＃cookie
