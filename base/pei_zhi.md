@@ -114,8 +114,23 @@ class Demo extends Controller
 
 如果想要读取数组下制定某个单元的配置信息，也是可以，直接支持以 `.` 点号进行连接的。
 
-例如需要获取数据库下读取的连接。
+例如需要获取数据库下读取(read)的连接。
 
 ```php
+$db = $this->getParameters('database.read');
+```
 
+结果: 
+
+```php
+[
+        'type'     => 'mysql',
+        'host'     => '127.0.0.1',
+        'port'     => 3306,
+        'user'     => 'root',
+        'pwd'      => '',
+        'charset'  => 'utf8',
+        'dbname'     => '',
+        'prefix'   => ''
+    ]
 ```
