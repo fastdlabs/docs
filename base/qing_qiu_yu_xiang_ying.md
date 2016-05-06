@@ -15,7 +15,7 @@
  */
 public function requestAction(Request $request)
 {
-    return $this->response('hello response');
+  return $this->response($request->getClientIp());
 }
 ```
 
