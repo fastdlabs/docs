@@ -26,9 +26,17 @@ public function twigAction(Request $request)
 
 ##### url
 
-生成一个路由绝对路径地址。
+生成一个路由绝对路径地址，接受三个参数。
 
+```php
+{{ url(route, params, format) }}
+```
 
+路由对应定义的路由名称，因此说这里给路由定义名称的重要性。
+
+params 为路由的参数，如果是动态路由，则会给路由动态添加上参数，如果参数有多余或者路由本身非动态路由，则参数会以 `query string` 的方式在地址上追加尾巴。
+
+format 为生成路由地址的格式，也就是后缀。
 
 ##### asset
 
