@@ -6,9 +6,9 @@
 * [基础](base/ji_chu.md)
    * [路由](base/lu_you.md)
    * [控制器](base/kong_zhi_qi.md)
+   * 请求与响应
    * [模板](base/mo_ban.md)
    * [配置](base/pei_zhi.md)
-   * 请求与响应
 * [数据库](database/shuju_ku_md.md)
 * [系统服务](system/xi_tong_fu_wu.md)
    * [辅助对象](system/fu_wu_fu_zhu_dui_xiang.md)
