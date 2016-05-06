@@ -24,6 +24,8 @@ public function twigAction(Request $request)
 
 ### 模板资源映射命令
 
+在模板中，可能需要用上很多的资源，如 css，js，images 等资源，每个地址都是一个静态的请求，所以建议这部分工作直接有 `nginx` 或者其他服务器进行接管。
+
 
 
 ### 模板预定义函数
