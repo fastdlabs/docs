@@ -68,25 +68,7 @@ use FastD\Framework\Bundle\Controllers\Controller;
  */
 class Demo extends Controller
 {
-    /**
-     * @Route("/route", name="demo")
-     *
-     * @return \FastD\Http\Response|string
-     */
-    public function indexAction()
-    {
-        return $this->render('base/route.twig');
-    }
-
-    /**
-     * @Route("/control", name="control")
-     *
-     * @return \FastD\Http\Response|string
-     */
-    public function controlAction()
-    {
-        return $this->render('base/control.twig');
-    }
+    // some code...
 
     /**
      * @Route("/config", name="config")
