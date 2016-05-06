@@ -1,8 +1,8 @@
 # Summary
 
 * [简介](README.md)
-* [演示](showcase/yan_shi.md)
 * [安装](install/an_zhuang.md)
+* [演示](showcase/yan_shi.md)
 * [基础](base/ji_chu.md)
    * [路由](base/lu_you.md)
    * [控制器](base/kong_zhi_qi.md)
