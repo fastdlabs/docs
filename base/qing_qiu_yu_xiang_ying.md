@@ -21,6 +21,8 @@ public function requestAction(Request $request)
 
 注入请求对象(FastD\Http\Request)之后, 即可通过对象获取对应的参数
 
+
+
 ##### ＃get参数
 
 ##### ＃post参数
