@@ -51,3 +51,6 @@ return [
 ];
 ```
 
+我们在控制器中，可以通过 `Controller::getParameter($name)` 对配置文件进行读取。
+
+
