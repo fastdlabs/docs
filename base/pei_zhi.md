@@ -145,4 +145,13 @@ $db = $this->getParameters('database.read');
 
 ### 变量配置
 
+系统中默认内置了4个动态配置变量，分别是: 
+
+* root.path
+* env
+* debug
+* version
+
+##### ＃如何使用动态配置
+
 
