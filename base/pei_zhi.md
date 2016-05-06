@@ -334,3 +334,7 @@ class Demo extends Controller
 }
 ```
 
+### 配置缓存
+
+
+
