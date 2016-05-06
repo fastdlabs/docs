@@ -54,5 +54,52 @@ return [
 我们在控制器中，可以通过 `Controller::getParameter($name)` 对配置文件进行读取。
 
 ```php
+<?php
 
+namespace WelcomeBundle\Controllers;
+
+use FastD\Framework\Bundle\Controllers\Controller;
+
+/**
+ * Class Demo
+ *
+ * @Route("/demo")
+ * @package WelcomeBundle\Controllers
+ */
+class Demo extends Controller
+{
+    /**
+     * @Route("/route", name="demo")
+     *
+     * @return \FastD\Http\Response|string
+     */
+    public function indexAction()
+    {
+        return $this->render('base/route.twig');
+    }
+
+    /**
+     * @Route("/control", name="control")
+     *
+     * @return \FastD\Http\Response|string
+     */
+    public function controlAction()
+    {
+        return $this->render('base/control.twig');
+    }
+
+    /**
+     * @Route("/config", name="config")
+     *
+     * @return \FastD\Http\Response|string
+     */
+    public function configAction()
+    {
+        $db = $this->getParameters('database');
+
+        return $this->render('base/config.twig', [
+            'config' => var_export($db, true),
+        ]);
+    }
+}
 ```
