@@ -26,6 +26,10 @@ public function twigAction(Request $request)
 
 ##### url
 
+生成一个路由绝对路径地址。
+
+
+
 ##### asset
 
 ### 模板扩展
