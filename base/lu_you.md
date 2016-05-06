@@ -6,7 +6,7 @@
 
 ### 基础路由配置
 
-#### GET
+##### ＃GET
 
 该路由地址只能通过 Get 访问
 
@@ -27,7 +27,7 @@ public function indexAction()
 
 而 `indexAction` 即是控制器方法，具体请求处理的方法主体。
 
-#### POST
+##### ＃POST
 
 ```php
 Routes::post('base_post', '/base', \WelcomeBundle\Controllers\Index::class.'@postAction');
