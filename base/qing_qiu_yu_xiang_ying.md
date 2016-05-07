@@ -79,5 +79,9 @@ $request->getCookie($name);
 
 ##### ＃session
 
+```php
+
+```
+
 ### 响应 (Response)
 
