@@ -81,4 +81,9 @@ public function databaseAction(Request $request)
 }
 ```
 
-`query($sql)` 方法是执行一个数据库语句操作，包括 `insert`，`select`，`update`，`delete`，
+`query($sql)` 方法是执行一个数据库语句操作，包括 `insert`，`select`，`update`，`delete`，而每个操作都有对应的结果获取。
+
+如果是 `insert` 操作，那么可以通过 `execute` 后执行 `getId` 方法获取最后插入的 id，但是在分布式 id 发号器中并不适用。
+
+如果是 `update` 操作，那么可以通过 `execute` 后执行 `getAffected` 获取影响的行数，`delete` 操作也一样。
+
