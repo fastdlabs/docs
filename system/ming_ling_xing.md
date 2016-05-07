@@ -131,4 +131,5 @@ php bin/console welcome:bundle
 $kernel = $this->getApplication()->getKernel(); // AppKernel
 ```
 
-方法会返回整个运行的核心，
+方法会返回整个运行的核心，即可通过核心获取其他更多的对象，包括容器。
+
