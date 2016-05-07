@@ -6,30 +6,30 @@
 
 ```php
 /**
-     * @Route("/session", name="base.session")
-     *
-     * @param Request $request
-     * @return Response
-     */
-    public function sessionAction(Request $request)
-    {
-        if (!$request->hasSession('name')) {
-            $request->setSession('name', 'jan');
-        }
-
-        $name = $request->getSession('name');
-
-        if (!$request->hasCookie('age')) {
-            $request->setCookie('age', 18);
-        }
-
-        $age = $request->getCookie('age');
-
-        return $this->render('base/request.twig', [
-            'name' => $name,
-            'age' => $age,
-        ]);
+ * @Route("/session", name="base.session")
+ *
+ * @param Request $request
+ * @return Response
+ */
+public function sessionAction(Request $request)
+{
+    if (!$request->hasSession('name')) {
+        $request->setSession('name', 'jan');
     }
+
+    $name = $request->getSession('name');
+
+    if (!$request->hasCookie('age')) {
+        $request->setCookie('age', 18);
+    }
+
+    $age = $request->getCookie('age');
+
+    return $this->render('base/request.twig', [
+        'name' => $name,
+        'age' => $age,
+    ]);
+}
 ```
 
 ##### ＃cookie
