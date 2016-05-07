@@ -127,3 +127,6 @@ php bin/console welcome:bundle
 
 ##### ＃在命令行中获取应用核心
 
+```php
+$kernel = $this->getApplication()->getKernel();
+```
