@@ -30,5 +30,32 @@
 在控制器中，通过 `FastD\Framework\Bundle\Controllers\Controller::getDriver($name)` 进行获取.
 
 ```php
+namespace WelcomeBundle\Controllers;
 
+use FastD\Framework\Bundle\Controllers\Controller;
+use FastD\Http\Request;
+use FastD\Http\Response;
+
+/**
+ * Class Database
+ *
+ * @Route("/database")
+ *
+ * @package WelcomeBundle\Controllers
+ */
+class Database extends Controller
+{
+    /**
+     * @Route("/driver", name="database.driver")
+     *
+     * @param Request $request
+     * @return Response
+     */
+    public function databaseAction(Request $request)
+    {
+        $write = $this->getDriver('write');
+
+        return $this->render('database/drivers.twig');
+    }
+}
 ```
