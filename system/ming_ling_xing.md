@@ -176,3 +176,15 @@ class DemoCommand extends Command
     }
 }
 ```
+
+执行: 
+
+```php
+php bin/console welcome:bundle janhuang --age=18
+```
+
+输出: 
+
+```php
+
+```
