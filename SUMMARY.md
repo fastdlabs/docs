@@ -11,7 +11,7 @@
    * [配置](base/pei_zhi.md)
 * [数据库](database/shuju_ku_md.md)
 * [系统服务](system/xi_tong_fu_wu.md)
-   * [辅助对象](system/fu_wu_fu_zhu_dui_xiang.md)
+   * [辅助服务](system/fu_wu_fu_zhu_dui_xiang.md)
    * [命令行](system/ming_ling_xing.md)
    * [异常](system/yi_chang.md)
 * [扩展包](extensions/kuo_zhan_bao.md)
