@@ -20,7 +20,10 @@ $memcached->set('age', '18');
 ##### ＃使用原生对象操作
 
 ```php
-
+$memcached = Memcached::connect([
+    'host' => '',
+    'port' => ''
+]);
 ```
 
 ### ＃Redis
