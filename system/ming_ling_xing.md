@@ -10,6 +10,8 @@
 php bin/console 
 ```
 
+程序展示所有内置的所有命令。
+
 ```php
 asset:
  ➜ asset:install
