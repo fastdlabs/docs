@@ -27,6 +27,8 @@ public function uploadAction(Request $request)
 
 ##### ＃扩展
 
+文件上传扩展相对简单，
+
 ```php
 
 ```
