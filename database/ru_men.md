@@ -98,7 +98,8 @@ public function databaseAction(Request $request)
 {
     $write = $this->getDriver('write');
 
-
+    $pdo = $write->getPdo();
+    
     return $this->render('database/drivers.twig');
 }
 ```
