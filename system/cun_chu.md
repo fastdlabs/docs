@@ -11,7 +11,6 @@ $memcached = new Memcached([
 ]);
 
 $memcached->set('age', '18');
-
 ```
 
 ### ＃Redis
