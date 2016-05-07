@@ -117,4 +117,4 @@ Controller::response($html, $status = 200, array $headers = []);
 
 源码中有多个响应，其中 `response` 方法是根据请求的格式进行自动化响应。
 
-具体可看 ``
+具体可看 `FastD\Framework\Bundle\Controllers\Controller` 对象中的 `response*` 所有方法。
