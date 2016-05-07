@@ -136,4 +136,43 @@ $kernel = $this->getApplication()->getKernel(); // AppKernel
 演示命令行: 
 
 ```php
+<?php
+
+namespace WelcomeBundle\Commands;
+
+use FastD\Console\Command\Command;
+use FastD\Console\IO\Input;
+use FastD\Console\IO\Output;
+
+class DemoCommand extends Command
+{
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return 'welcome:bundle';
+    }
+
+    /**
+     * @return void
+     */
+    public function configure()
+    {
+        $this
+            ->setArgument('name')
+            ->setOption('age')
+        ;
+    }
+
+    /**
+     * @param Input $input
+     * @param Output $output
+     * @return int
+     */
+    public function execute(Input $input, Output $output)
+    {
+        $output->write('welcome fastd. Argument = ' . $input->get('name') . ' Options = ' . $input->get('age'));
+    }
+}
 ```
