@@ -111,3 +111,5 @@ php bin/console welcome:bundle
 
 命令后要接上命令行的名字，也就是 `getName` 方法中返回的名字。就会执行命令的 `execute` 方法。
 
+输出: `welcome fastd`
+
