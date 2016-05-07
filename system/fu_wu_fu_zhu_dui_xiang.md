@@ -22,7 +22,7 @@ class Name
 }
 ```
 
-将 services 注册到容器中: 
+将 services 注册到容器中 (`app/application.php`): 
 
 ```php
 /**
