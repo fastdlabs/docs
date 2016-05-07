@@ -66,7 +66,7 @@ class Database extends Controller
 
 获取后数据库连接后，即可以通过数据库连接驱动进行数据库操作。
 
-##### ＃查询
+##### ＃执行数据库语句
 
 ```php
 public function databaseAction(Request $request)
