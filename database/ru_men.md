@@ -113,6 +113,16 @@ public function databaseAction(Request $request)
 `query($sql)` 方法的处理就是 `\PDO` 的 `prepare` 方法，因此在使用 `query` 方法的时候，其实是一个预处理的方式进行语句操作的，因此在操作方法的时候可以进行参数绑定。
 
 ```php
+public function databaseAction(Request $request)
+{
+    $write = $this->getDriver('write');
 
+    $write
+        ->query('select * from test where id = :id')
+        ->setParameters(['id' => 1])
+    ;
+    
+    return $this->render('database/drivers.twig');
+}
 ```
 
