@@ -7,5 +7,16 @@
 ##### ＃上传 
 
 ```php
+public function uploadAction(Request $request)
+{
+    $uploader = $request->getUploader();
+    $files = [];
+    if ($uploader->uploadTo($this->get('kernel')->getRootPath() . '/storage/files')) {
+        $files = $uploader->getUploadedFiles();
+    }
 
+    return $this->render('system/files.twig', [
+        'files' => $files
+    ]);
+}
 ```
