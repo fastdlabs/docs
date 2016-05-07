@@ -27,7 +27,7 @@ public function uploadAction(Request $request)
 
 ##### ＃扩展
 
-文件上传扩展相对简单，
+文件上传扩展相对简单，实现 `FastD\Http\File\Upload\ UploadInterface` 接口即可，实现对应方法。
 
 ```php
 
