@@ -35,3 +35,43 @@ route:
 
 ### ＃自定义命令行
 
+自定义命令行在每个目录 `Commands` 下，而且命令会自动扫描文件进行添加，因为命令在 cli 模式下执行，所以可以更少考虑扫描文件产生的效率问题，应该把问题都集中在业务代码处理上。
+
+```php
+<?php
+
+namespace WelcomeBundle\Commands;
+
+use FastD\Console\Command\Command;
+use FastD\Console\IO\Input;
+use FastD\Console\IO\Output;
+
+class DemoCommand extends Command
+{
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return 'welcome:bundle';
+    }
+
+    /**
+     * @return void
+     */
+    public function configure()
+    {
+        // TODO: Implement configure() method.
+    }
+
+    /**
+     * @param Input $input
+     * @param Output $output
+     * @return int
+     */
+    public function execute(Input $input, Output $output)
+    {
+        $output->write('welcome fastd');
+    }
+}
+```
