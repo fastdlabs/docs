@@ -82,3 +82,5 @@ Controller::get($name, array $parameters = [], $flag = false)
 
 ### ＃服务依赖注入
 
+因为服务也以来容器，所以支持依赖注入也是很容易的，因为本身容器就是个注入容器。
+
