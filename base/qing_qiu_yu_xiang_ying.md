@@ -113,3 +113,4 @@ $request->getSession($name);
 Controller::response($html, $status = 200, array $headers = []);
 ```
 
+观察源码不难发现，每个响应其实都是返回一个 `FastD\Http\Response` 基础对象。
