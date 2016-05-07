@@ -107,3 +107,4 @@ $request->getSession($name);
 
 ### 响应 (Response)
 
+每个请求对应一个响应，
