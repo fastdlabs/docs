@@ -123,3 +123,4 @@ php bin/console welcome:bundle
 
 ##### ＃参数和选项的区别
 
+参数是指命令行后，接受的参数数量，例如: ``
