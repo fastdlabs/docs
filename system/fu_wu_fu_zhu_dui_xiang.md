@@ -34,4 +34,10 @@ public function registerService(Container $container)
 }
 ```
 
+第一个是服务的名字，必填，第二个是服务的类名地址或者实例对象。
+
+在控制器中获取服务对象。
+
+
+
 ### 服务依赖注入 
