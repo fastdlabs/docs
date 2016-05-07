@@ -28,6 +28,38 @@ $memcached = Memcached::connect([
 
 ### ＃Redis
 
+```php
+use FastD\Storage\Redis\Redis;
+
+$redis = new Redis([
+    'host' => '',
+    'port' => '',
+    'auth' => ''
+]);
+
+$redis->set($name, $value, $ttl = 0);
+
+$redis->get($name);
+```
+
+获取 Redis 与原生对象，保持使用上的灵活。
+
+
+```php
+use FastD\Storage\Redis\Redis;
+
+$redis = Redis::connect([
+    'host' => '',
+    'port' => '',
+    'auth' => ''
+]);
+
+// 原生 redis 操作
+
+$redis->mset($name, $value);
+```
+
+
 ### ＃SSDB
 
 ```php
