@@ -27,4 +27,8 @@
 
 次数数据库无论有一个，还是多个，均使用二维数组进行定义。
 
-在控制器中，通过 ``
+在控制器中，通过 `FastD\Framework\Bundle\Controllers\Controller::getDriver($name)` 进行获取.
+
+```php
+
+```
