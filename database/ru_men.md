@@ -130,3 +130,4 @@ public function databaseAction(Request $request)
 
 参数绑定 `setParameters(array $parameters)` 接受多个参数，以二维数组的形式进行参数传递。
 
+
