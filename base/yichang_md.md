@@ -42,4 +42,4 @@ class NotFoundException extends HttpException
 
 继承的基类就是 `FastD\Debug\Exceptions\Http\HttpException`。
 
-继续根据实际情况实现对应方法: 
+继续根据实际情况实现对应方法: `getStatusCode`, `getHeaders`, `getContent`。
