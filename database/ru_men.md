@@ -68,3 +68,15 @@ class Database extends Controller
 
 ##### ＃query($sql) 
 
+```php
+public function databaseAction(Request $request)
+    {
+        $write = $this->getDriver('write');
+
+        $result = $write->query('show tables')->execute()->getAll();
+
+        return $this->render('database/drivers.twig' . [
+                'result' => $result
+            ]);
+    }
+```
