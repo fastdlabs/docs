@@ -119,7 +119,7 @@ php bin/console welcome:bundle
 
 在命令行类中，可以通过 `FastD\Console\Command\Command::setOption($name, $optional, $desc)` 设置选项，`FastD\Console\Command\Command::setArgument($name, $optional, $desc)` 设置参数。
 
-命令行配置需要在 `configure` 方法中进行配置初始化。其他地方无效。
+命令行配置需要在 `configure` 方法中进行配置初始化，其他地方无效。
 
 ##### ＃参数和选项的区别
 
