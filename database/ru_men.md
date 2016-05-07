@@ -1,4 +1,4 @@
-# 入门
+ro su guu gu# 入门
 
 ```php
 'database' => [
@@ -87,3 +87,4 @@ public function databaseAction(Request $request)
 
 如果是 `update` 操作，那么可以通过 `execute` 后执行 `getAffected` 获取影响的行数，`delete` 操作也一样。
 
+ru
