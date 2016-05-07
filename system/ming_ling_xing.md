@@ -106,5 +106,8 @@ route:
 会发现，自定义的命令会自动显示到列表当中 `welcome:bundle`，而每个模块下的命令并不是自动分组的，而是在实现 `getName` 方法的时候，通过返回值中的第一个参数进行分组，比如上述的 `welcome:bundle`, 那么就会按照 `welcome` 进行分组。
 
 ```php
-php bin/console
+php bin/console welcome:bundle
 ```
+
+命令后要接上命令行的名字，也就是 `getName` 方法中返回的名字。就会执行命令的 `execute` 方法。
+
