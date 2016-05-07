@@ -14,7 +14,7 @@
 * [数据库](database/shuju_ku_md.md)
 * [系统服务](system/xi_tong_fu_wu.md)
    * [命令行](system/ming_ling_xing.md)
-   * 测试套件
+   * [测试套件](system/ce_shi_tao_jian.md)
 * [扩展包](extensions/kuo_zhan_bao.md)
 * [组件](components/zujian_md.md)
 * [实战技术](practice/shizhan_ji_zhu_md.md)
