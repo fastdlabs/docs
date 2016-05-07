@@ -4,7 +4,7 @@ FastD 中采用了 [Twig](http://twig.sensiolabs.org/) 来作为模板引擎。�
 
 模板文件存放于目录: `{bundle}/Resources/views`
 
-### 渲染模板
+### ＃渲染模板
 
 如果在试图目录下存在 `test.twig` 文件，那么只需要在控制器中调用 `render` 方法即可对其进行渲染，减少 1.x 版本中过长的模板路径。
 
@@ -22,7 +22,7 @@ public function twigAction(Request $request)
 
 已经去处过长的父级目录地址。
 
-### 模板资源映射命令
+### ＃模板资源映射命令
 
 在模板中，可能需要用上很多的资源，如 css，js，images 等资源，每个地址都是一个静态的请求，所以建议这部分工作直接有 `nginx` 或者其他服务器进行接管。
 
@@ -34,7 +34,7 @@ php bin/console asset:install
 
 安装成功后，会在 `public` 目录下生成 `bundles/{bundle}` 软链接，按照不同的 bundle 名进行目录划分。
 
-### 模板预定义函数
+### ＃模板预定义函数
 
 ##### ＃url
 
@@ -64,7 +64,7 @@ format 为生成路由地址的格式，也就是后缀。
 
 如果有版本参数，则会追加版本尾巴: `?v=1.0.0`
 
-### 模板扩展
+### ＃模板扩展
 
 twig 自身支持模块扩展，具体请看文档: [Twig Extension](http://twig.sensiolabs.org/doc/advanced.html#creating-an-extension).
 
