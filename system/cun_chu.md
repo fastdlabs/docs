@@ -24,7 +24,7 @@ $memcached = Memcached::connect([
 ]);
 ```
 
-连接 `Memcached` 后，就可以使用原生的操作对其进行操作了，过程中没有对 `Memcached` 进行封装，所以使用上和扩展是一模一样，可以说，这就是扩展对象。
+连接 `Memcached` 后，就可以使用原生的操作对其进行操作了，过程中没有对 `Memcached` 进行封装，所以使用上和扩展是一模一样，可以说，这就是扩展对象(`\Memcached`)。
 
 ### ＃Redis
 
