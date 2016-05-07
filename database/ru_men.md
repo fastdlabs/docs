@@ -80,3 +80,5 @@ public function databaseAction(Request $request)
         ]);
 }
 ```
+
+`query($sql)` 方法是执行一个数据库语句操作，包括 `insert`，`select`，`update`，`delete`，
