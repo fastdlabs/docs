@@ -4,7 +4,7 @@
 
 控制器存放于目录: `{bundle}/Controllers`。
 
-### 基础控制器
+### ＃基础控制器
 
 框架中本身都是需要命名空间的，所以在框架中控制器和路由的关系密不可分，每个路由都需要对应一个控制器。
 
@@ -37,7 +37,7 @@ public function jsonAction()
 
 当访问执行此处代码的时候，就会响应对应的 `json` 内容到客户端。
 
-### 依赖注入
+### ＃依赖注入
 
 控制器还支持一个强大的依赖注入，注入实现方式是根据容器注入进行实现，具体容器注入可看： [Container](https://github.com/JanHuang/container)
 
@@ -55,7 +55,7 @@ public function diAction(\FastD\Http\Request $request)
 
 也可以注入自定义的对象，前提对象现需要定义好。
 
-### 跳转
+### ＃跳转
 
 跳转是一个只需要一行代码的工作。哈哈
 
@@ -71,7 +71,7 @@ public function redirectAction(Request $request)
 
 以上会直接跳转到上述定义的依赖注入控制器中。
 
-### 创建路由
+### ＃创建路由
 
 每个定义的路由都允许根据路由名来生成对应的路由地址。在上述跳转代码中，已经生成了一个路由地址。
 
