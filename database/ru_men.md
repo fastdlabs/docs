@@ -31,6 +31,8 @@
 
 在控制器中，通过 `FastD\Framework\Bundle\Controllers\Controller::getDriver($name)` 进行获取.
 
+##### ＃获取数据库连接驱动
+
 ```php
 <?php
 
