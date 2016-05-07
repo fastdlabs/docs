@@ -121,6 +121,8 @@ php bin/console welcome:bundle
 
 命令行配置需要在 `configure` 方法中进行配置初始化，其他地方无效。
 
+在 `execute` 方法中可以获取对应设置的变量，参数的顺序和你设置的顺序保持一致。
+
 ##### ＃参数和选项的区别
 
 参数是指命令行后，接受的参数数量。而选项，则是命令行后面需要使用 `-` 或者 `--` 进行配置的，我们称之为选项。
@@ -186,5 +188,5 @@ php bin/console welcome:bundle janhuang --age=18
 输出: 
 
 ```php
-
+welcome fastd. Argument = janhuang Options = 18
 ```
