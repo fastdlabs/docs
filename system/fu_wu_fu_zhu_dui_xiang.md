@@ -39,7 +39,35 @@ public function registerService(Container $container)
 在控制器中获取服务对象。
 
 ```php
+<?php
 
+namespace WelcomeBundle\Controllers;
+
+use FastD\Framework\Bundle\Controllers\Controller;
+use FastD\Http\Request;
+
+/**
+ * Class System
+ *
+ * @Route("/system")
+ *
+ * @package WelcomeBundle\Controllers
+ */
+class System extends Controller
+{
+    /**
+     * @Route("/services", name="system.services")
+     *
+     * @param Request $request
+     * @return \FastD\Http\Response
+     */
+    public function servicesAction(Request $request)
+    {
+        $name = $this->get('name');
+
+        return $this->response($name->getName());
+    }
+}
 ```
 
 ### 服务依赖注入 
