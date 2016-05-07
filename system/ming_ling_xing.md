@@ -113,3 +113,13 @@ php bin/console welcome:bundle
 
 输出: `welcome fastd`
 
+##### ＃设置命令行参数
+
+命令行是可以设置对应的命令参数的，例如系统内置的参数 `--env=dev`，如果没有 `env` 参数，则环境默认为 `dev` 环境执行。
+
+在命令行类中，可以通过 `FastD\Console\Command\Command::setOption($name, $optional, $desc)` 设置选项，`FastD\Console\Command\Command::setArgument($name, $optional, $desc)` 设置参数。
+
+命令行配置需要在 `configure` 方法中进行配置初始化。其他地方无效。
+
+##### ＃参数和选项的区别
+
