@@ -9,3 +9,20 @@
 ```php
 php bin/console 
 ```
+
+```php
+asset:
+ ➜ asset:install
+bundle:
+ ➜ bundle:generate
+config:
+ ➜ config:cache
+db:
+ ➜ db:revert
+ ➜ db:update
+production:
+ ➜ production:init
+route:
+ ➜ route:cache
+ ➜ route:dump
+```
