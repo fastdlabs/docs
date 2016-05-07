@@ -45,3 +45,15 @@ class NotFoundException extends HttpException
 继续根据实际情况实现对应方法: `getStatusCode`, `getHeaders`, `getContent`。
 
 异常中三个方法均可以自定义，因此在自定义异常模板的时候，需要使用文件读取的形式进行处理。
+
+```php
+/**
+ * @Route("/exception", name="base.exception")
+ *
+ * @throws NotFoundException
+ */
+public function exceptionAction()
+{
+    throw new NotFoundException(404);
+}
+```
