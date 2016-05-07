@@ -126,3 +126,7 @@ public function databaseAction(Request $request)
 }
 ```
 
+参数绑定此处会减少 PHP 本身的参数绑定中的 `:` 冒号，但其实在内部是会自动拼接 `:` 冒号。
+
+参数绑定 `setParameters(array $parameters)` 接受多个参数，以二维数组的形式进行参数传递。
+
