@@ -99,6 +99,8 @@ $request->getSession($name);
 
 框架的 session 本身提供两种存储模式，一是 PHP 默认的存储模式，另外一种则是可以注入 `Redis`, `Memcache` 进行存储的优化，而这里只需要简单地注入存储对象即可。
 
+注意: **sessionHandler需要在一开始初始化的时候进行注入，否则不生效，因为 session 在一个请求中只能初始化一次** 
+
 ```php
 
 ```
