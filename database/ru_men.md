@@ -30,6 +30,8 @@
 在控制器中，通过 `FastD\Framework\Bundle\Controllers\Controller::getDriver($name)` 进行获取.
 
 ```php
+<?php
+
 namespace WelcomeBundle\Controllers;
 
 use FastD\Framework\Bundle\Controllers\Controller;
@@ -55,7 +57,9 @@ class Database extends Controller
     {
         $write = $this->getDriver('write');
 
-        return $this->render('database/drivers.twig');
+        return $this->render('database/drivers.twig' . [
+                'write' => $write
+            ]);
     }
 }
 ```
