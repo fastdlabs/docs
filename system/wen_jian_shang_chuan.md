@@ -23,5 +23,7 @@ public function uploadAction(Request $request)
 
 文件上传成功后，通过 `getUploadedFile` 获取所有成功上传的文件，文件在上传的时候会生成一个唯一 `hash`，也就是说，如果已经上传过的文件，不会再重新上传多一张。
 
+文件返回一个文件对象，文件对象包含基础的属性获取，通过 `get*` 获取属性即可。
+
 ##### ＃扩展
 
