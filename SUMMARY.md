@@ -15,6 +15,7 @@
 * [系统服务](system/xi_tong_fu_wu.md)
    * [命令行](system/ming_ling_xing.md)
    * [测试套件](system/ce_shi_tao_jian.md)
+   * 存储
 * [扩展包](extensions/kuo_zhan_bao.md)
    * [HttpServerBundle](extensions/httpserverbundle.md)
 * [组件](components/zujian_md.md)
