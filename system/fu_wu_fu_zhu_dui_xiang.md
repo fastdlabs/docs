@@ -38,6 +38,8 @@ public function registerService(Container $container)
 
 在控制器中获取服务对象。
 
+```php
 
+```
 
 ### 服务依赖注入 
