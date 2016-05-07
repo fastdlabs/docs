@@ -57,3 +57,5 @@ public function exceptionAction()
     throw new NotFoundException(404);
 }
 ```
+
+包括如果是 API 接口类型的异常，可以定义响应头格式 `getHeaders` 方法，返回 `application/json` 文档类型头部即可。因此在 2.x 版本中异常的处理更为灵活方便。
