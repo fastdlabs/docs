@@ -111,18 +111,6 @@ class Agent
 
 ```php
 <?php
-/**
- * Created by PhpStorm.
- * User: janhuang
- * Date: 16/5/7
- * Time: 上午11:55
- * Github: https://www.github.com/janhuang
- * Coding: https://www.coding.net/janhuang
- * SegmentFault: http://segmentfault.com/u/janhuang
- * Blog: http://segmentfault.com/blog/janhuang
- * Gmail: bboyjanhuang@gmail.com
- * WebSite: http://www.janhuang.me
- */
 
 namespace WelcomeBundle\Controllers;
 
@@ -157,3 +145,5 @@ class System extends Controller
     }
 }
 ```
+
+结果和在方法中注入的 `FastD\Http\Request` 是一致的，并且他们的对象是同一个。对象在注入的时候会检查容器中是否存在该对象，如果存在，直接获取，不存在，实例化并保存容器中，避免再度实例化而损耗资源。
