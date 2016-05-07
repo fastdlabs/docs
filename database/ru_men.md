@@ -57,9 +57,9 @@ class Database extends Controller
     {
         $write = $this->getDriver('write');
 
-        return $this->render('database/drivers.twig' . [
-                'write' => $write
-            ]);
+        return $this->render('database/drivers.twig', [
+            'write' => $write
+        ]);
     }
 }
 ```
