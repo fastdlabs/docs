@@ -10,7 +10,7 @@
    * [模板](base/mo_ban.md)
    * [配置](base/pei_zhi.md)
    * [异常](base/yichang_md.md)
-   * [辅助服务](base/fu_wu_fu_zhu_dui_xiang.md)
+   * [辅助服务](base/fuwu_fu_zhu_dui_xiang_md.md)
 * [数据库](database/shuju_ku_md.md)
 * [系统服务](system/xi_tong_fu_wu.md)
    * [命令行](system/ming_ling_xing.md)
