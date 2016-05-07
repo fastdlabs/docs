@@ -9,13 +9,13 @@ cookie 操作与 PHP 本身操作保持一致，只是框架中的 cookie 是一
 **setCookie**
 
 ```php
-$request->setCookie($name, $value = null, $expire = 0, $path = '/', $domain = null, $secure = false, $httpOnly = true);
+\FastD\Http\Request::setCookie($name, $value = null, $expire = 0, $path = '/', $domain = null, $secure = false, $httpOnly = true);
 ```
 
 **getCookie**
 
 ```php
-$request->getCookie($name);
+\FastD\Http\Request::getCookie($name);
 ```
 
 ##### ＃session
@@ -25,13 +25,13 @@ session 操作和原生 PHP 操作也是非常类似的，所以在操作上是�
 **setSession**
 
 ```php
-$request->setSession($name, $value);
+\FastD\Http\Request::setSession($name, $value);
 ```
 
 **getSession**
 
 ```php
-$request->getSession($name);
+\FastD\Http\Request::getSession($name);
 ```
 
 具体代码可看演示示例.
