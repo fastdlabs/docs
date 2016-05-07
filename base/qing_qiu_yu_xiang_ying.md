@@ -113,4 +113,8 @@ $request->getSession($name);
 Controller::response($html, $status = 200, array $headers = []);
 ```
 
-观察源码不难发现，每个响应其实都是返回一个 `FastD\Http\Response` 基础对象。
+观察源码不难发现，每个响应其实都是返回一个 `FastD\Http\Response` 基础对象。其中包括 `render` 方法，`render` 方法中就是解析模板后内容后，将内容赋值到 `FastD\Http\Response` 中，然后返回整个对象。
+
+源码中有多个响应，其中 `response` 方法是根据请求的格式进行自动化响应。
+
+具体可看 ``
