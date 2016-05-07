@@ -5,6 +5,12 @@
 ### ＃Memcached
 
 ```php
+$memcached = new Memcached([
+    'host' => '11.11.11.44',
+    'port' => '11211'
+]);
+
+$memcached->set('age', '18');
 
 ```
 
