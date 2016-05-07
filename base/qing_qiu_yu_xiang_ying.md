@@ -97,7 +97,11 @@ $request->getSession($name);
 
 ##### ＃session 自定义存储
 
+框架的 session 本身提供两种存储模式，一是 PHP 默认的存储模式，另外一种则是可以注入 `Redis`, `Memcache` 进行存储的优化，而这里只需要简单地注入存储对象即可。
 
+```php
+
+```
 
 ### 响应 (Response)
 
