@@ -70,7 +70,7 @@ class System extends Controller
 }
 ```
 
-使用 `Controller::get($name, array $parameters = [])`
+使用 `Controller::get($name, array $parameters = [], $flag = false)` 进行获取，如果带有动态参数，需要在获取的时候传递，`$flag` 代表是否重新实例化对象，默认为单例管理。
 
 获取服务对象其实就是获取容器中的对象，因此可以解释为什么将服务注册到容器当中，因为获取服务对象，需要经过容器获取，这么一来就可以解析，容器就是管理所有对象的地方。
 
