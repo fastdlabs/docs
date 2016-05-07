@@ -25,7 +25,13 @@ class Name
 将 services 注册到容器中: 
 
 ```php
-
+/**
+ * @param Container $container
+ */
+public function registerService(Container $container)
+{
+    $container->set('name', WelcomeBundle\Services\Name::class);
+}
 ```
 
 ### 服务依赖注入 
