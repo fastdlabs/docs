@@ -29,3 +29,23 @@ $memcached = Memcached::connect([
 ### ＃Redis
 
 ### ＃SSDB
+
+```php
+use FastD\Storage\Ssdb\Ssdb;
+
+$ssdb = new Ssdb([
+    'host' => '',
+    'port' => ''
+]);
+```
+
+原生操作
+
+```php
+use FastD\Storage\Ssdb\Ssdb;
+
+$ssdb = Ssdb::connect([
+    'host' => '',
+    'port' => ''
+]);
+```
