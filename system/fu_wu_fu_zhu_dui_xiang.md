@@ -24,6 +24,8 @@ class Name
 
 将 services 注册到容器中: 
 
+```php
 
+```
 
 ### 服务依赖注入 
