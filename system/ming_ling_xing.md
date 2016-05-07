@@ -31,3 +31,5 @@ route:
  ➜ route:dump
 ```
 
+系统框架命令存在于 `fastd/framework` 中，源代码可以直接通过安装组件进行查看。
+
