@@ -55,7 +55,7 @@ $request->query->hasGet('name', 'janhuang');
 
 ##### ＃post参数
 
-post 参数只是在对象上的不一样而已，其他操作和 get 操作保持一致，对象名与 symfony 保持一致。
+post 参数只是在对象上的不一样而已，其他操作和 get 操作保持一致，对象名与 symfony 保持一致，post 数据对应 `$request->request` 属性，因此只需要修改属性即可。
 
 ```php
 $request->request->get($name);
