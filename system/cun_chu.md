@@ -11,8 +11,6 @@ $memcached = new Memcached([
     'host' => '',
     'port' => ''
 ]);
-
-$memcached->set('age', '18');
 ```
 
 实例化一个已经封装好的 `Memcached`，直接使用方法对 `memcached` 进行操作。
