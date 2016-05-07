@@ -9,7 +9,7 @@
    * [请求与响应](base/qing_qiu_yu_xiang_ying.md)
    * [模板](base/mo_ban.md)
    * [配置](base/pei_zhi.md)
-   * [异常](system/yi_chang.md)
+   * [异常](base/yichang_md.md)
 * [数据库](database/shuju_ku_md.md)
 * [系统服务](system/xi_tong_fu_wu.md)
    * [辅助服务](system/fu_wu_fu_zhu_dui_xiang.md)
