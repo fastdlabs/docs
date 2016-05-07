@@ -98,7 +98,7 @@ public function databaseAction(Request $request)
 {
     $write = $this->getDriver('write');
 
-    $pdo = $write->getPdo();
+    $pdo = $write->getPdo(); // 获取原生 \PDO 对象。
     
     return $this->render('database/drivers.twig');
 }
