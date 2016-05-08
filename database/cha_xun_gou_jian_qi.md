@@ -42,9 +42,7 @@ $queryBuilder->from('test', 't'); // FROM `test` AS `t`
 ##### ＃select
 
 ```php
-$queryBuilder->from('test')->select(); // select * from test;
-
-$queryBuilder->from('test', 't')->select();
+$queryBuilder->from('test')->select(); // select * from `test`;
 ```
 
 ##### ＃insert(array $data)
