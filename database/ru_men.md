@@ -172,3 +172,4 @@ public function getRepository($repository)
 $repository = new TestRepository($write);
 ```
 
+两者在原理实现上，效果是一致的。
