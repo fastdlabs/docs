@@ -40,4 +40,18 @@ $queryBuilder->from('test')->select();
 
 ##### ＃fields(array $fields)
 
-##### ＃
+##### ＃where(array $where)
+
+##### ＃limit($limit, $offset = null)
+
+##### ＃groupBy(array $groupBy)
+
+##### ＃orderBy(array $orderBy)
+
+##### ＃like(array $like)
+
+##### ＃notLike(array $like)
+
+##### ＃having(array $having)
+
+##### ＃join($table, $on, $type = 'LEFT')
