@@ -118,7 +118,7 @@ $driver->query('delete from table')->execute()->getAffected();
 $driver->query('select * from table where id = 1')->execute()->getOne();
 ```
 
-
+`getOne` 方法接受一个参数，即是在查询的时候获取制定字段的值。
 
 ##### ＃预处理
 
