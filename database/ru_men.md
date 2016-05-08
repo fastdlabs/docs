@@ -66,6 +66,8 @@ class Database extends Controller
     public function databaseAction(Request $request)
     {
         $write = $this->getDriver('write');
+        
+        return $this->render('database/drivers.twig');
     }
 }
 ```
