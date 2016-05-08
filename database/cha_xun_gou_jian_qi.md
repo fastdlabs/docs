@@ -11,5 +11,17 @@ $queryBuilder = Mysql::singleton();
 ##### ＃通过连接驱动获取查询构建器
 
 ```php
+/**
+ * @Route("/builder", name="database.builder")
+ *
+ * @return Response|string
+ */
+public function queryBuilderAction()
+{
+    $this->getDriver('read')->createQueryBuilder();
 
+    return $this->render('database/drivers.twig', [
+        'sql' => $sql,
+    ]);
+}
 ```
