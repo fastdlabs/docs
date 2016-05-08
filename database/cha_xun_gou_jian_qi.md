@@ -30,6 +30,12 @@ public function queryBuilderAction()
 
 查询构建器通过 `select`，`insert`，`update` 来获取生成语句。此处没有添加 `delete` 操作，因为再业务开发中，不应该使用物理删除操作，所以框架也不提供删除语句构建。
 
+##### ＃from($table, $alias = null)
+
+```php
+$queryBuilder->from('test')->select();
+```
+
 ##### ＃insert(array $data)
 
 ```php
@@ -48,11 +54,6 @@ $queryBuilder->from('test')->update(['name' => 'janhuang']);
 $queryBuilder->from('test')->update(['name' => 'janhuang'], ['id' => 1]);
 ```
 
-##### ＃from($table, $alias = null)
-
-```php
-$queryBuilder->from('test')->select();
-```
 
 `from` 方法接受两个参数，第二个是别名(`AS`)。
 
