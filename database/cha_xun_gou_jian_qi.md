@@ -20,7 +20,7 @@ FastD\Database\Query\Mysql::singleton();
  */
 public function queryBuilderAction()
 {
-    $this->getDriver('read')->createQueryBuilder();
+    $queryBuilder = $this->getDriver('read')->createQueryBuilder();
 
     return $this->render('database/drivers.twig', [
         'sql' => $sql,
@@ -30,5 +30,7 @@ public function queryBuilderAction()
 
 ##### ＃from
 
-
+```php
+$queryBuilder
+```
 
