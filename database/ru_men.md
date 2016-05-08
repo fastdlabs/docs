@@ -65,7 +65,7 @@ class Database extends Controller
      */
     public function databaseAction(Request $request)
     {
-        $write = $this->getDriver('write');
+        $driver = $this->getDriver('write');
         
         return $this->render('database/drivers.twig');
     }
@@ -79,9 +79,9 @@ class Database extends Controller
 ```php
 public function databaseAction(Request $request)
 {
-    $write = $this->getDriver('write');
+    $driver = $this->getDriver('write');
 
-    $result = $write->query('show tables')->execute()->getAll();
+    $result = $driver->query('show tables')->execute()->getAll();
 
     return $this->render('database/drivers.twig', [
         'result' => $result
