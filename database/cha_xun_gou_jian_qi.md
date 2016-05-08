@@ -6,3 +6,4 @@
 $queryBuilder = Mysql::singleton();
 ```
 
+获取 Mysql 查询构建器，其他方法中 `createQueryBuilder` 
