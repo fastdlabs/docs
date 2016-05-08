@@ -44,6 +44,8 @@ $queryBuilder->from('test')->select();
 $queryBuilder->fields(['id', 'name'])->from('test')->select();
 ```
 
+如果需要设置别名的话，则需要配置数组 `value` 值，该值就是字段名的别名.
+
 ##### ＃where(array $where)
 
 ##### ＃limit($limit, $offset = null)
