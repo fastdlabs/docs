@@ -36,13 +36,13 @@ public function queryBuilderAction()
 $queryBuilder->from('test');
 ```
 
+`from` 方法接受两个参数，第二个是别名(`AS`)。
+
 ##### ＃select
 
 ```php
 $queryBuilder->from('test')->select();
 ```
-
-`from` 方法接受两个参数，第二个是别名(`AS`)。
 
 ##### ＃insert(array $data)
 
