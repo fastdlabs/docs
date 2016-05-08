@@ -147,9 +147,9 @@ $driver
 ```php
 public function databaseAction(Request $request)
 {
-    $write = $this->getDriver('write');
+    $driver = $this->getDriver('write');
 
-    $pdo = $write->getPdo(); // 获取原生 \PDO 对象
+    $pdo = $driver->getPdo(); // 获取原生 \PDO 对象
     
     return $this->render('database/drivers.twig');
 }
