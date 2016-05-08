@@ -36,6 +36,8 @@ public function queryBuilderAction()
 $queryBuilder->from('test')->insert(['id' => 1]);
 ```
 
+
+
 ##### ＃update(array $data, array $where = [])
 
 ##### ＃from($table, $alias = null)
