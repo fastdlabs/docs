@@ -81,9 +81,9 @@ public function databaseAction(Request $request)
 
     $result = $write->query('show tables')->execute()->getAll();
 
-    return $this->render('database/drivers.twig' . [
-            'result' => $result
-        ]);
+    return $this->render('database/drivers.twig', [
+        'result' => $result
+    ]);
 }
 ```
 
