@@ -40,6 +40,10 @@ $queryBuilder->from('test')->select();
 
 ##### ＃fields(array $fields)
 
+```php
+
+```
+
 ##### ＃where(array $where)
 
 ##### ＃limit($limit, $offset = null)
