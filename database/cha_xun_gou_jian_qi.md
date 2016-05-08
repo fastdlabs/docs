@@ -33,7 +33,13 @@ public function queryBuilderAction()
 ##### ＃from($table, $alias = null)
 
 ```php
-$queryBuilder->from('test')->select();
+$queryBuilder->from('test');
+```
+
+##### ＃select
+
+```php
+
 ```
 
 `from` 方法接受两个参数，第二个是别名(`AS`)。
