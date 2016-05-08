@@ -103,6 +103,7 @@ $driver->query('insert into test (keys) values(values)')->execute()->getId();
 
 ```php
 $driver->query('update table set key = value')->execute()->getAffected();
+$driver->query('delete from table')->execute()->getAffected();
 ```
 
 如果是查询操作，那么可以通过 `getOne` 或者 `getAll` 分别获取 1 条纪录和多条记录结果集。
