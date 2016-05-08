@@ -145,7 +145,7 @@ $driver
 如果以上封装并不能满足你业务上的操作，可以通过获取原生 `\PDO`  对象进行操作，这样跟 PHP 操作是一样的，除非 PHP 也没法满足你的业务需求。
 
 ```php
-$pdo = $driver->getPdo(); // 获取原生 \PDO 对象
+$driver->getPdo(); // 获取原生 \PDO 对象
 ```
 
 ### ＃Repository
