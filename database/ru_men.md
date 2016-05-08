@@ -116,6 +116,7 @@ $driver->query('delete from table')->execute()->getAffected();
 
 ```php
 $driver->query('select * from table where id = 1')->execute()->getOne();
+$driver->query('select count(1) as total from table')->execute()->getOne('total');
 ```
 
 `getOne` 方法接受一个参数，即是在查询的时候获取制定字段的值。
