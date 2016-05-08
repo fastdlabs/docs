@@ -108,6 +108,10 @@ $driver->query('delete from table')->execute()->getAffected();
 
 如果是查询操作，那么可以通过 `getOne` 或者 `getAll` 分别获取 1 条纪录和多条记录结果集。
 
+```php
+
+```
+
 ##### ＃预处理
 
 `query($sql)` 方法的处理就是 `\PDO` 的 `prepare` 方法，因此在使用 `query` 方法的时候，其实是一个预处理的方式进行语句操作的，因此在操作方法的时候可以进行参数绑定。
