@@ -155,7 +155,7 @@ $driver->getPdo(); // 获取原生 \PDO 对象
 Repository 可以通过 `FastD\Database\DriverInterface::getRepository($name)`
 
 ```php
-$repository = $write->getRepository($name);
+$driver->getRepository($name);
 ```
 
 参数需要完整说明 Repository 的类名。
