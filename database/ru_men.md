@@ -140,7 +140,7 @@ Repository 可以通过 `FastD\Database\DriverInterface::getRepository($name)`
 $repository = $write->getRepository('WelcomeBundle:Repository:Test');
 ```
 
-参数需要完整说明 Repository 的地址。
+参数需要完整说明 Repository 的类名。
 
 
 
