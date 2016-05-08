@@ -137,7 +137,7 @@ public function databaseAction(Request $request)
 Repository 可以通过 `FastD\Database\DriverInterface::getRepository($name)`
 
 ```php
-$repository = $write->getRepository('WelcomeBundle:Repository:Test');
+$repository = $write->getRepository($name);
 ```
 
 参数需要完整说明 Repository 的类名。
