@@ -93,11 +93,15 @@ public function databaseAction(Request $request)
 
 `query($sql)` 方法是执行一个数据库语句操作，包括 `insert`，`select`，`update`，`delete`，而每个操作都有对应的结果获取。
 
+##### ＃insert
+
 如果是 `insert` 操作，那么可以通过 `execute` 后执行 `getId` 方法获取最后插入的 id，但是在分布式 id 发号器中并不适用。
 
 ```php
 $driver->query('insert into test (keys) values(values)')->execute()->getId();
 ```
+
+##### ＃update & delete
 
 如果是 `update` 操作，那么可以通过 `execute` 后执行 `getAffected` 获取影响的行数，`delete` 操作也一样。
 
@@ -106,11 +110,15 @@ $driver->query('update table set key = value')->execute()->getAffected();
 $driver->query('delete from table')->execute()->getAffected();
 ```
 
+##### ＃select
+
 如果是查询操作，那么可以通过 `getOne` 或者 `getAll` 分别获取 1 条纪录和多条记录结果集。
 
 ```php
-
+$driver->query('select * from table where id = 1')->execute()->getOne();
 ```
+
+
 
 ##### ＃预处理
 
