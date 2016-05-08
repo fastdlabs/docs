@@ -49,6 +49,7 @@ $queryBuilder->from('test')->select(); // select * from `test`;
 
 ```php
 $queryBuilder->from('test')->insert(['name' => 'janhuang']);
+// INSERT INTO `test` (`name`) values ('janhuang');
 ```
 
 ##### ＃update(array $data, array $where = [])
