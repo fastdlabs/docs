@@ -38,3 +38,5 @@ $queryBuilder->from('test')->select();
 
 `from` 方法接受两个参数，第二个是别名(`AS`)。
 
+##### ＃fields(array $fields)
+
