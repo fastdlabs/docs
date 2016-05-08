@@ -45,7 +45,7 @@ $queryBuilder->from('test')->update(['name' => 'janhuang']);
 如果需要添加更新条件
 
 ```php
-
+$queryBuilder->from('test')->update(['name' => 'janhuang'], ['id' => 1]);
 ```
 
 ##### ＃from($table, $alias = null)
