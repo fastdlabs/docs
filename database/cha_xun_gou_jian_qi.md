@@ -32,6 +32,10 @@ public function queryBuilderAction()
 
 ##### ＃insert(array $data)
 
+```php
+$queryBuilder->from('test')->select();
+```
+
 ##### ＃update(array $data, array $where = [])
 
 ##### ＃from($table, $alias = null)
