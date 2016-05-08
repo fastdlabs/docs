@@ -54,9 +54,6 @@ $queryBuilder->from('test')->update(['name' => 'janhuang']);
 $queryBuilder->from('test')->update(['name' => 'janhuang'], ['id' => 1]);
 ```
 
-
-`from` 方法接受两个参数，第二个是别名(`AS`)。
-
 ##### ＃fields(array $fields)
 
 ```php
