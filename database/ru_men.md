@@ -121,6 +121,10 @@ $driver->query('select count(1) as total from table')->execute()->getOne('total'
 
 `getOne` 方法接受一个参数，即是在查询的时候获取制定字段的值。
 
+```php
+
+```
+
 ##### ＃预处理
 
 `query($sql)` 方法的处理就是 `\PDO` 的 `prepare` 方法，因此在使用 `query` 方法的时候，其实是一个预处理的方式进行语句操作的，因此在操作方法的时候可以进行参数绑定。
