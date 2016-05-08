@@ -172,4 +172,4 @@ public function getRepository($repository)
 $repository = new TestRepository($write);
 ```
 
-两者在原理实现上，效果是一致的。
+两者在原理实现上，效果是一致的。因此两种方式均可以实现 `Repository` 的示例化。
