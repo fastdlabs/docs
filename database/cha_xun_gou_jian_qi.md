@@ -80,12 +80,19 @@ $queryBuilder->fields(['id', 'name'])->from('test')->select();
 
 ```php
 $queryBuilder->where(['id' => 1])->from('test')->select();
+// SELECT * FROM `test` WHERE `id` = 1;
 ```
 
 **AND**
 
 ```php
-$queryBuilder->where();
+$queryBuilder->where([
+    'AND' => [
+        'id' => 1,
+        'name' => 'jan'
+    ]
+])->from('test')->select();
+// SELECT * FROM `test` WHERE `id` = 1 AND `name` = 'jan';
 ```
 
 ##### ＃limit($limit, $offset = null)
