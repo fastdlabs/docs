@@ -93,21 +93,6 @@ public function databaseAction(Request $request)
 
 如果是查询操作，那么可以通过 `getOne` 或者 `getAll` 分别获取 1 条纪录和多条记录结果集。
 
-##### ＃PDO
-
-如果以上封装并不能满足你业务上的操作，可以通过获取原生 `\PDO`  对象进行操作，这样跟 PHP 操作是一样的，除非 PHP 也没法满足你的业务需求。
-
-```php
-public function databaseAction(Request $request)
-{
-    $write = $this->getDriver('write');
-
-    $pdo = $write->getPdo(); // 获取原生 \PDO 对象
-    
-    return $this->render('database/drivers.twig');
-}
-```
-
 ##### ＃预处理
 
 `query($sql)` 方法的处理就是 `\PDO` 的 `prepare` 方法，因此在使用 `query` 方法的时候，其实是一个预处理的方式进行语句操作的，因此在操作方法的时候可以进行参数绑定。
@@ -129,5 +114,20 @@ public function databaseAction(Request $request)
 参数绑定此处会减少 PHP 本身的参数绑定中的 `:` 冒号，但其实在内部是会自动拼接 `:` 冒号。
 
 参数绑定 `setParameters(array $parameters)` 接受多个参数，以二维数组的形式进行参数传递。
+
+##### ＃PDO
+
+如果以上封装并不能满足你业务上的操作，可以通过获取原生 `\PDO`  对象进行操作，这样跟 PHP 操作是一样的，除非 PHP 也没法满足你的业务需求。
+
+```php
+public function databaseAction(Request $request)
+{
+    $write = $this->getDriver('write');
+
+    $pdo = $write->getPdo(); // 获取原生 \PDO 对象
+    
+    return $this->render('database/drivers.twig');
+}
+```
 
 
