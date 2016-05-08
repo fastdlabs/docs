@@ -31,6 +31,6 @@ public function queryBuilderAction()
 ##### ＃from
 
 ```php
-$queryBuilder
+$queryBuilder->from('test')->select();
 ```
 
