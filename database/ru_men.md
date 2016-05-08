@@ -169,6 +169,6 @@ public function getRepository($repository)
 在构造方法构造时，传递对应的连接驱动，即可实现一个 `Repository`。
 
 ```php
-
+$repository = new TestRepository($write);
 ```
 
