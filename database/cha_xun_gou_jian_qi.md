@@ -33,13 +33,13 @@ public function queryBuilderAction()
 ##### ＃insert(array $data)
 
 ```php
-$queryBuilder->from('test')->insert(['id' => 1]);
+$queryBuilder->from('test')->insert(['name' => 'janhuang']);
 ```
 
 ##### ＃update(array $data, array $where = [])
 
 ```php
-
+$queryBuilder->from('test')->update(['name' => 'janhuang']);
 ```
 
 ##### ＃from($table, $alias = null)
