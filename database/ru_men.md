@@ -162,7 +162,7 @@ $driver->getRepository($name);
 
 除了 `getRepository` 方法获取之外，还可以直接实例化，因为 `getRepository` 方法最终仅是处理了 repository 实例化的工作.
 
-源码:
+`getRepository` 源码:
 
 ```php
 /**
@@ -187,7 +187,7 @@ public function getRepository($repository)
 在构造方法构造时，传递对应的连接驱动，即可实现一个 `Repository`。
 
 ```php
-$repository = new TestRepository($write);
+new XXXRepository($driver);
 ```
 
 两者在原理实现上，效果是一致的。因此两种方式均可以实现 `Repository` 的实例化。
