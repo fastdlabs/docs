@@ -36,5 +36,5 @@ public function queryBuilderAction()
 $queryBuilder->from('test')->select();
 ```
 
-`from` 方法接受两个参数，第二个是别名(`AS`)，通过 
+`from` 方法接受两个参数，第二个是别名(`AS`)。
 
