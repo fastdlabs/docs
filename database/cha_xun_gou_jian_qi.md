@@ -33,7 +33,7 @@ public function queryBuilderAction()
 ##### ＃insert(array $data)
 
 ```php
-$queryBuilder->from('test')->select();
+$queryBuilder->from('test')->insert(['id' => 1]);
 ```
 
 ##### ＃update(array $data, array $where = [])
