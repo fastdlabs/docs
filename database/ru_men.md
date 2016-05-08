@@ -37,7 +37,7 @@ FastD 框架让数据库链接和操作变得相对简单，目前框架提供�
 
 在控制器中，通过 `FastD\Framework\Bundle\Controllers\Controller::getDriver($name)` 进行获取.
 
-##### ＃获取数据库连接驱动
+### ＃获取数据库连接驱动
 
 ```php
 <?php
@@ -76,7 +76,7 @@ class Database extends Controller
 
 获取后数据库连接后，即可以通过数据库连接驱动进行数据库操作。
 
-##### ＃执行数据库语句
+### ＃执行数据库语句
 
 ```php
 public function databaseAction(Request $request)
@@ -121,7 +121,7 @@ public function databaseAction(Request $request)
 
 参数绑定 `setParameters(array $parameters)` 接受多个参数，以二维数组的形式进行参数传递。
 
-##### ＃PDO
+### ＃PDO
 
 如果以上封装并不能满足你业务上的操作，可以通过获取原生 `\PDO`  对象进行操作，这样跟 PHP 操作是一样的，除非 PHP 也没法满足你的业务需求。
 
@@ -136,7 +136,7 @@ public function databaseAction(Request $request)
 }
 ```
 
-##### ＃Repository
+### ＃Repository
 
 数据库 `Repository` 相当于其他开发框架中的 `Model`，主要作用是用于数据处理和包装，这就是为什么要将数据包装到模型中，为了提高程序的可读性，灵活性，在控制器中是要禁止处理对应的 SQL 语句处理。
 
