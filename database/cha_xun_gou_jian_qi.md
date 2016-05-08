@@ -8,7 +8,7 @@
 FastD\Database\Query\Mysql::singleton();
 ```
 
-获取 Mysql 查询构建器，其他方法 `createQueryBuilder` 中，原理也是通过 `Mysql::singleton` 获取查询构建器，因此通过 `Mysql::singleton` 即可获取最原始的构建器。
+获取 `Mysql` 查询构建器，其他方法 `createQueryBuilder` 中，原理也是通过 `Mysql::singleton` 获取查询构建器，因此通过 `Mysql::singleton` 即可获取最原始的构建器。
 
 ### ＃获取查询构建器
 
