@@ -133,6 +133,8 @@ $driver->query('select * from table')->execute()->getAll();
 $driver
     ->query('select * from test where id = :id')
     ->setParameters(['id' => 1])
+    ->execute()
+    ->getOne()
 ;
 ```
 
