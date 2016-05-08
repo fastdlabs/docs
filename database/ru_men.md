@@ -142,5 +142,13 @@ $repository = $write->getRepository($name);
 
 参数需要完整说明 Repository 的类名。
 
+除了 `getRepository` 方法获取之外，还可以直接实例化，因为 `getRepository` 方法最终仅是处理了 repository 实例化的工作.
+
+源码:
+
+```php
+
+```
+
 
 
