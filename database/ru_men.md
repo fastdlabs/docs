@@ -1,6 +1,12 @@
 # 入门
 
-FastD 框架让数据库链接和操作变得相对简单，
+FastD 框架让数据库链接和操作变得相对简单，目前框架提供的数据库支持仅是: MySQL，因为精力和能力有限，暂时仅支持MySQL，未来看发展需求和精力，适当扩展。
+
+数据库配置文件: `app/config/config_*.php`
+
+模块配置文件: `{bundle}/Resources/config/config.php`
+
+
 
 ##### ＃数据库配置规范:
 
