@@ -56,12 +56,14 @@ $queryBuilder->from('test')->insert(['name' => 'janhuang']);
 
 ```php
 $queryBuilder->from('test')->update(['name' => 'janhuang']);
+// UPDATE `test` SET `name` = 'janhuang';
 ```
 
 如果需要添加更新条件
 
 ```php
 $queryBuilder->from('test')->update(['name' => 'janhuang'], ['id' => 1]);
+// UPDATE `test` SET `name` = 'janhuang' WHERE `id` = 1;
 ```
 
 ##### ＃fields(array $fields)
