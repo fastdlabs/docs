@@ -72,7 +72,7 @@ $queryBuilder->fields(['id', 'name'])->from('test')->select();
 
 ##### ＃where(array $where)
 
-普通的
+普通条件查询
 
 ```php
 $queryBuilder->where(['id' => 1])->from('test')->select();
