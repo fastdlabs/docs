@@ -73,7 +73,7 @@ $queryBuilder->fields(['id', 'name'])->from('test')->select();
 ##### ＃where(array $where)
 
 ```php
-
+$queryBuilder->where(['id' => 1])->from('test')->select();
 ```
 
 ##### ＃limit($limit, $offset = null)
