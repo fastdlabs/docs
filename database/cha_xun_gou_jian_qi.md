@@ -5,7 +5,7 @@
 **注意: 查询构建器是一个独立，不依赖于数据库连接驱动的独立对象，因此生成出来的语句，需要传递到连接驱动中才可以真正发挥作用。**
 
 ```php
-$queryBuilder = Mysql::singleton();
+FastD\Database\Query\Mysql::singleton();
 ```
 
 获取 Mysql 查询构建器，其他方法 `createQueryBuilder` 中，原理也是通过 `Mysql::singleton` 获取查询构建器，因此通过 `Mysql::singleton` 即可获取最原始的构建器。
