@@ -96,10 +96,14 @@ public function databaseAction(Request $request)
 如果是 `insert` 操作，那么可以通过 `execute` 后执行 `getId` 方法获取最后插入的 id，但是在分布式 id 发号器中并不适用。
 
 ```php
-
+$driver->query('insert into test (keys) values(values)')->execute()->getId();
 ```
 
 如果是 `update` 操作，那么可以通过 `execute` 后执行 `getAffected` 获取影响的行数，`delete` 操作也一样。
+
+```php
+$driver->query('update table set key = value')->execute()->affected();
+```
 
 如果是查询操作，那么可以通过 `getOne` 或者 `getAll` 分别获取 1 条纪录和多条记录结果集。
 
