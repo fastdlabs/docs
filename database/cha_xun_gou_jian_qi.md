@@ -78,6 +78,12 @@ $queryBuilder->fields(['id', 'name'])->from('test')->select();
 $queryBuilder->where(['id' => 1])->from('test')->select();
 ```
 
+**AND**
+
+```php
+$queryBuilder->where();
+```
+
 ##### ＃limit($limit, $offset = null)
 
 ##### ＃groupBy(array $groupBy)
