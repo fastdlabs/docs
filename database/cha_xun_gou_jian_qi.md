@@ -41,7 +41,7 @@ $queryBuilder->from('test')->select();
 ##### ＃fields(array $fields)
 
 ```php
-
+$queryBuilder->fields(['id', 'name'])->from('test')->select();
 ```
 
 ##### ＃where(array $where)
