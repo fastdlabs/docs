@@ -132,5 +132,9 @@ public function databaseAction(Request $request)
 
 ##### ＃Repository
 
+数据库 `Repository` 相当于其他开发框架中的 `Model`，主要作用是用于数据处理和包装，这就是为什么要将数据包装到模型中，为了提高程序的可读性，灵活性，在控制器中是要禁止处理对应的 SQL 语句处理。
 
+```php
+
+```
 
