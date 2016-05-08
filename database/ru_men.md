@@ -125,9 +125,9 @@ $driver->query('select count(1) as total from table')->execute()->getOne('total'
 $driver->query('select * from table')->execute()->getAll();
 ```
 
-##### ＃预处理
+### ＃预处理
 
-`query($sql)` 方法的处理就是 `\PDO` 的 `prepare` 方法，因此在使用 `query` 方法的时候，其实是一个预处理的方式进行语句操作的，因此在操作方法的时候可以进行参数绑定。
+`query($sql)` 方法的处理就是 `\PDO` 的 `prepare` 方法，因此在使用 `query` 方法的时候，其实是一个预处理的方式进行语句操作的，因此在操作方法的时候是可以进行参数绑定的。
 
 ```php
 public function databaseAction(Request $request)
