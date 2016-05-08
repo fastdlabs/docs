@@ -72,6 +72,10 @@ $queryBuilder->fields(['id', 'name'])->from('test')->select();
 
 ##### ＃where(array $where)
 
+```php
+
+```
+
 ##### ＃limit($limit, $offset = null)
 
 ##### ＃groupBy(array $groupBy)
