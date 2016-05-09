@@ -27,6 +27,12 @@ $page->getTotalPage(); // 3
 ##### ＃获取当前页
 
 ```php
+$page->getCurrentPage(); // 2
+```
+
+##### ＃获取上下一页
+
+```php
 
 ```
 
