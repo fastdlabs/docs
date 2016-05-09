@@ -142,7 +142,7 @@ public function servicesAction(Request $request)
     'name' => $name,
     'agent' => $agent,
   ]);
-  }
+ }
 }
 ```
 
