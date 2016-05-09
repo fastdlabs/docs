@@ -15,8 +15,13 @@ php bin/console bundle:generate
 bundle 目录结构如下:
 
 ```php
-Commands
-Controllers
-Exceptions
-Extensions
+Bundle
+    Commands
+    Controllers
+    Exceptions
+    Extensions
+    Resources
+    Services
+    Testing
+    Bundle.php
 ```
