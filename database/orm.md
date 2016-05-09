@@ -80,6 +80,16 @@ prefix: fd_ # 默认留空
 suffix: # 默认留空
 ```
 
+存储引擎:
 
+```yml
+engine: innodb # 默认是 InnoDB
+```
+
+存储编码:
+
+```yml
+
+```
 
 ##### ＃orm:revert
