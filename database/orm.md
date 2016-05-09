@@ -114,7 +114,7 @@ length: 10 # 字段长度
 default: 0 # 默认值
 comment: '' # 注释，说明
 unsigned: false # 是否允许为负数
-key: '' # 数据库字段索引 索引目前支持3种
+key: '' # 数据库字段索引 索引目前支持3种 UNIQUE、PRIMARY、INDEX
 nullable: false # 是否允许为空，默认不允许为空
 ```
 
