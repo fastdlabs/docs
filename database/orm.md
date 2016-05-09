@@ -230,5 +230,17 @@ Repository 在生成之后是一个空白的对象，内部仅有预定义的基
 源码: 
 
 ```php
-
+foreach ($params as $name => $value) {
+    if (array_key_exists($name, static::FIELDS)) {
+        $field = static::FIELDS[$name];
+        // for entity
+        $method = 'set' . ucfirst($name);
+        if (method_exists($this, $method)) {
+            $this->$method($value);
+        }
+        // for repository
+        $this->data[$field['name']] = ':' . $name;
+        $this->params[$name] = $value;
+    }
+}
 ```
