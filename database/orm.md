@@ -158,6 +158,10 @@ Building from bundle:   WelcomeBundle\WelcomeBundle     ["Resources/orm"]
 
 如果你的数据库当中已经存在对应的数据表，但是又不想手动添加文件，那么这个时候，命令 `orm:revert` 就可以帮助到你，减少这一个重复的操作。
 
+例如已经存在的数据库 `test` 中存在 `test, fd_demo` 两个数据表，执行命令: 
 
+```php
+php bin/console orm:revert read
+```
 
 ##### ＃对象关系模型
