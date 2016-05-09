@@ -16,4 +16,8 @@ BundleX 是用于开发框架扩展包的一个小组件，其工作主要是自
 composer init
 ```
 
-添加依赖: ``
+添加依赖: 
+
+```json
+"fastd/bundlex": "2.0.x-dev"
+```
