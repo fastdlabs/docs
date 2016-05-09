@@ -99,4 +99,4 @@ php bin/console bundle:generate name
 
 ### ＃安装扩展依赖
 
-如果扩展包是提交到 `packagist` 那么就好办了。
+如果扩展包是提交到 `packagist` 的话，那么在 `composer.json` 
