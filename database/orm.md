@@ -43,7 +43,7 @@ orm:
 命令参数: 
 
 ```php
-php bin/console orm:update 
+php bin/console orm:update {connection} {--bundle} {debug}
 ```
 
 建立数据表配置文件: 
