@@ -10,4 +10,8 @@
 FastD\Database\Query\Paging\Pagination::__construct($total, $currentPage = 1, $showList = 25, $showPage = 5);
 ```
 
+```php
+
+```
+
 ### ＃自动查询分页
