@@ -4,7 +4,7 @@
 * [安装](install/an_zhuang.md)
 * [演示](showcase/yan_shi.md)
 * [基础](base/ji_chu.md)
-   * 模块
+   * [模块](base/mo_kuai.md)
    * [路由](base/lu_you.md)
    * [控制器](base/kong_zhi_qi.md)
    * [请求与响应](base/qing_qiu_yu_xiang_ying.md)
