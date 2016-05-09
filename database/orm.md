@@ -65,7 +65,7 @@ fields:
 表名(必填): 
 
 ```yml
-table: demo # 默认留空
+table: demo
 ```
 
 前缀: 
