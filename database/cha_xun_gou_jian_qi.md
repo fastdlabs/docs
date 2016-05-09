@@ -115,7 +115,10 @@ $queryBuilder->from('test')->limit(5,5)->select();
 
 查询分组
 
-
+```php
+$queryBuilder->from('test')->groupBy(['name'])->select();
+// SELECT * FROM `base` GROUP BY `name`;
+```
 
 ##### ＃orderBy(array $orderBy)
 
