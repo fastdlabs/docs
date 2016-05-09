@@ -49,26 +49,26 @@ use FastD\Http\Request;
 use FastD\Http\Response;
 
 /**
-* Class Database
-*
-* @Route("/database")
-*
-* @package WelcomeBundle\Controllers
-*/
+ * Class Database
+ *
+ * @Route("/database")
+ *
+ * @package WelcomeBundle\Controllers
+ */
 class Database extends Controller
 {
-/**
-* @Route("/driver", name="database.driver")
-*
-* @param Request $request
-* @return Response
-*/
-public function databaseAction(Request $request)
-{
-$driver = $this->getDriver('write');
+    /**
+     * @Route("/driver", name="database.driver")
+     *
+     * @param Request $request
+     * @return Response
+     */
+    public function databaseAction(Request $request)
+    {
+        $driver = $this->getDriver('write');
 
-return $this->render('database/drivers.twig');
-}
+        return $this->render('database/drivers.twig');
+    }
 }
 ```
 
