@@ -138,6 +138,7 @@ $queryBuilder->from('test')->orderBy([
 
 ```php
 
+// SELECT * FROM `base` WHERE `name` LIKE '%jan%';
 ```
 
 ##### ＃notLike(array $like)
