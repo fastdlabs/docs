@@ -148,8 +148,6 @@ Building from bundle:   WelcomeBundle\WelcomeBundle     ["Resources/orm"]
 
 ```
 
-命令最重会生成一个 `ORM` 目录，目录中按照数据库区分不同的对象模型。
-
 开启 debug 模式后，执行的语句会在终端显示，用于查看具体语句是否正确。
 
 当选项 `--create` 存在时，才会执行对应的新建表操作。否责会执行表更新操作。
