@@ -126,23 +126,23 @@ use FastD\Http\Request;
 */
 class System extends Controller
 {
-/**
-* @Route("/services", name="system.services")
-*
-* @param Request $request
-* @return \FastD\Http\Response
-*/
-public function servicesAction(Request $request)
-{
-  $name = $this->get('name')->getName();
+  /**
+   * @Route("/services", name="system.services")
+   *
+   * @param Request $request
+   * @return \FastD\Http\Response
+   */
+  public function servicesAction(Request $request)
+  {
+    $name = $this->get('name')->getName();
 
-  $agent = $this->get('agent')->getAgent();
+    $agent = $this->get('agent')->getAgent();
 
-  return $this->render('system/services.twig', [
-    'name' => $name,
-    'agent' => $agent,
-  ]);
- }
+    return $this->render('system/services.twig', [
+      'name' => $name,
+      'agent' => $agent,
+    ]);
+   }
 }
 ```
 
