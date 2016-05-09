@@ -43,7 +43,7 @@ orm:
 命令参数: 
 
 ```php
-php bin/console orm:update {connection} {--bundle=WelcomeBundle} {debug}
+php bin/console orm:update {connection} {--bundle} {debug}
 ```
 
 建立数据表配置文件: 
@@ -129,7 +129,7 @@ nullable: false # 是否允许为空，默认不允许为空
 配置完成后，执行命令: 
 
 ```php
-
+php bin/console write --bundle=WelcomeBundle --debug
 ```
 
 ##### ＃orm:revert
