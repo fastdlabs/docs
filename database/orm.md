@@ -62,8 +62,10 @@ fields:
 
 字段解释: 
 
-```yml
+表名: 
 
+```yml
+table: demo
 ```
 
 ##### ＃orm:revert
