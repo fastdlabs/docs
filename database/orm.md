@@ -178,14 +178,18 @@ Entity 实体在构造的时候接受两个参数，一个是查询条件，第�
 
 实体对象在参数 (null) 的时候需要执行的是 `save` 方法，而不是查询方法。`save` 方法会自动根据查询条件，更新的内容执行 `insert` 或者 `update` 操作。
 
+##### ＃新增记录
+
 ```php
 $demo = new Demo(null, $this->getDriver('write'));
 $demo->setId('1');
 ```
 
-返回 0，因为数据表非 id 自增长，因为没有返回增长 id。
+##### ＃更新记录
 
-查询
+```php
+
+```
 
 ##### ＃Repository 模型
 
