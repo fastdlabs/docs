@@ -75,7 +75,7 @@ composer init
 }
 ```
 
-**记得添加 "config": {"bin-dir": "bin"}**
+**记得添加 "config": {"bin-dir": "bin"}，否则脚本将不会同步到 bin 目录**
 
 初始化完成 `composer.json` 文件，开始安装 `composer install`。
 
