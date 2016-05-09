@@ -74,3 +74,5 @@ composer init
     ...
 }
 ```
+
+初始化完成 `composer.json` 文件，开始安装 `composer install`
