@@ -83,6 +83,8 @@ $queryBuilder->where(['id' => 1])->from('test')->select();
 // SELECT * FROM `test` WHERE `id` = 1;
 ```
 
+
+
 **AND**
 
 ```php
@@ -94,8 +96,6 @@ $queryBuilder->where([
 ])->from('test')->select();
 // SELECT * FROM `test` WHERE `id` = 1 AND `name` = 'jan';
 ```
-
-****
 
 ##### ＃limit($limit, $offset = null)
 
