@@ -115,6 +115,7 @@ $queryBuilder->from('test')->limit(5,5)->select();
 
 ```php
 $queryBuilder->from('test')->orderBy(['id' => 'DESC'])->select();
+// SELECT * FROM `base` ORDER BY `name` DESC,`age` DESC;
 ```
 
 ##### ＃orderBy(array $orderBy)
