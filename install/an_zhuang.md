@@ -1,6 +1,6 @@
 # 安装
 
-### 对运行环境的要求
+### ＃对运行环境的要求
 
 FastD 对运行环境是有一定要求的。
 
@@ -10,7 +10,7 @@ FastD 对运行环境是有一定要求的。
 
 确保以上环境要求之后就可以安装 FastD 了。
 
-### Composer 
+### ＃Composer 
 
 FastD 利用 [Composer](http://getcomposer.org) 来管理其自身的依赖包。因此，在使用 FastD 之前，请务必确保在你的机器上已经安装了 `Composer `。
 
@@ -18,13 +18,13 @@ FastD 利用 [Composer](http://getcomposer.org) 来管理其自身的依赖包�
 composer create-project fastd fastd/fastd
 ```
 
-### 环境配置
+### ＃环境配置
 
 保证目录在当前进程的读写权限，特别是 `app/storage` 的读写权限，因为此目录是用于数据缓存读写的。
 
 其次要配置好 php.ini 时区。
 
-#### Nginx
+##### ＃Nginx
 
 ```
 server
@@ -52,7 +52,7 @@ server
 
 注意 `{}` 里面使用与配置你该有的域名及入口文件的，请对应修改自己服务器的配置。
 
-#### Apache
+##### ＃Apache
 
 项目的 `public` 目录下已经存在了 `.htaccess` 文件了，所以 `apache` 只需要开启 `rewrite_mod` 扩展即可 
 
