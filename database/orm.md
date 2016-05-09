@@ -40,7 +40,7 @@ orm:
 
 建立数据表配置文件: 
 
-```yaml
+```yml
 table: demo
 prefix: fd_
 suffix: ''
