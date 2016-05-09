@@ -39,5 +39,21 @@ orm:
 建立数据表配置文件: 
 
 ```yaml
+table: demo
+prefix: fd_
+suffix: ''
+cache: ''
+engine: innodb
+charset: utf8
+fields:
+    id:
+        name: id
+        type: int
+        length: 10
+        default: 0
+        comment: ''
+        unsigned: false
+        key: ''
+        nullable: false
 
 ```
