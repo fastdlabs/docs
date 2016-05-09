@@ -4,6 +4,7 @@
 * [安装](install/an_zhuang.md)
 * [演示](showcase/yan_shi.md)
 * [基础](base/ji_chu.md)
+   * 模块
    * [路由](base/lu_you.md)
    * [控制器](base/kong_zhi_qi.md)
    * [请求与响应](base/qing_qiu_yu_xiang_ying.md)
@@ -11,7 +12,6 @@
    * [配置](base/pei_zhi.md)
    * [异常](base/yichang_md.md)
    * [辅助服务](base/fuwu_fu_zhu_dui_xiang_md.md)
-   * 模块
 * [系统服务](system/xi_tong_fu_wu.md)
    * [会话(session 待完善)](system/hui_hua.md)
    * [文件上传(待完善)](system/wen_jian_shang_chuan.md)
