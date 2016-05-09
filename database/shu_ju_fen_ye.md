@@ -51,3 +51,10 @@ $page->getPageList(); // 1, 2, 3
 FastD\Database\Query\Paging\QueryPagination::__construct(Repository $repository, $currentPage = 1, $showList = 25, $showPage = 5)
 ```
 
+示例: 
+
+```php
+$repository = new BaseRepository($this->createDriver());
+
+$page = new QueryPagination($repository, 1);
+```
