@@ -36,6 +36,16 @@ composer init
     "require-dev": {
         "fastd/bundlex": "~2.0"
     }
+    "autoload": {
+        "psr-4": {
+            "": "src"
+        }
+    },
+    "autoload-dev": {
+        "files": [
+            "app/application.php"
+        ]
+    },
     ...
 }
 ```
