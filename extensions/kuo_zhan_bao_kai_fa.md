@@ -104,5 +104,19 @@ php bin/console bundle:generate name
 如果扩展包是私有的，需要在 `composer.json` 添加 `repositories` 配置。
 
 ```json
-
+{
+  ...
+  "repositories": [
+      {
+          "type": "git",
+          "url": "xxx.git"
+      }
+  ],
+  "require": {
+      "name": "version"
+  }
+  ...
+}
 ```
+
+安装完成后，实例化模块引导对象到 `app/application.php` 即可。
