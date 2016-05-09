@@ -132,4 +132,6 @@ nullable: false # 是否允许为空，默认不允许为空
 php bin/console write --bundle=WelcomeBundle --debug
 ```
 
+
+
 ##### ＃orm:revert
