@@ -230,6 +230,12 @@ Repository 在生成之后是一个空白的对象，内部仅有预定义的基
 源码: 
 
 ```php
+return $this->bindParams(
+            $request->isMethod('get') ? $request->query->all() : $request->request->all()
+        );
+```
+
+```php
 foreach ($params as $name => $value) {
     if (array_key_exists($name, static::FIELDS)) {
         $field = static::FIELDS[$name];
