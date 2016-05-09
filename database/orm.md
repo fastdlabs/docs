@@ -219,3 +219,6 @@ Repository 在生成之后是一个空白的对象，内部仅有预定义的基
 
 数据对象模型支持数据绑定，其实就是参数自动完成功能。
 
+```php
+\FastD\Database\Orm\Entity::bindRequest(\FastD\Http\Request $request);
+```
