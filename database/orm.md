@@ -222,3 +222,13 @@ Repository 在生成之后是一个空白的对象，内部仅有预定义的基
 ```php
 \FastD\Database\Orm\Entity::bindRequest(\FastD\Http\Request $request);
 ```
+
+传递 `\FastD\Http\Request` 对象，程序自动判断请求方法，进行参数绑定。
+
+其内部原理就是一个 `foreach` 循环。
+
+源码: 
+
+```php
+
+```
