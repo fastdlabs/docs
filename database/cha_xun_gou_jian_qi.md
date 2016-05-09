@@ -137,10 +137,10 @@ $queryBuilder->from('test')->orderBy([
 模糊匹配查询
 
 ```php
-$queryBuilder->from('test')->notLike([
+$queryBuilder->from('test')->like([
     'name' => '%jan%'
 ])->select();
-// SELECT * FROM `base` WHERE `name` NOT LIKE '%jan%';
+// SELECT * FROM `base` WHERE `name` LIKE '%jan%';
 ```
 
 ##### ＃notLike(array $like)
@@ -148,7 +148,10 @@ $queryBuilder->from('test')->notLike([
 模糊匹配查询
 
 ```php
-
+$queryBuilder->from('test')->notLike([
+    'name' => '%jan%'
+])->select();
+// SELECT * FROM `base` WHERE `name` NOT LIKE '%jan%';
 ```
 
 ##### ＃having(array $having)
