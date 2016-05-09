@@ -178,7 +178,6 @@ Entity 实体在构造的时候接受两个参数，一个是查询条件，第�
 
 ```php
 $demo = new Demo(null, $this->getDriver('write'));
-
 $demo->setId('1');
 ```
 
