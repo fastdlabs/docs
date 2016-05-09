@@ -62,10 +62,21 @@ fields:
 
 字段解释: 
 
-表名: 
+表名(必填): 
 
 ```yml
-table: demo
+table: demo # 默认留空
 ```
 
+前缀: 
+
+```yml
+prefix: fd_ # 默认留空
+```
+
+后缀: 
+
+```yml
+suffix: # 默认留空
+```
 ##### ＃orm:revert
