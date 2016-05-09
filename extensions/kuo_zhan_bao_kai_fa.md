@@ -6,4 +6,4 @@ BundleX 是用于开发框架扩展包的一个小组件，其工作主要是自
 
 ### ＃初始化 bundle
 
-
+我们建立的 bundle 如果需要添加到 `packagist` 的话，大家可以参考这一篇文章: [](http://rivsen.github.io/post/how-to-publish-package-to-packagist-using-github-and-composer-step-by-step/)
