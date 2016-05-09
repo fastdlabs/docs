@@ -56,3 +56,4 @@ fields:
         nullable: false
 ```
 
+目前数据表配置仅支持 `yml`
