@@ -53,4 +53,24 @@ composer init
 添加 config:
 
 ```json
+{
+    ...
+    "require-dev": {
+        "fastd/bundlex": "~2.0"
+    }
+    "autoload": {
+        "psr-4": {
+            "": "src"
+        }
+    },
+    "autoload-dev": {
+        "files": [
+            "app/application.php"
+        ]
+    },
+    "config": {
+        "bin-dir": "bin"
+    }
+    ...
+}
 ```
