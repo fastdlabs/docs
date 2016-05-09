@@ -42,7 +42,6 @@ orm:
 table: demo
 prefix: fd_
 suffix: ''
-cache: ''
 engine: innodb
 charset: utf8
 fields:
@@ -55,5 +54,4 @@ fields:
         unsigned: false
         key: ''
         nullable: false
-
 ```
