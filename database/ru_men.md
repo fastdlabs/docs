@@ -10,26 +10,26 @@ FastD 框架让数据库链接和操作变得相对简单，目前框架提供�
 
 ```php
 'database' => [
-'write' => [
-'database_type' => 'mysql',
-'database_host' => '127.0.0.1',
-'database_port' => 3306,
-'database_user' => 'root',
-'database_pwd' => '123456',
-'database_charset' => 'utf8',
-'database_name' => 'test',
-'database_prefix' => ''
-],
-'read' => [
-'database_type' => 'mysql',
-'database_host' => '127.0.0.1',
-'database_port' => 3306,
-'database_user' => 'root',
-'database_pwd' => '123456',
-'database_charset' => 'utf8',
-'database_name' => 'test',
-'database_prefix' => ''
-],
+    'write' => [
+        'database_type' => 'mysql',
+        'database_host' => '127.0.0.1',
+        'database_port' => 3306,
+        'database_user' => 'root',
+        'database_pwd' => '123456',
+        'database_charset' => 'utf8',
+        'database_name' => 'test',
+        'database_prefix' => ''
+    ],
+    'read' => [
+        'database_type' => 'mysql',
+        'database_host' => '127.0.0.1',
+        'database_port' => 3306,
+        'database_user' => 'root',
+        'database_pwd' => '123456',
+        'database_charset' => 'utf8',
+        'database_name' => 'test',
+        'database_prefix' => ''
+    ],
 ],
 ```
 
