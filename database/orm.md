@@ -62,7 +62,8 @@ fields:
 
 字段解释: 
 
-```yaml
+```yml
+
 ```
 
 ##### ＃orm:revert
