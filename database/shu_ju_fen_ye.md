@@ -54,5 +54,6 @@ FastD\Database\Query\Paging\QueryPagination::__construct(Repository $repository,
 `QueryPagination` 提供 `getResult` 方法，用于自动分页的每页内容，所以整体操作与分页类是保持一致的。
 
 ```php
-
+$page = new QueryPagination($repository);
+$result = $page->getResult(); // 页码内容
 ```
