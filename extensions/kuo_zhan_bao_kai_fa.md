@@ -84,5 +84,6 @@ composer init
 `composer` 安装完成后，会新增一个 `bin` 目录，目录中有三个文件，执行: 
 
 ```php
-php bin/bundle
+php bin/bundlex
 ```
+
