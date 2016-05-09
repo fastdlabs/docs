@@ -156,4 +156,8 @@ $queryBuilder->from('test')->notLike([
 
 ##### ＃having(array $having)
 
+```php
+
+```
+
 ##### ＃join($table, $on, $type = 'LEFT')
