@@ -4,8 +4,10 @@
 
 ### ＃普通分页
 
+普通分页不附带其他依赖，仅提供分页页码解析等 API 接口调用。
+
 ```php
-FastD\Database\Query\Paging\Pagination($total, $currentPage = 1, $showList = 25, $showPage = 5);
+FastD\Database\Query\Paging\Pagination::__construct($total, $currentPage = 1, $showList = 25, $showPage = 5);
 ```
 
 ### ＃自动查询分页
