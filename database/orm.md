@@ -143,10 +143,14 @@ CREATE TABLE `fd_demo` (
 `id` int(10) NOT NULL DEFAULT 0, 
 KEY `index_id` (`id`)
 ) ENGINE=innodb CHARSET=utf8;
+
 Building from bundle:   WelcomeBundle\WelcomeBundle     ["Resources/orm"]
 
 ```
 
+开启 debug 模式后，执行的语句会在终端显示，用于查看具体语句是否正确。
+
+当选项 `--create` 存在时，才会执行对应的新建表操作。否责会执行表更新操作。
 
 ##### ＃orm:revert
 
