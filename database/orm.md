@@ -156,6 +156,8 @@ Building from bundle:   WelcomeBundle\WelcomeBundle     ["Resources/orm"]
 
 ##### ＃orm:revert
 
+如果你的数据库当中已经存在对应的数据表，但是又不想手动添加文件，那么这个时候，命令 `orm:revert` 就可以帮助到你，减少这一个重复的操作。
+
 
 
 ##### ＃对象关系模型
