@@ -60,33 +60,31 @@ fields:
 
 目前数据表配置仅支持 `yml` 格式，因为 `yml` 格式文件直观，可以一目了然，所以在配置文件上是一个绝佳的选择，但是要考虑性能的问题，不能滥用，因为命令执行在 CLI 模式下，因此不需要考虑性能问题。
 
-字段解释: 
-
-表名(必填): 
+＃表名(必填): 
 
 ```yml
 table: demo
 ```
 
-前缀: 
+＃前缀: 
 
 ```yml
 prefix: fd_ # 默认留空
 ```
 
-后缀: 
+＃后缀: 
 
 ```yml
 suffix: # 默认留空
 ```
 
-存储引擎:
+＃存储引擎:
 
 ```yml
 engine: innodb # 默认是 InnoDB
 ```
 
-存储编码:
+＃存储编码:
 
 ```yml
 charset: utf8 # 默认是 utf8
@@ -106,5 +104,7 @@ fields:
         key: ''
         nullable: false
 ```
+
+＃字段详细解析
 
 ##### ＃orm:revert
