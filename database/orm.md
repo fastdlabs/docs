@@ -239,17 +239,24 @@ public function bindRequest(Request $request)
 ```
 
 ```php
-foreach ($params as $name => $value) {
-    if (array_key_exists($name, static::FIELDS)) {
-        $field = static::FIELDS[$name];
-        // for entity
-        $method = 'set' . ucfirst($name);
-        if (method_exists($this, $method)) {
-            $this->$method($value);
+public function bindParams(array $params)
+{
+    if (array() === $params) {
+        throw new \Exception("Request params error.");
+    }
+
+    foreach ($params as $name => $value) {
+        if (array_key_exists($name, static::FIELDS)) {
+            $field = static::FIELDS[$name];
+            // for entity
+            $method = 'set' . ucfirst($name);
+            if (method_exists($this, $method)) {
+                $this->$method($value);
+            }
+            // for repository
+            $this->data[$field['name']] = ':' . $name;
+            $this->params[$name] = $value;
         }
-        // for repository
-        $this->data[$field['name']] = ':' . $name;
-        $this->params[$name] = $value;
     }
 }
 ```
