@@ -176,7 +176,7 @@ php bin/console orm:revert read
 
 Entity 实体在构造的时候接受两个参数，一个是查询条件，第二个是数据库连接驱动，操作需要在制定的数据库连接驱动上执行。
 
-实体对象在参数 (null) 的时候需要执行的是 `save` 方法，而不是查询方法。`save` 方法会自动根据查询条件，更新的内容执行 `insert` 或者 `update` 操作
+实体对象在参数 (null) 的时候需要执行的是 `save` 方法，而不是查询方法。`save` 方法会自动根据查询条件，更新的内容执行 `insert` 或者 `update` 操作。
 
 ```php
 $demo = new Demo(null, $this->getDriver('write'));
