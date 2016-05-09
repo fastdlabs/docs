@@ -33,6 +33,13 @@ $page->getCurrentPage(); // 2
 ##### ＃获取上下一页
 
 ```php
+$page->getPrevPage(); // 1
+$page->getNextPage(); // 3
+```
+
+##### ＃获取页码列表
+
+```php
 
 ```
 
