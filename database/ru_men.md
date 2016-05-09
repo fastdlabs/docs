@@ -79,13 +79,13 @@ class Database extends Controller
 ```php
 public function databaseAction(Request $request)
 {
-$driver = $this->getDriver('write');
+    $driver = $this->getDriver('write');
 
-$result = $driver->query('show tables')->execute()->getAll();
+    $result = $driver->query('show tables')->execute()->getAll();
 
-return $this->render('database/drivers.twig', [
-'result' => $result
-]);
+    return $this->render('database/drivers.twig', [
+        'result' => $result
+    ]);
 }
 ```
 
@@ -129,10 +129,10 @@ $driver->query('select * from table')->execute()->getAll();
 
 ```php
 $driver
-->query('select * from test where id = :id')
-->setParameters(['id' => 1])
-->execute()
-->getOne()
+    ->query('select * from test where id = :id')
+    ->setParameters(['id' => 1])
+    ->execute()
+    ->getOne()
 ;
 ```
 
@@ -166,21 +166,21 @@ $driver->getRepository($name);
 
 ```php
 /**
-* @param string $repository
-* @return Repository
-* @throws \InvalidArgumentException
-*/
+ * @param string $repository
+ * @return Repository
+ * @throws \InvalidArgumentException
+ */
 public function getRepository($repository)
 {
-$repository = str_replace(':', '\\', $repository);
+    $repository = str_replace(':', '\\', $repository);
 
-if (!class_exists($repository)) {
-throw new \InvalidArgumentException(sprintf('Repository class ["%s"] is not found.', $repository));
-}
+    if (!class_exists($repository)) {
+        throw new \InvalidArgumentException(sprintf('Repository class ["%s"] is not found.', $repository));
+    }
 
-$repository = new $repository($this);
+    $repository = new $repository($this);
 
-return $repository;
+    return $repository;
 }
 ```
 
