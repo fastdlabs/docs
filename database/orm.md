@@ -172,7 +172,11 @@ php bin/console orm:revert read
 
 ##### ＃Entity 表实体
 
+每一个数据表的每一行数据对应一个 Entity 实体，所以 Entity 在理解上，可以理解为一行数据记录，因此在数据处理上应该明确确认模型与记录的区别。
 
+```php
+
+```
 
 ##### ＃Repository 模型
 
