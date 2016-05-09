@@ -199,7 +199,7 @@ $demo = new Demo(['id' => 1], $this->getDriver('write'));
 $demo->getId(); // 1
 ```
 
-Entity 对象实体可以大量减轻<u>**简单**</u>的数据表操作。
+Entity 对象实体可以大量减轻 <u>**简单**</u> 的数据表操作。
 
 ##### ＃Repository 模型
 
