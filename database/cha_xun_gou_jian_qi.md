@@ -134,9 +134,10 @@ $queryBuilder->from('test')->orderBy([
 
 ##### ＃like(array $like)
 
-模糊查询
+模糊匹配查询
 
 ```php
+
 ```
 
 ##### ＃notLike(array $like)
