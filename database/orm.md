@@ -192,6 +192,13 @@ $demo = new Demo(['id' => 1], $this->getDriver('write'));
 $demo->setId('5');
 ```
 
+##### ＃查询记录
+
+```php
+$demo = new Demo(['id' => 1], $this->getDriver('write'));
+$demo->getId(); // 1
+```
+
 ##### ＃Repository 模型
 
 ##### ＃参数绑定
