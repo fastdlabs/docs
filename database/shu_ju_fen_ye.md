@@ -16,6 +16,10 @@ FastD\Database\Query\Paging\Pagination::__construct($total, $currentPage = 1, $s
 $page = new Pagination(10, 2, 4);
 ```
 
-按照构造方法中所述，总页数为 10，当前页码为第 2 页，每页显示 4 条数据。
+按照构造方法中所述，总页数为 10，当前页码为第 2 页，每页显示 4 条数据。所以，总页数应该是 3，因为 10 条记录，每页 4 条。
+
+```php
+$page->getTotalPages();
+```
 
 ### ＃自动查询分页
