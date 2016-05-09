@@ -10,3 +10,10 @@
 php bin/console bundle:generate
 ```
 
+创建 bundle 骨架。
+
+bundle 目录结构如下:
+
+```php
+
+```
