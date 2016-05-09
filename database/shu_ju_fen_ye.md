@@ -40,7 +40,7 @@ $page->getNextPage(); // 3
 ##### ＃获取页码列表
 
 ```php
-
+$page->getPageList(); // 1, 2, 3
 ```
 
 ### ＃自动查询分页
