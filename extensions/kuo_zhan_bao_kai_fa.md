@@ -87,4 +87,15 @@ composer init
 php bin/bundlex
 ```
 
-构件 bundle 运行环境，然后程序会自动生成所有
+构件 bundle 运行环境，然后程序会自动生成所有构件文件，变成一个可运行的框架环境。
+
+创建 bundle:
+
+```php
+php bin/console bundle:generate name
+```
+
+创建 bundle，然后添加到 `app/application.php` 中即可，其他操作和框架开发保持一致，代码提交只需要提交相关配置和 `src` 源代码即可。
+
+### ＃安装扩展依赖
+
