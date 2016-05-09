@@ -19,5 +19,9 @@ php bin/console
 输出: 
 
 ```php
-
+...
+orm:
+ ➜ orm:revert
+ ➜ orm:update
+...
 ```
