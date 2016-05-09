@@ -40,6 +40,12 @@ orm:
 
 配置目录: `{bundle/Resources/orm}`
 
+命令参数: 
+
+```php
+
+```
+
 建立数据表配置文件: 
 
 ```yml
