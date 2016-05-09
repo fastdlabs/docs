@@ -134,15 +134,15 @@ class System extends Controller
 */
 public function servicesAction(Request $request)
 {
-$name = $this->get('name')->getName();
+  $name = $this->get('name')->getName();
 
-$agent = $this->get('agent')->getAgent();
+  $agent = $this->get('agent')->getAgent();
 
-return $this->render('system/services.twig', [
-'name' => $name,
-'agent' => $agent,
-]);
-}
+  return $this->render('system/services.twig', [
+    'name' => $name,
+    'agent' => $agent,
+  ]);
+  }
 }
 ```
 
