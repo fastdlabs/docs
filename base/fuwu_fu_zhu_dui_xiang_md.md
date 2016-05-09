@@ -15,10 +15,10 @@ namespace WelcomeBundle\Services;
 
 class Name
 {
-public function getName()
-{
-return 'janhuang';
-}
+    public function getName()
+    {
+        return 'janhuang';
+    }
 }
 ```
 
@@ -26,11 +26,11 @@ return 'janhuang';
 
 ```php
 /**
-* @param Container $container
-*/
+ * @param Container $container
+ */
 public function registerService(Container $container)
 {
-$container->set('name', WelcomeBundle\Services\Name::class);
+    $container->set('name', WelcomeBundle\Services\Name::class);
 }
 ```
 
@@ -47,26 +47,26 @@ use FastD\Framework\Bundle\Controllers\Controller;
 use FastD\Http\Request;
 
 /**
-* Class System
-*
-* @Route("/system")
-*
-* @package WelcomeBundle\Controllers
-*/
+ * Class System
+ *
+ * @Route("/system")
+ *
+ * @package WelcomeBundle\Controllers
+ */
 class System extends Controller
 {
-/**
-* @Route("/services", name="system.services")
-*
-* @param Request $request
-* @return \FastD\Http\Response
-*/
-public function servicesAction(Request $request)
-{
-$name = $this->get('name');
+    /**
+     * @Route("/services", name="system.services")
+     *
+     * @param Request $request
+     * @return \FastD\Http\Response
+     */
+    public function servicesAction(Request $request)
+    {
+        $name = $this->get('name');
 
-return $this->response($name->getName());
-}
+        return $this->response($name->getName());
+    }
 }
 ```
 
@@ -126,23 +126,23 @@ use FastD\Http\Request;
 */
 class System extends Controller
 {
-  /**
-   * @Route("/services", name="system.services")
-   *
-   * @param Request $request
-   * @return \FastD\Http\Response
-   */
-  public function servicesAction(Request $request)
-  {
-      $name = $this->get('name')->getName();
+    /**
+     * @Route("/services", name="system.services")
+     *
+     * @param Request $request
+     * @return \FastD\Http\Response
+     */
+    public function servicesAction(Request $request)
+    {
+        $name = $this->get('name')->getName();
 
-      $agent = $this->get('agent')->getAgent();
+        $agent = $this->get('agent')->getAgent();
 
-      return $this->render('system/services.twig', [
-        'name' => $name,
-        'agent' => $agent,
-      ]);
-   }
+        return $this->render('system/services.twig', [
+          'name' => $name,
+          'agent' => $agent,
+        ]);
+     }
 }
 ```
 
