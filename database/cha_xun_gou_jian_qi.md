@@ -113,6 +113,14 @@ $queryBuilder->from('test')->limit(5,5)->select();
 
 ##### ＃groupBy(array $groupBy)
 
+查询分组
+
+
+
+##### ＃orderBy(array $orderBy)
+
+查询排序
+
 ```php
 $queryBuilder->from('test')->orderBy([
     'name' => 'DESC',
@@ -120,8 +128,6 @@ $queryBuilder->from('test')->orderBy([
 ])->select();
 // SELECT * FROM `base` ORDER BY `name` DESC,`age` DESC;
 ```
-
-##### ＃orderBy(array $orderBy)
 
 ##### ＃like(array $like)
 
