@@ -97,6 +97,13 @@ $queryBuilder->where([
 
 ##### ＃limit($limit, $offset = null)
 
+```php
+$queryBuilder->from('test')->limit(5)->select(); 
+// SELECT * FROM `test` LIMIT 5;
+$queryBuilder->from('test')->limit(5,5)->select(); 
+// SELECT * FROM `test` LIMIT 5, 5;
+```
+
 ##### ＃groupBy(array $groupBy)
 
 ##### ＃orderBy(array $orderBy)
