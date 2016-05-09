@@ -175,3 +175,5 @@ php bin/console orm:revert read
 
 
 ##### ＃Repository 模型
+
+##### ＃参数绑定
