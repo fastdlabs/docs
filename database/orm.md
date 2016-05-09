@@ -152,6 +152,8 @@ Building from bundle:   WelcomeBundle\WelcomeBundle     ["Resources/orm"]
 
 当选项 `--create` 存在时，才会执行对应的新建表操作。否责会执行表更新操作。
 
+此时制定的数据库连接当中则会建立对应的数据表，数据表结构和打印出来的数据表结构是保持一致的。
+
 ##### ＃orm:revert
 
 ##### ＃对象关系模型
