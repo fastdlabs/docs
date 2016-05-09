@@ -81,3 +81,4 @@ composer init
 
 ### ＃构建 bundle 运行环境
 
+`composer` 安装完成后，
