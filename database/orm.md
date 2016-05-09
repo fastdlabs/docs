@@ -136,6 +136,16 @@ nullable: false # 是否允许为空，默认不允许为空
 php bin/console orm:update write --create --debug
 ```
 
+输出:
+
+```
+CREATE TABLE `fd_demo` (
+`id` int(10) NOT NULL DEFAULT 0, 
+KEY `index_id` (`id`)
+) ENGINE=innodb CHARSET=utf8;
+Building from bundle:   WelcomeBundle\WelcomeBundle     ["Resources/orm"]
+
+```
 
 
 ##### ＃orm:revert
