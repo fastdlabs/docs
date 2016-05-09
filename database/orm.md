@@ -133,7 +133,7 @@ nullable: false # 是否允许为空，默认不允许为空
 配置完成后，执行命令: 
 
 ```php
-php bin/console write --bundle=WelcomeBundle --debug
+php bin/console write --create --debug
 ```
 
 
