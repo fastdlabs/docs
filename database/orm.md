@@ -109,13 +109,13 @@ fields:
 
 ```yml
 name: id # 数据表字段名
-type: int # 数据表字段名
-length: 10 # 数据表字段名
-default: 0 # 数据表字段名
-comment: '' # 数据表字段名
-unsigned: false # 数据表字段名
-key: '' # 数据表字段名
-nullable: false # 数据表字段名
+type: int # 数据字段类型
+length: 10 # 字段长度
+default: 0 # 默认值
+comment: '' # 注释，说明
+unsigned: false # 是否允许为负数
+key: '' # 数据库字段索引
+nullable: false # 是否允许为空，默认不允许为空
 ```
 
 ##### ＃orm:revert
