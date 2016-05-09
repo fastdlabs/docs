@@ -96,7 +96,15 @@ charset: utf8 # 默认是 utf8
 
 ```yml
 fields:
-    id: 
+    id:
+        name: id
+        type: int
+        length: 10
+        default: 0
+        comment: ''
+        unsigned: false
+        key: ''
+        nullable: false
 ```
 
 ##### ＃orm:revert
