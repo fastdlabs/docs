@@ -49,3 +49,8 @@ composer init
     ...
 }
 ```
+
+添加 config:
+
+```json
+```
