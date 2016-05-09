@@ -83,9 +83,13 @@ $queryBuilder->where(['id' => 1])->from('test')->select();
 // SELECT * FROM `test` WHERE `id` = 1;
 ```
 
+条件查询
 
+```php
 
-**AND**
+```
+
+**AND/OR**
 
 ```php
 $queryBuilder->where([
