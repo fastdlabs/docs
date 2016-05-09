@@ -106,6 +106,10 @@ $queryBuilder->from('test')->limit(5,5)->select();
 
 ##### ＃groupBy(array $groupBy)
 
+```php
+
+```
+
 ##### ＃orderBy(array $orderBy)
 
 ##### ＃like(array $like)
