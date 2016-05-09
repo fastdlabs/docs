@@ -87,3 +87,4 @@ composer init
 php bin/bundlex
 ```
 
+构件 bundle 运行环境，然后程序会自动生成所有
