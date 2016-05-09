@@ -181,6 +181,10 @@ $demo = new Demo(null, $this->getDriver('write'));
 $demo->setId('1');
 ```
 
+返回 0，因为数据表非 id 自增长，因为没有返回增长 id。
+
+
+
 ##### ＃Repository 模型
 
 ##### ＃参数绑定
