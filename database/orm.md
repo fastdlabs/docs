@@ -238,6 +238,8 @@ public function bindRequest(Request $request)
 }
 ```
 
+`binRequest` 获取请求参数后，调用 `bindParams` 方法进行参数 "赋值"，完整整个参数绑定流程。
+
 ```php
 public function bindParams(array $params)
 {
@@ -260,3 +262,4 @@ public function bindParams(array $params)
     }
 }
 ```
+
