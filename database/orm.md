@@ -89,7 +89,7 @@ engine: innodb # 默认是 InnoDB
 存储编码:
 
 ```yml
-
+charset: utf8 # 默认是 utf8
 ```
 
 ##### ＃orm:revert
