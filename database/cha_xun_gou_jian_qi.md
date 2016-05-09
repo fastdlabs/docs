@@ -137,11 +137,19 @@ $queryBuilder->from('test')->orderBy([
 模糊匹配查询
 
 ```php
-
+$queryBuilder->from('test')->like([
+    'name' => '%jan%'
+])->select();
 // SELECT * FROM `base` WHERE `name` LIKE '%jan%';
 ```
 
 ##### ＃notLike(array $like)
+
+模糊匹配查询
+
+```php
+
+```
 
 ##### ＃having(array $having)
 
