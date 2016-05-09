@@ -95,7 +95,7 @@ php bin/bundlex
 php bin/console bundle:generate name
 ```
 
-创建 bundle，然后添加到 `app/application.php` 中即可，其他操作和框架开发保持一致，代码提交只需要提交相关配置和 `src` 源代码即可。
+创建 `bundle`，然后添加到 `app/application.php` 中即可，其他操作和框架开发保持一致，代码提交只需要提交相关配置和 `src` 源代码即可。
 
 ### ＃安装扩展依赖
 
