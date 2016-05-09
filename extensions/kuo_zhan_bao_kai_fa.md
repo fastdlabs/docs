@@ -99,4 +99,10 @@ php bin/console bundle:generate name
 
 ### ＃安装扩展依赖
 
-如果扩展包是提交到 `packagist` 的话，那么在 `composer.json` 
+如果扩展包是提交到 `packagist` 的话，那么在 `composer.json` 中添加 `require`，然后将扩展包的引导文件添加到 `app/application.php` 即可。
+
+如果扩展包是私有的，需要在 `composer.json` 添加 `repositories` 配置。
+
+```json
+
+```
