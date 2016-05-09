@@ -118,12 +118,12 @@ use FastD\Framework\Bundle\Controllers\Controller;
 use FastD\Http\Request;
 
 /**
-* Class System
-*
-* @Route("/system")
-*
-* @package WelcomeBundle\Controllers
-*/
+ * Class System
+ *
+ * @Route("/system")
+ *
+ * @package WelcomeBundle\Controllers
+ */
 class System extends Controller
 {
     /**
