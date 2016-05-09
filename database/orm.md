@@ -92,4 +92,11 @@ engine: innodb # 默认是 InnoDB
 charset: utf8 # 默认是 utf8
 ```
 
+字段设置: 
+
+```yml
+fields:
+  
+```
+
 ##### ＃orm:revert
