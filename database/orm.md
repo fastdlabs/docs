@@ -43,7 +43,11 @@ orm:
 命令参数: 
 
 ```php
-php bin/console orm:update {connection} {--create} {--bundle} {debug}
+php bin/console orm:update \
+   {connection:要执行的数据库连接} \
+   {--create:是否创建数据表} \
+   {--bundle:模块包} \
+   {debug:是否debug模式}
 ```
 
 建立数据表配置文件: 
