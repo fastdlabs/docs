@@ -5,7 +5,7 @@
 ### ＃普通分页
 
 ```php
-$page = FastD\Database\Query\Paging\Pagination($total, $currentPage = 1, $showList = 25, $showPage = 5);
+FastD\Database\Query\Paging\Pagination($total, $currentPage = 1, $showList = 25, $showPage = 5);
 ```
 
 ### ＃自动查询分页
