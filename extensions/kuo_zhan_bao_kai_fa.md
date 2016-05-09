@@ -81,4 +81,8 @@ composer init
 
 ### ＃构建 bundle 运行环境
 
-`composer` 安装完成后，
+`composer` 安装完成后，会新增一个 `bin` 目录，目录中有三个文件，执行: 
+
+```php
+php bin/bundle
+```
