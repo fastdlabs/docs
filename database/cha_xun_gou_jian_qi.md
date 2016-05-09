@@ -87,7 +87,7 @@ $queryBuilder->where(['id' => 1])->from('test')->select();
 
 ```php
 $queryBuilder->where(['[>]id' => 1])->from('test')->select();
-// SELECT * FROM `test` WHERE `id` = 1;
+// SELECT * FROM `base` WHERE `id`>'1';
 ```
 
 **AND/OR**
