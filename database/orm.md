@@ -148,11 +148,7 @@ Building from bundle:   WelcomeBundle\WelcomeBundle     ["Resources/orm"]
 
 ```
 
-命令最重会生成一个 `ORM` 目录，目录中按照数据库区分不同的对象模型，结构如下: 
-
-```php
-
-```
+命令最重会生成一个 `ORM` 目录，目录中按照数据库区分不同的对象模型。
 
 开启 debug 模式后，执行的语句会在终端显示，用于查看具体语句是否正确。
 
