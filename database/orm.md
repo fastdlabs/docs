@@ -230,9 +230,12 @@ Repository 在生成之后是一个空白的对象，内部仅有预定义的基
 源码: 
 
 ```php
-return $this->bindParams(
-            $request->isMethod('get') ? $request->query->all() : $request->request->all()
-        );
+public function bindRequest(Request $request)
+{
+    return $this->bindParams(
+        $request->isMethod('get') ? $request->query->all() : $request->request->all()
+    );
+}
 ```
 
 ```php
