@@ -95,6 +95,8 @@ $queryBuilder->where([
 // SELECT * FROM `test` WHERE `id` = 1 AND `name` = 'jan';
 ```
 
+****
+
 ##### ＃limit($limit, $offset = null)
 
 ```php
