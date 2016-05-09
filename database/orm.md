@@ -188,7 +188,8 @@ $demo->setId('1');
 ##### ＃更新记录
 
 ```php
-
+$demo = new Demo(['id' => 1], $this->getDriver('write'));
+$demo->setId('5');
 ```
 
 ##### ＃Repository 模型
