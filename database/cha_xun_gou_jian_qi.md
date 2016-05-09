@@ -157,7 +157,8 @@ $queryBuilder->from('test')->notLike([
 ##### ＃having(array $having)
 
 ```php
-
+$queryBuilder->from('test')->having(['[>]age' => 10])->select();
+// 
 ```
 
 ##### ＃join($table, $on, $type = 'LEFT')
