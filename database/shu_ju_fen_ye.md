@@ -11,6 +11,7 @@ FastD\Database\Query\Paging\Pagination::__construct($total, $currentPage = 1, $s
 ```
 
 ```php
+$page = new Pagination(10, 1, 4);
 
 ```
 
