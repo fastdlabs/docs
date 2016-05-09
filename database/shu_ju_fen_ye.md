@@ -44,3 +44,7 @@ $page->getPageList(); // 1, 2, 3
 ```
 
 ### ＃自动查询分页
+
+```php
+FastD\Database\Query\Paging\QueryPagination::__construct(Repository $repository, $currentPage = 1, $showList = 25, $showPage = 5)
+```
