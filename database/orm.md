@@ -107,4 +107,15 @@ fields:
 
 ＃字段详细解析
 
+```yml
+name: id # 数据表字段名
+type: int # 数据表字段名
+length: 10 # 数据表字段名
+default: 0 # 数据表字段名
+comment: '' # 数据表字段名
+unsigned: false # 数据表字段名
+key: '' # 数据表字段名
+nullable: false # 数据表字段名
+```
+
 ##### ＃orm:revert
