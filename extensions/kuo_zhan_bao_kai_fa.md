@@ -22,7 +22,19 @@ composer init
 {
     ...
     "require-dev": {
-        "fastd/bundlex": "2.0.x-dev"
+        "fastd/bundlex": "~2.0"
+    }
+    ...
+}
+```
+
+添加 autoload:
+
+```json
+{
+    ...
+    "require-dev": {
+        "fastd/bundlex": "~2.0"
     }
     ...
 }
