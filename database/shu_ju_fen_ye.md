@@ -10,9 +10,12 @@
 FastD\Database\Query\Paging\Pagination::__construct($total, $currentPage = 1, $showList = 25, $showPage = 5);
 ```
 
-```php
-$page = new Pagination(10, 1, 4);
+示例: 
 
+```php
+$page = new Pagination(10, 2, 4);
 ```
+
+按照构造方法中所述，总页数为 10，当前页码为第 2 页，每页显示 4 条数据。
 
 ### ＃自动查询分页
