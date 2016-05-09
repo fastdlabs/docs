@@ -45,7 +45,7 @@ $page->getPageList(); // 1, 2, 3
 
 ### ＃自动查询分页
 
-自动查询分页，需要传递 `Repository` 对象，因为上一节讲到，`Repository` 其实可以理解为一个表，因此在自动查询分页当中，需要传递 `Repository` 对象。
+自动查询分页，需要传递 `Repository` 对象，因为上一节讲到，`Repository` 其实可以理解为一个表，因此在自动查询分页当中，需要传递 `Repository` 对象作为第一参数。
 
 ```php
 FastD\Database\Query\Paging\QueryPagination::__construct(Repository $repository, $currentPage = 1, $showList = 25, $showPage = 5)
