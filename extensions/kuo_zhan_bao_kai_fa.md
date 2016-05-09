@@ -19,5 +19,11 @@ composer init
 添加依赖: 
 
 ```json
-"fastd/bundlex": "2.0.x-dev"
+{
+    ...
+    "require-dev": {
+        "fastd/bundlex": "2.0.x-dev"
+    }
+    ...
+}
 ```
