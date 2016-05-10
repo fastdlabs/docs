@@ -42,7 +42,7 @@ route:
 
 namespace WelcomeBundle\Commands;
 
-use FastD\Console\Command\Command;
+use FastD\Framework\Bundle\Commands\CommandAware;
 use FastD\Console\IO\Input;
 use FastD\Console\IO\Output;
 
@@ -142,11 +142,11 @@ $kernel = $this->getApplication()->getKernel(); // AppKernel
 
 namespace WelcomeBundle\Commands;
 
-use FastD\Console\Command\Command;
+use FastD\Framework\Bundle\Commands\CommandAware;
 use FastD\Console\IO\Input;
 use FastD\Console\IO\Output;
 
-class DemoCommand extends Command
+class DemoCommand extends CommandAware
 {
     /**
      * @return string
