@@ -164,7 +164,7 @@ Building from bundle:   WelcomeBundle\WelcomeBundle     ["Resources/orm"]
 php bin/console orm:update \
    {connection:要执行的数据库连接} \
    {--bundle:是否创建数据表} \
-   {debug:是否debug模式}
+   {--debug:是否debug模式}
 ```
 
 例如已经存在的数据库 `test` 中存在 `test, fd_demo` 两个数据表，执行命令: 
