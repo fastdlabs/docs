@@ -156,6 +156,16 @@ Building from bundle:   WelcomeBundle\WelcomeBundle     ["Resources/orm"]
 
 ##### ＃orm:revert
 
+命令参数: 
+
+```php
+php bin/console orm:update \
+   {connection:要执行的数据库连接} \
+   {--create:是否创建数据表} \
+   {--bundle:模块包} \
+   {debug:是否debug模式}
+```
+
 如果你的数据库当中已经存在对应的数据表，但是又不想手动添加文件，那么这个时候，命令 `orm:revert` 就可以帮助到你，减少这一个重复的操作。
 
 例如已经存在的数据库 `test` 中存在 `test, fd_demo` 两个数据表，执行命令: 
