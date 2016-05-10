@@ -46,7 +46,7 @@ use FastD\Console\Command\Command;
 use FastD\Console\IO\Input;
 use FastD\Console\IO\Output;
 
-class DemoCommand extends Command
+class DemoCommand extends CommandAware
 {
     /**
      * @return string
