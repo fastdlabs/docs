@@ -163,8 +163,7 @@ Building from bundle:   WelcomeBundle\WelcomeBundle     ["Resources/orm"]
 ```php
 php bin/console orm:update \
    {connection:要执行的数据库连接} \
-   {--create:是否创建数据表} \
-   {--bundle:模块包} \
+   {--bundle:是否创建数据表} \
    {debug:是否debug模式}
 ```
 
