@@ -50,7 +50,7 @@ php bin/console orm:update \
    {debug:是否debug模式}
 ```
 
-建立数据表配置文件: 
+手动建立数据表配置文件: 
 
 ```yml
 table: demo
