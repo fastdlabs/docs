@@ -47,7 +47,7 @@ php bin/console orm:update \
    {connection:要执行的数据库连接} \
    {--create:是否创建数据表} \
    {--bundle:模块包} \
-   {debug:是否debug模式}
+   {--debug:是否debug模式}
 ```
 
 手动建立数据表配置文件: 
