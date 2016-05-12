@@ -4,6 +4,28 @@
 
 在使用前，不要忘记安装好对应的 PHP 扩展。
 
+###＃配置
+
+存储的配置和系统全局配置，模块配置一起:
+
+```php
+<?php
+
+return [
+    // ...
+    'storage' => [
+        'redis' => [
+            'type' => 'redis',
+            'host' => '',
+            'port' => '', // [default 6379]
+        ]
+    ]
+    // ...
+];
+```
+
+配置中的存储类型 (`type`) 支持3个方法，分别是: `redis`, `memcached`, `ssdb`
+
 ### ＃Memcached
 
 ```php
