@@ -14,7 +14,21 @@ FastD 是一个开源，面向对象的开发框架。其模式类似 Symfony �
 
 ### ＃贡献
 
-
+* [fastd](https://github.com/JanHuang/fastD)
+* [fastd/bundlex](https://github.com/JanHuang/bundlex)
+* [fastd/framework](https://github.com/JanHuang/framework)
+* [fastd/container](https://github.com/JanHuang/container)
+* [fastd/storage](https://github.com/JanHuang/storage)
+* [fastd/http](https://github.com/JanHuang/http)
+* [fastd/debug](https://github.com/JanHuang/debug)
+* [fastd/database](https://github.com/JanHuang/database)
+* [fastd/console](https://github.com/JanHuang/console)
+* [fastd/annotation](https://github.com/JanHuang/annotation)
+* [fastd/routing](https://github.com/JanHuang/routing)
+* [fastd/config](https://github.com/JanHuang/config)
+* [fastd/generator](https://github.com/JanHuang/generator)
+* [fastd/swoole](https://github.com/JanHuang/swoole)
+* [fastd/http-server-bundle](https://github.com/JanHuang/http-server-bundle)
 
 如果对本项目有兴趣或者发现问题的，欢迎 fork 项目，然后提交修改或者问题，我会第一时间进行处理。
 
