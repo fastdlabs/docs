@@ -92,3 +92,7 @@ session 操作和原生 PHP 操作也是非常类似的，所以在操作上是�
 
 使用 `getDefaultSessionStorage` 方法获取 session 存储对象，该方法返回一个 `FastD\Http\Session\Storage\SessionRedis` 对象，通过 `sessionHandler` 进行参数注入。
 
+
+```php
+
+```
