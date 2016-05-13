@@ -24,15 +24,6 @@ Routes::get('base', '/base', \WelcomeBundle\Controllers\Index::class.'@indexActi
 Routes::post('base_post', '/base', \WelcomeBundle\Controllers\Index::class.'@postAction');
 ```
 
-**Action**
-
-```php
-public function postAction()
-{
-    return $this->response('That is POST request method.');
-}
-```
-
 路由配置支持:
 
 * get
