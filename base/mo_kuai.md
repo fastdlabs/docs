@@ -8,6 +8,8 @@
 
 如果要独立扩展编写扩展 `bundle`，可以移步: [扩展包开发](http://www.fast-d.cn/doc-ext-bundle)
 
+##### ＃构建 bundle 命令
+
 ```php
 php bin/console bundle:generate
 ```
