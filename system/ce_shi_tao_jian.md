@@ -32,4 +32,4 @@ class IndexControllerTest extends WebTestCase
 }
 ```
 
-测试需要继承来自星星的它: ``
+测试需要继承来自星星的它: `FastD\Framework\Tests\WebTestCase`，灵感来源依然是 Symfony，与 Symfony 结下不解之缘，即使我并不是很深入了解它。
