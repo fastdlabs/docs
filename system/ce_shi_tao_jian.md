@@ -31,3 +31,5 @@ class IndexControllerTest extends WebTestCase
     }
 }
 ```
+
+测试需要继承
