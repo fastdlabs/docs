@@ -3,6 +3,7 @@
 * [简介](README.md)
 * [安装](install/anzhuang_md.md)
 * [演示](showcase/yan_shi.md)
+* 附言
 * [基础](base/ji_chu.md)
    * [模块](base/mo_kuai.md)
    * [路由](base/lu_you.md)
@@ -31,5 +32,4 @@
    * [tcpdump使用](tcpdumpshi_yong.md)
    * [连接数查看](lian_jie_shu_cha_kan.md)
    * Nginx动态添加模块
-* 附言
 
