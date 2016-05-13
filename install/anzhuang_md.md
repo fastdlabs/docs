@@ -52,5 +52,5 @@ server
 
 ##### ＃Apache
 
-项目的 `public` 目录下已经存在了 `.htaccess` 文件了，所以 `apache` 只需要开启 `rewrite_mod` 扩展即可 
+项目的 `public` 目录下已经存在了 `.htaccess` 文件了，所以 `apache` 只需要开启 `rewrite_mod` 模块即可 
 
