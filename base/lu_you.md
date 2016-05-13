@@ -1,6 +1,6 @@
 # 路由
 
-路由是一个框架必备的东西，配置的方式参考了 Laravel 和 Symfony 两个框架。
+路由是一个框架必备的东西，配置的方式参考了 Laravel 和 Symfony 两个框架。框架在开发环境和测试环境中支持注释路由。
 
 路由配置文件在 `{bundle}/Resources/config/routes.php`
 
