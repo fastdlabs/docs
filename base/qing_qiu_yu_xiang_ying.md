@@ -63,7 +63,7 @@ $request->request->get($name);
 
 ### ＃响应 (Response)
 
-每个请求对应一个响应，而响应正式由控制器直接返回对象(FastD\Http\Response)，由调度中心进行调度输出，这样就可以控制每个出口的数据，保持进出口的一致性。
+每个请求对应一个响应，而响应正式由控制器直接返回对象(`FastD\Http\Response`)，由调度中心进行调度输出，这样就可以控制每个出口的数据，保持进出口的一致性。
 
 ```php
 Controller::response($html, $status = 200, array $headers = []);
