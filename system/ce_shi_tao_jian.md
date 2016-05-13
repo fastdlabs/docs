@@ -33,3 +33,8 @@ class IndexControllerTest extends WebTestCase
 ```
 
 测试需要继承来自星星的它: `FastD\Framework\Tests\WebTestCase`，灵感来源依然是 Symfony，与 Symfony 结下不解之缘，即使我并不是很深入了解它。
+
+通过 `static::createClient()` 模拟一个客户端，调用 `testRepsonse($method, $path, array $parameters = [])` 进行模拟请求，这个模拟请求与浏览器请求是一样的，所以相当于一个用户打开一个浏览器进行请求处理。请求返回一个 `FastD\Http\Response` 对象，通过响应的信息进行断言即可。
+
+上述例子断言了 `/welcomebundle/` 这个地址响应 200 HTTP status code.
+
