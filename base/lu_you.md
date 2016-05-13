@@ -52,7 +52,7 @@ Routes::get('dynamic', '/{name}', \WelcomeBundle\Controllers\Index::class.'@dyna
 
 访问地址: `/janhuang` 即可出现 `This variable is janhuang` 等字样，动态路由配置成功。
 
-而动态路由中的参数 `{name}` 会作为控制器方法动态传递到方法中 `dynamicAction($name)` 。
+而动态路由中的参数 `{name}` 会作为控制器方法动态传递到方法中 `dynamicAction($name)` ，如果多个路由参数，则是根据路由参数顺序传递到控制器方法参数中。
 
 
 ### ＃路由组
