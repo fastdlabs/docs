@@ -19,7 +19,7 @@ public function requestAction(Request $request)
 }
 ```
 
-注入请求对象(FastD\Http\Request)之后, 即可通过对象获取对应的参数。具体可以通过请求对象查询更多的操作方法。
+注入请求对象(`FastD\Http\Request`)之后, 即可通过对象获取对应的参数。具体可以通过请求对象查询更多的操作方法。
 
 以上例子是获取请求来源的 ip 地址。
 
