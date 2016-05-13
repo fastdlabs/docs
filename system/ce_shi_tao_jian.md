@@ -11,5 +11,21 @@
 我们在编写完 API 接口，页面的时候，是否需要测试地址的可用性？是否直接通过浏览器去测试？试想一下，如果你已经有数十个接口页面的时候，你还能通过浏览器进行访问测试吗？显然不能，因此，自动化测试在我们开发当中是饰演着一个多么重要而又经常被忽略的角色。
 
 ```php
+<?php
 
+namespace WelcomeBundle\Testing;
+
+use FastD\Framework\Tests\WebTestCase;
+
+class IndexControllerTest extends WebTestCase
+{
+    public function testIndexAction()
+    {
+        $client = static::createClient();
+
+        $response = $client->testResponse('GET', '/welcomebundle/');
+
+        $this->assertEquals(200, $response->getStatusCode());
+    }
+}
 ```
