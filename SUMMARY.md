@@ -16,7 +16,7 @@
 * [系统服务](system/xi_tong_fu_wu.md)
    * [命令行](system/ming_ling_xing.md)
    * [会话(session 待完善)](system/hui_hua.md)
-   * [文件上传(待完善)](system/wen_jian_shang_chuan.md)
+   * [文件上传](system/wen_jian_shang_chuan.md)
    * [存储](system/cun_chu.md)
    * [测试套件(待完善)](system/ce_shi_tao_jian.md)
 * [数据库](database/shuju_ku_md.md)
