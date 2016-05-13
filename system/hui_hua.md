@@ -94,5 +94,20 @@ session 操作和原生 PHP 操作也是非常类似的，所以在操作上是�
 
 
 ```php
+/**
+ * @Route("/session", name="session.handler")
+ *
+ * @param Request $request
+ * @return Response
+ */
+public function sessionHandlerAction(Request $request)
+{
+    $session = $request->getSessionHandle($this->getDefaultSessionStorage('session'));
 
+    $session->set('name', 'janhuang'); // $request->setSession('name', 'janhuang');
+
+    return $this->render('base/session.twig', [
+        'session' => $session->get('name') // $request->getSession('name');
+    ]);
+}
 ```
