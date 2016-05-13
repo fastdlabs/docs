@@ -32,4 +32,4 @@ class IndexControllerTest extends WebTestCase
 }
 ```
 
-测试需要继承
+测试需要继承来自星星的它: ``
