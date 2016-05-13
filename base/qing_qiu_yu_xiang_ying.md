@@ -65,8 +65,10 @@ $request->request->get($name);
 
 每个请求对应一个响应，而响应正式由控制器直接返回对象(`FastD\Http\Response`)，由调度中心进行调度输出，这样就可以控制每个出口的数据，保持进出口的一致性。
 
+##### ＃response
+
 ```php
-Controller::response($html, $status = 200, array $headers = []);
+
 ```
 
 观察源码不难发现，每个响应其实都是返回一个 `FastD\Http\Response` 基础对象。其中包括 `render` 方法，`render` 方法中就是解析模板后内容后，将内容赋值到 `FastD\Http\Response` 中，然后返回整个对象。
