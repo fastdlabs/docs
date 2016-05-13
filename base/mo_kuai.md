@@ -14,9 +14,7 @@
 php bin/console bundle:generate
 ```
 
-创建 bundle 骨架。
-
-bundle 目录结构如下:
+目录结构如下:
 
 ```
 Bundle
@@ -31,3 +29,8 @@ Bundle
 ```
 
 然后将 `{Bundle}.php` 引导文件对象实例化到 `app/application.php` 中即可。
+
+```php
+php bin/console Demo
+```
+
