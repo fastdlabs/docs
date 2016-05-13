@@ -13,7 +13,9 @@ FastD 对运行环境是有一定要求的，在安装框架前需要确认一�
 FastD 利用 [Composer](http://getcomposer.org) 来管理其自身的依赖包。因此，在使用 FastD 之前，请务必确保在你的机器上已经安装了 `Composer `。
 
 ```
-composer create-project fastd fastd/fastd [version]
+git clone https://github.com/JanHuang/fastD.git
+cd fastD
+composer install -vvv 
 ```
 
 ### ＃环境配置
