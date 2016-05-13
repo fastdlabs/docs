@@ -6,6 +6,8 @@
 
 框架提供快捷的构建 `bundle` 方法，我们可以通过命令快速生成一个空白的 bundle.
 
+如果要独立扩展编写扩展 `bundle`，可以移步: [扩展包开发](http://www.fast-d.cn/doc-ext-bundle
+
 ```php
 php bin/console bundle:generate
 ```
