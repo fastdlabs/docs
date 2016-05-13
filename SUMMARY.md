@@ -12,7 +12,7 @@
    * [配置](base/pei_zhi.md)
    * [异常](base/yichang_md.md)
    * [辅助服务](base/fuwu_fu_zhu_dui_xiang_md.md)
-   * [测试套件(待完善)](system/ce_shi_tao_jian.md)
+   * [测试套件](system/ce_shi_tao_jian.md)
 * [系统服务](system/xi_tong_fu_wu.md)
    * [命令行](system/ming_ling_xing.md)
    * [会话(session 待完善)](system/hui_hua.md)
