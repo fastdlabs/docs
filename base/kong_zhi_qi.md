@@ -8,6 +8,8 @@
 
 框架中本身都是需要命名空间的，所以在框架中控制器和路由的关系密不可分，每个路由都需要对应一个控制器。
 
+路由配置文件的控制器配置格式: `{$class}@{$method}`
+
 ```php
 Routes::get('base', '/base', \WelcomeBundle\Controllers\Index::class.'@indexAction');
 ```
