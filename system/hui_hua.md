@@ -92,7 +92,6 @@ session 操作和原生 PHP 操作也是非常类似的，所以在操作上是�
 
 使用 `getDefaultSessionStorage` 方法获取 session 存储对象，该方法返回一个 `FastD\Http\Session\Storage\SessionRedis` 对象，通过 `sessionHandler` 进行参数注入。
 
-
 ```php
 /**
  * @Route("/session", name="session.handler")
@@ -111,3 +110,5 @@ public function sessionHandlerAction(Request $request)
     ]);
 }
 ```
+
+构建 seesion 存储后，使用 `getSessionHandle` 返回的对象和使用 `$request->setSession` 方法效果是一样的。
