@@ -20,6 +20,8 @@ Routes::get('base', '/base', \WelcomeBundle\Controllers\Index::class.'@indexActi
 
 ##### ＃POST
 
+POST 请求路由地址
+
 ```php
 Routes::post('base_post', '/base', \WelcomeBundle\Controllers\Index::class.'@postAction');
 ```
