@@ -3,7 +3,7 @@
 * [简介](README.md)
 * [安装](install/anzhuang_md.md)
 * [演示](showcase/yan_shi.md)
-* 附言
+* [附言](fu_yan.md)
 * [基础](base/ji_chu.md)
    * [模块](base/mo_kuai.md)
    * [路由](base/lu_you.md)
