@@ -32,6 +32,7 @@
 * [组件](components/zujian_md.md)
     * [Swoole](components/s-wo-o-le.md)
         * [基础使用](components/基础使用.md)
+        * [服务配置](components/服务配置.md)
 * [实战技术](practice/shizhan_ji_zhu_md.md)
     * [tcpdump使用](tcpdumpshi_yong.md)
     * [连接数查看](lian_jie_shu_cha_kan.md)
