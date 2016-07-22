@@ -20,9 +20,10 @@ php bin/console
 
 ```php
 ...
-orm:
- ➜ orm:revert
- ➜ orm:update
+fdb:
+ ➜ fdb:reflex
+ ➜ fdb:data.set
+ ➜ fdb:schema
 ...
 ```
 
@@ -43,7 +44,7 @@ orm:
 命令参数: 
 
 ```php
-php bin/console orm:update \
+php bin/console fdb:reflex \
    {connection:要执行的数据库连接} \
    {--create:是否创建数据表} \
    {--bundle:模块包} \
