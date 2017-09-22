@@ -1,4 +1,4 @@
-<h1 align="center">Fast-D</h1>
+<h1 align="center">FastD 中文文档</h1>
 
 <p align="center">:rocket: A high performance PHP API framework.</p>
 
@@ -13,18 +13,62 @@
 <a href="https://fastdlabs.com/"><img src="https://poser.pugx.org/fastd/fastd/license" /></a>
 </p>
 
-FastD 是一个支持 Swoole 的轻量级 Web 开发框架，可适用于对性能有要求的 API 场景，并且灵活的扩展性可以让开发者们更容易地建造自己的服务 (基于Swoole)，
+框架中集成了部分使用率较高的工具，提高开发效率，不必担心的是，框架并不会因为依赖的东西多了而造成速度的变慢，程序中，仅会对使用到的文件代码进行操作。
 
-### 要求
+框架执行模式: 
 
-* PHP >= 5.6
-* ext-curl
-* ext-pdo
-* ext-swoole
+1. 普通模式
+2. 命令行模式
+3. Swoole 模式
 
-### 文档
+针对不同模式，加载的对象不大相同，所以针对不同的执行环境，会有不同的操作流程来加速框架的调度效率。
 
-* [中文文档](docs/zh_CN/readme.md)
+修改日志
+--------
+
+- [x] [修改日志](change-log.md)
+- [x] [升级指南](upgrade.md)
+
+安装与配置
+--------
+
+- [x] [关于 FastD](1-1-about-fastd.md)
+- [x] [安装 FastD](1-2-installing.md)
+- [x] [目录结构](1-3-directory-structure.md)
+- [x] [框架执行流程图](1-4-flow.md)
+
+
+基础入门
+-------
+
+- [x] [路由与控制器](2-1-routing-and-controllers.md)
+- [x] [请求处理](2-2-request-handling.md)
+- [x] [响应处理](2-3-response-handling.md)
+- [x] [认证授权](2-4-authorization.md)
+- [x] [异常与日志处理](2-5-exception-logger-handling.md)
+- [ ] ~~[API文档](2-6-docuemnt.md)~~
+
+高级
+-------
+
+- [x] [配置](3-1-configuration.md)
+- [x] [中间件](3-2-middleware.md)
+- [x] [数据库medoo](3-3-database.md)
+- [x] [缓存](3-4-cache.md)
+- [x] [命令行](3-5-console.md)
+- [x] [单元测试](3-6-testcase.md)
+- [x] [辅助函数](3-7-helpers.md)
+- [x] [服务提供器](3-8-service-provider.md)
+- [x] [Swoole服务器](3-9-swoole-server.md)
+- [x] [Swoole进程管理](3-10-swoole-processor.md)
+- [x] [连接池](3-11-connection-pool.md)
+- [x] [扩展](3-12-extend.md)
+- [x] [监控](3-13-monitor.md)
+
+架构
+---------
+
+- [x] [生命周期](4-1-lifecycle.md)
 
 ### 系列文章
 
@@ -49,21 +93,7 @@ FastD 是一个支持 Swoole 的轻量级 Web 开发框架，可适用于对性�
 
 * [Dobee API Framework](https://github.com/JanHuang/dobee)
 
-### 贡献
-
-* [yyz26371945](https://github.com/yyz26371945)
-* [RunnerLee](https://github.com/RunnerLee)
-* [zqhong](https://github.com/zqhong)
-* [xsharp](https://github.com/xsharp)
-
-非常欢迎感兴趣，愿意参与其中，共同打造更好PHP生态，Swoole生态的开发者。
-
-如果你乐于此，却又不知如何开始，可以试试下面这些事情：
-
-* 在你的系统中使用，将遇到的问题 [反馈](https://github.com/JanHuang/fastD/issues)。
-* 有更好的建议？欢迎联系 [bboyjanhuang@gmail.com](mailto:bboyjanhuang@gmail.com) 或 [新浪微博:编码侠](http://weibo.com/ecbboyjan)。
-
-### 联系
+### Support
 
 如果你在使用中遇到问题，请联系: [bboyjanhuang@gmail.com](mailto:bboyjanhuang@gmail.com). 微博: [编码侠](http://weibo.com/ecbboyjan)
 
