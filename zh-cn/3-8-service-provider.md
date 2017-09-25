@@ -35,7 +35,7 @@ class DatabaseServiceProvider implements ServiceProviderInterface
 }
 ```
 
-通过 `register` 方法，将服务注入到 `container` 容器当中，提供给全局使用，因为整个 Application 就是一个 容器。具体可查看 [Application.php](../../src/Application.php)
+通过 `register` 方法，将服务注入到 `container` 容器当中，提供给全局使用，因为整个 Application 就是一个 容器。具体可查看 [Application.php](https://github.com/JanHuang/fastD/blob/master/src/Application.php)
 
 最终将新增的服务提供器通过 `Class::class` 的方式添加到应用配置的 services 配置项即可。
 
@@ -43,6 +43,6 @@ class DatabaseServiceProvider implements ServiceProviderInterface
 
 若果掌握了解更多容器相关知识，相信可以很好地使用该框架。
 
-如果需要尝试添加或者修改服务提供器，可以参考 [DatabaseServiceProvider](../../src/ServiceProvider/DatabaseServiceProvider.php), [database.php](../../tests/app/default/config/database.php), [app.php](../../tests/app/default/config/app.php)
+如果需要尝试添加或者修改服务提供器，可以参考 [DatabaseServiceProvider](https://github.com/JanHuang/fastD/blob/master/src/ServiceProvider/DatabaseServiceProvider.php), [database.php](https://github.com/JanHuang/dobee/blob/master/config/database.php), [app.php](https://github.com/JanHuang/dobee/blob/master/config/app.php)
 
 下一节: [Swoole服务器](zh-cn/3-9-swoole-server.md)

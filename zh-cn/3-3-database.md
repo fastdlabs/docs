@@ -1,6 +1,6 @@
 # 数据库
 
-框架模式使用 [medoo](https://github.com/catfan/Medoo) 框架，提供最简便的操作。如果想使用 ORM 的朋友可以尝试添加 [ServiceProvider](3-8-service-provider.md)，作为框架的一个扩充。
+框架模式使用 [medoo](https://github.com/catfan/Medoo) 框架，提供最简便的操作。如果想使用 ORM 的朋友可以尝试添加 [ServiceProvider](zh-cn/3-8-service-provider.md)，作为框架的一个扩充。
 
 > 3.1 版本开始，一维数组结构改为二维数组配置. 数据库操作方面会考虑将 medoo 改为可选扩展，并且会考虑使用其他数据库操作进行替换。ORM 是不会内置到框架中，可能会使用一个扩展进行补充。
 
@@ -33,7 +33,7 @@ return [
 
 ### 数据库模型
 
-框架提供简单的数据库模型，暂时不提供 ORM 等复杂操作，因为本身定位不在此处，如果想要使用 ORM 等操作，可以通过自定义 [服务提供器](3-8-service-provider.md) 来扩展。
+框架提供简单的数据库模型，暂时不提供 ORM 等复杂操作，因为本身定位不在此处，如果想要使用 ORM 等操作，可以通过自定义 [服务提供器](zh-cn/3-8-service-provider.md) 来扩展。
 
 模型没有强制要求继承 `FastD\Model\Model`，但是在每个模型初始化的时候，会默认在构造方法中注入 `medoo` 对象，分配在 `db` 属性当中。
 

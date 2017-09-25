@@ -38,7 +38,7 @@ route("/", function () {
 
 #### abort($statusCode, $message = null)
 
-终端执行，抛出异常。异常输出控制请参考: [应用配置](3-1-configuration.md)
+终端执行，抛出异常。异常输出控制请参考: [应用配置](zh-cn/3-1-configuration.md)
 
 #### logger(): \Monolog\Logger
 
@@ -54,7 +54,7 @@ route("/", function () {
 
 框架默认的 `DatabaseServiceProvider` 是提供 medoo 操作，不提供具体的 ORM 等关系操作，如果需要自定义数据库操作，可以通过实现自己的 ServiceProvider 进行扩展。
 
-具体的操作和使用方式请查看: [服务提供器](3-6-service-provider.md)
+具体的操作和使用方式请查看: [服务提供器](zh-cn/3-6-service-provider.md)
 
 #### server(): \swoole_server
 

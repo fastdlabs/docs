@@ -72,7 +72,7 @@ class DatabasePool implements PoolInterface
 }
 ```
 
-然后通过 ServiceProvider 注入到容器中, 可参考[ServiceProvider](3-8-service-provider.md)
+然后通过 ServiceProvider 注入到容器中, 可参考[ServiceProvider](zh-cn/3-8-service-provider.md)
 
 启动服务器，就会连接到每个 worker 当中，要注意的是，所有每个 worker 都是独立的，也就是如果开 20 个 worker，就会产生 20 个连接。
 

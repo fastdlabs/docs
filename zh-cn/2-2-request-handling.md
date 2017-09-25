@@ -71,7 +71,7 @@ TCP 解析协议为 `JSON`，因此在进行参数传递的时候，需要对上
 
 WebSocket 中也是使用 JSON 作为数据传输格式，和 TCP 参数格式保持一样。
 
-详细服务器配置可以点击: [Swoole 服务器](3-9-swoole-server.md)
+详细服务器配置可以点击: [Swoole 服务器](zh-cn/3-9-swoole-server.md)
 
 内置服务器协议最终会转换成 HTTP 协议解析，因此可以兼容各种不同的内置服务器，平滑过渡。
 
