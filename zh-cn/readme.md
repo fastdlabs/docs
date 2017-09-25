@@ -1,4 +1,4 @@
-<h1 align="center">FastD 中文文档</h1>
+<h1 align="center">FastD</h1>
 
 <p align="center">:rocket: A high performance PHP API framework.</p>
 
