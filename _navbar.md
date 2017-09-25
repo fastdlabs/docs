@@ -1,0 +1,4 @@
+- [首页](/)
+- [文章](posts/readme.md)
+- [动态](zh-cn/more-pages.md)
+- [机器人](http://bot.fastdlabs.com/)
