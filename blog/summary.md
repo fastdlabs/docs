@@ -1,0 +1,15 @@
+- 架构
+    - [微服务与API 网关（下）: Kong能为我们做什么？](blog/why-need-kong-2.md)
+    - [微服务与API 网关（上）: 为什么需要API网关？](blog/why-need-kong-1.md)
+    - [浅谈RESTFul API设计](blog/talk-restful-api.md)
+    - [小钢的架构思考:架构设计](blog/think-architecture.md)
+    - [构建自描述 RESTFul API 体系的设计与畅想](blog/restful-api.md)
+    - [FastD 3.1设计详解](blog/3-1-api-design.md)
+
+- 最佳实践
+    - [FastD 最佳实践一: 构建 API](blog/practice/practice-1-created-api.md)
+    - [FastD 最佳实践二: 构建配置中心](blog/practice/practice-2-created-configure.md)
+    - [FastD 最佳实践三: 构建API网关](blog/practice/practice-3-created-gateway.md)
+    - [FastD 最佳实践四: 构建系统可视化监控](blog/practice/practice-4-created-monitor.md)
+    - [FastD 最佳实践五: 构建ELK日志分析系统](blog/practice/practice-5-created-log.md)
+    - [FastD 最佳实践六: 为应用添加调用链监控 Zipkin](blog/practice/practice-6-created-zipkin.md)
