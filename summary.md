@@ -34,13 +34,13 @@
 - 架构
     - [生命周期](zh-cn/4-1-lifecycle.md)
 
-- 系列文章
-    * [FastD 最佳实践一: 构建 API](https://fastdlabs.com/blog/9)
-    * [FastD 最佳实践二: 构建配置中心](https://fastdlabs.com/blog/10)
-    * [FastD 最佳实践三: 构建API网关](https://fastdlabs.com/blog/11)
-    * [FastD 最佳实践四: 构建系统可视化监控](https://runnerlee.com/2017/08/18/influxdb-telegraf-grafana-monitor)
-    * [FastD 最佳实践五: 构建ELK日志分析系统](http://fastdlabs.com/blog/13)
-    * [FastD 最佳实践六: 为应用添加调用链监控 Zipkin](http://fastdlabs.com/blog/14)
+- 最佳实践
+    - [FastD 最佳实践一: 构建 API](blog/practice/practice-1-created-api.md)
+    - [FastD 最佳实践二: 构建配置中心](blog/practice/practice-2-created-configure.md)
+    - [FastD 最佳实践三: 构建API网关](blog/practice/practice-3-created-gateway.md)
+    - [FastD 最佳实践四: 构建系统可视化监控](blog/practice/practice-4-created-monitor.md)
+    - [FastD 最佳实践五: 构建ELK日志分析系统](blog/practice/practice-5-created-log.md)
+    - [FastD 最佳实践六: 为应用添加调用链监控 Zipkin](blog/practice/practice-6-created-zipkin.md)
 
 - 周边
     * [FastD ServiceProvider](https://github.com/linghit/service-provider)
