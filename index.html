@@ -29,8 +29,17 @@
         loadNavbar: true,
         loadSidebar: 'summary.md',
         maxLevel: 4,
-        subMaxLevel: 2
-
+        subMaxLevel: 2,
+        auto2top: true,
+        autoHeader: true,
+        formatUpdated: '{MM}/{DD} {HH}:{mm}',
+        plugins: [
+            function (hook) {
+                hook.afterEach(function (html) {
+                    return html;
+                })
+            }
+        ]
     }
 </script>
 <script src="//s103.ggwan.com/docs/docsify.min.js"></script>

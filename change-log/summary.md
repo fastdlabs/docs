@@ -1,7 +1,0 @@
-- 系列文章
-    * [FastD 最佳实践一: 构建 API](https://fastdlabs.com/blog/9)
-    * [FastD 最佳实践二: 构建配置中心](https://fastdlabs.com/blog/10)
-    * [FastD 最佳实践三: 构建API网关](https://fastdlabs.com/blog/11)
-    * [FastD 最佳实践四: 构建系统可视化监控](https://runnerlee.com/2017/08/18/influxdb-telegraf-grafana-monitor)
-    * [FastD 最佳实践五: 构建ELK日志分析系统](http://fastdlabs.com/blog/13)
-    * [FastD 最佳实践六: 为应用添加调用链监控 Zipkin](http://fastdlabs.com/blog/14)

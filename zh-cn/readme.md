@@ -26,49 +26,48 @@
 修改日志
 --------
 
-- [x] [修改日志](change-log.md)
-- [x] [升级指南](upgrade.md)
+- [修改日志](zh-cn/change-log.md)
+- [升级指南](zh-cn/upgrade.md)
 
 安装与配置
 --------
 
-- [x] [关于 FastD](1-1-about-fastd.md)
-- [x] [安装 FastD](1-2-installing.md)
-- [x] [目录结构](1-3-directory-structure.md)
-- [x] [框架执行流程图](1-4-flow.md)
+- [关于 FastD](zh-cn/1-1-about-fastd.md)
+- [安装 FastD](zh-cn/1-2-installing.md)
+- [目录结构](zh-cn/1-3-directory-structure.md)
+- [框架执行流程图](zh-cn/1-4-flow.md)
 
 
 基础入门
 -------
 
-- [x] [路由与控制器](2-1-routing-and-controllers.md)
-- [x] [请求处理](2-2-request-handling.md)
-- [x] [响应处理](2-3-response-handling.md)
-- [x] [认证授权](2-4-authorization.md)
-- [x] [异常与日志处理](2-5-exception-logger-handling.md)
-- [ ] ~~[API文档](2-6-docuemnt.md)~~
+- [路由与控制器](zh-cn/2-1-routing-and-controllers.md)
+- [请求处理](zh-cn/2-2-request-handling.md)
+- [响应处理](zh-cn/2-3-response-handling.md)
+- [认证授权](zh-cn/2-4-authorization.md)
+- [异常与日志处理](zh-cn/2-5-exception-logger-handling.md)
 
 高级
 -------
 
-- [x] [配置](3-1-configuration.md)
-- [x] [中间件](3-2-middleware.md)
-- [x] [数据库medoo](3-3-database.md)
-- [x] [缓存](3-4-cache.md)
-- [x] [命令行](3-5-console.md)
-- [x] [单元测试](3-6-testcase.md)
-- [x] [辅助函数](3-7-helpers.md)
-- [x] [服务提供器](3-8-service-provider.md)
-- [x] [Swoole服务器](3-9-swoole-server.md)
-- [x] [Swoole进程管理](3-10-swoole-processor.md)
-- [x] [连接池](3-11-connection-pool.md)
-- [x] [扩展](3-12-extend.md)
-- [x] [监控](3-13-monitor.md)
+- [配置](zh-cn/3-1-configuration.md)
+- [中间件](zh-cn/3-2-middleware.md)
+- [数据库medoo](zh-cn/3-3-database.md)
+- [缓存](zh-cn/3-4-cache.md)
+- [命令行](zh-cn/3-5-console.md)
+- [单元测试](zh-cn/3-6-testcase.md)
+- [辅助函数](zh-cn/3-7-helpers.md)
+- [服务提供器](zh-cn/3-8-service-provider.md)
+- [Swoole服务器](zh-cn/3-9-swoole-server.md)
+- [Swoole进程管理](zh-cn/3-10-swoole-processor.md)
+- [连接池](zh-cn/3-11-connection-pool.md)
+- [扩展](zh-cn/3-12-extend.md)
+- [监控](zh-cn/3-13-monitor.md)
 
 架构
 ---------
 
-- [x] [生命周期](4-1-lifecycle.md)
+- [生命周期](zh-cn/4-1-lifecycle.md)
 
 ### 系列文章
 
