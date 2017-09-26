@@ -6,4 +6,4 @@
 - Support Swoole
 
 [GitHub](https://github.com/JanHuang/fastd)
-[Get Started](zh-cn/1-2-installing)
+[Get Started](zh-cn/readme.md)
