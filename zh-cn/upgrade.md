@@ -1,5 +1,10 @@
 # 升级指南
 
+> v3.1 -> v3.2
+
+**无痕升级**
+
+!> v3.0 -> v3.1
 1. 调整配置文件 `config/cache.php` 和 `config/database.php` 一维数组变成二维数组
 
 ##### cache.php
