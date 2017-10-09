@@ -45,9 +45,10 @@
     
 - Swoole
     - [基础使用](zh-cn/swoole/8-1-swoole-server.md)
-    - [HttpServer](zh-cn/swoole/8-2-swoole-http.md)
-    - [WebSocketServer](zh-cn/swoole/8-3-swoole-websocket.md)
-    - [自定义服务器](zh-cn/swoole/8-4-swoole-custom.md)
+    - [TCPServer](zh-cn/swoole/8-2-tcp-server.md)
+    - [HttpServer](zh-cn/swoole/8-3-http-server.md)
+    - [WebSocketServer](zh-cn/swoole/8-4-websocket-server.md)
+    - [自定义服务器](zh-cn/swoole/8-5-custom-server.md)
 
 - 最佳实践
     - [FastD 最佳实践一: 构建 API](blog/practice/practice-1-created-api.md)

@@ -13,7 +13,7 @@
 
 #### 效果图:  
 
-![](../assets/elk.jpg)
+![](assets/elk.jpg)
 
 #### 使用
 

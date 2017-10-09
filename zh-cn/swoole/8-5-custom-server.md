@@ -2,7 +2,7 @@
 
 Swoole 服务器依赖于 [swoole](https://github.com/JanHuang/swoole) 并且提供灵活优雅的实现方式。
 
-!> swoole 必须依赖于 ext-swoole 扩展，并且版本 >= 1.9.6
+> swoole 必须依赖于 ext-swoole 扩展，并且版本 >= 1.9.6
 
 swoole 服务器的配置文件存放在 `config/server.php` 中，其中 `host` 选项是必填，`options` 配置项请看 [server 配置选项](http://wiki.swoole.com/wiki/page/274.html)
 
@@ -12,7 +12,7 @@ $ php bin/server {start|status|stop|reload} [-d: 守护进程] [-t: web root 目
 
 默认操作方式是 `status`，可用于简单查看进程状态。
 
-!> 访问的方式与 FPM 下访问保持一致。开发环境下推荐使用 FPM，生产环境可以尝试用 Swoole 代替 FPM，如果有必要的话
+> 访问的方式与 FPM 下访问保持一致。开发环境下推荐使用 FPM，生产环境可以尝试用 Swoole 代替 FPM，如果有必要的话
 
 ### 守护进程
 
@@ -21,6 +21,10 @@ $ php bin/server {start|status|stop|reload} [-d: 守护进程] [-t: web root 目
 ```php
 $ php bin/server {start|status|stop|reload} -d > /dev/null
 ```
+
+启动守护进程需要屏蔽输出，屏蔽输出仅仅是屏蔽输出而已，并不会对程序和性能造成影响。
+
+以上即可通过不修改代码，支持 Swoole 操作。
 
 ### 多端口监听
 
@@ -57,10 +61,15 @@ return [
 
 每个需要监听的端口需要继承 `FastD\Swoole\Server` 对象，实现内部抽象方法，具体请查看 [examples](https://github.com/JanHuang/swoole/blob/master/examples/multi_port_server.php)
 
-!> `swoole_http_server` 和 `swoole_websocket_server` 因为是使用继承子类实现的，无法使用 listen 创建 Http/WebSocket 服务器。如果服务器的主要功能为RPC，但希望提供一个简单的Web管理界面。
-在这样的场景中，可以先创建 Http/WebSocket 服务器，然后再进行 listen 监听 RPC 服务器的端口。 官方说明: [Swoole 监听端口](http://wiki.swoole.com/wiki/page/525.html)
+**注意事项**
 
-因为多端口是共享进程处理的，所以如果要使用 task 任务处理，需要在主服务器中处理 `doTask` 回调方法。
+`swoole_http_server` 和 `swoole_websocket_server` 因为是使用继承子类实现的，无法使用 listen 创建 Http/WebSocket 服务器。如果服务器的主要功能为RPC，但希望提供一个简单的Web管理界面。
+
+在这样的场景中，可以先创建 Http/WebSocket 服务器，然后再进行 listen 监听 RPC 服务器的端口。
+
+因为多端口是共享进程处理的，所以如果要使用 task 任务处理，需要在主服务器中处理 `doTask` 回调方法。 
+
+* [Swoole 监听端口](http://wiki.swoole.com/wiki/page/525.html)
 
 ### 服务器进程
 
@@ -80,14 +89,14 @@ return [
         'task_worker_num' => 20,
     ],
     'processes' => [
-        \Processor\DemoProcessor::class
+
     ],
 ];
 ```
 
 重写 `FastD\Swoole\Process` 的 `handle` 方法，`handle` 为进程具体执行的事务。示例: [DemoProcessor](../../tests/app/src/Processor/DemoProcessor.php)
 
-> 完整的配置
+##### 完整的配置
 
 ```php
 <?php
@@ -100,7 +109,7 @@ return [
         'task_worker_num' => 20,
     ],
     'processes' => [
-        \Processor\DemoProcessor::class
+        
     ],
     'listeners' => [
        [
@@ -113,7 +122,9 @@ return [
 
 ### Task 服务器
 
-在 swoole 组件中，已经实现了 Swoole Task 功能，框架本身不提供 Task 服务器，但是可以通过集成扩展的方式实现自己的 Task 服务器。
+在 swoole 组件中，已经实现了 Swoole Task 功能，可以通过集成扩展的方式实现自己的 Task 服务器。如下: 
+
+##### Server\TaskServer
 
 ```php
 <?php
@@ -143,21 +154,36 @@ class TaskServer extends HTTPServer
 }
 ```
 
-当我们实现自身 swoole server 的时候，并且需要启动，需要对 `server.php` 配置文件进行修改，修改 `class` 配置项, 如下:
-
 调整配置: 
 
 ```php
 <?php
 
 return [
-    // code...
+    'host' => 'http://0.0.0.0:9527',
     'class' => \Server\TaskServer::class,
-    // code...
+    'options' => [
+        'pid_file' => __DIR__ . '/../runtime/pid/' . app()->getName() . '.pid',
+        'worker_num' => 10,
+        'task_worker_num' => 20,
+    ],
+    'processes' => [
+
+    ],
+    'listeners' => [
+        [
+            'class' => \FastD\Servitization\Server\TCPServer::class,
+            'host' => 'tcp://127.0.0.1:9528',
+        ]
+    ],
 ];
 ```
 
-启动服务器即可。
+即可实现 task 服务器
+
+### WebSocket 服务器
+
+
 
 ### Swoole 客户端
 
