@@ -45,4 +45,10 @@ class DatabaseServiceProvider implements ServiceProviderInterface
 
 如果需要尝试添加或者修改服务提供器，可以参考 [DatabaseServiceProvider](https://github.com/JanHuang/fastD/blob/master/src/ServiceProvider/DatabaseServiceProvider.php), [database.php](https://github.com/JanHuang/dobee/blob/master/config/database.php), [app.php](https://github.com/JanHuang/dobee/blob/master/config/app.php)
 
+### 自注册命令行
+
+当如果我们的服务提供器带有命令行，而又不想让用户手动添加，可以通过服务提供器内部注册的方式进行处理。
+
+
+
 下一节: [Swoole服务器](zh-cn/3-9-swoole-server.md)

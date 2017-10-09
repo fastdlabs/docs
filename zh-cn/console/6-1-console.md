@@ -1,66 +1,49 @@
-# 命令行
+### config 命令
 
-命令行依赖于 [symfony/console](https://github.com/symfony/console) 具体操作可以查看 [console](http://symfony.com/doc/current/console.html)
-
-版本: `^3.2`
-
-所有命令行文件存放在 `src/Console` 目录中，命令行对象需要继承 `Symfony\Component\Console\Command\Command`, 在启动 Console 控制台对象的时候，程序会自动扫描目录下所有命令行文件，并且进行处理。
- 
-```php
-<?php
-
-namespace Console;
-
-use Symfony\Component\Console\Command\Command;
-use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Output\OutputInterface;
-
-
-class Demo extends Command
-{
-    public function configure()
-    {
-        $this->setName('demo');
-    }
-
-    public function execute(InputInterface $input, OutputInterface $output)
-    {
-        $output->writeln('hello world');
-    }
-}
-```
-
-更多请查看: [console](http://symfony.com/doc/current/console.html)
-
-#### 注册命令行
-
-在默认情况下，命令行一般会存储在 `src/Console` 目录中，对于一些特殊情况，例如我需要在扩展包中注册命令行，就需要手动注册命令行了。
-
-框架本身提供两种注册方式，一种是配置文件注册，另外一种是通过在服务提供者 `register` 方法中手动注册。
+用于查看 config 配置文件信息，会以 json 格式化输出到终端，可用于 QConf 配置中心调试。
 
 ```php
-class FooServiceProvider implements ServiceProviderInterface
-{
-    public function register(Container $container)
-    {
-        $container->add('foo', new Foo());
-        config()->merge([
-            'consoles' => [
-                DemoConsole::class
-            ]
-        ]);
-    }
-}
+$ php bin/console config
 ```
 
-代码解析: 
-
-在系统中，命令行 application 会执行如下代码，用于注册用户自定义命令，而命令来至于配置，那么只需要我们将命令行对象添加到配置中，即可达成注册的效果.
+查看指定配置文件信息
 
 ```php
-foreach (config()->get('consoles', []) as $console) {
-    $this->add(new $console());
-}
+$ php bin/console config app
 ```
 
-下一节: [单元测试](zh-cn/3-6-testcase.md)
+### controller 命令
+
+用于创建初始化控制器。
+
+```php
+$ php bin/console controller Demo
+```
+
+### model 命令
+
+用于创建初始化数据操作模型。
+
+```php
+$ php bin/console model Demo
+```
+
+### migrate 命令
+
+执行数据迁移命令。详情可查看: [数据迁移](zh-cn/database/4-4-migration.md)
+
+### route 命令
+
+查看调试所有路由，展示路由列表及详情
+
+```php
+$ php bin/console route
+```
+
+### process 命令
+
+用于管理进程，当我们编写好进程处理逻辑之后，可以通过该命令进行管理。详细操作可看: [进程管理](zh-cn/process/7-1-swoole-processor)
+
+```php
+$ php bin/console process name
+```

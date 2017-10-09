@@ -83,6 +83,16 @@ $ php bin/console migrate run
 $ php bin/console migrate run table
 ```
 
+自定义数据集默认存放在 dataset 目录，可以通过 `-d` 参数进行调整选择。
+
+程序会自动读取相关表名的yml文件进行读取，然后进行插入操作。
+
+!> 每次运行程序指挥执行一次数据填充，如果想要重新插入，请执行 cache --clear 命令进行清除缓存。
+
+```php
+$ php bin/console migrate run table -d /tmp
+```
+
 ##### cache
 
 缓存处理操作，用于查看和清理缓存数据，不影响业务处理。
