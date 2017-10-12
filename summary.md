@@ -5,7 +5,7 @@
     - [关于 FastD](zh-cn/introduct/1-1-about-fastd.md)
     - [安装 FastD](zh-cn/introduct/1-2-installing.md)
     - [目录结构](zh-cn/introduct/1-3-directory-structure.md)
-    - [框架执行流程图](zh-cn/introduct/1-4-flow.md)
+    - [流程图](zh-cn/introduct/1-4-flow.md)
     - [生命周期](zh-cn/introduct/1-5-lifecycle.md)
 
 - 基础入门

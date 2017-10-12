@@ -2,8 +2,8 @@
 
 #### 3.2
 
-* 新增进程管理命令，新增 process.php 配置文件。支持自定义命令，守护进程。
-* 调整注册命令行
+* 新增进程管理命令，新增 `process.php` 配置文件。支持自定义命令，守护进程。
+* 优化预设命令行，去除前缀
 * 新增 `binary`, `version` 等辅助函数
 * 优化 application 日志处理
 * 新增 `FastD\Logger\Formatter\StashForamtter` 日志格式，支持 `logstash`。点击前往: [教程](blog/practice/practice-5-created-log.md)

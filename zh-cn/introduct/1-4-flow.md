@@ -53,4 +53,4 @@
                          +------------------+                            
 ```
 
-下一节: [路由与控制器](zh-cn/2-1-routing-and-controllers.md)
+下一节: [生命周期](zh-cn/introduct/1-5-lifecycle.md)
