@@ -133,6 +133,18 @@ return [
 
 #### 进程配置
 
+3.2 版本新增进程管理，新增: `config/process.php`。
+
+```php
+<?php
+
+return [
+    'demo' => \Process\DemoProcess::class
+];
+```
+
+通过命令快速管理 php 进程，
+
 #### 缓存配置
 
 #### 数据库配置

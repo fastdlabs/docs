@@ -2,6 +2,10 @@
 
 API 返回均是响应 `json`, 因为主要单独针对 API 场景, 如果功能无法满足业务需要，可以通过自定义 [扩展](zh-cn/3-8-extend.md) 来实现业务目的，但必须返回 `Psr\Http\Message\ResponseInterface` 抽象接口类。
 
+#### 响应头
+
+#### 响应体
+
 ```php
 <?php
 
@@ -51,5 +55,7 @@ function xxx ()
     ]);
 }
 ```
+
+
 
 下一节: [授权](zh-cn/2-4-authorization.md)

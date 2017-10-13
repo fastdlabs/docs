@@ -73,7 +73,7 @@ class IndexController
 
 控制器(中间件)方法默认接收: `ServerRequest` 对象，`ServerRequest` 对象实现来自 http 组件，内封装对 http 协议常规处理。
 
-##### 获取 $_GET
+#### 获取 $_GET
 
 ```php
 namespace Controller;
@@ -92,12 +92,65 @@ class IndexController
 }
 ```
 
-##### 获取 $_POST
+#### 获取 $_POST
 
-##### 获取 PUT/DELETE
+```php
+namespace Controller;
 
-##### 获取 $_COOKIE
 
-##### Session 的实现
+use FastD\Http\ServerRequest;
+
+class IndexController
+{
+    public function sayHello(ServerRequest $request)
+    {
+        return json([
+            'name' => $request->getQueryString('name')
+        ]);
+    }
+}
+```
+
+#### 获取 PUT/DELETE
+
+```php
+namespace Controller;
+
+
+use FastD\Http\ServerRequest;
+
+class IndexController
+{
+    public function sayHello(ServerRequest $request)
+    {
+        return json([
+            'name' => $request->getQueryString('name')
+        ]);
+    }
+}
+```
+
+#### 获取 $_COOKIE
+
+```php
+namespace Controller;
+
+
+use FastD\Http\ServerRequest;
+
+class IndexController
+{
+    public function sayHello(ServerRequest $request)
+    {
+        return json([
+            'name' => $request->getQueryString('name')
+        ]);
+    }
+}
+```
+
+#### Session 的实现
+
+框架不提供 Session 处理，但可以利用 Cookie 进行实现，亦可以通过 Session 组件进行扩展。[session](https://github.com/janhuang/session)
 
 下一节: [请求](zh-cn/2-2-request-handling.md)
