@@ -75,6 +75,8 @@ class IndexController
 
 #### 获取 $_GET
 
+利用 `getQueryParams()` 方法获取所有 `$_GET` 参数。
+
 ```php
 namespace Controller;
 
@@ -85,15 +87,24 @@ class IndexController
 {
     public function sayHello(ServerRequest $request)
     {
-        return json([
-            'name' => $request->getQueryString('name')
-        ]);
+        $get = $request->getQueryParams();
+        // some code
     }
 }
 ```
+
+可以利用 `getParam()` 获取具体参数，例外方法内置判断参数是否存在，因此接受两个参数，第二个作为默认值，当不存在该值的时候，会默认返回第二个参数。如:
+
+```php
+$request->getParam("foo", "bar");
+```
+
+当没有 `foo` 索引的时候，就会默认返回 `bar` 的值。
 
 #### 获取 $_POST
 
+利用 `getParsedBody()` 方法获取所有 `$_GET` 参数。
+
 ```php
 namespace Controller;
 
@@ -104,12 +115,19 @@ class IndexController
 {
     public function sayHello(ServerRequest $request)
     {
-        return json([
-            'name' => $request->getQueryString('name')
-        ]);
+        $post = $request->getParsedBody();
+        // some code
     }
 }
 ```
+
+可以利用 `getParam()` 获取具体参数，例外方法内置判断参数是否存在，因此接受两个参数，第二个作为默认值，当不存在该值的时候，会默认返回第二个参数。如:
+
+```php
+$request->getParam("foo", "bar");
+```
+
+当没有 `foo` 索引的时候，就会默认返回 `bar` 的值。
 
 #### 获取 PUT/DELETE
 
@@ -123,9 +141,9 @@ class IndexController
 {
     public function sayHello(ServerRequest $request)
     {
-        return json([
-            'name' => $request->getQueryString('name')
-        ]);
+        $raw = (string) $request->getBody();
+        $body = $request->getParsedBody();
+        // some code
     }
 }
 ```
@@ -142,9 +160,9 @@ class IndexController
 {
     public function sayHello(ServerRequest $request)
     {
-        return json([
-            'name' => $request->getQueryString('name')
-        ]);
+        $cookies = $request->getCookieParams();
+        $cookie = $request->getCookie('foo', 'bar');
+        // some code
     }
 }
 ```
@@ -153,4 +171,4 @@ class IndexController
 
 框架不提供 Session 处理，但可以利用 Cookie 进行实现，亦可以通过 Session 组件进行扩展。[session](https://github.com/janhuang/session)
 
-下一节: [请求](zh-cn/2-2-request-handling.md)
+下一节: [请求](zh-cn/basic/2-3-request-handling.md)
