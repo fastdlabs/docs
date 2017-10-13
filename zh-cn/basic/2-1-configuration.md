@@ -1,18 +1,26 @@
 # 配置
 
-#### 路由配置
+#### 路由配置 
 
-路由配置则是具体的路由配置信息，具体请前往: [路由与控制器](zh-cn/2-1-routing-and-controllers.md)
+路由配置存放地址: `config/routes.php`
+
+每个路由对应控制一个控制器，支持多种路由方式。
+
+```php
+<?php
+
+route()->get('/', 'WelcomeController@welcome');
+route()->get('/hello/{name}', 'WelcomeController@sayHello');
+
+```
+
+更多详细配置请前往: [路由与控制器](zh-cn/basic/2-2-routing-and-controllers.md)
 
 #### 应用配置
 
-应用配置则是整体核心配置的集合，包括时区，环境，日志，服务提供器，中间件等等，可以通过自定义 [服务提供器](zh-cn/3-8-service-provider.md) 来读取具体的配置内容。
+应用配置则是整体核心配置的集合，包括时区，环境，日志，服务提供器，中间件等等，可以通过自定义 [服务提供器](zh-cn/basic/3-8-service-provider.md) 来读取具体的配置内容。
 
-具体内容请查看: [app.php](../../tests/app/default/config/app.php)
-
-用户自定义配置可以设置 [config.php](../../tests/app/default/config/config.php)，此处配置项会合并到 app.php 配置中，因为不能出现重名配置项。
-
-> 完整的配置项
+!> 系统默认配置项请勿随意删除。
 
 ```php
 <?php
@@ -88,9 +96,9 @@ return [
 ];
 ```
 
-!> 默认的配置项请不要删除
-
 #### 服务器配置
+
+服务器配置主要用于 `swoole` 服务器处理上，用于配置基础 ip、端口等信息，一起启动的服务器类型。
 
 服务器配置项 host 是必填的，是 Swoole 服务器监听的地址。`options` 配置项请查看 [Swoole配置](http://wiki.swoole.com/wiki/page/274.html)
 
@@ -99,7 +107,7 @@ return [
 ```php
 <?php
 return [
-    'host' => 'http://'.get_local_ip().':9527',
+    'host' => get_local_ip().':9527',
     'class' => \FastD\Servitization\Server\HTTPServer::class,
     'options' => [
         'pid_file' => '',
@@ -110,20 +118,25 @@ return [
         
     ],
     'listeners' => [
-        [
-            'class' => \FastD\Servitization\Server\TCPServer::class,
-            'host' => 'tcp://'.get_local_ip().':9528',
-        ],
+        
     ],
 ];
 ```
 
-#### 自定义配置项
+`class` 配置项用于配置启动的服务器类型，可以自定义具体服务器。具体文档: [自定义服务器](zh-cn/swoole/8-5-custom-server)
 
-[database.php](https://github.com/JanHuang/dobee/blob/master/config/database.php) 与 [cache.php](https://github.com/JanHuang/dobee/blob/master/config/cache.php) 是框架默认提供的扩展配置，由 [DatabaseServiceProvider](https://github.com/JanHuang/fastD/blob/master/src/ServiceProvider/DatabaseServiceProvider.php) 与 [CacheServiceProvider](https://github.com/JanHuang/fastD/blob/master/src/ServiceProvider/CacheServiceProvider.php) 进行具体处理。
+`options` 配置项与 `swoole` 保持一致，请参考: [配置项](https://wiki.swoole.com/wiki/page/274.html)
 
-其中 database.php 与 cache.php 虽说是框架默认提供的，但是他们均属于自定义服务提供器之一。
+`processes` 配置项作用于服务器的进程处理。例如:启动服务后，使用进程定时检测服务器状态。官方地址: [swoole_server->addProcess](https://wiki.swoole.com/wiki/page/390.html)
 
-如果需要自定添加或者修改服务提供器，具体请参考: [服务提供器](zh-cn/3-8-service-provider.md)
+`listeners` 配置项作用于服务多端口监听上。例如: 开启HTTP服务器，并且开放 TCP 端口进行监听。官方地址: [swoole_server->listen](https://wiki.swoole.com/wiki/page/367.html)
 
-下一节: [中间件](zh-cn/3-2-middleware.md)
+#### 进程配置
+
+#### 缓存配置
+
+#### 数据库配置
+
+#### 自定义配置
+
+下一节: [路由与控制器](zh-cn/basic/2-2-routing-and-controllers.md)

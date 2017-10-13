@@ -6,7 +6,7 @@
 
 在路由回调处理中，控制器不需要编写命名空间，默认在控制器前追加 `Controller` 命名空间。
 
-> 3.1 版本控制器已经迁移到 `Controller` 目录，3.0 版本存储在 `Http/Controller` 目录
+!> 从 3.1 版本开始，控制器已经迁移到 `Controller` 目录，3.0 版本存储在 `Http/Controller` 目录
 
 #### 方法路由
  
@@ -42,55 +42,7 @@ route()->get("/foo/*", "IndexController@sayHello");
 $request->getAttribute('fuzzy_path');
 ```
 
-### 中间件
 
-路由是整个框架最核心的功能之一，最后执行会根据路由地址操作最终的回调处理，而这个回调处理本身就是一个中间件处理模块之一。
-
-使用中间件前，需要先配置可用中间件列表，通过 `config/app.php` 配置文件进行配置
-
-```php
-<?php
-
-return [
-    // some code...
-    /**
-     * Http middleware
-     */
-    'middleware' => [
-        'basic.auth' => new FastD\BasicAuthenticate\HttpBasicAuthentication([
-            'authenticator' => [
-                'class' => \FastD\BasicAuthenticate\PhpAuthenticator::class,
-                'params' => [
-                    'foo' => 'bar'
-                ]
-            ],
-            'response' => [
-                'class' => \FastD\Http\JsonResponse::class,
-                'data' => [
-                    'msg' => 'not allow access',
-                    'code' => 401
-                ]
-            ]
-        ])
-    ],
-];
-```
-
-键名 `basic.auth` 即是中间件名字，可以通过 
-
-```php
-route()->post('/', 'IndexController@sayHello')->withMiddleware('basic.auth');
-```
-
-进行配置。每当程序调用 `/` 地址的时候，会先经过配置的中间件。
-
-##### 路由组中间件
-
-```php
-route()->group(['prefix' => '/v1', 'middleware' => 'demo'], function () {
-    route()->get('/', 'IndexController@sayHello');
-});
-```
 
 路由组支持全局设置中间件，可以子路由可以统一设置中间。子路由中会默认继承路由组中的中间级，如果在路由组中继续定义中间件，会继续追加到指定路由中。
 
@@ -98,40 +50,9 @@ route()->group(['prefix' => '/v1', 'middleware' => 'demo'], function () {
 
 路由配置不支持匿名函数回调，因此在核心处理中屏蔽了该功能，用户保持配置文件的清洁与独立，建议开发者使用控制器回调的方式进行处理。
 
-**控制器目前存放于 Http 目录中，3.1 版本后将统一控制器入口，同时为TCP、HTTP提供服务, 去除 Http 目录，保留 Controller 目录，其他结构不变**
+!> 控制器目前存放于 Http 目录中，3.1 版本后将统一控制器入口，同时为TCP、HTTP提供服务, 去除 Http 目录，保留 Controller 目录，其他结构不变
 
 > 控制器无需继承任何对象，方法均有 [辅助函数](zh-cn/3-7-helpers.md) 提供
-
-```php
-namespace Controller;
-
-
-class IndexController
-{
-    public function sayHello()
-    {
-        return json([
-            'foo' => 'bar'
-        ]);
-    }
-}
-```
-
-如上述，此处的控制器就是一个 "中间件" 的回调处理，如果在 [中间件](zh-cn/3-2-middleware.md) 中逻辑处理错误，是不会进入到控制器中的。
-
-中间件的实现依赖于 [Middleware](https://github.com/JanHuang/middleware) 组件。
-
-如果该路由是动态路由，则参数需要通过 `ServerRequestInterface` 对象进行访问。
-
-##### 示例
-
-**config/routes.php**
-
-```php
-route()->get('/hello/{name}', 'IndexController@sayHello');
-```
-
-**Controller\IndexController**
 
 ```php
 namespace Controller;
@@ -149,5 +70,34 @@ class IndexController
     }
 }
 ```
+
+控制器(中间件)方法默认接收: `ServerRequest` 对象，`ServerRequest` 对象实现来自 http 组件，内封装对 http 协议常规处理。
+
+##### 获取 $_GET
+
+```php
+namespace Controller;
+
+
+use FastD\Http\ServerRequest;
+
+class IndexController
+{
+    public function sayHello(ServerRequest $request)
+    {
+        return json([
+            'name' => $request->getQueryString('name')
+        ]);
+    }
+}
+```
+
+##### 获取 $_POST
+
+##### 获取 PUT/DELETE
+
+##### 获取 $_COOKIE
+
+##### Session 的实现
 
 下一节: [请求](zh-cn/2-2-request-handling.md)
