@@ -1,10 +1,10 @@
 # 响应处理
 
-API 返回均是响应 `json`, 因为主要单独针对 API 场景, 如果功能无法满足业务需要，可以通过自定义 [扩展](zh-cn/3-8-extend.md) 来实现业务目的，但必须返回 `Psr\Http\Message\ResponseInterface` 抽象接口类。
-
-#### 响应头
+每个路由对应控制器方法，并且方法需要返回对应响应信息，完成一次完整的请求响应。
 
 #### 响应体
+
+利用框架提供的 `json` 函数，能够快速向客户端输出 `json` 格式的数据。
 
 ```php
 <?php
@@ -25,37 +25,95 @@ class IndexController
 }
 ```
 
-json 是框架提供的辅助函数，可以通过 `helpers.php` 进行查阅。
-
-响应对象返回给 Application 后，Application 会自动将 Response 进行包装，输出 Header，Body，如果是 TCP 服务，则会输出具体 Body。
-
-如果想要自定义输出格式，你需要实现自己的服务器。具体实现可以参考内置的服务器: [HTTP](https://github.com/JanHuang/fastD/blob/master/src/Servitization/Server/HTTPServer.php), [TCP](https://github.com/JanHuang/fastD/blob/master/src/Servitization/Server/TCPServer.php)
-
-服务器基于 Swoole 扩展实现，具体可以前往: [Swoole服务器](zh-cn/3-9-swoole-server.md)
-
-#### 中断
-
-在应用开发过程中，除了有正常的响应外，更多的是需要提供完善的异常处理。异常处理我们提供 `abort` 函数，立即中断并返回数据。
+如果需要响应特殊的 http 状态码，可以通过第二个参数进行调整。
 
 ```php
-abort(400);
-```
+<?php
 
-程序中自动抛出异常，有系统捕获，减少开发人员判断的工作。
+namespace Controller;
 
-#### 响应编码
 
-除了日常可理解的相应数据外，3.2 还提供 binary 编码响应。
+use FastD\Http\ServerRequest;
 
-```php
-function xxx ()
+class IndexController
 {
-    return binary([
-        'foo' => 'bar'
-    ]);
+    public function sayHello(ServerRequest $request)
+    {
+        return json([
+            'foo' => 'bar'
+        ], 201);
+    }
 }
 ```
 
+#### 响应头
+
+当如果需要自定义一些响应头的时候，可以利用 PSR7 Response 对象方法来设置响应头.
+
+```php
+<?php
+
+namespace Controller;
 
 
-下一节: [授权](zh-cn/2-4-authorization.md)
+use FastD\Http\ServerRequest;
+
+class IndexController
+{
+    public function sayHello(ServerRequest $request)
+    {
+        return json([
+            'args' => $request->getParsedBody()
+        ])->withHeader('foo', 'bar');
+    }
+}
+```
+
+##### 设置 Cookie
+
+利用响应头，设置 cookie 信息，框架 cookie 的实现也是利用 `header` 函数进行实现的。
+
+```php
+<?php
+
+namespace Controller;
+
+
+use FastD\Http\ServerRequest;
+
+class IndexController
+{
+    public function sayHello(ServerRequest $request)
+    {
+        return json([
+            'args' => $request->getParsedBody()
+        ])->withCookie('foo', 'bar');
+    }
+}
+``` 
+
+##### 设置 cache-control
+
+Response 对象还提供了常用的 http 缓存配置。
+
+```php
+<?php
+
+namespace Controller;
+
+
+use FastD\Http\ServerRequest;
+
+class IndexController
+{
+    public function sayHello(ServerRequest $request)
+    {
+        return json([
+            'args' => $request->getParsedBody()
+        ])->withCacheControl('public')
+        ->withExpires(new \DateTime('2017-10-11'));
+    }
+}
+```
+
+下一节: [中间件](zh-cn/basic/2-5-middleware.md)

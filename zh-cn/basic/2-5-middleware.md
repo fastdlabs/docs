@@ -1,10 +1,12 @@
 # 中间件
 
-### 中间件
-
 路由是整个框架最核心的功能之一，最后执行会根据路由地址操作最终的回调处理，而这个回调处理本身就是一个中间件处理模块之一。
 
-使用中间件前，需要先配置可用中间件列表，通过 `config/app.php` 配置文件进行配置
+当控制器配置中间件之后，执行会先将配置的中间件全部调用完，最终落地到控制器方法中，由开发者最终处理。
+
+### 授权中间件
+
+框架内置授权中间件，依赖于 [fastd/basic-authenticate](https://github.com/JanHuang/basic-authenticate)。
 
 ```php
 <?php
@@ -34,15 +36,21 @@ return [
 ];
 ```
 
-键名 `basic.auth` 即是中间件名字，可以通过 
+可以修改 `params` 选项来调整授权的用户和密码。
+
+`response` 选项用于授权失败的响应数据和格式。
+
+添加到路由中
 
 ```php
 route()->post('/', 'IndexController@sayHello')->withMiddleware('basic.auth');
 ```
 
-进行配置。每当程序调用 `/` 地址的时候，会先经过配置的中间件。
+### 缓存中间件
 
-##### 路由组中间件
+
+
+### 自定义中间件
 
 ```php
 route()->group(['prefix' => '/v1', 'middleware' => 'demo'], function () {

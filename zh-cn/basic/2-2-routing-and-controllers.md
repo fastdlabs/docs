@@ -54,6 +54,12 @@ $request->getAttribute('fuzzy_path');
 
 > 控制器无需继承任何对象，方法均有 [辅助函数](zh-cn/3-7-helpers.md) 提供
 
+#### 正常响应
+
+对应路由的控制器方法都必须返回一个 `Response` 对象，否则无法向客户端发送数据。
+
+框架内置 `json` 函数，用于封装输出 `json` 格式的数据，使用如下: 
+
 ```php
 namespace Controller;
 
@@ -73,37 +79,9 @@ class IndexController
 
 控制器(中间件)方法默认接收: `ServerRequest` 对象，`ServerRequest` 对象实现来自 http 组件，内封装对 http 协议常规处理。
 
-#### 获取 $_GET
+#### 异常中断
 
-利用 `getQueryParams()` 方法获取所有 `$_GET` 参数。
-
-```php
-namespace Controller;
-
-
-use FastD\Http\ServerRequest;
-
-class IndexController
-{
-    public function sayHello(ServerRequest $request)
-    {
-        $get = $request->getQueryParams();
-        // some code
-    }
-}
-```
-
-可以利用 `getParam()` 获取具体参数，例外方法内置判断参数是否存在，因此接受两个参数，第二个作为默认值，当不存在该值的时候，会默认返回第二个参数。如:
-
-```php
-$request->getParam("foo", "bar");
-```
-
-当没有 `foo` 索引的时候，就会默认返回 `bar` 的值。
-
-#### 获取 $_POST
-
-利用 `getParsedBody()` 方法获取所有 `$_GET` 参数。
+框架中提供中断处理，用于应用发生异常时，提示客户端进行处理。
 
 ```php
 namespace Controller;
@@ -115,60 +93,18 @@ class IndexController
 {
     public function sayHello(ServerRequest $request)
     {
-        $post = $request->getParsedBody();
-        // some code
+        abort(400, 'foo bar');
     }
 }
 ```
 
-可以利用 `getParam()` 获取具体参数，例外方法内置判断参数是否存在，因此接受两个参数，第二个作为默认值，当不存在该值的时候，会默认返回第二个参数。如:
+对应客户端接收到的格式如下:
 
-```php
-$request->getParam("foo", "bar");
-```
-
-当没有 `foo` 索引的时候，就会默认返回 `bar` 的值。
-
-#### 获取 PUT/DELETE
-
-```php
-namespace Controller;
-
-
-use FastD\Http\ServerRequest;
-
-class IndexController
+```json
 {
-    public function sayHello(ServerRequest $request)
-    {
-        $raw = (string) $request->getBody();
-        $body = $request->getParsedBody();
-        // some code
-    }
+    "code": 400,
+    "msg": "foo bar"
 }
 ```
-
-#### 获取 $_COOKIE
-
-```php
-namespace Controller;
-
-
-use FastD\Http\ServerRequest;
-
-class IndexController
-{
-    public function sayHello(ServerRequest $request)
-    {
-        $cookies = $request->getCookieParams();
-        $cookie = $request->getCookie('foo', 'bar');
-        // some code
-    }
-}
-```
-
-#### Session 的实现
-
-框架不提供 Session 处理，但可以利用 Cookie 进行实现，亦可以通过 Session 组件进行扩展。[session](https://github.com/janhuang/session)
 
 下一节: [请求](zh-cn/basic/2-3-request-handling.md)
