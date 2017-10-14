@@ -4,9 +4,17 @@
 
 [PSR规范官网](http://www.php-fig.org/)
 
+### 预设函数
+
+框架内置提供数个辅助函数，能够提高效率快速开发。
+
 #### app(): Application
 
 函数返回应用核心，应用核心继承自容器，因此应用本身就是一个容器。
+
+#### version()
+
+获取框架应用版本号。
 
 #### route($prefix = null, callable $callback = null): \FastD\Routing\RouteCollection
 
@@ -46,18 +54,46 @@ route("/", function () {
 
 更多 monolog 操作请看: [Monolog](https://github.com/Seldaek/monolog)
 
-#### cache(): \Symfony\Component\Cache\Adapter\AbstractAdapter
+#### cache($connection = 'default'): \Symfony\Component\Cache\Adapter\AbstractAdapter
 
 缓存提供器依赖于 [Symfony/cache](https://symfony.com/doc/current/components/cache.html) ，缓存函数返回一个 AbstractAdapter 对象，具体操作可以查看文档。如果无法满足业务需求，可以自定义服务提供器，对其进行代替.
 
-#### database(): \Medoo
+#### database($connection = 'default'): \Medoo
 
 框架默认的 `DatabaseServiceProvider` 是提供 medoo 操作，不提供具体的 ORM 等关系操作，如果需要自定义数据库操作，可以通过实现自己的 ServiceProvider 进行扩展。
 
 具体的操作和使用方式请查看: [服务提供器](zh-cn/3-6-service-provider.md)
 
-#### server(): \swoole_server
+#### server(): \FastD\Swoole\Server
 
-server 函数返回 swoole 对象，在 swoole 启动的时候会自动赋值，可在控制器中使用 server 对象进行操作。 
+返回 Server 对象，能够通过对象获取部分服务器和客户端信息。
 
-下一节: [服务提供器](zh-cn/3-8-service-provider.md)
+#### swoole(): \swoole_server
+
+server 函数返回 swoole 对象，在 swoole 启动的时候会自动赋值，可在控制器中使用 server 对象进行操作。
+
+### 自定义辅助函数
+
+很多情况下，部分的辅助函数可能不足以满足业务需求，我们可以扩展出属于自己的扩展函数。
+
+如果你能够足够熟悉 `composer`，那么其实可以撇开框架，去进行自己的扩展。
+
+添加辅助函数文件: `helpers.php`
+
+修改 `composer.json` 
+
+```json
+{
+    // some code
+    "autoload": {
+        "files": [
+            "helpers.php"
+        ]
+    }
+    // some code
+}
+```
+
+然后重新生成 autoload。`composer dump-autoload`
+
+下一节: [服务提供器](zh-cn/advanced/3-3-service-provider.md)

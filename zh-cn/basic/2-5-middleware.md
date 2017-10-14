@@ -48,21 +48,33 @@ route()->post('/', 'IndexController@sayHello')->withMiddleware('basic.auth');
 
 ### 缓存中间件
 
+框架并且内置了缓存中间件，可用于普通响应缓存中，能都大大缩减程序执行时间，提高处理效率。
 
+```php
+<?php
+
+return [
+    // some code
+    'middleware' => [
+        'common.cache' => [
+            \FastD\Middleware\CacheMiddleware::class,
+        ],
+    ],
+    // some code
+];
+```
+
+配置到具体路由中。当发起GET请求的时候，系统都回去检查缓存是否存在，其他非GET则穿透到具体处理中。
+
+```php
+route()->post('/', 'IndexController@sayHello')->withMiddleware('common.cache');
+```
+
+响应头中会多出 `x-cache` 字段。
 
 ### 自定义中间件
 
-```php
-route()->group(['prefix' => '/v1', 'middleware' => 'demo'], function () {
-    route()->get('/', 'IndexController@sayHello');
-});
-```
-
-中间件的原理其实是一个多层嵌套的匿名函数，由一开始调用的函数开始，一直往下调用，直到后面已经没有回调的时候，返回给客户端。
-
-这里面的中间件也是这样的原理，当中间件处理完成后，最后才到路由中的回调，中间件依赖于 [middleware](https://github.com/JanHuang/middleware) 组件，支持 PSR15。
-
-中间件推荐存放在 `src/Middleware` 目录中，每个中间件必须继承 `FastD\Middleware\Middleware` 对象，实现 `handle` 方法。
+实现自己的中间件，只需要实现小部分代码，就能够完成一个简单的中间件处理。
 
 ```php
 <?php
@@ -93,10 +105,8 @@ class BasicAuth extends Middleware
 }
 ```
 
-中间件中，如果返回的结果是一个字符串，则会默认转化成 `Psr\Http\Message\ResponseInterface` 对象，由中间件调度器进行封装。
-
-因此如果想在中间件中返回不同的格式，那必须返回一个 `Psr\Http\Message\ResponseInterface` 对象，可自定义。
+中间件调度中，推荐返回 `Psr\Http\Message\ResponseInterface`，每个中间件都需要遵循的规定。
 
 实现原理可以参考: [PSR15](https://github.com/php-fig/fig-standards/blob/master/proposed/http-middleware)
 
-下一节: [命令行](zh-cn/3-3-database.md)
+下一节: [授权](zh-cn/basic/2-6-authorization.md)
