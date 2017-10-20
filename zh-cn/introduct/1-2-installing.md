@@ -2,7 +2,7 @@
 
 !> 如果使用浏览器访问入口，需要给项目配置虚拟域名，将路径指向项目的 web 目录
 
-> 推荐配合 Vagrant 虚拟机使用，能够更快适应开发环境。
+?> 推荐配合 Vagrant 虚拟机使用，能够更快适应开发环境。
 
 ### Linux 环境
 
@@ -24,7 +24,7 @@ composer config -g repo.packagist composer https://packagist.laravel-china.org
 
 ##### 2 安装 Swoole 扩展
 
-:bangbang:推荐使用1.9.9以上版本
+?> :bangbang:推荐使用1.9.9以上版本
 
 ```
 $ pecl install swoole
