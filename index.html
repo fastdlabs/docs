@@ -15,6 +15,10 @@
             max-width: 900px;
             padding: 60px 15px 40px;
         }
+        .donate {
+            position: fixed;
+            right: 0;
+        }
     </style>
 </head>
 <body>
@@ -30,6 +34,20 @@
         loadSidebar: 'summary.md',
         maxLevel: 6,
         subMaxLevel: 6,
+        plugins: [
+            function(hook, vm) {
+                hook.beforeEach(function (html) {
+                    var url = 'https://github.com/QingWei-Li/docsify/blob/master/docs/' + vm.route.file
+                    var donate = '<div class="donate">' +
+                        '<h5 style="text-align: center;">捐赠</h5>' +
+                        '<img src="assets/wxpay.jpg" width="120"/><br/>' +
+                        '<img src="assets/alipay.jpg" width="120"/><br/>' +
+                        '</div>';
+                    var editHtml = '[:memo: Edit Document](' + url + ')\n'
+                    return donate + html;
+                })
+            }
+        ]
     }
 </script>
 <script>
