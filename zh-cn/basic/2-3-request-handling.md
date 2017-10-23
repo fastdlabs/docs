@@ -38,7 +38,7 @@ $request->getParam("foo", "bar");
 
 #### 获取 $_POST
 
-利用 `getParsedBody()` 方法获取所有 `$_GET` 参数。
+利用 `getParsedBody()` 方法获取所有 `$_POST` 参数。
 
 ```php
 namespace Controller;
