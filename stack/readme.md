@@ -1,5 +1,3 @@
-# php-learn
-my php learn plan.
 
 ## Mac 工具集
 
