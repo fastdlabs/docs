@@ -1,6 +1,3 @@
-* [Atom](https://atom.io/)
-    * [markdown-preview-enhanced 炒鸡好用的 markdown 插件](https://shd101wyy.github.io/markdown-preview-enhanced/#/zh-cn/)
-
 * PHP 相关
     * [FastD PHP Web框架](https://github.com/JanHuang/fastD)
     * [PHP路由](https://github.com/JanHuang/routing)
@@ -50,11 +47,11 @@
     * Vagrant
     * 缓存，OPcode，文件缓存，redis 缓存
     * 开源框架、开源组件
-        *  Symfony
-        *  Laravel
-        *  FastD
-        *  Slim
-        *  cakePHP
+        * Symfony
+        * Laravel
+        * FastD
+        * Slim
+        * cakePHP
     * 热门社区，Github
     * 网络编程 (Swoole)
     * 其他语言学习，go、python、lua、C/C++
@@ -62,7 +59,7 @@
     * 架构基础，理论
     * 分布式概念
     * 服务化概念
-        * 实践 RPC
+    * 实践 RPC
 
 * 运维知识
     * linux 环境搭建，centos，ubuntu，arch
@@ -80,9 +77,9 @@
     * FTP, SFTP
     * shell编程
     * lnmp 环境部署
-        * php
-        * nginx
-        * mysql
+    * php
+    * nginx
+    * mysql
     * nginx web配置
     * 网络管理,抓板
     * DNS，LVS
@@ -96,7 +93,6 @@
     * 内核配置及优化
     * Linux C
     * 硬件
-
 
 * 架构思维
     * LNMP 搭建
