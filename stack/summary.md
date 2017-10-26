@@ -1,8 +1,7 @@
-
 * PHP 知识
     * 基础HTML、JavaScript、CSS知识
-    * [环境配置，内置 Web 服务器](http://php.net/manual/zh/features.commandline.webserver.php)
-    * [PSR 知识]()
+    * [环境配置，内置 Web 服务器](stack/experience/local-server.md)
+    * [PSR 知识](stack/experience/psr.md)
     * Git 版本管理
     * Composer 与 Packagist
     * 代码注释
