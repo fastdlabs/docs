@@ -1,3 +1,10 @@
+* 案例分享
+    * [FastD开发入门](blog/practice/practice-1-created-api)
+    * Nginx 简单配置
+    * PHPUnit
+    * PHP代码覆盖率测试
+    * PHP开发之持续集成
+    * 
 * PHP 知识
     * 基础HTML、JavaScript、CSS知识
     * [环境配置，内置 Web 服务器](stack/experience/local-server.md)
@@ -8,7 +15,7 @@
     * PEAR
     * 命名空间
     * 日期相关
-    * 设计模式
+    * 设计模式git  gitgitgit 
     * 依赖注入、容器
     * 数据库操作、注入
     * PHP 模板??? (能够深入PHP，而不仅仅在套模板上)
