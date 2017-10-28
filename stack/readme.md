@@ -4,10 +4,10 @@
 * 基础HTML、JavaScript、CSS知识
 * [环境配置，内置 Web 服务器](stack/experience/local-server.md)
 * [PSR 知识](stack/experience/psr.md)
-* Git 版本管理
-* Composer 与 Packagist
-* 代码注释
-* PEAR
+* [Git 版本管理](stack/experience/git.md)
+* [Composer 与 Packagist](stack/experience/composer.md)
+* [代码注释](stack/experience/annotation.md)
+* [PEAR](stack/experience/pear.md)
 * 命名空间
 * 日期相关
 * 设计模式
