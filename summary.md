@@ -1,6 +1,10 @@
 - [修改日志](zh-cn/change-log.md)
 - [升级指南](zh-cn/upgrade.md)
 
+- 快速演示
+    - [安装](guide/getstarted.md)
+    - [控制器]()
+
 - 安装
     - [关于 FastD](zh-cn/introduct/1-1-about-fastd.md)
     - [安装 FastD](zh-cn/introduct/1-2-installing.md)

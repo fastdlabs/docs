@@ -10,7 +10,7 @@
 * 新增 `FastD\ServiceProvider\MoltenServiceProvider`，支持 `zipkin` 调用链。点击前往: [教程](blog/practice/practice-6-created-zipkin.md)
 * 替换 migration 为 [fastd/migration](https://github.com/JanHuang/migration)。点击前往: [教程]()
 * 修复 ArrayObject merge 覆盖的 bug
-
+* 优化 server 命令体验
 
 #### 3.1.0 released candidate 4
 
