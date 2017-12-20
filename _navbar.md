@@ -1,5 +1,4 @@
-- [首页](/)
-- [文档](zh-cn/readme.md)
-- [博客](blog/readme.md)
-- [技术栈](stack/readme.md)
+- [首页](https://fastdlabs.com/)
+- [文档](http://docs.fastdlabs.com/)
+- [博客](http://blog.fastdlabs.com)
 - [机器人](http://bot.fastdlabs.com/)

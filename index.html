@@ -19,6 +19,9 @@
             position: fixed;
             right: 0;
         }
+        .markdown-section h1:first-child {
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -29,7 +32,6 @@
         coverpage: false,
         name: 'FastD',
         // repo: 'https://github.com/JanHuang/fastd',
-        loadSidebar: true,
         loadNavbar: true,
         loadSidebar: 'summary.md',
         maxLevel: 6,
@@ -37,14 +39,12 @@
         plugins: [
             function(hook, vm) {
                 hook.beforeEach(function (html) {
-                    var url = 'https://github.com/QingWei-Li/docsify/blob/master/docs/' + vm.route.file
-                    var donate = '<div class="donate">' +
-                        '<h5 style="text-align: center;">捐赠</h5>' +
-                        '<img src="assets/wxpay.jpg" width="120"/><br/>' +
-                        '<img src="assets/alipay.jpg" width="120"/><br/>' +
-                        '</div>';
-                    var editHtml = '[:memo: Edit Document](' + url + ')\n'
-                    return donate + html;
+//                    var donate = '<div class="donate">' +
+//                        '<h5 style="text-align: center;">捐赠</h5>' +
+//                        '<img src="assets/wxpay.jpg" width="120"/><br/>' +
+//                        '<img src="assets/alipay.jpg" width="120"/><br/>' +
+//                        '</div>';
+                    return html;
                 })
             }
         ]
