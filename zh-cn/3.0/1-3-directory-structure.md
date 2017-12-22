@@ -24,5 +24,5 @@ web
 
 源代码均放置在 src 目录，如果目录并不能满足业务需求，可以通过手动修改方式进行调整。
 
-下一节: [路由与控制器](2-1-routing-and-controllers.md)
+下一节: [路由与控制器](zh-cn/3.0/2-1-routing-and-controllers.md)
 

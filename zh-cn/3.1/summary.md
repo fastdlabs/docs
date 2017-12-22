@@ -1,6 +1,5 @@
-- 修改日志
-    - [修改日志](zh-cn/3.1/change-log.md)
-    - [升级指南](zh-cn/3.1/upgrade.md)
+- [修改日志](zh-cn/3.1/change-log.md)
+- [升级指南](zh-cn/3.1/upgrade.md)
 
 - 安装与配置
     - [关于 FastD](zh-cn/3.1/1-1-about-fastd.md)

@@ -23,68 +23,48 @@
 
 针对不同模式，加载的对象不大相同，所以针对不同的执行环境，会有不同的操作流程来加速框架的调度效率。
 
-修改日志
---------
+### 修改日志
 
-- [x] [修改日志](change-log.md)
-- [x] [升级指南](upgrade.md)
+- [修改日志](zh-cn/3.1/change-log.md)
+- [升级指南](zh-cn/3.1/upgrade.md)
 
-安装与配置
---------
+### 安装与配置
 
-- [x] [关于 FastD](1-1-about-fastd.md)
-- [x] [安装 FastD](1-2-installing.md)
-- [x] [目录结构](1-3-directory-structure.md)
-- [x] [框架执行流程图](1-4-flow.md)
+- [关于 FastD](zh-cn/3.1/1-1-about-fastd.md)
+- [安装 FastD](zh-cn/3.1/1-2-installing.md)
+- [目录结构](zh-cn/3.1/1-3-directory-structure.md)
+- [框架执行流程图](zh-cn/3.1/1-4-flow.md)
 
+### 基础入门
 
-基础入门
--------
+- [路由与控制器](zh-cn/3.1/2-1-routing-and-controllers.md)
+- [请求处理](zh-cn/3.1/2-2-request-handling.md)
+- [响应处理](zh-cn/3.1/2-3-response-handling.md)
+- [认证授权](zh-cn/3.1/2-4-authorization.md)
+- [异常与日志处理](zh-cn/3.1/2-5-exception-logger-handling.md)
+- [ ] ~~[API文档](zh-cn/3.1/2-6-docuemnt.md)~~
 
-- [x] [路由与控制器](2-1-routing-and-controllers.md)
-- [x] [请求处理](2-2-request-handling.md)
-- [x] [响应处理](2-3-response-handling.md)
-- [x] [认证授权](2-4-authorization.md)
-- [x] [异常与日志处理](2-5-exception-logger-handling.md)
-- [ ] ~~[API文档](2-6-docuemnt.md)~~
+### 高级
 
-高级
--------
+- [配置](zh-cn/3.1/3-1-configuration.md)
+- [中间件](zh-cn/3.1/3-2-middleware.md)
+- [数据库medoo](zh-cn/3.1/3-3-database.md)
+- [缓存](zh-cn/3.1/3-4-cache.md)
+- [命令行](zh-cn/3.1/3-5-console.md)
+- [单元测试](zh-cn/3.1/3-6-testcase.md)
+- [辅助函数](zh-cn/3.1/3-7-helpers.md)
+- [服务提供器](zh-cn/3.1/3-8-service-provider.md)
+- [Swoole服务器](zh-cn/3.1/3-9-swoole-server.md)
+- [连接池](zh-cn/3.1/3-10-connection-pool.md)
+- [扩展](zh-cn/3.1/3-11-extend.md)
 
-- [x] [配置](3-1-configuration.md)
-- [x] [中间件](3-2-middleware.md)
-- [x] [数据库medoo](3-3-database.md)
-- [x] [缓存](3-4-cache.md)
-- [x] [命令行](3-5-console.md)
-- [x] [单元测试](3-6-testcase.md)
-- [x] [辅助函数](3-7-helpers.md)
-- [x] [服务提供器](3-8-service-provider.md)
-- [x] [Swoole服务器](3-9-swoole-server.md)
-- [x] [连接池](3-10-connection-pool.md)
-- [x] [扩展](3-11-extend.md)
+### 架构
 
-架构
----------
-
-- [x] [生命周期](4-1-lifecycle.md)
-- [ ] ~~[RPC服务](4-2-microservice.md)~~
-- [ ] [FastD 与 LogStash](4-3-fastd-logstash.md) (未开放)
-- [ ] [FastD 与 QConf](4-4-fastd-qconf.md) (未开放)
-- [ ] [FastD 与 LogViewer](4-5-fastd-log-viewer.md) (未开放)
-- [ ] FastD 服务化
-- [ ] FastD 管理
-- [x] 特性功能演示
-    - [ ] [Queue]()
-
-周边开源
---------
-
-- [x] [Dobee API Framework](https://github.com/JanHuang/dobee)
-- [x] [UserD](https://github.com/JanHuang/userd) 开发中...
-- [x] [MediaD](https://github.com/JanHuang/mediad) 开发中...
-- [x] [PostsD](https://github.com/JanHuang/postsd) 开发中...
-- [x] [TagD](https://github.com/JanHuang/tagd) 开发中...
-- [x] [CommentD](https://github.com/JanHuang/commentd) 开发中...
+- [生命周期](zh-cn/3.1/4-1-lifecycle.md)
+- [ ] ~~[RPC服务](zh-cn/3.1/4-2-microservice.md)~~
+- [ ] [FastD 与 LogStash](zh-cn/3.1/4-3-fastd-logstash.md) (未开放)
+- [ ] [FastD 与 QConf](zh-cn/3.1/4-4-fastd-qconf.md) (未开放)
+- [ ] [FastD 与 LogViewer](zh-cn/3.1/4-5-fastd-log-viewer.md) (未开放)
 
 ### Support
 

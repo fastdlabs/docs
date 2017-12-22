@@ -224,4 +224,4 @@ class User
 
 [![效果](doc.png)]
 
-下一节: [应用配置](3-1-configuration.md)
+下一节: [应用配置](zh-cn/3.1/3-1-configuration.md)

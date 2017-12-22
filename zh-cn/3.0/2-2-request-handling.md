@@ -23,4 +23,4 @@ class IndexController
 
 由于 Http 组件实现 PSR7，所以用法是保持 PSR7 一致，操作可以根据 [Http](https://github.com/JanHuang/http) 进行查看
 
-下一节: [响应处理](2-3-response-handling.md)
+下一节: [响应处理](zh-cn/3.0/2-3-response-handling.md)

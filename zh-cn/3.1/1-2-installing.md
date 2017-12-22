@@ -121,4 +121,4 @@ server
 
 不建议完全替代 Nginx + FPM，毕竟有 Nginx 作为前端服务器，灵活和扩展性会大大提高。
 
-下一节: [目录结构](1-3-directory-structure.md)
+下一节: [目录结构](zh-cn/3.1/1-3-directory-structure.md)

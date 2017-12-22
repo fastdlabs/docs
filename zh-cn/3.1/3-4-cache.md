@@ -62,4 +62,4 @@ return [
  ```
 
 
-下一节: [命令行](3-5-console.md)
+下一节: [命令行](zh-cn/3.1/3-5-console.md)

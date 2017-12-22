@@ -51,4 +51,4 @@
                          +------------------+                            
 ```
 
-下一节: [路由与控制器](2-1-routing-and-controllers.md)
+下一节: [路由与控制器](zh-cn/3.1/2-1-routing-and-controllers.md)

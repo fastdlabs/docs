@@ -45,4 +45,4 @@ class IndexControllerTest extends TestCase
 
 此处要注意数据库的测试流程，每个测试进程完成后会重置数据库。
 
-下一节: [辅助函数](3-7-helpers.md)
+下一节: [辅助函数](zh-cn/3.1/3-7-helpers.md)

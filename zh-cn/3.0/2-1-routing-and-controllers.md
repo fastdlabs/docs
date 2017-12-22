@@ -48,7 +48,7 @@ $request->getAttribute('fuzzy_path');
 
 **控制器目前存放于 Http 目录中，3.1 版本后将统一控制器入口，同时为TCP、HTTP提供服务, 去除 Http 目录，保留 Controller 目录，其他结构不变**
 
-> 控制器无需继承任何对象，方法均有 [辅助函数](3-5-helpers.md) 提供
+> 控制器无需继承任何对象，方法均有 [辅助函数](zh-cn/3.0/3-5-helpers.md) 提供
 
 ```php
 namespace Http\Controller;
@@ -65,7 +65,7 @@ class IndexController
 }
 ```
 
-仔细的朋友不难发现，其实此处的控制器就是一个 "中间件" 的回调处理，如果在 [中间件](3-2-middleware.md) 中逻辑处理错误，是不会进入到控制器中的。
+仔细的朋友不难发现，其实此处的控制器就是一个 "中间件" 的回调处理，如果在 [中间件](zh-cn/3.0/3-2-middleware.md) 中逻辑处理错误，是不会进入到控制器中的。
 
 中间件的实现依赖于 [Middleware](https://github.com/JanHuang/middleware) 组件。
 
@@ -94,4 +94,4 @@ class IndexController
 
 如此类推。
 
-下一节: [请求](2-2-request-handling.md)
+下一节: [请求](zh-cn/3.0/2-2-request-handling.md)

@@ -99,4 +99,4 @@ server
 }
 ```
 
-下一节: [目录结构](1-3-directory-structure.md)
+下一节: [目录结构](zh-cn/3.0/1-3-directory-structure.md)

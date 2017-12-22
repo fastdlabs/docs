@@ -8,4 +8,4 @@
 
 如果还有疑问，可以参考 [ServiceProvider](../../src/ServiceProvider)
 
-下一节: [理念与架构](4-1-lifecycle.md)
+下一节: [理念与架构](zh-cn/3.0/4-1-lifecycle.md)

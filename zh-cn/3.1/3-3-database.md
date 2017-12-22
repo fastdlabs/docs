@@ -1,6 +1,6 @@
 # 数据库
 
-框架模式使用 [medoo](https://github.com/catfan/Medoo) 框架，提供最简便的操作。如果想使用 ORM 的朋友可以尝试添加 [ServiceProvider](3-8-service-provider.md)，作为框架的一个扩充。
+框架模式使用 [medoo](https://github.com/catfan/Medoo) 框架，提供最简便的操作。如果想使用 ORM 的朋友可以尝试添加 [ServiceProvider](zh-cn/3.1/3-8-service-provider.md)，作为框架的一个扩充。
 
 > 3.1 版本开始，一维数组结构改为二维数组配置. 数据库操作方面会考虑将 medoo 改为可选扩展，并且会考虑使用其他数据库操作进行替换。ORM 是不会内置到框架中，可能会使用一个扩展进行补充。
 
@@ -184,4 +184,4 @@ public function onWorkerStart()
 // ...
 ```
 
-下一节: [缓存](3-4-cache.md)
+下一节: [缓存](zh-cn/3.1/3-4-cache.md)

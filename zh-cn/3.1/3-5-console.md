@@ -60,4 +60,4 @@ class Demo extends Command
 
 执行数据库种子文件
 
-下一节: [单元测试](3-6-testcase.md)
+下一节: [单元测试](zh-cn/3.1/3-6-testcase.md)

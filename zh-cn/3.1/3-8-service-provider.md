@@ -44,4 +44,4 @@ class DatabaseServiceProvider implements ServiceProviderInterface
 
 如果需要尝试添加或者修改服务提供器，可以参考 [DatabaseServiceProvider](../../src/ServiceProvider/DatabaseServiceProvider.php), [database.php](../../tests/app/default/config/database.php), [app.php](../../tests/app/default/config/app.php)
 
-下一节: [Swoole服务器](3-9-swoole-server.md)
+下一节: [Swoole服务器](zh-cn/3.1/3-9-swoole-server.md)

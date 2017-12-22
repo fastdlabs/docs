@@ -18,4 +18,4 @@ FastD 提供灵活配置的核心，由于为了性能，提供的组件当不�
 - [x] ext-pdo
 - [x] ext-swoole
 
-下一节: [安装](1-2-installing.md)
+下一节: [安装](zh-cn/3.1/1-2-installing.md)
