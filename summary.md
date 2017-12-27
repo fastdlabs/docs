@@ -2,8 +2,13 @@
 - [升级指南](zh-cn/3.2/upgrade.md)
 
 - 快速演示
-    - [安装](guide/getstarted.md)
-    - [控制器]()
+    - [安装](guide/get_started.md)
+    - [创建API](guide/create_api.md)
+    - [创建命令行]()
+    - [创建服务提供器]()
+    - [创建外部依赖]()
+    - [创建服务器]()
+    - [创建进程]()
 
 - 安装
     - [关于 FastD](zh-cn/3.2/introduct/1-1-about-fastd.md)
