@@ -56,4 +56,84 @@ fastd 框架的另外一个特点，就是一切逻辑处理，控制器都是�
 
 理解上述原理之后，那么咱们开始做第一个中间件吧。
 
-创建
+假设我想在 `/hello/{名字}` 上做一个判断，如果是 jan 用户就显示 **帅气**，如果是 `runnerlee` 就显示 `还好`。为此，我们只需要添加一个简单的判断中间间即可:
+
+```php
+<?php
+
+namespace Middleware;
+
+
+use FastD\Middleware\DelegateInterface;
+use FastD\Middleware\Middleware;
+use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\ServerRequestInterface;
+
+class ManMiddleware extends Middleware
+{
+    /**
+     * @param ServerRequestInterface $request
+     * @param DelegateInterface $next
+     * @return ResponseInterface
+     */
+    public function handle(ServerRequestInterface $request, DelegateInterface $next)
+    {
+        $man = $request->getAttribute('name');
+        if ('jan' === $man) {
+            $request->withAttribute('name', '帅气的'.$man);
+        } else if ('runnerlee' === $man) {
+            $request->withAttribute('name', '还好的'.$man);
+        }
+
+        return $next->process($request);
+    }
+}
+```
+
+现在，添加中间件到应用配置(`config/app.php`):
+
+```php
+<?php
+return [
+    /**
+     * Http middleware
+     */
+    'middleware' => [
+        'man' => [
+            \Middleware\ManMiddleware::class
+        ]
+    ],
+];
+```
+
+最后，给路由添加中间件: 
+
+!> 此处路由添加的中间件需要与应用配置的中间件配置key保持一致。
+
+```php
+<?php
+
+$router = route();
+
+$router->get('/hello/{name}', 'HelloController@hello')->withAddMiddleware('man');
+```
+
+尝试分别访问:
+
+http://localhost:9876/hello/runnerlee
+
+```json
+{
+    "msg": "hello 还好的runnerlee"
+}
+```
+
+http://localhost:9876/hello/jan
+
+```json
+{
+    "msg": "hello 帅气的jan"
+}
+```
+
+操作看懂了吗? 其实理解运行原理之后，剩下的就迎刃而解了，是不是感觉开始有点意思了呢? 接下来的可能会有不一样的体验哦。😎

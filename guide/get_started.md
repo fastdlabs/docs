@@ -11,8 +11,7 @@
 ## 创建演示项目
 
 ```shell
-$ git clone https://github.com/fastdlabs/fastd-demo.git
-$ cd fastd-demo && composer -vvv install
+$ composer create-project fastd/fastd-demo
 ```
 
 确定以上步骤安装完毕后，运行 PHP 内置 WEB 服务器:
@@ -55,7 +54,7 @@ $ php bin/server start
 
 > 就是这么简单，什么都不用修改，就直接支持 swoole 执行了。
 
-!> 值得注意的是: composer 在 cywin 环境下，创建软连接失败，需要手动调整脚本。
+!> 值得注意的是: composer 在 cygwin 环境下，创建软连接失败，需要手动调整脚本。
 
 ```shell
 dir=$(d=${0%[/\\]*}; cd "$d"; cd '../vendor/fastd/fastd' && pwd)

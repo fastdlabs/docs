@@ -2,22 +2,20 @@
 - [升级指南](zh-cn/3.2/upgrade.md)
 
 - 快速演示
-    - [安装](guide/get_started.md)
+    - [快速开始](guide/get_started.md)
     - [创建API](guide/create_api.md)
-    - [创建命令行]()
-    - [创建服务提供器]()
-    - [创建外部依赖]()
-    - [创建服务器]()
-    - [创建进程]()
+    - [创建命令行](guide/create_console.md)
+    - [创建服务提供器](guide/service_provider.md)
+    - [创建进程](guide/process.md)
+    - [创建服务器](guide/server.md)
 
-- 安装
-    - [关于 FastD](zh-cn/3.2/introduct/1-1-about-fastd.md)
+- 入门指南
     - [安装 FastD](zh-cn/3.2/introduct/1-2-installing.md)
     - [目录结构](zh-cn/3.2/introduct/1-3-directory-structure.md)
     - [流程图](zh-cn/3.2/introduct/1-4-flow.md)
     - [生命周期](zh-cn/3.2/introduct/1-5-lifecycle.md)
 
-- 基础入门
+- 基础功能
     - [配置](zh-cn/3.2/basic/2-1-configuration.md)
     - [路由与控制器](zh-cn/3.2/basic/2-2-routing-and-controllers.md)
     - [请求处理](zh-cn/3.2/basic/2-3-request-handling.md)
@@ -26,7 +24,6 @@
     - [认证授权](zh-cn/3.2/basic/2-6-authorization.md)
     - [异常与日志处理](zh-cn/3.2/basic/2-7-exception-logger-handling.md)
     
-
 - 高级
     - [单元测试](zh-cn/3.2/advanced/3-1-testcase.md)
     - [辅助函数](zh-cn/3.2/advanced/3-2-helpers.md)
