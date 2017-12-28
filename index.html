@@ -7,44 +7,18 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="//s103.ggwan.com/docs/vue.css">
-    <style>
-        .app-nav a, .app-nav li {
-            font-size: 14px;
-        }
-        .markdown-section {
-            max-width: 900px;
-            padding: 60px 15px 40px;
-        }
-        .donate {
-            position: fixed;
-            right: 0;
-        }
-    </style>
 </head>
 <body>
 <div id="app"></div>
 </body>
 <script>
     window.$docsify = {
-        coverpage: false,
         name: 'FastD',
         // repo: 'https://github.com/JanHuang/fastd',
         loadNavbar: true,
-        loadSidebar: 'summary.md',
-        maxLevel: 6,
-        subMaxLevel: 3,
-        plugins: [
-            function(hook, vm) {
-                hook.beforeEach(function (html) {
-//                    var donate = '<div class="donate">' +
-//                        '<h5 style="text-align: center;">捐赠</h5>' +
-//                        '<img src="assets/wxpay.jpg" width="120"/><br/>' +
-//                        '<img src="assets/alipay.jpg" width="120"/><br/>' +
-//                        '</div>';
-                    return html;
-                })
-            }
-        ]
+        loadSidebar: true,
+        homepage: 'README.md',
+        subMaxLevel: 2
     }
 </script>
 <script>
@@ -61,5 +35,4 @@
 <script src="//s103.ggwan.com/docs/zoom-image.js"></script>
 <script src="//s103.ggwan.com/docs/prism-bash.js"></script>
 <script src="//s103.ggwan.com/docs/prism-php.js"></script>
-<script src="//vjs.zencdn.net/4.10/video.js"></script>
 </html>

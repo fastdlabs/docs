@@ -1,5 +1,5 @@
 - [首页](https://fastdlabs.com/)
-- 文档
+- v3.2
     - [v3.2](zh-cn/3.2/readme.md)
     - [v3.1](zh-cn/3.1/readme.md)
     - [v3.0](zh-cn/3.0/readme.md)
