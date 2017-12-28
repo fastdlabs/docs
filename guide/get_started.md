@@ -20,16 +20,25 @@ $ composer create-project fastd/fastd-demo
 $ php -S localhost:9876 -t web
 ```
 
-访问: [http://localhost:9876](http://localhost:9876)
-
 > PHP 内置 WEB 服务器可前往官网: http://php.net/manual/zh/features.commandline.webserver.php
 
-输出:
+
+访问: [http://localhost:9876](http://localhost:9876)
+```
+curl -i http://localhost:9876
+```
+
+响应
  
-```json
-{
-    "msg": "welcome fastd"
-}
+```
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+Server: swoole-http-server
+Connection: keep-alive
+Date: Thu, 28 Dec 2017 08:30:12 GMT
+Content-Length: 23
+
+{"msg":"welcome fastd"}
 ```
 
 > 恭喜你，已经成功安装 fastd，是不是比想象中的简单。😆
