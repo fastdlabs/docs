@@ -31,12 +31,12 @@ curl -i http://localhost:9876
 响应
  
 ```
-HTTP/1.1 200 OK
+HTTP/1.1 200
+Host: 127.0.0.1:8888
+Date: Fri, 29 Dec 2017 10:32:53 +0800
+Connection: close
+X-Powered-By: PHP/7.1.11-1+ubuntu16.04.1+deb.sury.org+1
 Content-Type: application/json; charset=UTF-8
-Server: swoole-http-server
-Connection: keep-alive
-Date: Thu, 28 Dec 2017 08:30:12 GMT
-Content-Length: 23
 
 {"msg":"welcome fastd"}
 ```
@@ -55,10 +55,15 @@ $ php bin/server start
 
 输出:
 
-```json
-{
-    "msg": "welcome fastd"
-}
+```
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+Server: swoole-http-server
+Connection: keep-alive
+Date: Fri, 29 Dec 2017 02:33:25 GMT
+Content-Length: 23
+
+{"msg":"welcome fastd"}
 ```
 
 > 就是这么简单，什么都不用修改，就直接支持 swoole 执行了。
