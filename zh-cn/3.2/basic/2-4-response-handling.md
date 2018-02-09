@@ -116,4 +116,25 @@ class IndexController
 }
 ```
 
+#### text/html 格式
+
+因为框架定位在 API 开发上，框架默认提供的数据格式是: json。因此由小部分场景其实是无需使用json，那么就需要直接通过 Response 对内容进行自定义输出。
+
+```php
+<?php
+
+namespace Controller;
+
+use FastD\Http\Response;
+use FastD\Http\ServerRequest;
+
+class IndexController
+{
+    public function sayHello(ServerRequest $request)
+    {
+        return new Response('hello world');
+    }
+}
+```
+
 下一节: [中间件](zh-cn/basic/2-5-middleware.md)

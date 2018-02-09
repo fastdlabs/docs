@@ -149,10 +149,30 @@ class IndexController
 
 上传成功后返回一个文件的存储位置。`moveTO` 方法仅需要指定目录即可，文件系统会自动给其利用 `md5_file` 重新命名。
 
-#### Session 的实现
+#### Raw 源数据
 
-框架不提供 Session 处理，但可以利用 Cookie 进行实现，亦可以通过 Session 组件进行扩展。[session](https://github.com/janhuang/session)
+在部分特殊场景下，我们无法直接使用 $_POST 获取数据，只能通过 `file_get_contents('php://input')` 进行获取。可通过一下进行获取 raw 源数据。
 
-利用 Cookie 记录 `session_id`，再次利用 `session_id` 查询对应 Session 内容，就能实现 session 的功能。
+```php
+namespace Controller;
+
+
+use FastD\Http\ServerRequest;
+
+class IndexController
+{
+    public function sayHello(ServerRequest $request)
+    {
+        $raw = (string) $request->getBody();
+        
+    }
+}
+```
+
+#### Session 支持
+
+Session 目前使用最简洁的方式进行集成，通过服务提供器进行配置，仅需注册到 service 中即可开启 session 功能。
+
+github: [session-provider](https://github.com/fastdlabs/session-provider)
 
 下一节: [响应处理](zh-cn/basic/2-4-response-handling.md)

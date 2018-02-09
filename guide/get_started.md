@@ -91,8 +91,8 @@ dir=$(echo $dir | sed 's/ /\ /g')
 此时此刻别慌，只需要将脚本内容拷贝到执行脚本中即可。
 
 ```
-bin/console     =>  vendor/fastd/fastd/console
-bin/server      =>  vendor/fastd/fastd/server
-bin/process     =>  vendor/fastd/fastd/process
-bin/client      =>  vendor/fastd/fastd/client
+bin/console     =>  vendor/fastd/fastd/bin/console
+bin/server      =>  vendor/fastd/fastd/bin/server
+bin/process     =>  vendor/fastd/fastd/bin/process
+bin/client      =>  vendor/fastd/fastd/bin/client
 ```

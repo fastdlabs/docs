@@ -4,9 +4,13 @@
 
 当控制器配置中间件之后，执行会先将配置的中间件全部调用完，最终落地到控制器方法中，由开发者最终处理。
 
-### 授权中间件
+### 中间件配置
 
-框架内置授权中间件，依赖于 [fastd/basic-authenticate](https://github.com/JanHuang/basic-authenticate)。
+操作步骤仅需三步:
+
+1. 新建中间件
+2. 注册中间件到配置文件
+3. 添加中间到路由器
 
 ```php
 <?php
@@ -17,60 +21,16 @@ return [
      * Http middleware
      */
     'middleware' => [
-        'basic.auth' => new FastD\BasicAuthenticate\HttpBasicAuthentication([
-            'authenticator' => [
-                'class' => \FastD\BasicAuthenticate\PhpAuthenticator::class,
-                'params' => [
-                    'foo' => 'bar'
-                ]
-            ],
-            'response' => [
-                'class' => \FastD\Http\JsonResponse::class,
-                'data' => [
-                    'msg' => 'not allow access',
-                    'code' => 401
-                ]
-            ]
-        ])
+        'foo' => Bar::class,
     ],
 ];
 ```
-
-可以修改 `params` 选项来调整授权的用户和密码。
-
-`response` 选项用于授权失败的响应数据和格式。
 
 添加到路由中
 
 ```php
 route()->post('/', 'IndexController@sayHello')->withMiddleware('basic.auth');
 ```
-
-### 缓存中间件
-
-框架并且内置了缓存中间件，可用于普通响应缓存中，能都大大缩减程序执行时间，提高处理效率。
-
-```php
-<?php
-
-return [
-    // some code
-    'middleware' => [
-        'common.cache' => [
-            \FastD\Middleware\CacheMiddleware::class,
-        ],
-    ],
-    // some code
-];
-```
-
-配置到具体路由中。当发起GET请求的时候，系统都回去检查缓存是否存在，其他非GET则穿透到具体处理中。
-
-```php
-route()->post('/', 'IndexController@sayHello')->withMiddleware('common.cache');
-```
-
-响应头中会多出 `x-cache` 字段。
 
 ### 自定义中间件
 
@@ -97,7 +57,7 @@ class BasicAuth extends Middleware
     public function handle(ServerRequestInterface $serverRequest, DelegateInterface $delegate)
     {
         if (/* logic */ true) {
-            $delegate($serverRequest);
+            $delegate->process($serverRequest);
         }
         
         return new Response('hello');

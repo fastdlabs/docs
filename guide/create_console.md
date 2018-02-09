@@ -85,4 +85,6 @@ $ php bin/console hello jan
 // hello jan
 ```
 
-由于我们功能实现引用了 `Symfony/console`，具体操作与使用可以通过官网文档进行查看: [点这里](http://symfony.com/doc/current/components/console.html)
+由于我们功能实现引用了 `Symfony/console`。
+
+更多操作与使用可以通过官网文档进行查看: [点这里](http://symfony.com/doc/current/components/console.html)

@@ -77,21 +77,7 @@ return [
      * Http middleware
      */
     'middleware' => [
-        'basic.auth' => new FastD\BasicAuthenticate\HttpBasicAuthentication([
-            'authenticator' => [
-                'class' => \FastD\BasicAuthenticate\PhpAuthenticator::class,
-                'params' => [
-                    'foo' => 'bar'
-                ]
-            ],
-            'response' => [
-                'class' => \FastD\Http\JsonResponse::class,
-                'data' => [
-                    'msg' => 'not allow access',
-                    'code' => 401
-                ]
-            ]
-        ])
+        
     ],
 ];
 ```
