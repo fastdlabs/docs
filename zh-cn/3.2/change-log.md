@@ -9,6 +9,7 @@
 * 新增 `binary`, `version`，`forward` 等辅助函数
 * 新增 mysql 查询构建器
 * 恢复时区配置
+* 完善周边服务
 
 ## 移除
 
