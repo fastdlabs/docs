@@ -56,6 +56,6 @@
     - [WebSocketServer](zh-cn/3.2/swoole/8-4-websocket-server.md)
     - [自定义服务器](zh-cn/3.2/swoole/8-5-custom-server.md)
     
-- 第三方工具
+- 第三方支持
     - [easywecaht](zh-cn/3.2/third_party/easywechat.md)
     - [http-foundation](zh-cn/3.2/third_party/symfony-http.md)
