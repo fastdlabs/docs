@@ -77,12 +77,12 @@
     - [自定义服务器](zh-cn/swoole/8-5-custom-server.md)
 
 - 最佳实践
-    - [FastD 最佳实践一: 构建 API](blog/practice/practice-1-created-api.md)
-    - [FastD 最佳实践二: 构建配置中心](blog/practice/practice-2-created-configure.md)
-    - [FastD 最佳实践三: 构建API网关](blog/practice/practice-3-created-gateway.md)
-    - [FastD 最佳实践四: 构建系统可视化监控](blog/practice/practice-4-created-monitor.md)
-    - [FastD 最佳实践五: 构建ELK日志分析系统](blog/practice/practice-5-created-log.md)
-    - [FastD 最佳实践六: 为应用添加调用链监控 Zipkin](blog/practice/practice-6-created-zipkin.md)
+    - [FastD 最佳实践一: 构建 API](http://blog.fastdlabs.com/2017-12-12/create-api)
+    - [FastD 最佳实践二: 构建配置中心](http://blog.fastdlabs.com/2017-12-12/create-configure)
+    - [FastD 最佳实践三: 构建API网关](http://blog.fastdlabs.com/2017-12-12/create-gatewray)
+    - [FastD 最佳实践四: 构建系统可视化监控](http://blog.fastdlabs.com/2017-12-12/create-monitor)
+    - [FastD 最佳实践五: 构建ELK日志分析系统](http://blog.fastdlabs.com/2017-12-12/create-log)
+    - [FastD 最佳实践六: 为应用添加调用链监控 Zipkin](http://blog.fastdlabs.com/2017-12-12/create-zipkin)
 
 - 周边
     * [FastD ServiceProvider](https://github.com/linghit/service-provider)
