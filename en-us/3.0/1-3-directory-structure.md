@@ -1,28 +1,27 @@
-# 目录结构 
+# Directory Structure 
 
-```
+`` `
 config
-    app.php             应用默认配置
-    config.php          用户自定义配置
-    database.php        数据库配置
-    routes.php          路由配置
-    server.php          swoole 服务器配置
-    cache.php           缓存配置
+     app.php application default configuration
+     config.php User-defined configuration
+     database.php database configuration
+     routes.php routing configuration
+     server.php swoole server configuration
+     cache.php cache configuration
 src
-    Console             控制台命令
-    Http                
-        Controller      Http 控制器
-    Middleware          Http 中间件
-    ServiceProvider     自定义服务提供者
-    Testing             单元测试
+     Console console command
+     Http
+         Controller Http Controller
+     Middleware Http middleware
+     ServiceProvider Custom Service Provider
+     Testing unit testing
 bin
-    console
-    server
+     console
+     server
 web
-    index.php
-```
+     index.php
+`` `
 
 Source code is placed in the src directory, if the directory does not meet business needs, you can manually modify the way to adjust.
 
-下一节: [routes and controller](zh-cn/3.0/2-1-routing-and-controllers.md)
-
+Next section: [routes and controller] (en-us/3.0/2-1-routing-and-controllers.md)

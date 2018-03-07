@@ -17,4 +17,4 @@ Because FastD supports Swoole extension, so you can develop more applications th
 * ext-pdo
 * [ext-swoole]
 
-下一节: [installing](zh-cn/3.0/1-2-installing.md)
+下一节: [installing](en-us/3.0/1-2-installing.md)

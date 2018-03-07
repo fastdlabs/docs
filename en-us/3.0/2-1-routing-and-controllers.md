@@ -2,7 +2,7 @@
 
 Routing comes from the [routing] (https://github.com/JanHuang/routing) component, which provides high-performance routing configuration and resolution processing and well supported RESTful.
 
-The routing configuration files are stored in the `config / routes.php` file.
+The routing configuration files are stored in the `config/routes.php` file.
 
 ### Routing configuration
 
@@ -33,10 +33,10 @@ The above routing will callback processing when the user accesses `/ v1 /` or `/
 ##### Routing fuzzy matching
 
 `` `php
-route () -> get ("/ foo / *", "IndexController @ sayHello");
+route () -> get ("/ foo/*", "IndexController @ sayHello");
 `` `
 
-This mode will match the address `[\ / _ a-zA-Z0-9 -] +` at the beginning of / foo to the controller and get the matched address with `fuzzy_path`.
+This mode will match the address `[\/_ a-zA-Z0-9 -] +` at the beginning of/foo to the controller and get the matched address with `fuzzy_path`.
 
 `` `php
 $ request-> getAttribute ('fuzzy_path');
@@ -48,7 +48,7 @@ Routing configuration does not support anonymous function callback, so the shiel
 
 ** The controller is currently stored in the Http directory, version 3.1 will be unified controller entrance, while providing services for TCP, HTTP, remove the Http directory, keep the Controller directory, the other structures are not changed **
 
-> The controller does not need to inherit any object, and the methods are provided by [Accessibility] (en-us / 3.0 / 3-5-helpers.md)
+> The controller does not need to inherit any object, and the methods are provided by [Accessibility] (en-us/3.0/3-5-helpers.md)
 
 `` `php
 namespace Http \ Controller;
@@ -65,14 +65,14 @@ class IndexController
 }
 `` `
 
-It is not hard to see that a careful friend can easily find that the controller here is actually a "middleware" callback. If there is a logic handling error in [middleware] (zh-cn / 3.0 / 3-2-middleware.md), it is Will not enter the controller.
+It is not hard to see that a careful friend can easily find that the controller here is actually a "middleware" callback. If there is a logic handling error in [middleware] (zh-cn/3.0/3-2-middleware.md), it is Will not enter the controller.
 
 Middleware implementation relies on [Middleware] (https://github.com/JanHuang/middleware) components.
 
 If the route is dynamic routing, the parameters need to be accessed through the `ServerRequestInterface` object.
 
 `` `php
-route () -> get ('/ hello / {name}', 'IndexController @ sayHello');
+route () -> get ('/ hello/{name}', 'IndexController @ sayHello');
 `` `
 
 `` `php
@@ -94,4 +94,4 @@ class IndexController
 
 And so on.
 
-Next section: [Request] (en-us / 3.0 / 2-2-request-handling.md)
+Next section: [Request] (en-us/3.0/2-2-request-handling.md)

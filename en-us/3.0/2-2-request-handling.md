@@ -23,4 +23,4 @@ class IndexController
 
 Since Http components implement PSR7, the usage is to keep PSR7 consistent, and operations can be viewed according to [Http] (https://github.com/JanHuang/http)
 
-Next Section: [Response Processing] (en-us / 3.0 / 2-3-response-handling.md)
+Next Section: [Response Processing] (en-us/3.0/2-3-response-handling.md)
