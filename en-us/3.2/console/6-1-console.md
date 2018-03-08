@@ -30,7 +30,7 @@ $ php bin/console model Demo
 
 ### migrate command
 
-Execute the data migration command. Details can be found at: [Data Migration] (en-us/3.2/database/4-4-migration.md)
+Execute the data migration command. Details can be found at: [Data Migration](en-us/3.2/database/4-4-migration.md)
 
 ### route command
 

@@ -2,7 +2,7 @@
 
 The command line depends on the [symfony/console](https://github.com/symfony/console) specific operation can view [console](http://symfony.com/doc/current/console.html)
 
-Version: `^ 3.2`
+Version: `^3.2`
 
 All command-line files are stored in the `src/Console` directory. The command line object needs to inherit `Symfony\Component\Console\Command\Command`. When the console console object is started, the program automatically scans all command line files in the directory , And processed.
 
