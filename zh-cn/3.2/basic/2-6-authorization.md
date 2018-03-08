@@ -12,4 +12,4 @@
 
 有了网关，我们就可以将授权放到网关中处理，由网关完成授权的操作。
 
-下一节: [异常处理](zh-cn/basic/2-7-exception-logger-handling.md)
+下一节: [异常处理](zh-cn/3.2/basic/2-7-exception-logger-handling.md)

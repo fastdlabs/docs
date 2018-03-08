@@ -30,7 +30,7 @@ $ php bin/console model Demo
 
 ### migrate 命令
 
-执行数据迁移命令。详情可查看: [数据迁移](zh-cn/database/4-4-migration.md)
+执行数据迁移命令。详情可查看: [数据迁移](zh-cn/3.2/database/4-4-migration.md)
 
 ### route 命令
 
@@ -42,7 +42,7 @@ $ php bin/console route
 
 ### process 命令
 
-用于管理进程，当我们编写好进程处理逻辑之后，可以通过该命令进行管理。详细操作可看: [进程管理](zh-cn/process/7-1-swoole-processor)
+用于管理进程，当我们编写好进程处理逻辑之后，可以通过该命令进行管理。详细操作可看: [进程管理](zh-cn/3.2/process/7-1-swoole-processor)
 
 ```php
 $ php bin/console process name

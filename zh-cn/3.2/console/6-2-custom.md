@@ -63,4 +63,4 @@ foreach (config()->get('consoles', []) as $console) {
 }
 ```
 
-下一节: [单元测试](zh-cn/3-6-testcase.md)
+下一节: [单元测试](zh-cn/3.2/advanced/3-1-testcase.md)

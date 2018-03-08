@@ -32,5 +32,3 @@ runtime program data directory
 `` `
 
 Source code is placed in the src directory, if the directory does not meet business needs, you can adjust the `composer.json` file for adaptation.
-
-Next: [Framework Execution Flowchart] (en-us / introduct / 1-4-flow.md)

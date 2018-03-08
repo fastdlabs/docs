@@ -12,13 +12,10 @@
  
 ```php
 route()->get('/', 'IndexController@sayHello');
-``` 
-
-```php
 route()->post('/', 'IndexController@sayHello');
 ```
 
-支持 `get, post, put, head, delete` 方法。添加路由名，可以更加方便在 [TCPServer](zh-cn/3-9-swoole-server.md) 中调用
+支持 `get, post, put, head, delete` 方法。添加路由名，可以更加方便在 [TCPServer](zh-cn/3.2/swoole/8-1-swoole-server.md) 中调用
 
 #### 路由组
 
@@ -42,8 +39,6 @@ route()->get("/foo/*", "IndexController@sayHello");
 $request->getAttribute('fuzzy_path');
 ```
 
-
-
 路由组支持全局设置中间件，可以子路由可以统一设置中间。子路由中会默认继承路由组中的中间级，如果在路由组中继续定义中间件，会继续追加到指定路由中。
 
 ### 控制器
@@ -52,7 +47,7 @@ $request->getAttribute('fuzzy_path');
 
 !> 控制器目前存放于 Http 目录中，3.1 版本后将统一控制器入口，同时为TCP、HTTP提供服务, 去除 Http 目录，保留 Controller 目录，其他结构不变
 
-> 控制器无需继承任何对象，方法均有 [辅助函数](zh-cn/3-7-helpers.md) 提供
+> 控制器无需继承任何对象，方法均有 [辅助函数](zh-cn/3.2/advanced/3-2-helpers.md) 提供
 
 #### 正常响应
 
@@ -107,4 +102,4 @@ class IndexController
 }
 ```
 
-下一节: [请求](zh-cn/basic/2-3-request-handling.md)
+下一节: [请求](zh-cn/3.2/basic/2-3-request-handling.md)

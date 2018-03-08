@@ -46,11 +46,11 @@ route("/", function () {
 
 #### abort($statusCode, $message = null)
 
-终端执行，抛出异常。异常输出控制请参考: [应用配置](zh-cn/3-1-configuration.md)
+终端执行，抛出异常。异常输出控制请参考: [应用配置](zh-cn/3.2/basic/2-1-configuration.md)
 
 #### logger(): \Monolog\Logger
 
-返回 monolog 对象，框架默认提供两种日志，一个是信息日志，一个是错误日志，分别在 [配置]() 中设置，如果需要操作日志并且创建更多日志，请使用该函数获取 Logger 对象，然后进行操作。
+返回 monolog 对象，框架默认提供两种日志，一个是信息日志，一个是错误日志，分别在 配置 中设置，如果需要操作日志并且创建更多日志，请使用该函数获取 Logger 对象，然后进行操作。
 
 更多 monolog 操作请看: [Monolog](https://github.com/Seldaek/monolog)
 
@@ -62,7 +62,7 @@ route("/", function () {
 
 框架默认的 `DatabaseServiceProvider` 是提供 medoo 操作，不提供具体的 ORM 等关系操作，如果需要自定义数据库操作，可以通过实现自己的 ServiceProvider 进行扩展。
 
-具体的操作和使用方式请查看: [服务提供器](zh-cn/3-6-service-provider.md)
+具体的操作和使用方式请查看: [服务提供器](zh-cn/3.2/advanced/3-3-service-provider.md)
 
 #### server(): \FastD\Swoole\Server
 
@@ -96,4 +96,4 @@ server 函数返回 swoole 对象，在 swoole 启动的时候会自动赋值，
 
 然后重新生成 autoload。`composer dump-autoload`
 
-下一节: [服务提供器](zh-cn/advanced/3-3-service-provider.md)
+下一节: [服务提供器](zh-cn/3.2/advanced/3-3-service-provider.md)

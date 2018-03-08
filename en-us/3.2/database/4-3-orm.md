@@ -5,43 +5,43 @@ FastD ORM is based on Eloquent to expand, so in use and Eloquent is consistent, 
 ### Installation
 
 `` `php
-$ composer require zqhong / fastd-eloquent
+$ composer require zqhong/fastd-eloquent
 `` `
 
 After the installation is successful, add to the app.php registration service
 
-`` `php
-<? php
+```php
+<?php
 return [
-    // omitted irrelevant configuration
-    'services' => [
-        \ ServiceProvider \ EloquentServiceProvider :: class,
-    ],
+    // 省略了无关配置
+    'services' => [
+        \ServiceProvider\EloquentServiceProvider::class,
+    ],
 ];
-`` `
+```
 
 ### use
 
-`` `php
-<? php
+```php
+<?php
 // create
-eloquent_db ('default')
-    -> table ('demo')
-    -> insert ([
-        'content' => 'hello world',
-    ]);
+eloquent_db('default')
+    ->table('demo')
+    ->insert([
+        'content' => 'hello world',
+    ]);
 
 // read
-// parameter can be omitted, the default value is default
-eloquent_db ()
-    -> table ('demo')
-    -> where ('id', 1)
-    -> where ('created_at', '<=', time ())
-    -> get ([
-        'id',
-        'content',
-    ]);
-`` `
+// 参数一可省略，默认值为 default
+eloquent_db()
+    ->table('demo')
+    ->where('id', 1)
+    ->where('created_at', '<=', time())
+    ->get([
+        'id',
+        'content',
+    ]);
+```
 
 ### Other related information
 
@@ -54,4 +54,4 @@ If you are unfamiliar with Eloquent, please read the information below.
 * Laravel - Eloquent: Getting Started
 * Laravel - Eloquent: Collections
 
-Developer: [zqhong] (https://github.com/zqhong/fastd-eloquent)
+Developer: [zqhong](https://github.com/zqhong/fastd-eloquent)

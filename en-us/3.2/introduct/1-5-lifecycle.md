@@ -39,5 +39,3 @@ Logging
 # Architecture and philosophy
 
 Provide a backbone that allows developers to flexibly disassemble parts (ServiceProvider) to make projects, functions more independent and flexible.
-
-Next section: [Configuration] (en / basic / 2-1-configuration.md)

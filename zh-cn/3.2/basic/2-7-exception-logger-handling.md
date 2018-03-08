@@ -7,6 +7,7 @@
 根据配置, 框架中的异常会通过 `json` 的形式返回到客户端, 并记录到日志.
 
 应用基础配置中异常处理配置示例:
+
 ```php
 <?php
  
@@ -94,6 +95,6 @@ return [
 
 然后启动 logstash agent，采集日志，即完成配置。
 
-完整教程: [FastD 最佳实践五: 构建ELK日志分析系统](blog/practice/practice-5-created-log)
+完整教程: [FastD 最佳实践五: 构建ELK日志分析系统](http://blog.fastdlabs.com/2017-12-12/create-log)
 
-下一节: [单元测试](zh-cn/advanced/3-1-testcase.md)
+下一节: [单元测试](zh-cn/3.2/advanced/3-1-testcase.md)

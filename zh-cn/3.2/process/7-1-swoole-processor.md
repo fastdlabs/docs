@@ -42,5 +42,3 @@ php bin/console process:create {ProcessName} [--name] [--daemon|-d]
 ```
 
 命令会保存进程的文件信息，如: pid，保存目录在 `runtime/process` 目录中
-
-下一节: [连接池](zh-cn/3-11-connection-pool.md)

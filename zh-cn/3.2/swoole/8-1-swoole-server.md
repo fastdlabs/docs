@@ -167,4 +167,3 @@ return [
 
 根据提示，输入具体操作的命令。
 
-下一节: [Swoole进程管理](zh-cn/3-10-swoole-processor.md)

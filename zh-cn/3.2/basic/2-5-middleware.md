@@ -69,4 +69,4 @@ class BasicAuth extends Middleware
 
 实现原理可以参考: [PSR15](https://github.com/php-fig/fig-standards/blob/master/proposed/http-middleware)
 
-下一节: [授权](zh-cn/basic/2-6-authorization.md)
+下一节: [授权](zh-cn/3.2/basic/2-6-authorization.md)

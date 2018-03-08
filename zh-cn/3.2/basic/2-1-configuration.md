@@ -11,14 +11,13 @@
 
 route()->get('/', 'WelcomeController@welcome');
 route()->get('/hello/{name}', 'WelcomeController@sayHello');
-
 ```
 
-更多详细配置请前往: [路由与控制器](zh-cn/basic/2-2-routing-and-controllers.md)
+更多详细配置请前往: [路由与控制器](zh-cn/3.2/basic/2-2-routing-and-controllers.md)
 
 #### 应用配置
 
-应用配置则是整体核心配置的集合，包括时区，环境，日志，服务提供器，中间件等等，可以通过自定义 [服务提供器](zh-cn/basic/3-8-service-provider.md) 来读取具体的配置内容。
+应用配置则是整体核心配置的集合，包括时区，环境，日志，服务提供器，中间件等等，可以通过自定义 [服务提供器](zh-cn/3.2/advanced/3-3-service-provider.md) 来读取具体的配置内容。
 
 !> 系统默认配置项请勿随意删除。`services` 默认内置的服务，如果在不了解的情况下，请勿随意改变顺序，如果需要添加自定义的，请在最后一项后添加。
 
@@ -109,7 +108,7 @@ return [
 ];
 ```
 
-`class` 配置项用于配置启动的服务器类型，可以自定义具体服务器。具体文档: [自定义服务器](zh-cn/swoole/8-5-custom-server)
+`class` 配置项用于配置启动的服务器类型，可以自定义具体服务器。具体文档: [自定义服务器](zh-cn/3.2/swoole/8-5-custom-server.md)
 
 `options` 配置项与 `swoole` 保持一致，请参考: [配置项](https://wiki.swoole.com/wiki/page/274.html)
 
@@ -226,4 +225,4 @@ $ php bin/console config
 $ php bin/console config app
 ```
 
-下一节: [路由与控制器](zh-cn/basic/2-2-routing-and-controllers.md)
+下一节: [路由与控制器](zh-cn/3.2/basic/2-2-routing-and-controllers.md)

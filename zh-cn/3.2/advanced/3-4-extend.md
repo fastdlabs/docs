@@ -1,6 +1,6 @@
 # 扩展
 
-框架以灵巧的方式进行服务提供，大部分的服务均通过 composer.json 与 [服务提供器进](zh-cn/3-6-service-provider.md) 进行依赖。
+框架以灵巧的方式进行服务提供，大部分的服务均通过 composer.json 与 [服务提供器进](zh-cn/3.2/advanced/3-3-service-provider.md) 进行依赖。
 
 如数据库服务通过依赖 `catfan/Medoo`, 通过 [DatabaseServiceProvider.php](https://github.com/JanHuang/fastD/blob/master/src/ServiceProvider/DatabaseServiceProvider.php) 进行注册到全局核心当中。
 
@@ -19,4 +19,4 @@
 * [FastD ORM](https://github.com/zqhong/fastd-eloquent)
 * [FastD QConf](https://github.com/JanHuang/QConfServiceProvider)
 
-下一节: [监控](zh-cn/3-13-monitor.md)
+下一节: [监控](zh-cn/3.2/advanced/3-5-monitor.md)

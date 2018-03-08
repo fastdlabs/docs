@@ -110,7 +110,7 @@ class IndexController
 
 上传单个文件可以获取数组索引，进行操作，键名来自于 form 表单的 `name` 属性。
 
-```php
+```````php
 namespace Controller;
 
 
@@ -125,7 +125,7 @@ class IndexController
         // some code
     }
 }
-```
+```````
 
 多个文件上传，可以利用 `foreach` 对数组进行迭代。
 
@@ -175,4 +175,4 @@ Session 目前使用最简洁的方式进行集成，通过服务提供器进行
 
 github: [session-provider](https://github.com/fastdlabs/session-provider)
 
-下一节: [响应处理](zh-cn/basic/2-4-response-handling.md)
+下一节: [响应处理](zh-cn/3.2/basic/2-4-response-handling.md)

@@ -14,19 +14,19 @@ If you need to get a list of all your routes, use the `route` command
 $ php bin / console route
 `` `
 
-`` `git
-+ --------------- + -------- + ------------------------ --------------- + ------------ +
-Path | Method | Callback | Middleware |
-+ --------------- + -------- + ------------------------ --------------- + ------------ +
-| / | GET | \Controller\WelcomeController@welcome |
-| / hello / {name} | GET | \Controller\HelloController@hello | man |
-+ --------------- + -------- + ------------------------ --------------- + ------------ +
-`` `
+```git
++---------------+--------+---------------------------------------+------------+
+| Path          | Method | Callback                              | Middleware |
++---------------+--------+---------------------------------------+------------+
+| /             | GET    | \Controller\WelcomeController@welcome |            |
+| /hello/{name} | GET    | \Controller\HelloController@hello     | man        |
++---------------+--------+---------------------------------------+------------+
+```
 
 If you want to get more command parameters, you can use `--help`,` -h` option to get.
 
 `` `shell
-$ php bin / console route -h
+$ php bin/console route -h
 `` `
 
 ```git
@@ -54,36 +54,36 @@ Help:
 
 Learn to use, now, let's create our command line tool.
 
-`` `php
-<? php
+```php
+<?php
 
-namespace Console
+namespace Console;
 
 
-use Symfony \ Component \ Console \ Command \ Command;
-use Symfony \ Component \ Console \ Input \ InputArgument;
-use Symfony \ Component \ Console \ Input \ InputInterface;
-use Symfony \ Component \ Console \ Output \ OutputInterface;
+use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
 
 class HelloConsole extends Command
 {
-    public function configure ()
-    {
-        $ this-> setName ('hello');
-        $this->addArgument('name', InputArgument::OPTIONAL, '', 'jan');
-    }
+    public function configure()
+    {
+        $this->setName('hello');
+        $this->addArgument('name', InputArgument::OPTIONAL, '', 'jan');
+    }
 
-    public function execute (InputInterface $ input, OutputInterface $ output)
-    {
-        $output->writeln('hello '.$input->getArgument('name'));
-    }
+    public function execute(InputInterface $input, OutputInterface $output)
+    {
+        $output->writeln('hello '.$input->getArgument('name'));
+    }
 }
-`` `
+```
 
-`` `shell
-$ php bin / console hello jan
+```shell
+$ php bin/console hello jan
 // hello jan
-`` `
+```
 
 Symfony / console is referenced because of our functional implementation.
 

@@ -102,4 +102,4 @@ class DatabaseServiceProvider implements ServiceProviderInterface
 
 通过命令 `$ php bin/console` 即可获取预置的命令。
 
-下一节: [Swoole服务器](zh-cn/advanced/3-3-extend.md)
+下一节: [Swoole服务器](zh-cn/3.2/advanced/3-4-extend.md)

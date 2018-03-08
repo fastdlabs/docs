@@ -137,4 +137,4 @@ class IndexController
 }
 ```
 
-下一节: [中间件](zh-cn/basic/2-5-middleware.md)
+下一节: [中间件](zh-cn/3.2/basic/2-5-middleware.md)
