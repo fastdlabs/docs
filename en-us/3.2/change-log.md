@@ -3,9 +3,9 @@
 ## new features
 
 * New process management command, add `process.php` configuration file. Support custom commands, daemons.
-* Added `FastD \ Logger \ Formatter \ StashForamtter` log format, support` logstash`. Click to go to: [Tutorials] (http://blog.fastdlabs.com/2017-12-12/create-log)
-* Added `FastD \ ServiceProvider \ MoltenServiceProvider`, support` zipkin` call chain. Click to: [Tutorial] (http://blog.fastdlabs.com/2017-12-12/create-zipkin)
-* Replacing `migration` with [fastd / migration] (https://github.com/JanHuang/migration)
+* Added `FastD\Logger\Formatter\StashForamtter` log format, support` logstash`. Click to go to: [Tutorials](http://blog.fastdlabs.com/2017-12-12/create-log)
+* Added `FastD\ServiceProvider\MoltenServiceProvider`, support` zipkin` call chain. Click to: [Tutorial](http://blog.fastdlabs.com/2017-12-12/create-zipkin)
+* Replacing `migration` with [fastd/migration](https://github.com/JanHuang/migration)
 * Added `binary`,` version`, `forward` and other helper functions
 * Added mysql query builder
 * Restore time zone configuration
