@@ -57,5 +57,5 @@
     - [Custom Server](en-GB/3.2/swoole/8-5-custom-server.md)
     
 - Third Party Support
-    - [easywecaht](en-us/3.2/third_party/easywechat.md)
+    - [easywechat](en-us/3.2/third_party/easywechat.md)
     - [http-foundation](en-us/3.2/third_party/symfony-http.md)
