@@ -7,3 +7,5 @@
 
 [GitHub](https://github.com/JanHuang/fastd)
 [Get Started](zh-cn/3.2/readme.md)
+
+![](assets/bg.jpg)
