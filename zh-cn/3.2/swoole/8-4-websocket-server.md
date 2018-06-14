@@ -96,6 +96,7 @@ ws.onclose = function(evt) {
 如上示例会被分发到POST路由 "/" 下，参数foo值为bar
 
 #2.如果你想自定义WebSocket 只需要修改配置为
+```
 return [
     'host' => 'ws://127.0.0.1:9527',
     'class' => \Server\CustomizeSocketServer::class,
@@ -108,6 +109,7 @@ return [
         'group' => 'www',
     ],
 ];
+```
 并增加目录和文件：项目目录/app/src/Server/CustomizeSocketServer.php 大致内容如下：
 ```
 <?php
@@ -152,3 +154,4 @@ class CustomizeSocketServer extends WebSocket
 }
 
 ```
+启动服务 :cd到项目目录执行 php bin/server start 如需挂为守护进程增加 -d 参数
