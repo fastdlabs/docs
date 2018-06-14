@@ -1,5 +1,4 @@
 # WebSocket Server
-# WebSocket Server
 1.框架提供原始的 FastD\Servitization\Server，实现代码如下：
 
 ```
