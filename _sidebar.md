@@ -2,12 +2,12 @@
 - [升级指南](zh-cn/3.2/upgrade.md)
 
 - 快速演示
-    - [快速开始](guide/get_started.md)
-    - [创建API](guide/create_api.md)
-    - [创建命令行](guide/create_console.md)
-    - [创建服务提供器](guide/service_provider.md)
-    - [创建进程](guide/process.md)
-    - [创建服务器](guide/server.md)
+    - [快速开始](zh-cn/3.2/guide/get_started.md)
+    - [创建API](zh-cn/3.2/guide/create_api.md)
+    - [创建命令行](zh-cn/3.2/guide/create_console.md)
+    - [创建服务提供器](zh-cn/3.2/guide/service_provider.md)
+    - [创建进程](zh-cn/3.2/guide/process.md)
+    - [创建服务器](zh-cn/3.2/guide/server.md)
 
 - 入门指南
     - [安装 FastD](zh-cn/3.2/introduct/1-2-installing.md)
