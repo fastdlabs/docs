@@ -1,0 +1,44 @@
+:root {
+    --fastd-accent: #0ea5e9;
+}
+
+.sidebar {
+    font-size: 14px;
+}
+
+.sidebar ul li a {
+    line-height: 1.55;
+}
+
+.markdown-section {
+    max-width: 980px;
+}
+
+.markdown-section h1,
+.markdown-section h2,
+.markdown-section h3 {
+    letter-spacing: 0;
+}
+
+.markdown-section code {
+    word-break: break-word;
+}
+
+.markdown-section table {
+    display: table;
+    width: 100%;
+}
+
+.markdown-section pre > code {
+    font-size: 13px;
+}
+
+.app-nav a.active {
+    color: var(--fastd-accent);
+}
+
+@media screen and (max-width: 768px) {
+    .markdown-section {
+        padding: 16px;
+    }
+}
