@@ -41,6 +41,7 @@ $this->add('event', new EventDispatcher($listenerProvider));
 要点：
 
 - 使用**无参** `new $listener`，构造函数不能有必填参数。需要构造注入时，把监听从这里移到 ServiceProvider，用 `$container->make()` 注册（见下文）。
+- 这一步发生在默认服务注册之前，监听器构造函数里拿不到 `logger` / `config` / `matcher`，也不要用 `container()` 取服务。
 - 同类监听器按类名去重，重复列出只保留第一次的实例。
 - 监听器在启动时全部实例化，构造器应保持轻量，不要做 I/O。
 - 若构造函数有必填参数，`new` 会在启动阶段抛 `ArgumentCountError`，且不在 `Runtime::process()` 的 try 内，属于未捕获错误。

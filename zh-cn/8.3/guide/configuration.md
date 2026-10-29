@@ -161,7 +161,7 @@ return [
 - 未定义的变量不会报错，会保留 `%key%` 原文，容易把占位符带进运行时，部署后要检查。
 - 变量名不支持短横线等其它字符。
 - `.env.yml` 不存在时变量集合为空，启动不报错；`file_exists()` 判断发生在 `Application::defaultServices()`。
-- 只在启动时加载一次。Swoole 常驻进程修改 `.env.yml` 后必须重启，`reload` 不会重新读取。
+- 每个 `Application` 启动时加载一次；CGI 每请求都会重新读取，Swoole 常驻进程修改后必须重启，`reload` 不会重新读取。
 
 当前 dobee 的 `config/*.php` 并没有使用 `%...%`，所以仅提供 `.env.yml` 不会自动覆盖这些配置；只有配置值里显式写了占位符才生效。框架也没有 `env()` 助手，需要读系统环境变量时，在 `config/*.php` 里直接调用 `getenv()`。
 

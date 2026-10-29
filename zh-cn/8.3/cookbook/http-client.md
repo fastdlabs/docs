@@ -30,7 +30,7 @@ $client = new Client();
 | `CURLOPT_CONNECTTIMEOUT` | `10` | 连接超时（秒） |
 | `CURLOPT_SSL_VERIFYPEER` | `false` | 默认不校验证书，生产必须改 |
 | `CURLOPT_SSL_VERIFYHOST` | `false` | 默认不校验主机名，生产必须改 |
-| `CURLOPT_FOLLOWLOCATION` | `true` | 自动跟随重定向 |
+| `CURLOPT_FOLLOWLOCATION` | `true` | 自动跟随重定向；重定向下的解析限制见“注意事项” |
 | `CURLOPT_MAXREDIRS` | `3` | 最大重定向次数 |
 
 > 构造参数会**整体替换**默认选项，不会与默认值合并。`new Client([CURLOPT_TIMEOUT => 5])` 会同时丢掉 `CURLOPT_HEADER` 和 `CURLOPT_RETURNTRANSFER`，响应解析随即失效。需要改单项时用 `withOption()`，或者传入完整选项表。
@@ -369,6 +369,7 @@ $result = Parallel::all([
 - **Cookie 罐是实例级的**：只保存在当前客户端实例内，不会跨进程或落盘持久化；高并发下不要共享同一个客户端实例去承载不同用户的会话。
 - **错误信息可能包含上游地址**：记录日志时不要把带签名参数的完整 URL 原样打出来。
 - **生产环境显式开启 SSL 校验**：默认 `CURLOPT_SSL_VERIFYPEER` / `CURLOPT_SSL_VERIFYHOST` 都是关闭的。
+- **重定向后的响应解析不完整**：客户端用 `explode("\r\n\r\n", $response, 2)` 只拆第一个响应头块，而 cURL 在 `CURLOPT_FOLLOWLOCATION` 下会返回所有中间响应头。发生 3xx 时，最终响应体可能混入中间响应头，`Content-Type` 也可能取自重定向响应。需要可靠处理重定向时，关闭 `CURLOPT_FOLLOWLOCATION`，读取 `Location` 后重新发起请求。
 - **设置合理的超时和重试上限**：上游故障时，无限重试会拖垮调用方。
 
 ## 相关文档

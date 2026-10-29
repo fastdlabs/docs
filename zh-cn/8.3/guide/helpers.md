@@ -108,6 +108,14 @@ return sse((function () {
 
 `$options` 支持 `heartbeat`、`max_duration`、`retry`、`error_event`、`headers`、`on_error`。Swoole 下由 `RequestListener` 识别 `SseResponse` 并切换 `SwooleEmitter`，CGI 下由 `CgiEmitter` 输出。详见 [SSE 场景](../cookbook/sse.md)。
 
+## 实际行为
+
+- 所有函数在调用时才通过 `container()` 取当前应用；应用尚未创建时直接失败，不做兜底。
+- `config()` 返回容器中的同一个 `FileParser` 实例，`parsed` 随解析累积，不会自动加载新文件。
+- `json()` / `text()` / `sse()` 只构造响应对象；`forward()` 只返回目标响应，都需要调用方 `return` 才会发送。
+- `session()` 只读当前请求属性，不创建会话；`logger()` / `event()` 返回容器中的共享实例。
+- `debug()` / `info()` / `error()` / `logging()` 受 `log.level` 过滤，低于级别的记录直接丢弃。
+
 ## 已知限制：abort()
 
 `helpers.php` 中的定义：

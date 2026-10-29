@@ -37,8 +37,8 @@
 ### Session
 
 - `SessionServiceProvider` 支持把 `config/session.php` 的 `handler` 写成：
-  - 类名：实现 `SessionHandlerInterface` 的处理器；
-  - 别名：`auto`、`swoole_table`、`native_file`、`redis`。
+  - 别名：`auto`、`swoole_table`、`native_file`、`redis`；
+  - 类名：当前只支持 `SwooleTableSessionHandler::class`、`NativeFileSessionHandler::class`、`RedisSessionHandler::class`。写其它类名会抛 `InvalidArgumentException`（`Unsupported session handler "..."`），不是“任意实现 `SessionHandlerInterface` 的类都能接入”。
 - `auto` 在 Swoole 运行时选择 Swoole Table，在 CGI / FastCGI 选择文件；`auto` **不会**选择 Redis。
 - 新增 `config/session.php` 的 `redis` 段：`host`、`port`、`timeout`、`password`、`database`、`prefix`，由 Provider 用来创建 `\Redis` 连接。
 - Redis 连接在应用 `bootstrap` 阶段建立；Swoole 下这发生在 Worker fork 之前，多 Worker 场景需要注意连接共享，见[已知问题](known-issues.md)。

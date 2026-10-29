@@ -76,7 +76,7 @@ final class AppServiceProvider implements ServiceProviderInterface
 由此得到几个可靠结论：
 
 - Provider 内可以安全使用 `config()`、`logger()`、`event()`、`matcher`。
-- Provider 内**路由集合还是空的**；如果 Provider 要加路由，直接操作 `$container->get('matcher')->routeCollection`。
+- Provider 内**还没有加载 `routes` 文件**；如果 Provider 要加路由，直接操作 `$container->get('matcher')->routeCollection`。
 - 后执行的 Provider 可以覆盖前面注册的同名服务；对象类型的 `add()` 是直接替换，数组类型会 `array_merge`。
 - 容器服务是共享实例；Provider 不要往服务属性里写请求级状态。
 - `register()` 没有异常兜底，配置错误会让启动直接失败（这是现有 Provider 的默认策略）。

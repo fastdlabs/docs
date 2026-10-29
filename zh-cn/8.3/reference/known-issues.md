@@ -15,6 +15,7 @@
 | 5 | 旧版 ORM / 迁移 / 认证扩展不属于 8.3 核心 | 中 | 文档边界 |
 | 6 | `MessageListener` / `ReceiveListener` 与事件分发不匹配 | 中 | API 缺陷 |
 | 7 | HTTP 客户端默认关闭 SSL 校验 | 中 | 安全默认值 |
+| 8 | HTTP 客户端跟随重定向时响应解析错位 | 中 | 实现缺陷 |
 
 ## 1. `abort()` 依赖未提供的 `HttpException`
 
@@ -290,6 +291,57 @@ $client = (new Client())
 需要自定义 CA 时再设置 `CURLOPT_CAINFO`。生产环境不要为了“能调通”长期关闭校验；测试环境也应尽量使用可信证书或显式指定 CA。
 
 用法与其它默认值见 [HTTP 客户端](../cookbook/http-client.md)。
+
+## 8. HTTP 客户端跟随重定向时响应解析错位
+
+**现象**
+
+上游返回 302 / 301 并自动跳转时，客户端拿到的状态码是最终响应（例如 200），但响应体里混入了中间响应头，`Content-Type` 也可能来自重定向响应，导致 JSON 被当成纯文本或解析失败。
+
+**原因**
+
+默认 `CURLOPT_FOLLOWLOCATION => true`。cURL 在开启 `CURLOPT_HEADER` 且跟随重定向时，会把**所有**中间响应头一起返回：
+
+```text
+HTTP/1.1 302 Found
+Location: /final
+Content-Type: text/html
+
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{"ok":true}
+```
+
+而 `Client::sendRequest()` 只做一次：
+
+```php
+$responseParts = explode("\r\n\r\n", $response, 2);
+```
+
+它把第一个头块当成最终响应头，剩余部分全部当成 body，于是第二个响应的头行进入了 body。
+
+**绕过方式**
+
+需要可靠处理重定向时，关闭自动跟随，自己处理 `Location`：
+
+```php
+$client = (new Client())->withOption(CURLOPT_FOLLOWLOCATION, false);
+
+$response = $client->sendRequest($request);
+
+if (in_array($response->getStatusCode(), [301, 302, 303, 307, 308], true)) {
+    $location = $response->getHeaderLine('Location');
+    // 解析为绝对 URL，必要时限制跳转次数和域名，再重新发请求
+}
+```
+
+如果上游确定不重定向，保持默认即可；只要可能发生 3xx，就不要依赖重定向后的 `Content-Type` 自动选择响应类型。
+
+**影响范围**
+
+- 默认配置下所有 3xx 跳转都可能触发。
+- 与 SSL 默认关闭一样，属于“请求能通但结果不可靠”的问题，容易被忽略。
 
 ## 相关文档
 

@@ -11,7 +11,7 @@ FastD 有两种 HTTP 运行方式：
 
 Console（`bin/console`）与 Process（`bin/process`）是命令行入口，不参与 HTTP 服务。
 
-无论哪种方式，Web 根都必须指向 `web/`，不要把项目根或 `config/`、`runtime/` 暴露给 Nginx。开发阶段可以用 `php -S 127.0.0.1:8099 -t web` 快速验证，但内置服务器是单进程模型，不要用于生产。
+无论哪种方式，Web 根都必须指向 `web/`，不要把项目根或 `config/`、`runtime/` 暴露给 Nginx。开发阶段可以用 `php -S 127.0.0.1:8099 -t web` 快速验证，但内置服务器默认是单进程模型，只适合本地开发。
 
 ## 发布构建
 

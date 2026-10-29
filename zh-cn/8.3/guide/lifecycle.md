@@ -47,7 +47,7 @@ abstract class Runtime
 
 - 监听器先于服务注册，所以 Provider 里可以 `event()->addListener()`。
 - 默认服务先于业务 Provider，所以 Provider 里可以取 `config`、`logger`、`matcher`。
-- 路由最后注册，Provider 执行时路由集合还是空的（Provider 可以自己往里加路由）。
+- 路由最后注册，Provider 执行时还没有来自 `routes` 文件的路由（Provider 可以自己往 `routeCollection` 里加）。
 - `config/listener.php` 中的监听器用无参 `new` 实例化；Provider 里的监听器可用 `$container->make()` 做构造注入。
 
 CGI 入口：

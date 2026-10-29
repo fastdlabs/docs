@@ -32,6 +32,7 @@
 - 因此 `cookie.lifetime` 目前不会改变 Cookie 生命周期，不要依赖它实现“记住我”。
 - Cookie 值为空时 `Cookie::__toString()` 输出删除指令（`deleted` + 过去的过期时间）；`invalidate()` 后中间件正是这样清除客户端 Cookie。
 - 会话 ID 必须是 32 位十六进制且存在于存储中；否则生成新 ID。这可以阻止攻击者指定任意会话 ID，但登录后仍应轮换。
+- 只要启用 Session，中间件在响应阶段就会 `save()` 并下发 Cookie，即使本次请求没有读写会话；未启用时对请求零影响。
 - 默认 `secure=false` 是为了本地 HTTP 调试；生产必须开启，否则 Cookie 会随 HTTP 明文发送。
 
 ```php
