@@ -1,61 +1,48 @@
-- [修改日志](zh-cn/3.2/change-log.md)
-- [升级指南](zh-cn/3.2/upgrade.md)
+- [手册首页](zh-cn/8.3/readme.md)
+- [快速开始](zh-cn/8.3/guide/getting-started.md)
 
-- 快速演示
-    - [快速开始](zh-cn/3.2/guide/get_started.md)
-    - [创建API](zh-cn/3.2/guide/create_api.md)
-    - [创建命令行](zh-cn/3.2/guide/create_console.md)
-    - [创建服务提供器](zh-cn/3.2/guide/service_provider.md)
-    - [创建进程](zh-cn/3.2/guide/process.md)
-    - [创建服务器](zh-cn/3.2/guide/server.md)
+- 基础手册
+    - [项目结构](zh-cn/8.3/guide/project-structure.md)
+    - [路由与控制器](zh-cn/8.3/guide/routing-controller.md)
+    - [请求与响应](zh-cn/8.3/guide/request-response.md)
+    - [中间件](zh-cn/8.3/guide/middleware.md)
+    - [Session](zh-cn/8.3/guide/session.md)
+    - [运行时](zh-cn/8.3/guide/runtime.md)
+    - [缓存](zh-cn/8.3/guide/cache.md)
+    - [数据库](zh-cn/8.3/guide/database.md)
+    - [Console 与 Process](zh-cn/8.3/guide/console-process.md)
+    - [测试](zh-cn/8.3/guide/testing.md)
+    - [Demo](zh-cn/8.3/guide/demo.md)
 
-- 入门指南
-    - [安装 FastD](zh-cn/3.2/introduct/1-2-installing.md)
-    - [目录结构](zh-cn/3.2/introduct/1-3-directory-structure.md)
-    - [流程图](zh-cn/3.2/introduct/1-4-flow.md)
-    - [生命周期](zh-cn/3.2/introduct/1-5-lifecycle.md)
+- 组件
+    - [组件总览](zh-cn/8.3/components/README.md)
+    - [fastd/fastd](zh-cn/8.3/components/fastd.md)
+    - [fastd/http](zh-cn/8.3/components/http.md)
+    - [fastd/swoole](zh-cn/8.3/components/swoole.md)
+    - [fastd/routing](zh-cn/8.3/components/routing.md)
+    - [fastd/middleware](zh-cn/8.3/components/middleware.md)
+    - [fastd/container](zh-cn/8.3/components/container.md)
+    - [fastd/config](zh-cn/8.3/components/config.md)
+    - [fastd/event](zh-cn/8.3/components/event.md)
+    - [fastd/cache](zh-cn/8.3/components/cache.md)
+    - [fastd/medoodb](zh-cn/8.3/components/medoodb.md)
+    - [fastd/dobee](zh-cn/8.3/components/dobee.md)
+    - [fastd/dobee-demo](zh-cn/8.3/components/dobee-demo.md)
 
-- 基础功能
-    - [配置](zh-cn/3.2/basic/2-1-configuration.md)
-    - [路由与控制器](zh-cn/3.2/basic/2-2-routing-and-controllers.md)
-    - [请求处理](zh-cn/3.2/basic/2-3-request-handling.md)
-    - [响应处理](zh-cn/3.2/basic/2-4-response-handling.md)
-    - [中间件](zh-cn/3.2/basic/2-5-middleware.md)
-    - [认证授权](zh-cn/3.2/basic/2-6-authorization.md)
-    - [异常与日志处理](zh-cn/3.2/basic/2-7-exception-logger-handling.md)
-    
-- 高级
-    - [单元测试](zh-cn/3.2/advanced/3-1-testcase.md)
-    - [辅助函数](zh-cn/3.2/advanced/3-2-helpers.md)
-    - [服务提供器](zh-cn/3.2/advanced/3-3-service-provider.md)
-    - [扩展](zh-cn/3.2/advanced/3-4-extend.md)
-    - [日志分析](zh-cn/3.2/advanced/3-5-monitor.md)
+- 常用场景
+    - [场景索引](zh-cn/8.3/cookbook/README.md)
+    - [Redis Session](zh-cn/8.3/cookbook/redis-session.md)
+    - [SSE](zh-cn/8.3/cookbook/sse.md)
+    - [Parallel](zh-cn/8.3/cookbook/parallel.md)
+    - [上传与下载](zh-cn/8.3/cookbook/upload-download.md)
+    - [CORS](zh-cn/8.3/cookbook/cors.md)
 
-- 数据库
-    - [medoo](zh-cn/3.2/database/4-1-database.md)
-    - [pool](zh-cn/3.2/database/4-2-connection-pool.md)
-    - [ORM](zh-cn/3.2/database/4-3-orm.md)
-    - [数据迁移](zh-cn/3.2/database/4-4-migration.md)
+- 参考
+    - [兼容性](zh-cn/8.3/reference/compatibility.md)
+    - [升级指南](zh-cn/8.3/reference/upgrading.md)
+    - [FAQ](zh-cn/8.3/reference/faq.md)
 
-- 缓存
-    - [缓存配置](zh-cn/3.2/cache/5-1-config.md)
-    - [文件缓存](zh-cn/3.2/cache/5-2-file-cache.md)
-    - [Redis缓存](zh-cn/3.2/cache/5-3-redis-cache.md)
-    
-- 命令行
-    - [预设命令](zh-cn/3.2/console/6-1-console.md)
-    - [自定义命令](zh-cn/3.2/console/6-2-custom.md)
-    
-- 进程
-    - [进程管理](zh-cn/3.2/process/7-1-swoole-processor.md)
-    
-- Swoole
-    - [基础使用](zh-cn/3.2/swoole/8-1-swoole-server.md)
-    - [TCPServer](zh-cn/3.2/swoole/8-2-tcp-server.md)
-    - [HttpServer](zh-cn/3.2/swoole/8-3-http-server.md)
-    - [WebSocketServer](zh-cn/3.2/swoole/8-4-websocket-server.md)
-    - [自定义服务器](zh-cn/3.2/swoole/8-5-custom-server.md)
-    
-- 第三方支持
-    - [easywechat](zh-cn/3.2/third_party/easywechat.md)
-    - [http-foundation](zh-cn/3.2/third_party/symfony-http.md)
+- 历史版本
+    - [3.2](zh-cn/3.2/readme.md)
+    - [3.1](zh-cn/3.1/readme.md)
+    - [3.0](zh-cn/3.0/readme.md)

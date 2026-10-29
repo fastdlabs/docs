@@ -1,23 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>FastD | A High-Performance API Framework</title>
-    <link rel="icon" href="_media/favicon.ico">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <meta name="keywords" content="doc,docs,documentation,gitbook,creator,generator,github,jekyll,github-pages">
-    <meta name="description" content="A magical documentation generator.">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css" title="vue">
-    <style>
-        nav.app-nav li ul {
-            min-width: 100px;
-        }
-    </style>
+    <title>FastD | 高性能 PHP API 框架</title>
+    <link rel="icon" href="assets/logo.png">
+    <meta name="description" content="FastD 8.3 使用手册：基础入门、路由、HTTP、Session、Swoole、缓存、数据库与组件文档。">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4.13.1/lib/themes/vue.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
 </head>
 <body>
-<div id="app">Loading ...</div>
+<div id="app">加载中…</div>
 <script>
     window.$docsify = {
         auto2top: true,
@@ -27,38 +20,25 @@
         loadNavbar: true,
         mergeNavbar: true,
         maxLevel: 4,
-        subMaxLevel: 2,
+        subMaxLevel: 3,
+        homepage: 'zh-cn/8.3/readme.md',
         name: 'FastD',
+        nameLink: 'zh-cn/8.3/readme.md',
         search: {
-            noData: {
-                '/de-de/': 'Keine Ergebnisse!',
-                '/zh-cn/': '没有结果!',
-                '/': 'No results!'
-            },
             paths: 'auto',
-            placeholder: {
-                '/de-de/': 'Suche',
-                '/zh-cn/': '搜索',
-                '/': 'Search'
-            }
+            placeholder: '搜索文档',
+            noData: '没有找到结果'
         },
-        formatUpdated: '{MM}/{DD} {HH}:{mm}',
-        plugins: [
-            function (hook, vm) {
-                hook.beforeEach(function (html) {
-                    return html
-                        + '\n\n----\n\n'
-                        + '<a href="http://www.miitbeian.gov.cn" target="_blank" style="color: inherit; font-weight: normal; text-decoration: none;">粤ICP备17090456号</a>'
-                })
-            }
-        ]
-    }
+        notFoundPage: {
+            text: '页面不存在，请从左侧目录重新选择。'
+        },
+        formatUpdated: '{MM}/{DD} {HH}:{mm}'
+    };
 </script>
-<script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
-<script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
-<script src="//unpkg.com/docsify/lib/plugins/codesponsor.min.js"></script>
-<script src="//unpkg.com/prismjs/components/prism-bash.min.js"></script>
-<script src="//unpkg.com/prismjs/components/prism-markdown.min.js"></script>
-<script src="//unpkg.com/prismjs/components/prism-nginx.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/docsify@4.13.1/lib/docsify.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/docsify@4.13.1/lib/plugins/search.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-bash.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-json.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-php.min.js"></script>
 </body>
 </html>
