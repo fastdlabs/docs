@@ -21,13 +21,21 @@ FastD 是面向 API 场景的轻量级 PHP 框架，基于 PSR 标准，同时�
 
 ### 熟悉框架后
 
+- [配置](guide/configuration.md)
+- [生命周期](guide/lifecycle.md)
+- [辅助函数](guide/helpers.md)
 - [中间件](guide/middleware.md)
+- [事件与监听器](guide/events.md)
+- [ServiceProvider](guide/service-provider.md)
 - [Session](guide/session.md)
 - [运行时](guide/runtime.md)
+- [异常与日志](guide/error-logging.md)
+- [安全](guide/security.md)
 - [缓存](guide/cache.md)
 - [数据库](guide/database.md)
 - [Console 与 Process](guide/console-process.md)
 - [测试](guide/testing.md)
+- [部署](guide/deployment.md)
 - [Demo](guide/demo.md)
 
 ### 组件细节

@@ -3,11 +3,19 @@
 
 - 基础手册
     - [项目结构](guide/project-structure.md)
+    - [配置](guide/configuration.md)
+    - [生命周期](guide/lifecycle.md)
     - [路由与控制器](guide/routing-controller.md)
     - [请求与响应](guide/request-response.md)
+    - [辅助函数](guide/helpers.md)
     - [中间件](guide/middleware.md)
+    - [事件与监听器](guide/events.md)
+    - [ServiceProvider](guide/service-provider.md)
     - [Session](guide/session.md)
     - [运行时](guide/runtime.md)
+    - [异常与日志](guide/error-logging.md)
+    - [安全](guide/security.md)
+    - [部署](guide/deployment.md)
     - [缓存](guide/cache.md)
     - [数据库](guide/database.md)
     - [Console 与 Process](guide/console-process.md)
@@ -34,12 +42,16 @@
     - [Redis Session](cookbook/redis-session.md)
     - [SSE](cookbook/sse.md)
     - [Parallel](cookbook/parallel.md)
+    - [HTTP Client](cookbook/http-client.md)
+    - [WebSocket / TCP](cookbook/websocket-tcp.md)
     - [上传与下载](cookbook/upload-download.md)
     - [CORS](cookbook/cors.md)
 
 - 参考
     - [兼容性](reference/compatibility.md)
     - [升级指南](reference/upgrading.md)
+    - [变更记录](reference/changelog.md)
+    - [已知问题](reference/known-issues.md)
     - [FAQ](reference/faq.md)
 
 - 历史版本

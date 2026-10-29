@@ -3,11 +3,19 @@
 
 - 基础手册
     - [项目结构](zh-cn/8.3/guide/project-structure.md)
+    - [配置](zh-cn/8.3/guide/configuration.md)
+    - [生命周期](zh-cn/8.3/guide/lifecycle.md)
     - [路由与控制器](zh-cn/8.3/guide/routing-controller.md)
     - [请求与响应](zh-cn/8.3/guide/request-response.md)
+    - [辅助函数](zh-cn/8.3/guide/helpers.md)
     - [中间件](zh-cn/8.3/guide/middleware.md)
+    - [事件与监听器](zh-cn/8.3/guide/events.md)
+    - [ServiceProvider](zh-cn/8.3/guide/service-provider.md)
     - [Session](zh-cn/8.3/guide/session.md)
     - [运行时](zh-cn/8.3/guide/runtime.md)
+    - [异常与日志](zh-cn/8.3/guide/error-logging.md)
+    - [安全](zh-cn/8.3/guide/security.md)
+    - [部署](zh-cn/8.3/guide/deployment.md)
     - [缓存](zh-cn/8.3/guide/cache.md)
     - [数据库](zh-cn/8.3/guide/database.md)
     - [Console 与 Process](zh-cn/8.3/guide/console-process.md)
@@ -34,12 +42,16 @@
     - [Redis Session](zh-cn/8.3/cookbook/redis-session.md)
     - [SSE](zh-cn/8.3/cookbook/sse.md)
     - [Parallel](zh-cn/8.3/cookbook/parallel.md)
+    - [HTTP Client](zh-cn/8.3/cookbook/http-client.md)
+    - [WebSocket / TCP](zh-cn/8.3/cookbook/websocket-tcp.md)
     - [上传与下载](zh-cn/8.3/cookbook/upload-download.md)
     - [CORS](zh-cn/8.3/cookbook/cors.md)
 
 - 参考
     - [兼容性](zh-cn/8.3/reference/compatibility.md)
     - [升级指南](zh-cn/8.3/reference/upgrading.md)
+    - [变更记录](zh-cn/8.3/reference/changelog.md)
+    - [已知问题](zh-cn/8.3/reference/known-issues.md)
     - [FAQ](zh-cn/8.3/reference/faq.md)
 
 - 历史版本
