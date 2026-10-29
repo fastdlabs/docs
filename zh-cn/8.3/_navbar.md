@@ -1,9 +1,9 @@
 - 文档
-    - [简体中文 8.3](readme.md)
-    - [English 3.2](../../en-us/3.2/readme.md)
+    - [简体中文 8.3](zh-cn/8.3/readme.md)
+    - [English 3.2](en-us/3.2/readme.md)
 - 版本
-    - [8.3](readme.md)
-    - [3.2](../3.2/readme.md)
-    - [3.1](../3.1/readme.md)
-    - [3.0](../3.0/readme.md)
+    - [8.3](zh-cn/8.3/readme.md)
+    - [3.2](zh-cn/3.2/readme.md)
+    - [3.1](zh-cn/3.1/readme.md)
+    - [3.0](zh-cn/3.0/readme.md)
 - [GitHub](https://github.com/fastdlabs/fastD)
