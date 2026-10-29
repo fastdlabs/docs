@@ -86,7 +86,7 @@ $db->insert('users', [
 
 $users = $db->select('users', '*', [
     'status' => 1,
-    'ORDER' => 'id DESC',
+    'ORDER' => ['id' => 'DESC'],
     'LIMIT' => 20,
 ]);
 
@@ -129,7 +129,7 @@ $db = new Database([
 - `getDatabase()` 按 key 缓存连接；`true` 会重建。连接失效（如 MySQL `server has gone away`）时用 `getDatabase($key, true)` 或 `reconnect()`。
 - Swoole 启动阶段 `BootedEvent` 会调用 `initConnections()` 预建连接；连接在 fork 前创建，若遇到跨 worker 连接问题，优先在 worker 内重新获取/重连，不要把 PDO 实例传给其他 worker。
 - SQLite `:memory:` 是连接级的：每次新建 `Database` 都是空库，测试中需重新建表；连接池里的同名连接可复用。
-- 查询条件、`ORDER`、`LIMIT`、JOIN 等使用 Medoo 语法，不是 SQL 字符串拼接。
+- 查询条件、JOIN、`LIMIT` 等使用 Medoo 语法。排序要写成 `'ORDER' => ['id' => 'DESC']`；写成 `'ORDER' => 'id DESC'` 会被当成单个列名并抛 `InvalidArgumentException`。
 - `prefix` 由 Medoo 统一加在表名前，写原生 SQL 时要自行带前缀。
 - 事务用 `action()`；回调内不要吞掉异常，否则不会回滚。
 - SQLite 适合 Demo/测试；生产注意连接数、索引、慢查询与事务边界。

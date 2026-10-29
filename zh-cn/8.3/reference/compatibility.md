@@ -50,8 +50,8 @@
 | PSR-7 / PSR-15 请求链路 | 支持 | 支持 |
 | Session | 支持（默认文件） | 支持（默认 Swoole Table） |
 | Redis Session | 支持 | 支持，但需评估多 Worker 连接共享 |
-| SSE | 支持 | 支持，需 `enable_coroutine` |
-| Parallel | 串行降级 | 协程并发 |
+| SSE | 支持 | 支持，需 `enable_coroutine`；由 `SwooleEmitter` 输出 |
+| Parallel | 串行降级 | 协程并发，需 `fastd/swoole >= 8.2` |
 | 常驻内存 / 协程 | 否 | 是 |
 | 文件上传 | PHP 上传机制 | Swoole 请求解析 + `package_max_length` |
 
@@ -67,7 +67,7 @@
 
 说明：
 
-- 8.3 在 8.2 基础上新增 Redis Session，未引入破坏性配置变更。
+- 8.3 在 8.2 基础上接入 Redis Session（`RedisSessionHandler` 由 http 8.2 提供），未引入破坏性配置变更。
 - `dobee 1.3.4` 的约束可能解析到 fastD 8.2，但 Swoole 配置仍是旧结构；应使用 `1.3.5`。
 - `dobee 1.4.x` 将 Demo 拆分到 `fastd/dobee-demo`，Swoole 配置使用 `servers` / `listeners` / `options`。
 - 组件补丁版本可能继续发布，例如 `fastd/http 8.2.x`、`fastd/swoole 8.2.x`，以 Packagist 与 tag 为准。

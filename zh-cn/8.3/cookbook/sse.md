@@ -6,7 +6,7 @@
 
 - PHP >= 8.4.1
 - `fastd/http`（`SseResponse`、`Event`、`EmitterInterface`）
-- Swoole 运行时需要 `fastd/swoole >= 8.2` 与 `ext-swoole >= 6.0`
+- Swoole 运行时需要 `fastd/swoole`（文档验证版本 8.2.1）与 `ext-swoole >= 6.0`
 - Swoole 必须开启协程：`enable_coroutine => true`
 
 ## 配置
@@ -52,7 +52,7 @@ return [
 ];
 ```
 
-`SseResponse::run()` 在非协程上下文会抛出 `RuntimeException`，提示开启 `enable_coroutine`。
+`SwooleEmitter::run()` 在非协程上下文会抛出 `RuntimeException`，提示开启 `enable_coroutine`。SSE 在请求/响应体系中的位置见[请求与响应](../guide/request-response.md)。
 
 ## 最小示例
 

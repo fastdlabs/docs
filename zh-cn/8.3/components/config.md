@@ -40,7 +40,7 @@ composer require fastd/config
 | 扩展名 | 解析方式 |
 |---|---|
 | `.php` | `include`，必须返回数组 |
-| `.yml` / `.yaml` | `Symfony\Component\Yaml\Yaml::parseFile()` |
+| `.yml` | `Symfony\Component\Yaml\Yaml::parseFile()` |
 | `.json` | `json_decode(..., true)` |
 | `.ini` | `parse_ini_file($file, true)`，支持 section |
 
@@ -54,7 +54,7 @@ return [
 ];
 ```
 
-之后 `container()->config('cache')` 返回 `config/cache.php` 中 `cache` 顶层键对应的数组。
+之后 `container()->config('cache')` 返回 `config/cache.php` 中的数组（解析结果以文件名 `cache` 为顶层键）。
 
 ## 最小示例
 
@@ -90,7 +90,8 @@ $enable = config()->parsed->get('cache.httpCache.enable', false);
 - 变量只替换字符串值，数组会递归处理；未定义变量不会报错，会保留 `%name%` 原文。
 - `Application::config($key)` 每次调用都会重新解析文件；高频读取时先存局部变量，不要放在循环里。
 - `Application::config()` 在 `$bootstrap[$key]` 不存在或文件缺失时抛 `ErrorException`，新增配置键要同步修改 `src/bootstrap.php`。
-- PHP 配置文件必须 `return` 数组；INI 解析失败时 `parse_ini_file()` 会返回 `false`。
+- 扩展名只认 `php`、`yml`、`json`、`ini`；`.yaml` 不在支持列表，会抛 `Unsupported file type` 异常。
+- PHP 配置文件必须 `return` 数组；INI 使用 section 形式，解析失败时 `parse_ini_file()` 返回 `false`。
 - `.env.yml` 由 `Application` 作为变量源加载，供 `%key%` 使用；它不是普通配置文件，不会出现在 `config()->parsed` 的顶层键中。
 - `Parsed::get()` 会先尝试完整键名，再按 `.` 拆分，因此含点的键名只有精确匹配时才能读到。
 

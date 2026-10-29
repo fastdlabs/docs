@@ -2,7 +2,7 @@
 
 适用场景：表单上传附件、导入 CSV、导出报表、返回生成的文件。
 
-FastD 的上传/下载都基于 PSR-7：上传用 `ServerRequestInterface::getUploadedFiles()`，下载用 `StreamInterface` 作为响应 body。
+FastD 的上传/下载都基于 PSR-7：上传用 `ServerRequestInterface::getUploadedFiles()`，下载用 `StreamInterface` 作为响应 body。请求与响应的基础 API 见[请求与响应](../guide/request-response.md)。
 
 ## 前置条件
 
@@ -12,11 +12,48 @@ FastD 的上传/下载都基于 PSR-7：上传用 `ServerRequestInterface::getUp
 - Swoole：`ext-swoole >= 6.0`，按需调大 `package_max_length`
 - 反向代理：按需调大 `client_max_body_size`
 
+## 配置
+
+### CGI / FastCGI
+
+`php.ini`：
+
+```ini
+file_uploads = On
+upload_max_filesize = 8M
+post_max_size = 10M
+max_file_uploads = 20
+upload_tmp_dir = /var/tmp
+```
+
+`post_max_size` 要大于 `upload_max_filesize`，给表单其他字段留出余量。
+
+### Swoole
+
+`config/swoole.php` 的 `options`：
+
+```php
+'options' => [
+    'package_max_length' => 8 * 1024 * 1024,
+    'upload_tmp_dir' => '/var/tmp',
+],
+```
+
+`package_max_length` 限制整个请求体；上传目录需要 Swoole 运行用户可写。
+
+### 反向代理
+
+```nginx
+client_max_body_size 10m;
+```
+
 检查 CGI 上传限制：
 
 ```bash
 php -i | grep -E 'file_uploads|upload_max_filesize|post_max_size|upload_tmp_dir'
 ```
+
+下载不需要额外配置；响应体大小由运行时内存与代理超时决定。
 
 ## 上传
 

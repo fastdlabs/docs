@@ -32,9 +32,10 @@ git status
 
 ### 变更概述
 
-`fastD 8.3` 没有破坏性的配置结构变更，主要新增 Redis Session 能力，并把 `fastd/http` 的最低版本提高到 `^8.2`。
+`fastD 8.3` 没有破坏性的配置结构变更，主要新增 Redis Session 的 Provider 集成（`RedisSessionHandler` 由 `fastd/http 8.2` 提供），并把 `fastd/http` 的最低版本提高到 `^8.2`。
 
 - `fastd/fastd 8.3.1` 允许 `fastd/http ^8.2`、`fastd/swoole ^8.1`。
+- 如果 `composer.lock` 仍固定 `fastd/http 8.1.x`，依赖解析会阻止升级，需要同步升级 `fastd/http`。
 - `FastD\Http\Session\Handler\RedisSessionHandler` 可用。
 - `SessionServiceProvider` 的 `handler` 支持直接写类名，也支持 `redis`、`auto`、`swoole_table`、`native_file` 别名。
 - Swoole 配置仍为 `servers` / `listeners` / `options`，无需迁移。

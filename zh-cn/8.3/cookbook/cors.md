@@ -228,7 +228,7 @@ Session Cookie 还需要：
 
 - **`*` 与凭据互斥**：`Access-Control-Allow-Origin: *` 加 `Access-Control-Allow-Credentials: true` 会被浏览器拒绝。
 - **不要无条件回显 Origin**：回显 + 凭据等于允许任意站点携带用户 Cookie 调用接口。必须使用白名单。
-- **错误响应也要带头**：业务异常如果直接抛到框架异常处理，CORS 中间件可能来不及追加头。用异常中间件把异常转成响应（参考 Demo 的 `ExceptionDemoMiddleware`），或在统一异常处理中补 CORS 头。
+- **错误响应也要带头**：业务异常如果直接抛到框架异常处理，内层 CORS 中间件来不及追加头。把 `CorsMiddleware` 放在异常中间件之前（路由数组里更靠前），或在异常处理生成的响应上主动补 CORS 头。
 - **预检不带 Cookie**：预检请求不携带凭据，不要对 `OPTIONS` 做强登录校验；真正的鉴权放在实际请求上。
 - **认证中间件顺序**：`CorsMiddleware` 应放在鉴权中间件之前，保证未登录时预检也能返回 CORS 头。
 - **`Vary: Origin`**：只要响应头随 Origin 变化，就必须加，否则缓存会串站。

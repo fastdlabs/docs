@@ -35,7 +35,7 @@ return [
 ];
 ```
 
-`enable_coroutine` 为 `false` 时，`Parallel::isConcurrent()` 返回 `false`，任务退化为串行；不会报错，但也没有并发收益。
+`enable_coroutine` 为 `false` 时，`Parallel::isConcurrent()` 返回 `false`，任务退化为串行；不会报错，但也没有并发收益。运行时配置的完整说明见[运行时](../guide/runtime.md)。
 
 ## 最小示例
 

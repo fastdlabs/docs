@@ -20,7 +20,7 @@ composer require --dev fastd/dobee-demo
 - SQLite Demo 需要 `ext-pdo_sqlite`
 - 依赖 `fastd/fastd`、`fastd/http`、`fastd/swoole`、`fastd/cache`、`fastd/medoodb`、`psr/log`
 
-安装（`post-install-cmd` / `post-update-cmd`）会调用包内 `scripts/install.php`：
+宿主 `dobee` 的 `post-install-cmd` / `post-update-cmd` 会调用本包的 `scripts/install.php`：
 
 - 在 `config/service.php` 的 `return` 数组中注入 `DemoServiceProvider` 的条件注册
 - 在 `config/swoole.php` 的 `servers` 中注入 `stats`（9528）与 `demo`（9529）两个监听
@@ -52,10 +52,10 @@ composer require --dev fastd/dobee-demo
 宿主无需修改 `routes/web.php`。若安装脚本未自动注入，可手动注册：
 
 ```php
-// config/service.php
-if (class_exists(\FastD\Demo\DemoServiceProvider::class)) {
-    $providers[] = \FastD\Demo\DemoServiceProvider::class;
-}
+// config/service.php（安装脚本自动注入的形式）
+return [
+    ...(class_exists(\FastD\Demo\DemoServiceProvider::class) ? [\FastD\Demo\DemoServiceProvider::class] : []),
+];
 ```
 
 Demo 使用宿主的 `config/session.php`、`config/cache.php`、`config/database.php`、`config/swoole.php`；安装脚本只追加 service 与两个 Swoole 端口。

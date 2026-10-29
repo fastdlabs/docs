@@ -129,7 +129,7 @@ return new SseResponse(function (EmitterInterface $emitter): void {
 - `Client` 默认关闭 SSL 校验（`CURLOPT_SSL_VERIFYPEER/VERIFYHOST = false`）、跟随最多 3 次跳转、超时 30s；生产环境用 `withOption()` 覆盖。`withOption()` / `withCookie()` 返回新实例。
 - `Client` 依据响应 `Content-Type` 是否包含 `application/json` 返回 `Json` 或 `Text`；读取响应体用 `(string) $response->getBody()`。
 - `Cookie` 的 `expire` 是相对秒数；值为空字符串表示删除 Cookie；`SameSite=Lax` 不会写入字符串（浏览器默认值）。
-- `fromGlobals()` 会为 PUT/PATCH/DELETE/OPTIONS 解析请求体（表单或 JSON），POST 仍取 `$_POST`。
+- `fromGlobals()` 的 POST 数据来自 `$_POST`。PUT/PATCH/DELETE/OPTIONS 虽然会尝试解析 body，但当前实现传入的是空的 `php://memory` 流，读不到原始请求体；需要原始 body 时用 `new Stream('php://input', 'r')` 自行构造请求。
 - SSE 生产者不要直接 `echo`/`flush`，统一通过 `EmitterInterface`；Swoole 运行时由 `SwooleEmitter` 输出。
 - Session ID 必须是 32 位十六进制；未知或畸形 ID 会新建会话。`SwooleTableSessionHandler` 必须在 worker fork 前创建，FastD 中交给 `SessionServiceProvider`。
 

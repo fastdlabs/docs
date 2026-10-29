@@ -127,8 +127,8 @@ final class HelloController implements MiddlewareInterface
 - `config/swoole.php` 的 `servers.*.listener` 必须是 Swoole 事件监听器；`SwServer` 按 HTTP 协议注册这些端口，TCP/UDP/WebSocket 请直接使用 `FastD\Swoole\Server`。
 - 骨架自动加载是 `"" => src/`，控制器命名空间是 `Http\Controller`（不是 `App\...`）。
 - 路由只写类名时，控制器必须实现 `MiddlewareInterface`；否则用 `Class@method`。
-- `config/service.php`、`config/command.php`、`config/process.php` 默认返回空数组；命令与 Worker 由 `new` 实例化，不能带构造依赖。
-- `runtime/` 下的日志、pid、缓存、Session 目录需要可写；Swoole 启动会创建 `runtime/pid` 与日志目录。
+- `config/service.php`、`config/command.php`、`config/process.php` 默认返回空数组；命令无参 `new`，Worker 用 `new $worker($name)`，不要依赖框架注入构造参数。
+- `runtime/` 下的日志、pid、缓存、Session 目录需要可写；启动时会创建 `runtime/pid` 与日志目录。
 - `composer create-project` 默认安装 dev 依赖（含 Demo）；生产环境用 `--no-dev` 或 `composer remove --dev fastd/dobee-demo`。
 
 ## 相关源码 / README

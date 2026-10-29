@@ -95,8 +95,6 @@ return [
 ## 最小示例
 
 ```php
-use Symfony\Component\Cache\Adapter\FilesystemAdapter;
-
 // 普通缓存池
 $cache = cache('file');
 $item = $cache->getItem('user_1');
