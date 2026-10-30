@@ -189,13 +189,23 @@ X-Accel-Buffering: no
 
 | 方法 | 说明 |
 |---|---|
-| `send(Event\|string\|array $event)` | 发送事件；字符串作为 data，数组 JSON 编码 |
+| `send(Event\|string\|array\|object $event)` | 发送事件；字符串作为 data，数组/对象 JSON 编码 |
 | `comment(string $text)` | 发送注释帧，常用于心跳 |
 | `retry(int $milliseconds)` | 下发重连间隔 |
 | `isClosed(): bool` | 客户端断开或达到 `max_duration` 时返回 `true` |
 | `close()` | 主动结束流 |
 
 生产者应定期检查 `isClosed()`，避免客户端断开后继续拉取上游或写日志。
+
+`SseResponse::emit(EmitterInterface $emitter)` 可直接注入自定义发送器，便于测试或接入其他运行时：
+
+```php
+$response = sse(function (EmitterInterface $emitter): void {
+    $emitter->send('hello');
+});
+
+$response->emit($customEmitter);
+```
 
 ## 客户端
 
