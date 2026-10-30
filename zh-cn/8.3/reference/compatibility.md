@@ -9,8 +9,8 @@
 | 组件 | Composer 包 | 版本 | 职责 |
 |---|---|---|---|
 | fastD | `fastd/fastd` | **8.3.1** | 框架核心：Application、Runtime、ServiceProvider |
-| http | `fastd/http` | **8.2.1** | PSR-7/17/18、Session、SSE |
-| swoole | `fastd/swoole` | **8.2.1** | Swoole Server、Process、IPC、Parallel、SSE Emitter |
+| http | `fastd/http` | **8.3.0** | PSR-7/17/18、Session、SSE |
+| swoole | `fastd/swoole` | **8.3.0** | Swoole Server、Process、IPC、Parallel、SSE Emitter |
 | cache | `fastd/cache` | **8.1.6** | Symfony Cache 缓存池、HTTP 缓存 |
 | medoodb | `fastd/medoodb` | **8.0.7** | Medoo 数据库与连接池 |
 | container | `fastd/container` | **8.1.4** | PSR-11 容器、构造器注入 |

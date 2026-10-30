@@ -189,7 +189,8 @@ X-Accel-Buffering: no
 
 | 方法 | 说明 |
 |---|---|
-| `send(Event\|string\|array\|object $event)` | 发送事件；字符串作为 data，数组/对象 JSON 编码 |
+| `send(Event\|string\|array $event)` | 发送事件；字符串作为 data，数组 JSON 编码 |
+| `sendObject(object $event)` | `ObjectEmitterInterface` 能力；对象 JSON 编码 |
 | `comment(string $text)` | 发送注释帧，常用于心跳 |
 | `retry(int $milliseconds)` | 下发重连间隔 |
 | `isClosed(): bool` | 客户端断开或达到 `max_duration` 时返回 `true` |
