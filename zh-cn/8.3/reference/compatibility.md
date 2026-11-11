@@ -17,7 +17,7 @@
 | config | `fastd/config` | **8.0.6** | PHP/YAML/JSON/INI 配置解析 |
 | event | `fastd/event` | **8.0.6** | PSR-14 事件调度 |
 | middleware | `fastd/middleware` | **8.0.6** | PSR-15 中间件栈 |
-| routing | `fastd/routing` | **8.2.0** | PSR-7/PSR-15 路由 |
+| routing | `fastd/routing` | **8.2.1** | PSR-7/PSR-15 路由 |
 | dobee | `fastd/dobee` | **1.4.x** | 最小应用骨架 |
 | dobee-demo | `fastd/dobee-demo` | **1.4.3** | 官方 Demo 包 |
 
