@@ -1,0 +1,506 @@
+#experience,
+#experience *,
+#experience *::before,
+#experience *::after {
+    box-sizing: border-box;
+}
+
+#experience {
+    --experience-bg: #030712;
+    --experience-text: #f8fafc;
+    --experience-muted: #94a3b8;
+    --experience-accent: #22d3ee;
+
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    overflow: hidden;
+    color: var(--experience-text);
+    background:
+        radial-gradient(circle at 50% 50%, rgba(14, 165, 233, 0.16), transparent 34%),
+        radial-gradient(circle at 18% 20%, rgba(34, 211, 238, 0.1), transparent 26%),
+        linear-gradient(135deg, #020617 0%, #06101e 52%, #020617 100%);
+}
+
+#experience[hidden] {
+    display: none;
+}
+
+#experience::before {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    content: "";
+    background:
+        linear-gradient(rgba(148, 163, 184, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(148, 163, 184, 0.045) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(circle at 50% 50%, #000 18%, transparent 72%);
+}
+
+#experience::after {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    content: "";
+    background: linear-gradient(180deg, rgba(2, 6, 23, 0.18), transparent 42%, rgba(2, 6, 23, 0.55));
+}
+
+#experience-canvas {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    cursor: crosshair;
+}
+
+#experience-canvas[hidden] {
+    display: none;
+}
+
+.warp-hud {
+    position: absolute;
+    bottom: 7vh;
+    left: 8vw;
+    z-index: 4;
+    width: min(320px, calc(100vw - 48px));
+    pointer-events: none;
+}
+
+.warp-hud[hidden] {
+    display: none;
+}
+
+.warp-kicker {
+    display: block;
+    margin-bottom: 14px;
+    color: var(--experience-accent);
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+}
+
+.warp-progress-label {
+    display: block;
+    margin-bottom: 8px;
+    color: #cbd5e1;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+}
+
+.warp-progress {
+    width: 100%;
+    height: 2px;
+    overflow: hidden;
+    background: rgba(148, 163, 184, 0.2);
+}
+
+.warp-progress i {
+    display: block;
+    width: 0;
+    height: 100%;
+    background: var(--experience-accent);
+    box-shadow: 0 0 18px rgba(34, 211, 238, 0.8);
+    transition: width 120ms linear;
+}
+
+.warp-hud p {
+    margin: 14px 0 0;
+    color: #64748b;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+}
+
+.warp-skip,
+.warp-secondary,
+.warp-primary {
+    display: inline-flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    min-height: 46px;
+    padding: 0 20px;
+    border-radius: 999px;
+    font: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.warp-skip {
+    margin-top: 20px;
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    color: #94a3b8;
+    background: transparent;
+    pointer-events: auto;
+}
+
+.warp-skip:hover {
+    border-color: rgba(34, 211, 238, 0.5);
+    color: #fff;
+}
+
+.warp-reveal {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8vh 8vw;
+    text-align: center;
+    pointer-events: none;
+    background: radial-gradient(
+        ellipse at 50% 48%,
+        rgba(2, 6, 23, 0.88) 0%,
+        rgba(2, 6, 23, 0.62) 30%,
+        rgba(2, 6, 23, 0.18) 52%,
+        transparent 68%
+    );
+}
+
+.warp-reveal[hidden] {
+    display: none;
+}
+
+.warp-reveal > * {
+    pointer-events: auto;
+}
+
+.warp-mark {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 28px;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+}
+
+.warp-mark img {
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 20px rgba(34, 211, 238, 0.45));
+}
+
+.warp-mark small {
+    color: var(--experience-accent);
+    font-size: 12px;
+    font-weight: 500;
+    vertical-align: super;
+}
+
+.warp-eyebrow {
+    margin: 0 0 16px;
+    color: var(--experience-accent);
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+}
+
+.warp-reveal h1 {
+    max-width: 960px;
+    margin: 0;
+    color: #fff;
+    font-size: clamp(42px, 5.6vw, 82px);
+    font-weight: 700;
+    line-height: 1.04;
+    letter-spacing: -0.05em;
+}
+
+.warp-slogan {
+    margin: 24px 0 0;
+    color: var(--experience-muted);
+    font-size: 15px;
+    line-height: 1.85;
+}
+
+.warp-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 32px;
+}
+
+.warp-primary {
+    color: #03111c;
+    background: var(--experience-accent);
+    box-shadow: 0 0 0 1px rgba(34, 211, 238, 0.35), 0 14px 38px rgba(34, 211, 238, 0.22);
+}
+
+.warp-primary:hover {
+    background: #67e8f9;
+    transform: translateY(-2px);
+}
+
+.warp-secondary {
+    border: 1px solid rgba(148, 163, 184, 0.3);
+    color: #cbd5e1;
+    background: rgba(15, 23, 42, 0.5);
+}
+
+.warp-secondary:hover {
+    border-color: rgba(34, 211, 238, 0.55);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.warp-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 18px;
+    margin-top: 28px;
+    color: var(--experience-muted);
+    font-size: 13px;
+}
+
+.warp-links a {
+    color: #cbd5e1;
+    text-decoration: none;
+}
+
+.warp-links a:hover {
+    color: var(--experience-accent);
+}
+
+.warp-example {
+    width: min(460px, 100%);
+    margin-top: 26px;
+    padding: 18px 20px;
+    border: 1px solid rgba(148, 163, 184, 0.22);
+    border-radius: 18px;
+    text-align: left;
+    background: rgba(8, 15, 28, 0.76);
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.32);
+    backdrop-filter: blur(18px);
+}
+
+.warp-example-head {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 12px;
+    color: var(--experience-accent);
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+}
+
+.warp-example-head span:last-child {
+    color: #64748b;
+    letter-spacing: 0.02em;
+}
+
+.warp-example pre {
+    margin: 0;
+    overflow: auto;
+    color: #e2e8f0;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    font-size: 12px;
+    line-height: 1.7;
+    white-space: pre-wrap;
+}
+
+.warp-example a {
+    display: inline-block;
+    margin-top: 14px;
+    color: var(--experience-accent);
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.warp-example a:hover {
+    text-decoration: underline;
+}
+
+.experience-fallback {
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+    z-index: 6;
+    width: min(360px, calc(100vw - 48px));
+    padding: 20px;
+    border: 1px solid rgba(148, 163, 184, 0.22);
+    border-radius: 18px;
+    color: #cbd5e1;
+    background: rgba(8, 15, 28, 0.9);
+}
+
+.experience-fallback[hidden] {
+    display: none;
+}
+
+.experience-fallback p {
+    margin: 0 0 10px;
+    font-size: 13px;
+}
+
+.experience-fallback ul {
+    margin: 0;
+    padding-left: 18px;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.experience-fallback a {
+    color: var(--experience-accent);
+}
+
+body.experience-open {
+    overflow: hidden;
+}
+
+body.experience-open #app {
+    visibility: hidden;
+}
+
+body.experience-open .app-nav,
+body.experience-open .sidebar {
+    visibility: hidden;
+}
+
+noscript .experience-noscript {
+    display: block;
+    padding: 32px;
+    color: #0f172a;
+    background: #f8fafc;
+    font-family: system-ui, sans-serif;
+}
+
+@media (max-width: 900px) {
+    .warp-hud {
+        bottom: 28px;
+        left: 24px;
+    }
+
+    .warp-reveal {
+        padding: 10vh 24px 0;
+    }
+
+    .warp-reveal h1 {
+        font-size: clamp(36px, 9vw, 60px);
+    }
+
+    .warp-example {
+        width: min(460px, 100%);
+        margin-top: 24px;
+    }
+}
+
+@media (max-width: 600px) {
+    .warp-hud {
+        width: calc(100vw - 48px);
+    }
+
+    .warp-reveal {
+        justify-content: flex-start;
+        align-items: center;
+        text-align: center;
+    }
+
+    .warp-mark img {
+        width: 42px;
+        height: 42px;
+    }
+
+    .warp-mark {
+        font-size: 20px;
+    }
+
+    .warp-reveal h1 {
+        font-size: 34px;
+    }
+
+    .warp-slogan {
+        font-size: 13px;
+    }
+
+    .warp-actions {
+        flex-direction: column;
+        align-items: stretch;
+        max-width: 220px;
+    }
+
+    .warp-links {
+        gap: 6px 12px;
+        font-size: 12px;
+    }
+
+    .warp-example {
+        margin-top: 20px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .warp-primary,
+    .warp-secondary,
+    .warp-skip {
+        transition: none;
+    }
+
+    .warp-progress i {
+        transition: none;
+    }
+}
+
+
+#experience .warp-skip,
+#experience .warp-secondary {
+    -webkit-appearance: none;
+    appearance: none;
+    background: rgba(15, 23, 42, 0.72) !important;
+    color: #cbd5e1 !important;
+    border: 1px solid rgba(148, 163, 184, 0.3) !important;
+}
+
+#experience .warp-skip:hover,
+#experience .warp-secondary:hover {
+    background: rgba(30, 41, 59, 0.9) !important;
+    color: #fff !important;
+    border-color: rgba(34, 211, 238, 0.55) !important;
+}
+
+
+#experience [hidden] {
+    display: none !important;
+}
+
+#experience.has-fallback .warp-example,
+#experience.has-fallback .warp-secondary {
+    display: none !important;
+}
+
+@media (max-width: 600px) {
+    .warp-reveal {
+        padding: 7vh 24px 0;
+        overflow-y: auto;
+    }
+
+    .warp-reveal h1,
+    .warp-slogan {
+        max-width: calc(100vw - 48px);
+        white-space: normal !important;
+        overflow-wrap: anywhere;
+    }
+
+    .warp-reveal h1 {
+        font-size: 30px;
+        line-height: 1.12;
+    }
+
+    .warp-slogan {
+        font-size: 12px;
+        line-height: 1.8;
+    }
+}

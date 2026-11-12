@@ -1,0 +1,17 @@
+# FastD Documentation
+
+FastD 8.3 使用手册：
+
+- https://fastdlabs.github.io/docs/#/zh-cn/8.3/readme
+- https://fastdlabs.github.io/docs/#/zh-cn/8.3/guide/getting-started
+- https://fastdlabs.github.io/docs/#/zh-cn/8.3/guide/configuration
+- https://fastdlabs.github.io/docs/#/zh-cn/8.3/guide/lifecycle
+- https://fastdlabs.github.io/docs/#/zh-cn/8.3/components/README
+- https://fastdlabs.github.io/docs/#/zh-cn/8.3/components/http
+- https://fastdlabs.github.io/docs/#/zh-cn/8.3/components/swoole
+- https://fastdlabs.github.io/docs/#/zh-cn/8.3/cookbook/sse
+- https://fastdlabs.github.io/docs/#/zh-cn/8.3/reference/compatibility
+
+3D 体验入口：
+
+- https://fastdlabs.github.io/docs/
