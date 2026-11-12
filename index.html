@@ -9,13 +9,80 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@5.0.0/dist/themes/core.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@5.0.0/dist/themes/addons/vue.min.css">
     <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="experience/landing.css">
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+                "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
+            }
+        }
+    </script>
 </head>
 <body>
 <div id="app">加载中…</div>
+
+<section id="experience" aria-hidden="true" hidden>
+    <canvas id="experience-canvas" aria-hidden="true"></canvas>
+
+    <div class="experience-copy">
+        <p class="experience-kicker">FastD <span>8</span> / Interactive Architecture</p>
+        <h1>轻量 API 框架<br><em>CGI / Swoole</em> 双运行时</h1>
+        <p class="experience-subtitle">
+            以 PSR 为边界，把应用内核、HTTP、路由、中间件、容器和可选生态放在同一张可交互架构图里。
+        </p>
+
+        <div class="experience-actions">
+            <a class="experience-primary" id="enter-docs" href="#/zh-cn/8.3/readme">
+                进入文档 <span aria-hidden="true">→</span>
+            </a>
+            <button class="experience-secondary" id="skip-experience" type="button">
+                跳过动画
+            </button>
+        </div>
+
+        <nav class="experience-links" aria-label="常用文档入口">
+            <a href="#/zh-cn/8.3/guide/getting-started">快速开始</a>
+            <span>/</span>
+            <a href="#/zh-cn/8.3/guide/configuration">配置</a>
+            <span>/</span>
+            <a href="#/zh-cn/8.3/components/http">HTTP</a>
+            <span>/</span>
+            <a href="#/zh-cn/8.3/components/swoole">Swoole</a>
+            <span>/</span>
+            <a href="#/zh-cn/8.3/cookbook/sse">SSE</a>
+        </nav>
+    </div>
+
+    <div id="experience-panel" role="dialog" aria-label="组件说明" hidden></div>
+
+    <div id="experience-fallback" class="experience-fallback" hidden>
+        <p data-fallback-message>当前环境无法展示 3D 场景，可直接进入文档。</p>
+        <ul>
+            <li><a href="#/zh-cn/8.3/readme">FastD 8.3 手册</a></li>
+            <li><a href="#/zh-cn/8.3/guide/getting-started">快速开始</a></li>
+            <li><a href="#/zh-cn/8.3/components/http">HTTP 组件</a></li>
+            <li><a href="#/zh-cn/8.3/cookbook/sse">SSE 场景</a></li>
+        </ul>
+    </div>
+</section>
+
+<noscript>
+    <div class="experience-noscript">
+        <h1>FastD 8</h1>
+        <p>请直接进入文档：</p>
+        <ul>
+            <li><a href="#/zh-cn/8.3/readme">FastD 8.3 手册</a></li>
+            <li><a href="#/zh-cn/8.3/guide/getting-started">快速开始</a></li>
+            <li><a href="#/zh-cn/8.3/components/http">HTTP 组件</a></li>
+            <li><a href="#/zh-cn/8.3/cookbook/sse">SSE 场景</a></li>
+        </ul>
+    </div>
+</noscript>
 <script>
     window.$docsify = {
         auto2top: true,
-        coverpage: true,
+        coverpage: false,
         executeScript: true,
         loadSidebar: true,
         loadNavbar: true,
@@ -41,5 +108,6 @@
 <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-bash.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-json.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-php.min.js"></script>
+<script type="module" src="experience/landing.js"></script>
 </body>
 </html>
