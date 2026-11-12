@@ -1,3 +1,10 @@
+#experience,
+#experience *,
+#experience *::before,
+#experience *::after {
+    box-sizing: border-box;
+}
+
 #experience {
     --experience-bg: #030712;
     --experience-text: #f8fafc;
@@ -145,9 +152,17 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
-    padding: 9vh 8vw;
+    align-items: center;
+    padding: 8vh 8vw;
+    text-align: center;
     pointer-events: none;
+    background: radial-gradient(
+        ellipse at 50% 48%,
+        rgba(2, 6, 23, 0.88) 0%,
+        rgba(2, 6, 23, 0.62) 30%,
+        rgba(2, 6, 23, 0.18) 52%,
+        transparent 68%
+    );
 }
 
 .warp-reveal[hidden] {
@@ -162,6 +177,7 @@
     display: flex;
     gap: 14px;
     align-items: center;
+    justify-content: center;
     margin-bottom: 28px;
     color: #fff;
     font-size: 24px;
@@ -211,6 +227,7 @@
 .warp-actions {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 12px;
     margin-top: 32px;
 }
@@ -241,6 +258,7 @@
 .warp-links {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 8px 18px;
     margin-top: 28px;
     color: var(--experience-muted);
@@ -257,13 +275,12 @@
 }
 
 .warp-example {
-    position: absolute;
-    right: 7vw;
-    bottom: 9vh;
-    width: min(380px, calc(100vw - 48px));
+    width: min(460px, 100%);
+    margin-top: 26px;
     padding: 18px 20px;
     border: 1px solid rgba(148, 163, 184, 0.22);
     border-radius: 18px;
+    text-align: left;
     background: rgba(8, 15, 28, 0.76);
     box-shadow: 0 24px 80px rgba(0, 0, 0, 0.32);
     backdrop-filter: blur(18px);
@@ -376,11 +393,8 @@ noscript .experience-noscript {
     }
 
     .warp-example {
-        position: relative;
-        right: auto;
-        bottom: auto;
-        width: min(100%, 380px);
-        margin-top: 28px;
+        width: min(460px, 100%);
+        margin-top: 24px;
     }
 }
 
@@ -391,6 +405,8 @@ noscript .experience-noscript {
 
     .warp-reveal {
         justify-content: flex-start;
+        align-items: center;
+        text-align: center;
     }
 
     .warp-mark img {
@@ -463,4 +479,28 @@ noscript .experience-noscript {
 #experience.has-fallback .warp-example,
 #experience.has-fallback .warp-secondary {
     display: none !important;
+}
+
+@media (max-width: 600px) {
+    .warp-reveal {
+        padding: 7vh 24px 0;
+        overflow-y: auto;
+    }
+
+    .warp-reveal h1,
+    .warp-slogan {
+        max-width: calc(100vw - 48px);
+        white-space: normal !important;
+        overflow-wrap: anywhere;
+    }
+
+    .warp-reveal h1 {
+        font-size: 30px;
+        line-height: 1.12;
+    }
+
+    .warp-slogan {
+        font-size: 12px;
+        line-height: 1.8;
+    }
 }
