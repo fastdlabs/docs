@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
 import { CSS2DObject, CSS2DRenderer } from 'three/addons/renderers/CSS2DRenderer.js';
 import { edges, flow, groups, nodes } from './data.js';
 
@@ -25,6 +26,55 @@ function makeLabel(node) {
     return new CSS2DObject(element);
 }
 
+function makeGlowTexture(color) {
+    const size = 128;
+    const canvas = document.createElement('canvas');
+    canvas.width = size;
+    canvas.height = size;
+
+    const context = canvas.getContext('2d');
+    const center = size / 2;
+    const gradient = context.createRadialGradient(center, center, 0, center, center, center);
+
+    gradient.addColorStop(0, color);
+    gradient.addColorStop(0.22, color);
+    gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
+
+    context.fillStyle = gradient;
+    context.fillRect(0, 0, size, size);
+
+    const texture = new THREE.CanvasTexture(canvas);
+    texture.colorSpace = THREE.SRGBColorSpace;
+
+    return texture;
+}
+
+function makeParticleField(count, color, spread, size, opacity) {
+    const positions = new Float32Array(count * 3);
+
+    for (let i = 0; i < count; i++) {
+        positions[i * 3] = (Math.random() - 0.5) * spread.x;
+        positions[i * 3 + 1] = (Math.random() - 0.5) * spread.y;
+        positions[i * 3 + 2] = (Math.random() - 0.5) * spread.z;
+    }
+
+    const geometry = new THREE.BufferGeometry();
+    geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+
+    return new THREE.Points(
+        geometry,
+        new THREE.PointsMaterial({
+            color,
+            size,
+            transparent: true,
+            opacity,
+            depthWrite: false,
+            blending: THREE.AdditiveBlending,
+            sizeAttenuation: true,
+        }),
+    );
+}
+
 function curveBetween(start, end) {
     const middle = new THREE.Vector3()
         .addVectors(start, end)
@@ -34,7 +84,7 @@ function curveBetween(start, end) {
     return new THREE.QuadraticBezierCurve3(start, middle, end);
 }
 
-export function startScene({ canvas, panel, fallback }) {
+export function startScene({ canvas, panel, fallback, onSelect }) {
     if (!canUseWebGL()) {
         fallback.hidden = false;
         canvas.hidden = true;
@@ -47,6 +97,7 @@ export function startScene({ canvas, panel, fallback }) {
 
     const parent = canvas.parentElement;
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const clock = new THREE.Clock();
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(
@@ -78,48 +129,103 @@ export function startScene({ canvas, panel, fallback }) {
     controls.minDistance = 6;
     controls.maxDistance = 17;
     controls.autoRotate = !reducedMotion;
-    controls.autoRotateSpeed = 0.35;
+    controls.autoRotateSpeed = 0.32;
 
     const world = new THREE.Group();
     world.position.set(2.0, 0, 0);
     world.scale.setScalar(0.8);
     scene.add(world);
 
-    scene.add(new THREE.AmbientLight(0xffffff, 1.8));
+    scene.add(new THREE.AmbientLight(0xffffff, 1.7));
 
     const keyLight = new THREE.DirectionalLight(0xbae6fd, 2.8);
     keyLight.position.set(5, 8, 7);
     scene.add(keyLight);
 
-    const rimLight = new THREE.DirectionalLight(0x22d3ee, 1.4);
+    const rimLight = new THREE.DirectionalLight(0x22d3ee, 1.6);
     rimLight.position.set(-6, -4, 3);
     scene.add(rimLight);
 
-    const meshes = [];
+    const particleFields = [
+        makeParticleField(
+            reducedMotion ? 220 : 720,
+            0x38bdf8,
+            new THREE.Vector3(22, 13, 12),
+            0.035,
+            0.46,
+        ),
+        makeParticleField(
+            reducedMotion ? 80 : 260,
+            0x67e8f9,
+            new THREE.Vector3(15, 9, 10),
+            0.06,
+            0.34,
+        ),
+    ];
+
+    for (const field of particleFields) {
+        scene.add(field);
+    }
+
+    const glowTextures = new Map(
+        Object.entries(groups).map(([key, group]) => [key, makeGlowTexture(group.color)]),
+    );
+
+    const nodeMeshes = [];
     const points = new Map();
 
     for (const node of nodes) {
         const position = new THREE.Vector3(...node.position);
         points.set(node.id, position);
 
-        const geometry = new THREE.BoxGeometry(1.75, 0.72, 0.2);
+        const groupColor = groups[node.group].color;
+        const geometry = new RoundedBoxGeometry(1.78, 0.74, 0.16, 4, 0.14);
         const material = new THREE.MeshStandardMaterial({
-            color: groups[node.group].color,
-            emissive: groups[node.group].color,
-            emissiveIntensity: 0.18,
-            metalness: 0.35,
-            roughness: 0.28,
+            color: groupColor,
+            emissive: groupColor,
+            emissiveIntensity: 0.2,
+            metalness: 0.45,
+            roughness: 0.24,
             transparent: true,
-            opacity: 0.94,
+            opacity: 0.95,
         });
         const mesh = new THREE.Mesh(geometry, material);
         mesh.position.copy(position);
-        mesh.rotation.z = (Math.random() - 0.5) * 0.05;
+        mesh.rotation.z = (Math.random() - 0.5) * 0.035;
         mesh.userData.node = node;
+        mesh.userData.baseY = position.y;
+        mesh.userData.phase = Math.random() * Math.PI * 2;
+        mesh.userData.hovered = false;
+        mesh.userData.selected = false;
+
+        const border = new THREE.LineSegments(
+            new THREE.EdgesGeometry(geometry, 18),
+            new THREE.LineBasicMaterial({
+                color: 0xffffff,
+                transparent: true,
+                opacity: 0.16,
+            }),
+        );
+        mesh.add(border);
+
+        const glow = new THREE.Sprite(
+            new THREE.SpriteMaterial({
+                map: glowTextures.get(node.group),
+                color: 0xffffff,
+                transparent: true,
+                opacity: 0.32,
+                depthWrite: false,
+                blending: THREE.AdditiveBlending,
+            }),
+        );
+        glow.scale.set(2.35, 2.35, 1);
+        glow.position.z = -0.12;
+        mesh.add(glow);
+
         mesh.add(makeLabel(node));
 
         world.add(mesh);
-        meshes.push(mesh);
+        nodeMeshes.push(mesh);
     }
 
     for (const [from, to] of edges) {
@@ -130,12 +236,14 @@ export function startScene({ canvas, panel, fallback }) {
             continue;
         }
 
+        const curve = curveBetween(start, end);
         const line = new THREE.Line(
-            new THREE.BufferGeometry().setFromPoints(curveBetween(start, end).getPoints(24)),
+            new THREE.BufferGeometry().setFromPoints(curve.getPoints(28)),
             new THREE.LineBasicMaterial({
                 color: 0x38bdf8,
                 transparent: true,
-                opacity: 0.22,
+                opacity: 0.18,
+                blending: THREE.AdditiveBlending,
             }),
         );
         world.add(line);
@@ -149,22 +257,31 @@ export function startScene({ canvas, panel, fallback }) {
         ? new THREE.CatmullRomCurve3(flowPoints)
         : null;
 
-    const particle = new THREE.Mesh(
-        new THREE.SphereGeometry(0.08, 14, 14),
-        new THREE.MeshBasicMaterial({ color: 0x67e8f9 }),
-    );
+    const flowParticles = [];
 
     if (flowCurve) {
-        world.add(particle);
+        for (let i = 0; i < 4; i++) {
+            const particle = new THREE.Mesh(
+                new THREE.SphereGeometry(i === 0 ? 0.075 : 0.045, 12, 12),
+                new THREE.MeshBasicMaterial({
+                    color: i === 0 ? 0x67e8f9 : 0x38bdf8,
+                    transparent: true,
+                    opacity: i === 0 ? 0.95 : 0.55,
+                    blending: THREE.AdditiveBlending,
+                }),
+            );
+            particle.userData.offset = i * 0.16 + 0.12;
+            particle.userData.progress = 0;
+            flowParticles.push(particle);
+            world.add(particle);
+        }
     }
 
-    let visible = true;
-    let frameId = null;
-    let flowProgress = 0;
-    const clock = new THREE.Clock();
     const raycaster = new THREE.Raycaster();
     const pointer = new THREE.Vector2();
     let pointerDown = null;
+    let hovered = null;
+    let selected = null;
 
     const resize = () => {
         camera.aspect = window.innerWidth / window.innerHeight;
@@ -183,6 +300,11 @@ export function startScene({ canvas, panel, fallback }) {
         close.textContent = '×';
         close.addEventListener('click', () => {
             panel.hidden = true;
+
+            if (selected) {
+                selected.userData.selected = false;
+                selected = null;
+            }
         });
 
         const group = document.createElement('span');
@@ -201,30 +323,47 @@ export function startScene({ canvas, panel, fallback }) {
 
         panel.append(close, group, title, summary, link);
         panel.hidden = false;
+
+        if (onSelect) {
+            onSelect(node, panel);
+        }
     };
 
-    const pick = (event) => {
+    const raycast = (event) => {
         const bounds = canvas.getBoundingClientRect();
         pointer.x = ((event.clientX - bounds.left) / bounds.width) * 2 - 1;
         pointer.y = -((event.clientY - bounds.top) / bounds.height) * 2 + 1;
 
         raycaster.setFromCamera(pointer, camera);
-        const hit = raycaster.intersectObjects(meshes, false)[0];
 
-        if (!hit) {
-            panel.hidden = true;
+        return raycaster.intersectObjects(nodeMeshes, false)[0]?.object ?? null;
+    };
 
+    const handlePointerMove = (event) => {
+        const mesh = raycast(event);
+
+        if (hovered === mesh) {
             return;
         }
 
-        selectNode(hit.object.userData.node);
+        if (hovered) {
+            hovered.userData.hovered = false;
+        }
+
+        hovered = mesh;
+
+        if (hovered) {
+            hovered.userData.hovered = true;
+        }
+
+        canvas.style.cursor = hovered ? 'pointer' : 'grab';
     };
 
-    canvas.addEventListener('pointerdown', (event) => {
+    const handlePointerDown = (event) => {
         pointerDown = { x: event.clientX, y: event.clientY };
-    });
+    };
 
-    canvas.addEventListener('pointerup', (event) => {
+    const handlePointerUp = (event) => {
         if (!pointerDown) {
             return;
         }
@@ -235,10 +374,49 @@ export function startScene({ canvas, panel, fallback }) {
         );
         pointerDown = null;
 
-        if (distance < 6) {
-            pick(event);
+        if (distance >= 6) {
+            return;
         }
-    });
+
+        const mesh = raycast(event);
+
+        if (!mesh) {
+            panel.hidden = true;
+
+            if (selected) {
+                selected.userData.selected = false;
+                selected = null;
+            }
+
+            return;
+        }
+
+        if (selected) {
+            selected.userData.selected = false;
+        }
+
+        selected = mesh;
+        selected.userData.selected = true;
+        selectNode(mesh.userData.node);
+    };
+
+    const handlePointerLeave = () => {
+        if (hovered) {
+            hovered.userData.hovered = false;
+            hovered = null;
+        }
+
+        canvas.style.cursor = 'grab';
+    };
+
+    canvas.addEventListener('pointermove', handlePointerMove);
+    canvas.addEventListener('pointerdown', handlePointerDown);
+    canvas.addEventListener('pointerup', handlePointerUp);
+    canvas.addEventListener('pointerleave', handlePointerLeave);
+
+    let visible = true;
+    let frameId = null;
+    let elapsed = 0;
 
     const render = () => {
         if (!visible) {
@@ -248,10 +426,41 @@ export function startScene({ canvas, panel, fallback }) {
         frameId = requestAnimationFrame(render);
 
         const delta = Math.min(clock.getDelta(), 0.05);
+        elapsed += delta;
 
-        if (!reducedMotion && flowCurve) {
-            flowProgress = (flowProgress + delta * 0.16) % 1;
-            particle.position.copy(flowCurve.getPointAt(flowProgress));
+        for (const particle of particleFields) {
+            if (!reducedMotion) {
+                particle.rotation.y += delta * 0.012;
+                particle.rotation.x += delta * 0.004;
+            }
+        }
+
+        for (const mesh of nodeMeshes) {
+            const targetScale = mesh.userData.selected
+                ? 1.12
+                : (mesh.userData.hovered ? 1.06 : 1);
+            const currentScale = mesh.scale.x;
+            const nextScale = currentScale + (targetScale - currentScale) * Math.min(1, delta * 8);
+            mesh.scale.setScalar(nextScale);
+
+            const targetIntensity = mesh.userData.selected
+                ? 0.55
+                : (mesh.userData.hovered ? 0.38 : 0.2);
+            const material = mesh.material;
+            material.emissiveIntensity += (targetIntensity - material.emissiveIntensity) * Math.min(1, delta * 8);
+
+            if (!reducedMotion) {
+                mesh.position.y = mesh.userData.baseY
+                    + Math.sin(elapsed * 1.1 + mesh.userData.phase) * 0.035;
+                mesh.rotation.y = Math.sin(elapsed * 0.45 + mesh.userData.phase) * 0.035;
+            }
+        }
+
+        if (flowCurve && !reducedMotion) {
+            for (const particle of flowParticles) {
+                const progress = (elapsed * 0.13 + particle.userData.offset) % 1;
+                particle.position.copy(flowCurve.getPointAt(progress));
+            }
         }
 
         controls.update();
@@ -282,6 +491,10 @@ export function startScene({ canvas, panel, fallback }) {
         destroy() {
             api.pause();
             window.removeEventListener('resize', resize);
+            canvas.removeEventListener('pointermove', handlePointerMove);
+            canvas.removeEventListener('pointerdown', handlePointerDown);
+            canvas.removeEventListener('pointerup', handlePointerUp);
+            canvas.removeEventListener('pointerleave', handlePointerLeave);
             controls.dispose();
             renderer.dispose();
             labelRenderer.domElement.remove();

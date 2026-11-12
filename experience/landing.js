@@ -5,6 +5,11 @@ const fallback = document.getElementById('experience-fallback');
 const enterDocs = document.getElementById('enter-docs');
 const skipExperience = document.getElementById('skip-experience');
 
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const motionReady = import('motion').catch(() => null);
+let motion = null;
+let copyAnimated = false;
+
 const forceDocs = new URLSearchParams(window.location.search).get('docs') === '1';
 let sceneApi = null;
 let sceneLoader = null;
@@ -30,6 +35,61 @@ const showFallback = (message) => {
     }
 };
 
+const animateCopy = () => {
+    if (copyAnimated || reducedMotion) {
+        return;
+    }
+
+    copyAnimated = true;
+
+    motionReady.then((module) => {
+        motion = module;
+
+        if (!motion) {
+            return;
+        }
+
+        motion.animate(
+            '.experience-copy > *',
+            {
+                opacity: [0, 1],
+                transform: ['translateY(18px)', 'translateY(0)'],
+            },
+            {
+                delay: motion.stagger(0.08),
+                duration: 0.7,
+                easing: [0.22, 1, 0.36, 1],
+            },
+        );
+    });
+};
+
+const animatePanel = (element) => {
+    if (reducedMotion) {
+        return;
+    }
+
+    motionReady.then((module) => {
+        motion = module;
+
+        if (!motion) {
+            return;
+        }
+
+        motion.animate(
+            element,
+            {
+                opacity: [0, 1],
+                transform: ['translateY(14px) scale(.98)', 'translateY(0) scale(1)'],
+            },
+            {
+                duration: 0.28,
+                easing: [0.22, 1, 0.36, 1],
+            },
+        );
+    });
+};
+
 const ensureScene = () => {
     if (sceneApi !== null) {
         sceneApi.resume();
@@ -43,7 +103,12 @@ const ensureScene = () => {
 
     sceneLoader = import('./scene.js')
         .then(({ startScene }) => {
-            sceneApi = startScene({ canvas, panel, fallback });
+            sceneApi = startScene({
+                canvas,
+                panel,
+                fallback,
+                onSelect: (_node, element) => animatePanel(element),
+            });
 
             if (experience.hidden) {
                 sceneApi.pause();
@@ -62,6 +127,8 @@ const showLanding = () => {
     experience.hidden = false;
     experience.setAttribute('aria-hidden', 'false');
     document.body.classList.add('experience-open');
+
+    animateCopy();
 
     if (sceneApi !== null) {
         sceneApi.resume();
