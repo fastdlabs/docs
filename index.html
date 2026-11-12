@@ -26,38 +26,55 @@
 <section id="experience" aria-hidden="true" hidden>
     <canvas id="experience-canvas" aria-hidden="true"></canvas>
 
-    <div class="experience-copy">
-        <p class="experience-kicker">FastD <span>8</span> / Interactive Architecture</p>
-        <h1>轻量 API 框架<br><em>CGI / Swoole</em> 双运行时</h1>
-        <p class="experience-subtitle">
-            以 PSR 为边界，把应用内核、HTTP、路由、中间件、容器和可选生态放在同一张可交互架构图里。
+    <div id="warp-hud" class="warp-hud">
+        <span class="warp-kicker">FASTD 8 / HYPERSPACE</span>
+        <span class="warp-progress-label" id="warp-progress-label">ENGINE 000%</span>
+        <div class="warp-progress" aria-hidden="true">
+            <i id="warp-progress"></i>
+        </div>
+        <p>正在进入 FastD 8 的运行时空间</p>
+        <button class="warp-skip" id="skip-experience" type="button">跳过穿越</button>
+    </div>
+
+    <div id="warp-reveal" class="warp-reveal" hidden>
+        <div class="warp-mark">
+            <img src="assets/logo.png" alt="" width="56" height="56">
+            <span>FastD <small>8</small></span>
+        </div>
+
+        <p class="warp-eyebrow">HYPERSPACE REACHED</p>
+        <h1>把 API 做得更轻、更快</h1>
+        <p class="warp-slogan">
+            高性能 PHP API 框架<br>
+            PSR 标准 · Swoole 6 · CGI / Swoole 双运行时
         </p>
 
-        <div class="experience-actions">
-            <a class="experience-primary" id="enter-docs" href="#/zh-cn/8.3/readme">
+        <div class="warp-actions">
+            <a class="warp-primary" id="enter-docs" href="#/zh-cn/8.3/readme">
                 进入文档 <span aria-hidden="true">→</span>
             </a>
-            <button class="experience-secondary" id="skip-experience" type="button">
-                跳过动画
+            <button class="warp-secondary" id="replay-experience" type="button">
+                重新穿越
             </button>
         </div>
 
-        <p class="experience-hint">拖拽旋转 · 滚轮缩放 · 点击节点查看文档</p>
-
-        <nav class="experience-links" aria-label="常用文档入口">
+        <nav class="warp-links" aria-label="常用文档入口">
             <a href="#/zh-cn/8.3/guide/getting-started">快速开始</a>
-            <span>/</span>
             <a href="#/zh-cn/8.3/guide/configuration">配置</a>
-            <span>/</span>
             <a href="#/zh-cn/8.3/components/http">HTTP</a>
-            <span>/</span>
             <a href="#/zh-cn/8.3/components/swoole">Swoole</a>
-            <span>/</span>
             <a href="#/zh-cn/8.3/cookbook/sse">SSE</a>
         </nav>
-    </div>
 
-    <div id="experience-panel" role="dialog" aria-label="组件说明" hidden></div>
+        <aside class="warp-example" aria-label="FastD 示例">
+            <div class="warp-example-head">
+                <span id="example-label">HELLO / 01</span>
+                <span id="example-file">hello.php</span>
+            </div>
+            <pre><code id="example-code">return text('Hello FastD');</code></pre>
+            <a id="example-link" href="#/zh-cn/8.3/guide/getting-started">查看完整示例 →</a>
+        </aside>
+    </div>
 
     <div id="experience-fallback" class="experience-fallback" hidden>
         <p data-fallback-message>当前环境无法展示 3D 场景，可直接进入文档。</p>
