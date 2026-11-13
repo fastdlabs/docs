@@ -2,20 +2,351 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>FastD | 高性能 PHP API 框架</title>
+    <title>FastD 8.3 | 高性能 PHP API 框架</title>
     <link rel="icon" href="assets/logo.png">
-    <meta name="description" content="FastD 8.3 使用手册：基础入门、路由、HTTP、Session、Swoole、缓存、数据库与组件文档。">
+    <meta name="description" content="FastD 8.3 是面向 PHP 团队的轻量 API 框架，支持 PSR 标准、CGI / FastCGI 与 Swoole 6 双运行时。">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="FastD 8.3 | 高性能 PHP API 框架">
+    <meta property="og:description" content="轻量 PHP API 框架，PSR 标准与 CGI / Swoole 双运行时。">
+    <meta property="og:image" content="https://fastdlabs.github.io/docs/assets/logo.png">
+    <meta name="twitter:card" content="summary">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@5.0.0/dist/themes/core.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@5.0.0/dist/themes/addons/vue.min.css">
     <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="landing/landing.css">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "FastD 是完整全栈框架吗？",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "不是。FastD 是面向 API 场景的轻量框架，核心提供应用调度、HTTP、路由、中间件、容器、配置和事件，缓存与数据库等能力按需安装。"
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "必须使用 Swoole 吗？",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "不是。FastD 同时支持 CGI / FastCGI 与 Swoole 6，按部署环境选择即可；Swoole 提供常驻 Worker、协程和长连接等能力。"
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "FastD 适合微服务吗？",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "适合把 FastD 用作 HTTP API 服务、BFF 或聚合层。服务注册、配置中心和链路等能力通过可选集成包接入，核心不内置完整治理平台。"
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "如何扩展 FastD？",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "通过 ServiceProvider、PSR 中间件、HTTP 客户端和独立组件扩展，不需要修改框架入口。"
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "运行 FastD 需要什么版本？",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "PHP 8.4.1 或更高版本；使用 Swoole 运行时还需要 Swoole 6 或更高版本。CGI / FastCGI 环境不需要 Swoole。"
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "从哪里开始使用？",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "从快速开始页面创建项目、定义第一条路由并启动服务；组件细节和常见场景可以在同一文档站继续查阅。"
+                    }
+                }
+            ]
+        }
+    </script>
 </head>
 <body>
+<button class="skip-link button-sm" id="skip-link" type="button">跳到主要内容</button>
+
 <div id="app">加载中…</div>
+
+<div id="landing-page" aria-hidden="true" hidden>
+    <div class="site-nav" role="navigation" aria-label="主导航">
+        <a class="nav-brand" href="#/zh-cn/8.3/readme" data-docs-link>
+            <img src="assets/logo.png" alt="" width="24" height="24">
+            <span>FastD</span>
+            <small>8</small>
+        </a>
+
+        <div class="nav-links" id="nav-links">
+            <button class="nav-link button-sm" type="button" data-scroll="why">为什么 FastD</button>
+            <button class="nav-link button-sm" type="button" data-scroll="benefits">能力</button>
+            <button class="nav-link button-sm" type="button" data-scroll="how-it-works">如何开始</button>
+            <button class="nav-link button-sm" type="button" data-scroll="faq">常见问题</button>
+            <a class="nav-cta button-sm" href="#/zh-cn/8.3/guide/getting-started" data-docs-link>
+                阅读文档
+                <i class="ph ph-arrow-right" aria-hidden="true"></i>
+            </a>
+        </div>
+
+        <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="打开菜单">
+            <i class="ph ph-list" aria-hidden="true"></i>
+        </button>
+    </div>
+
+    <main id="main" class="landing-main" tabindex="-1">
+        <section class="landing-section hero" id="hero">
+            <div class="hero-copy">
+                <p class="eyebrow caption-3">
+                    <span class="eyebrow-dot" aria-hidden="true"></span>
+                    FastD 8.3 / PHP API framework
+                </p>
+
+                <h1 class="heading-1 hero-title">把 API 做得更轻，<br>跑得更快</h1>
+
+                <p class="body-3 hero-subtitle">
+                    面向需要在 Swoole 上掌控运行时的 PHP 团队。PSR 标准、路由、中间件、Session 与双运行时，
+                    保持在一套小而清晰的内核里。
+                </p>
+
+                <div class="hero-actions">
+                    <a class="button-primary button-md" href="#/zh-cn/8.3/guide/getting-started" data-docs-link>
+                        阅读快速开始
+                        <i class="ph ph-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <div class="hero-proof" aria-label="技术要求">
+                    <span class="proof-item caption-3"><i class="ph ph-check-circle" aria-hidden="true"></i>PHP 8.4+</span>
+                    <span class="proof-item caption-3"><i class="ph ph-check-circle" aria-hidden="true"></i>Swoole 6+</span>
+                    <span class="proof-item caption-3"><i class="ph ph-check-circle" aria-hidden="true"></i>PSR 标准</span>
+                    <span class="proof-item caption-3"><i class="ph ph-check-circle" aria-hidden="true"></i>MIT License</span>
+                </div>
+            </div>
+
+            <div class="hero-visual" aria-label="FastD 路由示例">
+                <div class="code-window">
+                    <div class="code-window-head">
+                        <span class="window-dot" aria-hidden="true"></span>
+                        <span class="window-dot" aria-hidden="true"></span>
+                        <span class="window-dot" aria-hidden="true"></span>
+                        <span class="code-window-title caption-4">routes/web.php</span>
+                    </div>
+                    <pre class="code-body"><code><span class="code-muted">return</span> [
+    [<span class="code-accent">'GET'</span>, <span class="code-string">'/hello/{name}'</span>, HelloController::class],
+    [<span class="code-accent">'POST'</span>, <span class="code-string">'/users'</span>, CreateUserController::class],
+];</code></pre>
+                </div>
+
+                <div class="terminal" aria-label="启动命令">
+                    <div class="terminal-line">
+                        <span class="terminal-prompt">$</span>
+                        <span>composer create-project fastd/dobee my-app</span>
+                    </div>
+                    <div class="terminal-line">
+                        <span class="terminal-prompt">$</span>
+                        <span>php bin/server start</span>
+                    </div>
+                    <div class="terminal-line terminal-output">
+                        <span>[swoole] listening on 127.0.0.1:9527</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="landing-section tagline-section" id="why">
+            <div class="tagline">
+                <p class="heading-2 tagline-line">轻量不是少做功能，</p>
+                <p class="heading-2 tagline-line">而是把复杂度留在边界之外。</p>
+            </div>
+        </section>
+
+        <section class="landing-section reveal" id="benefits">
+            <div class="section-head">
+                <p class="section-kicker caption-3">为什么 FastD</p>
+                <h2 class="heading-3">一套小内核，覆盖真实 API 服务的主链路</h2>
+                <p class="body-3">从请求进入、路由匹配到中间件和响应，框架只保留必要的部分。需要缓存、数据库或服务治理时，再按需组合组件。</p>
+            </div>
+
+            <div class="benefit-grid">
+                <article class="benefit-card">
+                    <span class="benefit-icon"><i class="ph ph-arrows-left-right" aria-hidden="true"></i></span>
+                    <h3 class="title-1">双运行时，不锁死部署</h3>
+                    <p class="body-6">同一套业务代码可在 CGI / FastCGI 与 Swoole 6 之间切换，按团队现有部署体系选择。</p>
+                </article>
+
+                <article class="benefit-card">
+                    <span class="benefit-icon"><i class="ph ph-cube" aria-hidden="true"></i></span>
+                    <h3 class="title-1">PSR 边界，组件可替换</h3>
+                    <p class="body-6">请求、响应、容器、事件和中间件遵循 PSR，外部实现可以和框架一起工作。</p>
+                </article>
+
+                <article class="benefit-card">
+                    <span class="benefit-icon"><i class="ph ph-puzzle-piece" aria-hidden="true"></i></span>
+                    <h3 class="title-1">按需引入，不背全家桶</h3>
+                    <p class="body-6">核心保持精简。缓存、MedooDB、微服务集成和部署能力放在独立包里，用什么装什么。</p>
+                </article>
+
+                <article class="benefit-card">
+                    <span class="benefit-icon"><i class="ph ph-lightning" aria-hidden="true"></i></span>
+                    <h3 class="title-1">为长连接和并发准备</h3>
+                    <p class="body-6">Swoole 运行时提供协程、并行编排和 SSE，适合实时接口与聚合型 API。</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="landing-section reveal" id="how-it-works">
+            <div class="section-head">
+                <p class="section-kicker caption-3">如何开始</p>
+                <h2 class="heading-3">从空目录到第一个接口，只需要三步</h2>
+                <p class="body-3">先用 dobee 骨架跑起来，再把业务放进路由和 Controller。每一步都有对应的文档。</p>
+            </div>
+
+            <div class="steps">
+                <article class="step">
+                    <span class="step-index caption-3">01</span>
+                    <h3 class="title-1">创建项目</h3>
+                    <p class="body-6">使用 Composer 创建最小骨架，不需要先搭一套复杂的工程结构。</p>
+                    <code class="step-command">composer create-project fastd/dobee my-app</code>
+                </article>
+
+                <article class="step">
+                    <span class="step-index caption-3">02</span>
+                    <h3 class="title-1">定义接口</h3>
+                    <p class="body-6">在 routes/web.php 注册路由，Controller 实现 PSR 标准请求处理即可。</p>
+                    <code class="step-command">['GET', '/hello', HelloController::class]</code>
+                </article>
+
+                <article class="step">
+                    <span class="step-index caption-3">03</span>
+                    <h3 class="title-1">启动并验证</h3>
+                    <p class="body-6">启动 Swoole 或 FastCGI 运行时，用 curl 验证第一条响应。</p>
+                    <code class="step-command">php bin/server start</code>
+                </article>
+            </div>
+        </section>
+
+        <section class="landing-section reveal" id="standards">
+            <div class="section-head">
+                <p class="section-kicker caption-3">技术底座</p>
+                <h2 class="heading-3">建立在可验证的标准和版本约束上</h2>
+                <p class="body-3">不需要相信宣传语。版本、接口和依赖关系都可以在文档和源码中核对。</p>
+            </div>
+
+            <div class="standards">
+                <article class="standard">
+                    <strong class="title-3">PHP 8.4+</strong>
+                    <span class="body-6">现代 PHP 类型系统和运行时能力。</span>
+                </article>
+                <article class="standard">
+                    <strong class="title-3">Swoole 6+</strong>
+                    <span class="body-6">常驻 Worker、协程与长连接支持。</span>
+                </article>
+                <article class="standard">
+                    <strong class="title-3">PSR 标准</strong>
+                    <span class="body-6">HTTP、容器、事件和中间件保持可替换。</span>
+                </article>
+                <article class="standard">
+                    <strong class="title-3">MIT License</strong>
+                    <span class="body-6">开源许可，可按项目需要修改和分发。</span>
+                </article>
+            </div>
+        </section>
+
+        <section class="landing-section reveal" id="faq">
+            <div class="section-head">
+                <p class="section-kicker caption-3">常见问题</p>
+                <h2 class="heading-3">在决定之前，先把边界问清楚</h2>
+            </div>
+
+            <div class="faq-list">
+                <details class="faq-item">
+                    <summary class="title-3">FastD 是完整全栈框架吗？</summary>
+                    <div class="faq-answer body-6"><p>不是。FastD 面向 API 场景，核心提供应用调度、HTTP、路由、中间件、容器、配置和事件。缓存与数据库等能力按需安装。</p></div>
+                </details>
+                <details class="faq-item">
+                    <summary class="title-3">必须使用 Swoole 吗？</summary>
+                    <div class="faq-answer body-6"><p>不是。FastD 同时支持 CGI / FastCGI 和 Swoole 6。Swoole 提供常驻 Worker、协程和长连接，CGI 适合传统部署体系。</p></div>
+                </details>
+                <details class="faq-item">
+                    <summary class="title-3">FastD 适合微服务吗？</summary>
+                    <div class="faq-answer body-6"><p>适合把 FastD 用作 HTTP API 服务、BFF 或聚合层。服务注册、配置中心和链路能力通过可选集成包接入，核心不内置完整治理平台。</p></div>
+                </details>
+                <details class="faq-item">
+                    <summary class="title-3">如何扩展 FastD？</summary>
+                    <div class="faq-answer body-6"><p>通过 ServiceProvider、PSR 中间件、HTTP 客户端和独立组件扩展，不需要修改框架入口。</p></div>
+                </details>
+                <details class="faq-item">
+                    <summary class="title-3">运行 FastD 需要什么版本？</summary>
+                    <div class="faq-answer body-6"><p>PHP 8.4.1 或更高版本；使用 Swoole 运行时还需要 Swoole 6 或更高版本。CGI / FastCGI 环境不需要 Swoole。</p></div>
+                </details>
+                <details class="faq-item">
+                    <summary class="title-3">从哪里开始使用？</summary>
+                    <div class="faq-answer body-6"><p>从<a href="#/zh-cn/8.3/guide/getting-started" data-docs-link>快速开始</a>创建项目、定义第一条路由并启动服务；组件细节和常见场景可以在同一文档站继续查阅。</p></div>
+                </details>
+            </div>
+        </section>
+
+        <section class="landing-section reveal" id="start">
+            <div class="cta-panel">
+                <p class="section-kicker caption-3">下一步</p>
+                <h2 class="heading-3">从第一个接口开始</h2>
+                <p class="body-3">阅读快速开始，创建项目，启动 FastD 8.3。需要更深入时，再进入组件文档和场景手册。</p>
+                <a class="button-primary button-md" href="#/zh-cn/8.3/guide/getting-started" data-docs-link>
+                    阅读快速开始
+                    <i class="ph ph-arrow-right" aria-hidden="true"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="landing-footer">
+        <span class="footer-brand title-4">
+            <img src="assets/logo.png" alt="" width="20" height="20">
+            FastD 8.3
+        </span>
+        <div class="footer-links caption-2">
+            <a href="#/zh-cn/8.3/readme" data-docs-link>文档</a>
+            <a href="https://github.com/fastdlabs/fastD" target="_blank" rel="noopener">GitHub</a>
+            <a href="landing/privacy.html">隐私说明</a>
+            <a href="https://github.com/fastdlabs/fastD/blob/master/LICENSE" target="_blank" rel="noopener">MIT License</a>
+        </div>
+        <p class="footer-note caption-5">本站为静态文档，不使用 Cookie 或第三方分析。</p>
+    </footer>
+</div>
+
+<noscript>
+    <style>
+        .reveal { opacity: 1 !important; transform: none !important; }
+        .tagline-word { color: var(--color-text) !important; }
+    </style>
+    <div class="noscript-landing">
+        <h1 class="heading-3">FastD 8.3</h1>
+        <p class="body-3">请直接进入文档：</p>
+        <ul class="body-3">
+            <li><a href="#/zh-cn/8.3/readme">FastD 8.3 手册</a></li>
+            <li><a href="#/zh-cn/8.3/guide/getting-started">快速开始</a></li>
+            <li><a href="#/zh-cn/8.3/components/http">HTTP 组件</a></li>
+            <li><a href="#/zh-cn/8.3/cookbook/sse">SSE 场景</a></li>
+        </ul>
+    </div>
+</noscript>
+
 <script>
     window.$docsify = {
         auto2top: true,
-        coverpage: true,
+        coverpage: false,
         executeScript: true,
         loadSidebar: true,
         loadNavbar: true,
@@ -41,5 +372,6 @@
 <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-bash.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-json.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-php.min.js"></script>
+<script type="module" src="landing/landing.js"></script>
 </body>
 </html>
